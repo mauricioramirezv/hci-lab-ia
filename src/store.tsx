@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useEffect, useState } from 'react';
-import type { Appointment, Finding, LabEvent, Persona, ProjectState, Scenario, TestSession } from './domain';
+import type { Appointment, MultimodalEvidence, Finding, LabEvent, Persona, ProjectState, Scenario, TestSession } from './domain';
 import { sampleProject, uid } from './domain';
 
 const STORAGE_KEY = 'hci-lab-ia-project-v2';
@@ -18,6 +18,7 @@ type Store = {
   removeFinding: (id: string) => void;
   addSession: (item: Omit<TestSession, 'id' | 'createdAt'>) => void;
   log: (event: Omit<LabEvent, 'id' | 'at'>) => void;
+  addMultimodalEvidence: (item: Omit<MultimodalEvidence, 'id' | 'createdAt'>) => void;
   toggleCheck: (id: string) => void;
   importProject: (state: ProjectState) => void;
   reset: () => void;
@@ -55,6 +56,7 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
     removeFinding: (id) => update((current) => ({ ...current, findings: current.findings.filter((item) => item.id !== id) })),
     addSession: (item) => update((current) => ({ ...current, sessions: [...current.sessions, { ...item, id: uid(), createdAt: new Date().toISOString() }] })),
     log,
+    addMultimodalEvidence: (item) => update((current) => ({ ...current, multimodalEvidence: [...(current.multimodalEvidence || []), { ...item, id: uid(), createdAt: new Date().toISOString() }] })),
     toggleCheck: (id) => update((current) => ({ ...current, a11yChecks: { ...current.a11yChecks, [id]: !current.a11yChecks[id] } })),
     importProject: (project) => setState(project),
     reset: () => setState(sampleProject),

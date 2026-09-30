@@ -1,3 +1,4 @@
+import { MultimodalPage } from './components/multimodal/MultimodalPage';
 import { useEffect, useState } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -27,14 +28,14 @@ function App() {
   const nav = [
     ['/', Gauge, t('nav.dashboard')], ['/lab', FlaskConical, t('nav.lab')], ['/concepts', Brain, t('nav.concepts')],
     ['/research', Users, t('nav.research')], ['/practices', LayoutTemplate, t('nav.practices')], ['/devices', Monitor, t('nav.devices')],
-    ['/accessibility', Accessibility, t('nav.accessibility')], ['/evaluation', CalendarCheck, t('nav.evaluation')],
+    ['/multimodal', Monitor, t('multimodal.title')], ['/accessibility', Accessibility, t('nav.accessibility')], ['/evaluation', CalendarCheck, t('nav.evaluation')],
     ['/user-testing', TestTube2, t('nav.userTesting')], ['/metrics', BarChart3, t('nav.metrics')], ['/ai', Bot, t('nav.ai')],
     ['/quality', ShieldCheck, t('nav.quality')], ['/course', CalendarCheck, t('nav.course')],
   ] as const;
   const setLanguage = (language: string) => { void i18n.changeLanguage(language); localStorage.setItem('hci-language', language); };
 
   return <div className="app-shell">
-    <a className="skip-link" href="#main-content">Saltar al contenido</a>
+    <a className="skip-link" href="#main-content" onClick={e => { e.preventDefault(); document.getElementById('main-content')?.focus(); }}>Saltar al contenido</a>
     <aside className={`sidebar ${menu ? 'open' : ''}`} aria-label="Navegación principal">
       <div className="brand"><span className="brand-mark">H+</span><div><strong>{t('common.title')}</strong><small>UX · A11y · AI</small></div><button className="icon-button mobile-only" onClick={() => setMenu(false)} aria-label={t('common.close')}><X/></button></div>
       <nav>{nav.map(([path, Icon, label]) => <NavLink key={path} to={path} end={path === '/'} onClick={() => setMenu(false)} className={({ isActive }) => isActive ? 'active' : ''}><Icon/><span>{label}</span></NavLink>)}</nav>
@@ -42,7 +43,7 @@ function App() {
     </aside>
     <div className="page-shell">
       <header className="topbar"><button className="icon-button mobile-only" onClick={() => setMenu(true)} aria-label="Abrir menú"><Menu/></button><div className="top-title"><strong>{t('common.title')}</strong><span>{t('common.subtitle')}</span></div><label className="language"><Languages/><span className="sr-only">{t('common.language')}</span><select value={i18n.language} onChange={(event) => setLanguage(event.target.value)}><option value="es-CO">ES</option><option value="en-US">EN</option><option value="pt-BR">PT</option><option value="fr-FR">FR</option></select></label><button className="icon-button" onClick={() => setPrefs((current) => ({ ...current, dark: !current.dark }))} aria-label={prefs.dark ? t('accessibility.light') : t('accessibility.dark')}>{prefs.dark ? <Sun/> : <Moon/>}</button></header>
-      <main id="main-content"><Routes><Route path="/" element={<DashboardPage/>}/><Route path="/lab" element={<LabPage/>}/><Route path="/concepts" element={<ConceptsPage/>}/><Route path="/research" element={<ResearchPage/>}/><Route path="/practices" element={<PracticesPage/>}/><Route path="/devices" element={<DevicesPage/>}/><Route path="/accessibility" element={<AccessibilityPage prefs={prefs} setPrefs={setPrefs}/>}/><Route path="/evaluation" element={<EvaluationPage/>}/><Route path="/user-testing" element={<TestingPage/>}/><Route path="/metrics" element={<MetricsPage/>}/><Route path="/ai" element={<AiStudioPage/>}/><Route path="/quality" element={<QualityPage/>}/><Route path="/course" element={<CoursePage/>}/><Route path="*" element={<DashboardPage/>}/></Routes></main>
+      <main id="main-content" tabIndex={-1}><Routes><Route path="/" element={<DashboardPage/>}/><Route path="/lab" element={<LabPage/>}/><Route path="/concepts" element={<ConceptsPage/>}/><Route path="/research" element={<ResearchPage/>}/><Route path="/practices" element={<PracticesPage/>}/><Route path="/devices" element={<DevicesPage/>}/><Route path="/multimodal" element={<MultimodalPage/>}/><Route path="/accessibility" element={<AccessibilityPage prefs={prefs} setPrefs={setPrefs}/>}/><Route path="/evaluation" element={<EvaluationPage/>}/><Route path="/user-testing" element={<TestingPage/>}/><Route path="/metrics" element={<MetricsPage/>}/><Route path="/ai" element={<AiStudioPage/>}/><Route path="/quality" element={<QualityPage/>}/><Route path="/course" element={<CoursePage/>}/><Route path="*" element={<DashboardPage/>}/></Routes></main>
     </div>
   </div>;
 }

@@ -1,3 +1,4 @@
+import { multimodalResources } from './components/multimodal/translations';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -58,7 +59,7 @@ const fr = {
 };
 
 i18n.use(initReactI18next).init({
-  resources: { 'es-CO': { translation: es }, 'en-US': { translation: en }, 'pt-BR': { translation: pt }, 'fr-FR': { translation: fr } },
+  resources: { 'es-CO': { translation: { ...es, multimodal: multimodalResources['es-CO'] } }, 'en-US': { translation: { ...en, multimodal: multimodalResources['en-US'] } }, 'pt-BR': { translation: { ...pt, multimodal: multimodalResources['pt-BR'] } }, 'fr-FR': { translation: { ...fr, multimodal: multimodalResources['fr-FR'] } } },
   lng: localStorage.getItem('hci-language') || 'es-CO',
   fallbackLng: 'es-CO',
   interpolation: { escapeValue: false },

@@ -1,3 +1,14 @@
+# 2.2.0 — 2026-09-30
+
+- Añadida ruta y menú Multimodal.
+- Ocho contextos, demostraciones de tareas y comparador.
+- Filtros aproximados de color con señales redundantes.
+- Voz opcional, texto alternativo, sonido y vibración con detección de soporte.
+- Evidencias persistentes y exportables; compatibilidad con proyectos anteriores.
+- Actividades para once conceptos, con observaciones enviadas a Evaluación.
+- Traducciones de controles del nuevo módulo en cuatro idiomas.
+- Pruebas de integración y E2E para el nuevo módulo.
+
 # Changelog
 
 ## 2.0.0 — Functional course workspace

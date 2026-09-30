@@ -45,3 +45,10 @@ A meta educacional é WCAG 2.2 AA. Os testes automáticos devem ser complementad
 ## Licença
 
 MIT.
+
+
+## Atualização multimodal 2.2.0
+
+Nova rota `#/multimodal`: oito contextos simulados; filtros aproximados de percepção de cores; reconhecimento e síntese de voz opcionais; som e vibração com resposta visual; observações persistentes no JSON do projeto. Controles e tabela do novo módulo estão traduzidos. Algumas páginas herdadas e atividades de conceitos permanecem em espanhol. APIs dependem do navegador; o hardware real exige verificação.
+
+See [README.md](README.md) and [ACTUALIZAR_WINDOWS.md](ACTUALIZAR_WINDOWS.md).

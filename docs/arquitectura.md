@@ -19,3 +19,10 @@ El proveedor de IA es simulado para evitar exponer claves. Un proveedor real deb
 `Interacción → acción del store → localStorage → cálculo de métricas → exportación`.
 
 Los videos LSC nunca se suben ni se conservan: la URL temporal existe solo durante la sesión. La muestra debe ser validada por una persona competente en Lengua de Señas Colombiana.
+
+
+## Multimodal 2.2
+
+`App.tsx` registra la ruta; `components/multimodal/MultimodalPage.tsx` coordina selección, demostraciones y evidencias. Componentes separados implementan color, comparación, smartwatch, vehículo, voz y respuestas hápticas/sonoras. `ConceptActivity.tsx` registra observaciones humanas como hallazgos. Los recursos JSON se añaden a i18next.
+
+`ProjectState.multimodalEvidence` es opcional para mantener compatibilidad con JSON de v2. El store añade evidencias mediante actualizaciones funcionales, conserva los datos anteriores y utiliza el almacenamiento/exportación ya existente.

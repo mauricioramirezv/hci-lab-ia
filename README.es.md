@@ -1,85 +1,84 @@
-# HCI Lab + IA
+# HCI Lab + IA — 2.2.0
 
-[Español](README.es.md) · [English](README.en.md) · [Português](README.pt-BR.md) · [Français](README.fr.md)
+Laboratorio educativo React + TypeScript para estudiar UX, usabilidad, accesibilidad, awareness, engagement ético, emociones, cognición, ergonomía, diseño universal e IA responsable.
 
-Laboratorio front-end, multiformato y multilenguaje para enseñar, aplicar y evaluar Interacción Humano–Computador, UX, accesibilidad e inteligencia artificial.
+## Inicio rápido
 
-## Funcionalidades
+Requiere Node.js 22 y npm.
 
-- Sistema funcional de reserva de citas: crear, reprogramar y cancelar.
-- Proyecto persistente con importación/exportación JSON y datos versionados.
-- Constructor de personas, mapa de empatía y escenarios de uso.
-- Modos de buena práctica, mala práctica y comparación.
-- Vistas para computador, tableta, celular y reloj.
-- Español, inglés, portugués y francés en tiempo de ejecución.
-- Centro de accesibilidad: temas claro/oscuro, alto contraste, texto 100–200 %, espaciado, lectura accesible y reducción de movimiento.
-- Demostración de lector de pantalla y componente para un video breve validado en LSC.
-- Once áreas de IHC: UX, usabilidad, accesibilidad, awareness, engagement, emociones, ergonomía, cognición, arquitectura, inclusión e IA responsable.
-- Evaluación de las diez heurísticas de Nielsen: evidencia, severidad 0–4, recomendación, fuente y estado.
-- Comparación humano–IA con validación o rechazo de propuestas.
-- Instrumentos SUS, SEQ, éxito, tiempo, errores y emoción por participante.
-- Métricas calculadas desde eventos y evidencias; exportación CSV.
-- AI Studio con proveedor local, contrato extensible y conexión opcional mediante proxy seguro.
-- Pruebas con Vitest, Testing Library, Playwright, Selenium, axe-core y guía de Katalon.
-- Despliegue automático en GitHub Pages.
-
-## Requisitos
-
-- Node.js 22 o superior.
-- npm 10 o superior.
-
-## Instalación
-
-```bash
-git clone https://github.com/mauricioramirezv/hci-lab-ia.git
-cd hci-lab-ia
-npm install
+```powershell
+npm ci
 npm run dev
 ```
 
+Abra la URL que muestre Vite. La nueva página está en `#/multimodal`.
+
+## Módulos
+
+| Ruta | Propósito |
+|---|---|
+| `#/` | Inicio y estado del proyecto |
+| `#/lab` | Reserva de citas y comparación de prácticas |
+| `#/concepts` | Once conceptos, ejemplos, correcciones, herramientas y actividades |
+| `#/research` | Personas y escenarios |
+| `#/practices` | Buenas y malas prácticas |
+| `#/devices` | Laboratorio multiformato original |
+| `#/multimodal` | Ocho contextos de dispositivo, color, voz, sonido, vibración y evidencia |
+| `#/accessibility` | Preferencias de lectura, contraste y asistencia |
+| `#/evaluation` | Hallazgos humanos y propuestas IA pendientes de validación |
+| `#/user-testing` | Sesiones de prueba y cuestionario SUS |
+| `#/metrics` | Métricas a partir de registros del proyecto |
+| `#/ai` | Proveedor IA simulado y revisable |
+| `#/quality` | Calidad y automatización |
+| `#/course` | Evolución por clases |
+
+## Ecosistema multimodal
+
+- PC, tableta y celular: confirmación y cancelación de una cita en marcos de distinto tamaño.
+- Smartwatch: acción breve, estado y comparación de densidad visual.
+- Vehículo: navegación y llamada simuladas; en buena práctica se bloquean controles visuales durante movimiento simulado. Permanece la alternativa escrita a los comandos de voz. No es un sistema automotriz ni una validación de seguridad vial.
+- TV: reproducción simulada; controles HTML utilizables con teclado. No emula un sistema de control remoto nativo.
+- Kiosco: solicitud de turno simulada.
+- IoT: luz virtual con estado explícito. No conecta dispositivos físicos.
+- Tabla comparativa: atención, entrada, ergonomía, riesgo y adaptación accesible por contexto.
+
+Los filtros de protanopia, deuteranopia, tritanopia y acromatopsia afectan una muestra de estados. Son aproximaciones RGB educativas; no reproducen la percepción individual, no modifican toda la aplicación y no certifican accesibilidad. Compare mala práctica (color solo) y buena práctica (color + texto + símbolo).
+
+Voz: síntesis de estado y reconocimiento opcional, más comando escrito. El micrófono se activa únicamente al pulsar su botón. El navegador puede procesar audio mediante un servicio externo: consulte el aviso previo. Vibración y sonido se activan por botones separados y conservan una respuesta visual. La API puede estar disponible sin que exista respuesta física perceptible; el usuario debe verificarlo.
+
+## Evidencia y continuidad
+
+En Multimodal seleccione contexto, práctica y filtro, pruebe la tarea y canales, escriba una observación y registre confianza autoinformada de 1 a 5. Las evidencias se guardan dentro de `multimodalEvidence` en el mismo proyecto, con fecha y respuestas observadas. Se conservan al recargar y en exportación/importación JSON. Los proyectos anteriores sin ese campo siguen funcionando; se mantiene la versión 2 del esquema para no perder datos.
+
+En Conceptos, expanda cada actividad, compare las prácticas y registre una observación. Se guarda como hallazgo humano pendiente en Evaluación. Las herramientas indicadas son recursos para realizar la evaluación, no integraciones automáticas. Seleccionar buena práctica no genera una puntuación ni demuestra mejora.
+
+## Idiomas
+
+El nuevo módulo Multimodal y su tabla tienen textos en español, inglés, portugués y francés. Las actividades educativas de Conceptos y algunas páginas heredadas permanecen en español; el selector global no implica traducción completa del contenido educativo.
+
 ## Verificación
 
-```bash
+```powershell
+npm run lint
 npm test
 npm run build
 npx playwright install chromium
 npm run test:e2e
 ```
 
-## Rutas
+Las pruebas E2E usan escritorio Chromium y emulación Pixel 7. La emulación no valida voz ni vibración en hardware real. Los controles de APIs ausentes se verifican en pruebas unitarias; sonido, voz y vibración deben comprobarse también en el dispositivo de destino.
 
-| Ruta | Propósito |
-|---|---|
-| `#/` | Panel del proyecto y progreso |
-| `#/lab` | Flujo funcional, comparación y gestión de citas |
-| `#/concepts` | Mapa de conceptos de IHC y UX |
-| `#/research` | Personas, empatía y escenarios |
-| `#/practices` | Biblioteca comparativa de patrones |
-| `#/devices` | Laboratorio multiformato |
-| `#/accessibility` | Preferencias y demostraciones accesibles |
-| `#/evaluation` | Heurísticas humanas y con IA |
-| `#/user-testing` | Sesiones, SUS, SEQ, emoción y desempeño |
-| `#/metrics` | Métricas y exportación |
-| `#/ai` | Generación simulada con IA |
-| `#/quality` | Estrategia y automatización de calidad |
-| `#/course` | Evolución de las ocho clases |
+## Publicar en GitHub
 
-## GitHub Pages
+Siga [ACTUALIZAR_WINDOWS.md](ACTUALIZAR_WINDOWS.md). La copia no publica cambios; primero pruebe, haga commit e integre la rama en `main`. El workflow existente despliega GitHub Pages al recibir el push de `main`.
 
-En GitHub, abra **Settings → Pages → Source → GitHub Actions**. Cada actualización de `main` compilará y publicará la aplicación.
+## Referencias
 
-## Seguridad e IA
+- [WCAG 1.4.1: uso del color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color)
+- [MDN: Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)
+- [MDN: SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
+- [MDN: SpeechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
 
-No guarde claves en el front-end. Copie `.env.example` y configure únicamente la URL de un proxy seguro; la clave permanece en el servidor. Toda salida de IA requiere revisión humana.
+## Arquitectura y contribución
 
-## Datos locales
-
-El proyecto se conserva en el navegador. Use **Exportar proyecto** antes de borrar datos del sitio o cambiar de equipo. El archivo JSON puede importarse nuevamente. No use datos personales reales en actividades de clase.
-
-## Accesibilidad
-
-La meta educativa es WCAG 2.2 AA. Las pruebas automatizadas se complementan con teclado, ampliación, lector de pantalla y evaluación con personas.
-
-## Licencia
-
-MIT.
+El código nuevo está en `src/components/multimodal/`; usa el contexto del proyecto en `src/store.tsx` y tipos aditivos en `src/domain.ts`. Consulte [docs/arquitectura.md](docs/arquitectura.md), [CONTRIBUTING.md](CONTRIBUTING.md) y [ACCESSIBILITY.md](ACCESSIBILITY.md).

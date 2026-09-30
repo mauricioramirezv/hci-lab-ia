@@ -74,6 +74,7 @@ export type ProjectState = {
   sessions: TestSession[];
   events: LabEvent[];
   a11yChecks: Record<string, boolean>;
+  multimodalEvidence?: MultimodalEvidence[];
 };
 
 export const uid = () => `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
@@ -138,3 +139,10 @@ export function calculateMetrics(state: ProjectState): Metrics {
     aiAgreement: ai.length ? Math.round((matches / ai.length) * 100) : 0,
   };
 }
+
+export type DeviceContext = 'desktop' | 'tablet' | 'mobile' | 'watch' | 'car' | 'tv' | 'kiosk' | 'iot';
+export type AccessibilityMode = 'normal' | 'protanopia' | 'deuteranopia' | 'tritanopia' | 'achromatopsia';
+export type MultimodalEvidence = {
+  id: string; createdAt: string; device: DeviceContext; practice: 'good' | 'bad';
+  vision: AccessibilityMode; notes: string; confidence: number; demoStatus: string; channelStatus: string;
+};

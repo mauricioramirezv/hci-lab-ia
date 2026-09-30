@@ -45,3 +45,10 @@ The teaching target is WCAG 2.2 AA. Automated checks must be complemented by key
 ## License
 
 MIT.
+
+
+## Multimodal update 2.2.0
+
+New route `#/multimodal`: eight simulated device contexts; approximate color-perception filters; optional speech recognition and synthesis; sound and vibration with visual fallback; persistent observations in project JSON. The module controls and comparison table are translated. Legacy educational pages and concept activities remain partly in Spanish. APIs depend on browser support and real hardware must be checked separately.
+
+See [README.md](README.md) and [ACTUALIZAR_WINDOWS.md](ACTUALIZAR_WINDOWS.md).
