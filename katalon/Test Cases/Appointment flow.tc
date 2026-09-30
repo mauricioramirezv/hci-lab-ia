@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity><description>Validates the primary appointment surface</description><name>Appointment flow</name><tag>regression</tag></TestCaseEntity>
