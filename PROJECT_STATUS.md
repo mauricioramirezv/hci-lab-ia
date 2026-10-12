@@ -1,3 +1,7 @@
+# Estado 2.4
+
+Implementación local basada en main e2e4907 (2.2). No publicada automáticamente. Véase LEEME_2_4.md para alcance y ejecución.
+
 # Estado — 2.2.0
 
 Implementado en el paquete: ruta Multimodal, ocho contextos, color, voz opcional, texto alternativo, sonido, vibración, evidencia persistente y actividades de conceptos.

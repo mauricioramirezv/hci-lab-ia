@@ -1,0 +1,25 @@
+.project-activities .activity-actions {display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:1rem}
+.project-activities button[aria-pressed=true] {text-decoration:underline;text-underline-offset:.25em;border-color:var(--green)}
+.project-activities .activity-panel {max-width:850px;margin:1.5rem auto;padding:1.25rem;border:1px solid var(--line);border-radius:var(--radius,16px);background:var(--surface)}
+.project-activities .activity-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.project-activities label {display:grid;gap:.4rem;margin:1rem 0;min-width:0}
+.project-activities [data-field] > input,.project-activities [data-field] > textarea,.project-activities [data-field] > select {width:100%;min-width:0}
+.project-activities .activity-error {color:var(--text);font-weight:650;border-inline-start:3px solid var(--danger,#b42318);padding-inline-start:.6rem}
+.project-activities .activity-notice {padding:1rem;border:2px solid var(--green);border-radius:12px;margin:1rem 0;background:var(--surface)}
+.project-activities .activity-steps {display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding-inline-start:1.5rem}
+.project-activities .activity-steps [aria-current=step] {font-weight:750;text-decoration:underline;text-underline-offset:.3em}
+.project-activities .activity-records {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1rem;margin-top:1rem}
+.project-activities .activity-record {padding:1.25rem;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow-wrap:anywhere}
+.project-activities dl {display:grid;gap:.75rem;margin:1rem 0}
+.project-activities dt {font-weight:700}
+.project-activities dd {margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.project-activities .activity-help {padding:1rem;border-inline-start:3px solid var(--green);margin:1rem 0}
+.project-activities .activity-specimen-bad {border-style:dashed}
+.project-activities details {margin:1rem 0;padding:1rem;border:1px solid var(--line);border-radius:12px}
+.project-activities summary {cursor:pointer;font-weight:700;min-height:44px;display:list-item}
+.project-activities .activity-check {display:flex;align-items:center;gap:.75rem}
+.project-activities .activity-check input {width:auto}
+@media(max-width:650px){.project-activities .activity-fields{grid-template-columns:1fr}.project-activities .activity-panel{padding:1rem}.project-activities .activity-actions button{flex-grow:1}}
+.project-activity-dialog {width:min(560px,calc(100% - 2rem));max-height:85vh;overflow:auto;padding:1.5rem;border:2px solid var(--green);border-radius:16px;background:var(--surface);color:var(--text)}
+.project-activity-dialog::backdrop {background:rgb(0 0 0 / .55)}
+.project-activity-dialog .activity-actions {display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}

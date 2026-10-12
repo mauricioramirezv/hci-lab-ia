@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import './i18n';
 import './styles.css';
+import './enhancements/styles.css';
+import './shell.css';
 import App from './App';
 import { ProjectProvider } from './store';
 

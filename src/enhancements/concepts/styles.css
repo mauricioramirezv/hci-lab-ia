@@ -1,0 +1,39 @@
+.concept-module { min-width:0; }
+.concept-module .concept-actions { display:flex; align-items:center; flex-wrap:wrap; gap:.75rem; margin:1rem 0; }
+.concept-module .concept-actions > a { padding:.7rem 0; }
+.concept-module .concept-filters { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr) auto; gap:1rem; align-items:end; margin-top:1.5rem; }
+.concept-module label { display:grid; gap:.5rem; margin:.75rem 0; }
+.concept-module .concept-filters > label { margin:0; }
+.concept-module label.check-row { display:flex; align-items:center; gap:.65rem; }
+.concept-module input:not([type=checkbox]):not([type=range]),.concept-module textarea,.concept-module select { width:100%; }
+.concept-module textarea { min-height:6rem; resize:vertical; }
+.concept-module .concept-catalog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:1.25rem; }
+.concept-module .concept-catalog-card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:1.25rem; display:flex; flex-direction:column; min-width:0; }
+.concept-module .concept-catalog-card h3 { margin:0 0 .75rem; }
+.concept-module .concept-catalog-card h4 { margin:.5rem 0; }
+.concept-module .concept-catalog-card button { margin-top:auto; align-self:stretch; }
+.concept-module .concept-activity,.concept-module .concept-diagnosis,.concept-module .concept-evidence { margin-top:1.5rem; }
+.concept-module .concept-activity-heading { display:flex; flex-wrap:wrap; align-items:start; justify-content:space-between; gap:1rem; }
+.concept-module .concept-activity-heading label { min-width:min(100%,14rem); margin:0; }
+.concept-module .concept-steps { display:flex; flex-wrap:wrap; list-style:none; gap:.75rem; padding:0; margin:1.5rem 0; }
+.concept-module .concept-steps li { border:1px solid var(--control-line); border-radius:9px; padding:.6rem .85rem; }
+.concept-module .concept-steps [aria-current=step] { background:var(--soft2); font-weight:700; border-width:2px; }
+.concept-module .concept-focus { scroll-margin-top:12rem; }
+.concept-module .concept-focus:focus { outline:3px solid var(--focus); outline-offset:5px; }
+.concept-module .concept-test-area { padding:1rem; border:1px solid var(--line); border-radius:12px; }
+.concept-module .concept-sample { padding:1rem; background:var(--soft); border:1px solid var(--control-line); border-radius:10px; margin:1rem 0; }
+.concept-module .concept-sample[data-condition=bad] { border-style:dashed; border-width:2px; }
+.concept-module .concept-sample h4 { margin:0 0 .5rem; }
+.concept-module .concept-sample p:last-child { margin-bottom:0; }
+.concept-module .concept-status-dot { display:block; width:1.5rem; height:1.5rem; background:var(--danger); border:2px solid var(--control-line); border-radius:50%; }
+.concept-module .concept-target-sample { display:flex; align-items:center; max-width:100%; overflow:auto; padding:.5rem; margin:1rem 0; }
+.concept-module .concept-target-sample span { display:block; flex:none; background:var(--green); border:2px solid var(--control-line); border-radius:8px; }
+.concept-module .concept-ratings { margin:1rem 0; padding:1rem; border:1px solid var(--control-line); border-radius:10px; }
+.concept-module fieldset { min-width:0; }
+.concept-module legend { padding:0 .4rem; font-weight:700; }
+.concept-module .concept-trial-footer,.concept-module .concept-observation { border-top:1px solid var(--line); padding-top:1rem; margin-top:1.5rem; }
+.concept-module .concept-feedback,.concept-module .concept-empty { padding:1rem; background:var(--soft); border:1px solid var(--control-line); border-radius:10px; margin:1rem 0; }
+.concept-module .concept-metrics { display:flex; flex-wrap:wrap; list-style:none; padding:0; gap:.75rem 1.5rem; }
+.concept-module .concept-evidence-record { border-top:1px solid var(--line); margin-top:1.25rem; padding-top:1.25rem; }
+.concept-module .concept-user-text { white-space:pre-wrap; overflow-wrap:anywhere; }
+@media(max-width:780px) { .concept-module .concept-filters { grid-template-columns:1fr; } .concept-module .concept-activity-heading { flex-direction:column; } .concept-module .concept-activity-heading label { width:100%; } }

@@ -1,3 +1,15 @@
+# 2.4.0
+
+- Integra seguimiento 2.3 y añade captura de página por ruta, canales independientes y exposición por tramo.
+- Reset global con confirmación, preferencias y limpieza de actividades activas.
+- Tres temáticas y once micro-demos; filtros de patrones/antipatrones.
+- Experimentos Fitts/Hick, chatbots guionizados y decisiones humano-IA.
+- Simulaciones sensoriales y motrices, TTS, earcons y háptica opcional.
+- Raw TLX y SUS sin respuestas preseleccionadas; respuestas SUS conservadas.
+- Informes Markdown/impresión PDF, datos JSON/CSV, comparación y gestión de sesiones.
+- Controles italianos/catalanes; contenido académico en español documentado.
+- Instalador incremental sobre 2.2 o paquete 2.3 y archivo completo de ejecución local.
+
 # 2.2.0 — 2026-09-30
 
 - Añadida ruta y menú Multimodal.

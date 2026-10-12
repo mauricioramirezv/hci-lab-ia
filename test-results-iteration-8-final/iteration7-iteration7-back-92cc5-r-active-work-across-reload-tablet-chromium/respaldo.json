@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "appointments": [],
+  "personas": [],
+  "scenarios": [],
+  "findings": [],
+  "sessions": [],
+  "events": [],
+  "a11yChecks": {},
+  "multimodalEvidence": [],
+  "trackingSessions": [],
+  "evidence": [
+    {
+      "kind": "sus",
+      "participant": "",
+      "task": "Persisted task",
+      "condition": "SUS",
+      "prototype": "iteration7",
+      "scores": {
+        "sus": 50,
+        "response1": 3,
+        "response2": 3,
+        "response3": 3,
+        "response4": 3,
+        "response5": 3,
+        "response6": 3,
+        "response7": 3,
+        "response8": 3,
+        "response9": 3,
+        "response10": 3
+      },
+      "notes": "",
+      "id": "1791817322583-jyhaos",
+      "createdAt": "2026-10-12T15:02:02.583Z"
+    }
+  ],
+  "pageSessions": [],
+  "backup": {
+    "format": "hci-lab-ia-backup",
+    "version": 1,
+    "exportedAt": "2026-10-12T15:02:02.751Z",
+    "preferences": {
+      "dark": false,
+      "contrast": false,
+      "font": 100,
+      "spacing": false,
+      "dyslexia": false,
+      "motion": false
+    },
+    "language": "es-CO"
+  }
+}

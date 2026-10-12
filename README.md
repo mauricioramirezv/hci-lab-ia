@@ -1,3 +1,11 @@
+# Actualización 2.4
+
+Proyecto completo para ejecución local: lea [LEEME_2_4.md](LEEME_2_4.md).
+
+Incluye conceptos por temáticas, actividades medidas, reset global, seguimiento de página y ejemplos, mirada simulada/webcam, experimentos, chatbots guionizados, Raw TLX e informes académicos. Italiano/catalán amplían los controles y etiquetas; el contenido académico continúa en español.
+
+---
+
 # HCI Lab + IA — 2.2.0
 
 Laboratorio educativo React + TypeScript para estudiar UX, usabilidad, accesibilidad, awareness, engagement ético, emociones, cognición, ergonomía, diseño universal e IA responsable.

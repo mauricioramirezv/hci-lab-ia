@@ -1,0 +1,602 @@
+{
+  "format": "hci-lab-ia-evidence",
+  "version": 1,
+  "language": "it-IT",
+  "report": "# Rapporti del progetto\n\nLingua del rapporto: it-IT\n\n## Identificazione e obiettivo del progetto\n\nNome del progetto: Nessuna informazione fornita.\nObiettivo del progetto: Nessuna informazione fornita.\n\n## Personas e scenari\n\n### Persona ficticia Álex\n\nCampo | Valore | Unità\n--- | --- | ---\nNome | Persona ficticia Álex | \nEtà o fascia (facoltativa) | Non registrato | \nDispositivo | USER\\_DEVICE | \nContesto | USER\\_CONTEXT | \nObiettivo della persona | Completar reserva | \nNecessità o barriere | Texto pequeño | \nInformazione o regola usata | Osservazioni e ipotesi | \nDati osservati | Observación directa | \nIpotesi da validare | Supuesto pendiente | \nFonte delle emozioni | Autodichiarate | \nCosa dice | USER\\_SAYS | \nCosa pensa | USER\\_THINKS | \nCosa fa | USER\\_DOES | \nCosa sente | USER\\_FEELS | \n\n### Escenario ficticio\n\nCampo | Valore | Unità\n--- | --- | ---\nTitolo | Escenario ficticio | \nPersona e mappa di empatia | Persona ficticia Álex | \nPersona e mappa di empatia | persona | \nContesto | Universidad | \nVincolo o difficoltà | Sin sonido | \nCriterio di successo osservabile | Una confirmación | \nEsempio fittizio | Sì | \n\n## Attività e metodo di valutazione\n\nNessuna informazione fornita.\n\nTempo: secondi registrati. Errori: conteggio osservato. Successo: media di 0/1, proporzione di compiti completati. SUS: punteggio (0–100). Raw TLX: media non ponderata di sei dimensioni (0–100). Compiti e metodi distinti separati.\n\nTipo | Compito | Condizione | Versione | Dati utilizzati (n)\n--- | --- | --- | --- | ---\nPersona e mappa di empatia | Persona ficticia Álex | Non registrato | Non registrato | 1\nScenario | Escenario ficticio | Non registrato | Non registrato | 1\nPrenotazione fittizia | Consulenza universitaria fittizia | Buona pratica | Non registrato | 1\nRiscontro euristico | Reserva | Revisionato e validato | Non registrato | 1\nTest di usabilità | Legacy task | Non registrato | Non registrato | 1\nAttività di concetti | Emozioni | Buona pratica | concepts-iteration3 | 1\nPattern o antipattern | Modulo | Antipattern | patterns-iteration-4 | 1\nTest di usabilità | Reserva | Buona pratica | iteration7 | 1\nTest di usabilità | Reserva | Antipattern | iteration7 | 1\nSUS | Reserva | Dati dichiarati | iteration7 | 1\nRaw NASA-TLX | Reserva | Dati dichiarati | iteration7 | 1\nEsperimento di Fitts o Hick | Fitts | Obiettivi grandi: 64 px | iteration7 | 1\nEsperimento di Fitts o Hick | Hick | 3 opzioni | iteration7 | 1\nRubrica umana del chatbot | Reserva | Chatbot B: buona pratica | chatbots | 1\nDecisione umana sull’IA simulata | USER\\_AI\\_CONTEXT | Accetta proposta | local-template-iteration7 | 1\nSessioni salvate di monitoraggio UX | USER\\_TRACK\\_TASK | Buona pratica | v1 | 1\nSessioni salvate di monitoraggio UX | Sessioni salvate di monitoraggio UX | Antipattern | Non registrato | 1\nAttività multimodale | Attività multimodale | Buona pratica | Non registrato | 1\nEvento del flusso di prenotazione | booking-good | Non registrato | Non registrato | 1\nLista di controllo di accessibilità | Lista di controllo di accessibilità | Non registrato | Non registrato | 1\n\n## Risultati\n\nIndicatori per compito, condizione, versione e metodo; solo valori presenti e finiti. Media = somma / n. Zero osservato conservato; dati assenti non calcolati.\n\n### Legacy task · Non registrato · Non registrato · Test di usabilità\n\nRisultati | Media | Dati utilizzati (n)\n--- | --- | ---\nTempo (s) | 0.000 | 1\nErrori (conteggio) | 0.000 | 1\nSuccesso del compito (0/1) | 0.000 | 1\nSUS (0–100) | 50.000 | 1\n\n### Reserva · Buona pratica · iteration7 · Test di usabilità\n\nRisultati | Media | Dati utilizzati (n)\n--- | --- | ---\nTempo (s) | 20.000 | 1\nErrori (conteggio) | 2.000 | 1\nSuccesso del compito (0/1) | 1.000 | 1\n\n### Reserva · Antipattern · iteration7 · Test di usabilità\n\nRisultati | Media | Dati utilizzati (n)\n--- | --- | ---\nTempo (s) | 10.000 | 1\nErrori (conteggio) | 0.000 | 1\nSuccesso del compito (0/1) | 1.000 | 1\n\n### Reserva · Dati dichiarati · iteration7 · SUS\n\nRisultati | Media | Dati utilizzati (n)\n--- | --- | ---\nSUS (0–100) | 50.000 | 1\n\n### Reserva · Dati dichiarati · iteration7 · Raw NASA-TLX\n\nRisultati | Media | Dati utilizzati (n)\n--- | --- | ---\nRaw NASA-TLX (0–100) | 35.000 | 1\n\n### Fitts · Obiettivi grandi: 64 px · iteration7 · Fitts · Puntatore · Tentativo misurato: 8\n\nRisultati | Media | Dati utilizzati (n)\n--- | --- | ---\nTempo (s) | 1.000 | 1\nErrori (conteggio) | 0.000 | 1\n\n### Hick · 3 opzioni · iteration7 · Hick · Tastiera · Tentativo misurato: 8\n\nRisultati | Media | Dati utilizzati (n)\n--- | --- | ---\nTempo (s) | 2.000 | 1\nErrori (conteggio) | 0.000 | 1\n\n### Persona e mappa di empatia · Persona ficticia Álex\n\nCampo | Valore\n--- | ---\nData di registrazione | Non registrato\nCondizione | Non registrato\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dato o valutazione umana\nID | personas:persona\n\nCampo | Valore | Unità\n--- | --- | ---\nNome | Persona ficticia Álex | \nEtà o fascia (facoltativa) | Non registrato | \nDispositivo | USER\\_DEVICE | \nContesto | USER\\_CONTEXT | \nObiettivo della persona | Completar reserva | \nNecessità o barriere | Texto pequeño | \nInformazione o regola usata | Osservazioni e ipotesi | \nDati osservati | Observación directa | \nIpotesi da validare | Supuesto pendiente | \nFonte delle emozioni | Autodichiarate | \nCosa dice | USER\\_SAYS | \nCosa pensa | USER\\_THINKS | \nCosa fa | USER\\_DOES | \nCosa sente | USER\\_FEELS | \n\nOsservazioni: Observación directa\nSupuesto pendiente\n\n### Scenario · Escenario ficticio\n\nCampo | Valore\n--- | ---\nData di registrazione | Non registrato\nCondizione | Non registrato\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dati simulati / esempio fittizio\nID | scenarios:scenario\n\nCampo | Valore | Unità\n--- | --- | ---\nTitolo | Escenario ficticio | \nPersona e mappa di empatia | Persona ficticia Álex | \nPersona e mappa di empatia | persona | \nContesto | Universidad | \nVincolo o difficoltà | Sin sonido | \nCriterio di successo osservabile | Una confirmación | \nEsempio fittizio | Sì | \n\nOsservazioni: Sin sonido\n\n### Prenotazione fittizia · Consulenza universitaria fittizia\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Buona pratica\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dati simulati / esempio fittizio\nID | appointments:booking\n\nCampo | Valore | Unità\n--- | --- | ---\nServizio | Servicio ficticio | \nServizio | advice | \nData di registrazione | 2026-11-11 | \nTempo (s) | 10:00 | \nStato di revisione umana | Confermata | \n\nOsservazioni: Non registrato\n\n### Riscontro euristico · Reserva\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Revisionato e validato\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dato o valutazione umana\nID | findings:finding\n\nCampo | Valore | Unità\n--- | --- | ---\nEuristica | Visibilità dello stato | \nEuristica | h1 | \nGravità | 2 | \nProblema osservato | USER\\_PROBLEM | \nEvidenza o posizione | USER\\_LOCATION | \nRaccomandazione di correzione | USER\\_FIX | \nOrigine del dato | Valutazione umana | \nStato di revisione umana | Revisionato e validato | \n\nOsservazioni: USER_PROBLEM\n\n### Test di usabilità · Legacy task\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Non registrato\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dati misurati e dichiarati\nID | sessions:legacy\n\nCampo | Valore | Unità\n--- | --- | ---\nSuccesso del compito (0/1) | No | \nTempo (s) | 0 | s\nErrori (conteggio) | 0 | \nSUS (0–100) | 50 | 0–100\nCampo originale: susResponses · 1 | 3 | \nCampo originale: susResponses · 2 | 3 | \nCampo originale: susResponses · 3 | 3 | \nCampo originale: susResponses · 4 | 3 | \nCampo originale: susResponses · 5 | 3 | \nCampo originale: susResponses · 6 | 3 | \nCampo originale: susResponses · 7 | 3 | \nCampo originale: susResponses · 8 | 3 | \nCampo originale: susResponses · 9 | 3 | \nCampo originale: susResponses · 10 | 3 | \nSEQ: facilità dichiarata (1 difficile, 7 facile) | 4 | 1–7\nEmozione dichiarata (1 negativa, 5 positiva) | 3 | 1–5\n\nOsservazioni: USER_LEGACY\n\n### Attività di concetti · Emozioni\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Buona pratica\nAlias facoltativo | Senza alias\nVersione | concepts-iteration3\nTipo | Dati misurati e dichiarati\nID | evidence:concept\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Attività di concetti | \nTempo (s) | 12 | s\nErrori (conteggio) | 0 | \nInterazioni: {{value}} | 3 | \nEmozione prima della prova | 2 | \nEmozione dopo la prova | 4 | \nCampo originale: id | emotions | \nCampo originale: outcome | Attività completata | \nDescrizione fittizia (non registrata) | USER\\_FEEDBACK | \nGiustificazione della comparabilità | USER\\_REASON | \nTorna a modificare | Non registrato | \nDecisione umana | Non registrato | \n\nOsservazioni: USER_NOTE_concept\n\n### Pattern o antipattern · Modulo\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Antipattern\nAlias facoltativo | Senza alias\nVersione | patterns-iteration-4\nTipo | Dato o valutazione umana\nID | evidence:pattern\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Pattern o antipattern | \nCampo originale: id | form | \nProblema osservato | USER\\_PATTERN\\_PROBLEM | \nCampo originale: principle | USER\\_PRINCIPLE | \nCome correggere il problema | USER\\_PATTERN\\_FIX | \n\nOsservazioni: USER_NOTE_pattern\n\n### Test di usabilità · Reserva\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Buona pratica\nAlias facoltativo | Senza alias\nVersione | iteration7\nTipo | Dati misurati e dichiarati\nID | evidence:ux-before\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Test di usabilità | \nTempo (s) | 20 | s\nErrori (conteggio) | 2 | \nSuccesso del compito (0/1) | 1 | \n\nOsservazioni: USER_NOTE_ux-before\n\n### Test di usabilità · Reserva\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Antipattern\nAlias facoltativo | Senza alias\nVersione | iteration7\nTipo | Dati misurati e dichiarati\nID | evidence:ux-after\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Test di usabilità | \nTempo (s) | 10 | s\nErrori (conteggio) | 0 | \nSuccesso del compito (0/1) | 1 | \n\nOsservazioni: USER_NOTE_ux-after\n\n### SUS · Reserva\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Dati dichiarati\nAlias facoltativo | Senza alias\nVersione | iteration7\nTipo | Dati dichiarati\nID | evidence:sus\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | SUS | \nSUS (0–100) | 50 | 0–100\nRisposta individuale 1 (1–5) | 3 | 1–5\nRisposta individuale 2 (1–5) | 3 | 1–5\nRisposta individuale 3 (1–5) | 3 | 1–5\nRisposta individuale 4 (1–5) | 3 | 1–5\nRisposta individuale 5 (1–5) | 3 | 1–5\nRisposta individuale 6 (1–5) | 3 | 1–5\nRisposta individuale 7 (1–5) | 3 | 1–5\nRisposta individuale 8 (1–5) | 3 | 1–5\nRisposta individuale 9 (1–5) | 3 | 1–5\nRisposta individuale 10 (1–5) | 3 | 1–5\n\nOsservazioni: USER_NOTE_sus\n\n### Raw NASA-TLX · Reserva\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Dati dichiarati\nAlias facoltativo | Senza alias\nVersione | iteration7\nTipo | Dati dichiarati\nID | evidence:tlx\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Raw NASA-TLX | \nRaw NASA-TLX (0–100) | 35 | 0–100\nRichiesta mentale | 10 | 0–100\nRichiesta fisica | 20 | 0–100\nRichiesta temporale | 30 | 0–100\nPrestazione: 0 eccellente, 100 scarsa | 40 | 0–100\nSforzo | 50 | 0–100\nFrustrazione | 60 | 0–100\n\nOsservazioni: USER_NOTE_tlx\n\n### Esperimento di Fitts o Hick · Fitts\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Obiettivi grandi: 64 px\nAlias facoltativo | Senza alias\nVersione | iteration7\nTipo | Dati misurati\nID | evidence:fitts\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Esperimento | \nTempo (s) | 1 | s\nErrori (conteggio) | 0 | \nTentativi misurati | 8 | \nLarghezza obiettivo (px) | 64 | \nTipo | Fitts | \nCondizione | simple | \nTentativi di pratica esclusi | 2 | \nTempo (s) · 1 | 1 | s\nErrori (conteggio) · 1 | 0 | \nMetodo di interazione · 1 | Puntatore | \nTempo (s) · 2 | 1 | s\nErrori (conteggio) · 2 | 0 | \nMetodo di interazione · 2 | Puntatore | \nDistanza tra centri (px) · 2 | 80 | px\nIndice di difficoltà di Fitts (bit) · 2 | 1.169925 | \nTempo (s) · 3 | 1 | s\nErrori (conteggio) · 3 | 0 | \nMetodo di interazione · 3 | Puntatore | \nDistanza tra centri (px) · 3 | 80 | px\nIndice di difficoltà di Fitts (bit) · 3 | 1.169925 | \nTempo (s) · 4 | 1 | s\nErrori (conteggio) · 4 | 0 | \nMetodo di interazione · 4 | Puntatore | \nDistanza tra centri (px) · 4 | 80 | px\nIndice di difficoltà di Fitts (bit) · 4 | 1.169925 | \nTempo (s) · 5 | 1 | s\nErrori (conteggio) · 5 | 0 | \nMetodo di interazione · 5 | Puntatore | \nDistanza tra centri (px) · 5 | 80 | px\nIndice di difficoltà di Fitts (bit) · 5 | 1.169925 | \nTempo (s) · 6 | 1 | s\nErrori (conteggio) · 6 | 0 | \nMetodo di interazione · 6 | Puntatore | \nDistanza tra centri (px) · 6 | 80 | px\nIndice di difficoltà di Fitts (bit) · 6 | 1.169925 | \nTempo (s) · 7 | 1 | s\nErrori (conteggio) · 7 | 0 | \nMetodo di interazione · 7 | Puntatore | \nDistanza tra centri (px) · 7 | 80 | px\nIndice di difficoltà di Fitts (bit) · 7 | 1.169925 | \nTempo (s) · 8 | 1 | s\nErrori (conteggio) · 8 | 0 | \nMetodo di interazione · 8 | Puntatore | \nDistanza tra centri (px) · 8 | 80 | px\nIndice di difficoltà di Fitts (bit) · 8 | 1.169925 | \n\nOsservazioni: USER_NOTE_fitts\n\n### Esperimento di Fitts o Hick · Hick\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | 3 opzioni\nAlias facoltativo | Senza alias\nVersione | iteration7\nTipo | Dati misurati\nID | evidence:hick\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Esperimento | \nTempo (s) | 2 | s\nErrori (conteggio) | 0 | \nTentativi misurati | 8 | \nNumero di opzioni | 3 | \nTipo | Hick | \nCondizione | simple | \nTentativi di pratica esclusi | 2 | \nTempo (s) · 1 | 2 | s\nErrori (conteggio) · 1 | 0 | \nMetodo di interazione · 1 | Tastiera | \nTempo (s) · 2 | 2 | s\nErrori (conteggio) · 2 | 0 | \nMetodo di interazione · 2 | Tastiera | \nTempo (s) · 3 | 2 | s\nErrori (conteggio) · 3 | 0 | \nMetodo di interazione · 3 | Tastiera | \nTempo (s) · 4 | 2 | s\nErrori (conteggio) · 4 | 0 | \nMetodo di interazione · 4 | Tastiera | \nTempo (s) · 5 | 2 | s\nErrori (conteggio) · 5 | 0 | \nMetodo di interazione · 5 | Tastiera | \nTempo (s) · 6 | 2 | s\nErrori (conteggio) · 6 | 0 | \nMetodo di interazione · 6 | Tastiera | \nTempo (s) · 7 | 2 | s\nErrori (conteggio) · 7 | 0 | \nMetodo di interazione · 7 | Tastiera | \nTempo (s) · 8 | 2 | s\nErrori (conteggio) · 8 | 0 | \nMetodo di interazione · 8 | Tastiera | \n\nOsservazioni: USER_NOTE_hick\n\n### Rubrica umana del chatbot · Reserva\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Chatbot B: buona pratica\nAlias facoltativo | Senza alias\nVersione | chatbots\nTipo | Dati dichiarati\nID | evidence:chatbot\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Rubrica umana del chatbot | \nChiarezza | 4 | \nControllo | 3 | \nTono | 4 | \nTrasparenza | 2 | \nContesto ed evidenza osservata | USER\\_CHAT\\_PROMPT | \nRisposta individuale | USER\\_CHAT\\_RESPONSE | \nDato o valutazione umana | Sì | \n\nOsservazioni: USER_NOTE_chatbot\n\n### Decisione umana sull’IA simulata · USER\\_AI\\_CONTEXT\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Accetta proposta\nAlias facoltativo | Senza alias\nVersione | local-template-iteration7\nTipo | Dato o valutazione umana\nID | evidence:ai\n\nCampo | Valore | Unità\n--- | --- | ---\nTipo | Decisione umana sull’IA simulata | \nProposta accettata (0/1) | 1 | \nTipo | Alternativa d’interfaccia | \nContesto ed evidenza osservata | USER\\_AI\\_CONTEXT | \nProposta modificabile | USER\\_PROPOSAL | \nInformazione o regola usata | USER\\_BASIS | \nLimitazioni | USER\\_LIMITS | \nRevisione umana | USER\\_REVIEW | \nMotivazione umana | USER\\_DECISION | \nDecisione umana | Accetta proposta | \n\nOsservazioni: USER_NOTE_ai\n\n### Sessioni salvate di monitoraggio UX · USER\\_TRACK\\_TASK\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Buona pratica\nAlias facoltativo | Senza alias\nVersione | v1\nTipo | Dati misurati e dichiarati\nID | pageSessions:page\n\nCampo | Valore | Unità\n--- | --- | ---\nPercorso registrato | /tracking | \nLarghezza del contenuto (px) | 700 | px\nAltezza del contenuto (px) | 1200 | px\nLarghezza visibile (px) | 700 | px\nAltezza visibile (px) | 500 | px\nTempo (s) | 5 | s\nProfondità massima di scorrimento (%) | 80 | %\nLimite campioni raggiunto | No | \nContenuto registrato | Esempio di monitoraggio | \nSistema di coordinate | Coordinate del contenuto dell’esempio | \nClic (conteggio) | 1 | \nEventi rotella | 2 | \nCondizione | Buona pratica | \nErrore mediano di validazione (px) | 70 | px\nLarghezza visibile (px) | 700 | px\nAltezza visibile (px) | 500 | px\nCampioni (conteggio) | 5 | \nData di registrazione | 2026-10-10T12:00:00.000Z | \n\nClic (conteggio) · Campioni (conteggio): 1\n\nCursore: approssimazione di attenzione · Campioni (conteggio): 1\n\nSguardo stimato dalla camera · Campioni (conteggio): 1\n\nPercorso di attenzione simulato · Campioni (conteggio): 1\n\nScorrimenti effettivi · Campioni (conteggio): 1\n\nI campioni originali sono in JSON/CSV. Il rapporto mostra conteggi per canale e risultati testuali, senza trattare la mappa come attenzione misurata.\n\nOsservazioni: USER_TRACK_NOTE\n\n### Sessioni salvate di monitoraggio UX · Sessioni salvate di monitoraggio UX\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Antipattern\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dati misurati e dichiarati\nID | trackingSessions:oldtrack\n\nCampo | Valore | Unità\n--- | --- | ---\nEsempio fittizio | Antipattern | \nLarghezza del contenuto (px) | 500 | px\nAltezza del contenuto (px) | 1000 | px\nTempo (s) | 0 | s\nEventi rotella | 0 | \nProfondità massima di scorrimento (%) | 0 | %\nLimite campioni raggiunto | No | \n\nClic (conteggio) · Campioni (conteggio): 0\n\nCursore: approssimazione di attenzione · Campioni (conteggio): 0\n\nSguardo stimato dalla camera · Campioni (conteggio): 0\n\nScorrimenti effettivi · Campioni (conteggio): 0\n\nI campioni originali sono in JSON/CSV. Il rapporto mostra conteggi per canale e risultati testuali, senza trattare la mappa come attenzione misurata.\n\nOsservazioni: USER_OLD_TRACK\n\n### Attività multimodale · Attività multimodale\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Buona pratica\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dati dichiarati\nID | multimodalEvidence:multimodal\n\nCampo | Valore | Unità\n--- | --- | ---\nDispositivo | Telefono | \nCondizione | Buona pratica | \nPercezione del colore simulata | Percezione senza filtro | \nFiducia dichiarata (1–5) | 4 | 1–5\nStato della dimostrazione | Original demonstration status | \nStato del canale registrato | Original channel status | \n\nOsservazioni: USER_MULTIMODAL\n\n### Evento del flusso di prenotazione · booking-good\n\nCampo | Valore\n--- | ---\nData di registrazione | 10/10/2026, 07:00:00\nCondizione | Non registrato\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dati misurati\nID | events:event\n\nCampo | Valore | Unità\n--- | --- | ---\nData di registrazione | 2026-10-10T12:00:00.000Z | \nTipo | Flusso completato | \nDettaglio registrato | booking-good | \nDurata (secondi) | 0 | s\n\nOsservazioni: Non registrato\n\n### Lista di controllo di accessibilità · Lista di controllo di accessibilità\n\nCampo | Valore\n--- | ---\nData di registrazione | Non registrato\nCondizione | Non registrato\nAlias facoltativo | Senza alias\nVersione | Non registrato\nTipo | Dato o valutazione umana\nID | a11yChecks:checks\n\nCampo | Valore | Unità\n--- | --- | ---\nControllo della tastiera | Sì | \nControllo del contrasto | No | \n\nOsservazioni: Non registrato\n\n## Confronto prima/dopo\n\nNessuna informazione fornita.\n\n## Interpretazione scritta dallo studente\n\nNessuna informazione fornita.\n\n## Miglioramenti proposti\n\nNessuna informazione fornita.\n\n## Limitazioni\n\nNessuna informazione fornita.\n\nSUS non è una percentuale di usabilità. Scorrimento non dimostra lettura o comprensione; cursore e simulazione non sono sguardo reale. La camera fornisce stime con validazione registrata. Una lista non certifica accessibilità. L’accordo umano–IA non misura accuratezza del modello.\n\n## Conclusioni\n\nNessuna informazione fornita.\n\n## Riferimenti effettivamente usati\n\nNessuna informazione fornita.",
+  "records": [
+    {
+      "collection": "personas",
+      "type": "Persona e mappa di empatia",
+      "key": "personas:persona",
+      "data": {
+        "id": "persona",
+        "name": "Persona ficticia Álex",
+        "age": "",
+        "device": "USER_DEVICE",
+        "context": "USER_CONTEXT",
+        "goal": "Completar reserva",
+        "barrier": "Texto pequeño",
+        "basis": "mixed",
+        "observed": "Observación directa",
+        "assumptions": "Supuesto pendiente",
+        "emotionSource": "declared",
+        "empathy": {
+          "says": "USER_SAYS",
+          "thinks": "USER_THINKS",
+          "does": "USER_DOES",
+          "feels": "USER_FEELS"
+        }
+      }
+    },
+    {
+      "collection": "scenarios",
+      "type": "Scenario",
+      "key": "scenarios:scenario",
+      "data": {
+        "id": "scenario",
+        "title": "Escenario ficticio",
+        "actor": "Persona ficticia Álex",
+        "personaId": "persona",
+        "context": "Universidad",
+        "task": "Reservar",
+        "constraint": "Sin sonido",
+        "success": "Una confirmación",
+        "fictional": true
+      }
+    },
+    {
+      "collection": "appointments",
+      "type": "Prenotazione fittizia",
+      "key": "appointments:booking",
+      "data": {
+        "id": "booking",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "service": "Servicio ficticio",
+        "serviceId": "advice",
+        "date": "2026-11-11",
+        "time": "10:00",
+        "status": "confirmed",
+        "condition": "good"
+      }
+    },
+    {
+      "collection": "findings",
+      "type": "Riscontro euristico",
+      "key": "findings:finding",
+      "data": {
+        "id": "finding",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "task": "Reserva",
+        "heuristic": "Original heuristic",
+        "heuristicId": "h1",
+        "severity": 2,
+        "problem": "USER_PROBLEM",
+        "evidence": "USER_LOCATION",
+        "recommendation": "USER_FIX",
+        "source": "human",
+        "status": "validated"
+      }
+    },
+    {
+      "collection": "sessions",
+      "type": "Test di usabilità",
+      "key": "sessions:legacy",
+      "data": {
+        "id": "legacy",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "participant": "",
+        "task": "Legacy task",
+        "success": false,
+        "seconds": 0,
+        "errors": 0,
+        "sus": 50,
+        "susResponses": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "seq": 4,
+        "emotion": 3,
+        "notes": "USER_LEGACY"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Attività di concetti",
+      "key": "evidence:concept",
+      "data": {
+        "id": "concept",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "concept",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "good",
+        "prototype": "concepts-iteration3",
+        "scores": {
+          "seconds": 12,
+          "errors": 0,
+          "interactions": 3,
+          "emotionBefore": 2,
+          "emotionAfter": 4
+        },
+        "notes": "USER_NOTE_concept",
+        "concept": {
+          "id": "emotions",
+          "outcome": "completed",
+          "response": {
+            "text": "USER_FEEDBACK",
+            "reason": "USER_REASON",
+            "edit": "",
+            "decision": ""
+          }
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Pattern o antipattern",
+      "key": "evidence:pattern",
+      "data": {
+        "id": "pattern",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "pattern",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "bad",
+        "prototype": "patterns-iteration-4",
+        "scores": {},
+        "notes": "USER_NOTE_pattern",
+        "pattern": {
+          "id": "form",
+          "problem": "USER_PATTERN_PROBLEM",
+          "principle": "USER_PRINCIPLE",
+          "correction": "USER_PATTERN_FIX"
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Test di usabilità",
+      "key": "evidence:ux-before",
+      "data": {
+        "id": "ux-before",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ux",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "good",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 20,
+          "errors": 2,
+          "success": 1
+        },
+        "notes": "USER_NOTE_ux-before"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Test di usabilità",
+      "key": "evidence:ux-after",
+      "data": {
+        "id": "ux-after",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ux",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "bad",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 10,
+          "errors": 0,
+          "success": 1
+        },
+        "notes": "USER_NOTE_ux-after"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "SUS",
+      "key": "evidence:sus",
+      "data": {
+        "id": "sus",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "sus",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "autodeclarado",
+        "prototype": "iteration7",
+        "scores": {
+          "sus": 50,
+          "response1": 3,
+          "response2": 3,
+          "response3": 3,
+          "response4": 3,
+          "response5": 3,
+          "response6": 3,
+          "response7": 3,
+          "response8": 3,
+          "response9": 3,
+          "response10": 3
+        },
+        "notes": "USER_NOTE_sus"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Raw NASA-TLX",
+      "key": "evidence:tlx",
+      "data": {
+        "id": "tlx",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "tlx",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "autodeclarado",
+        "prototype": "iteration7",
+        "scores": {
+          "rawTLX": 35,
+          "mental": 10,
+          "physical": 20,
+          "temporal": 30,
+          "performance": 40,
+          "effort": 50,
+          "frustration": 60
+        },
+        "notes": "USER_NOTE_tlx"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Esperimento di Fitts o Hick",
+      "key": "evidence:fitts",
+      "data": {
+        "id": "fitts",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "experiment",
+        "participant": "",
+        "task": "Fitts",
+        "condition": "simple",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 1,
+          "errors": 0,
+          "trials": 8,
+          "size": 64
+        },
+        "notes": "USER_NOTE_fitts",
+        "experiment": {
+          "kind": "Fitts",
+          "condition": "simple",
+          "practiceCount": 2,
+          "trials": [
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer"
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            }
+          ]
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Esperimento di Fitts o Hick",
+      "key": "evidence:hick",
+      "data": {
+        "id": "hick",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "experiment",
+        "participant": "",
+        "task": "Hick",
+        "condition": "simple",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 2,
+          "errors": 0,
+          "trials": 8,
+          "options": 3
+        },
+        "notes": "USER_NOTE_hick",
+        "experiment": {
+          "kind": "Hick",
+          "condition": "simple",
+          "practiceCount": 2,
+          "trials": [
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Rubrica umana del chatbot",
+      "key": "evidence:chatbot",
+      "data": {
+        "id": "chatbot",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "chatbot",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "B-buena",
+        "prototype": "chatbots",
+        "scores": {
+          "clarity": 4,
+          "control": 3,
+          "tone": 4,
+          "transparency": 2
+        },
+        "notes": "USER_NOTE_chatbot",
+        "chatbot": {
+          "prompt": "USER_CHAT_PROMPT",
+          "response": "USER_CHAT_RESPONSE",
+          "human": true
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Decisione umana sull’IA simulata",
+      "key": "evidence:ai",
+      "data": {
+        "id": "ai",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ai",
+        "participant": "",
+        "task": "USER_AI_CONTEXT",
+        "condition": "aceptar",
+        "prototype": "local-template-iteration7",
+        "scores": {
+          "accepted": 1
+        },
+        "notes": "USER_NOTE_ai",
+        "review": {
+          "type": "interface",
+          "prompt": "USER_AI_CONTEXT",
+          "proposal": "USER_PROPOSAL",
+          "basis": "USER_BASIS",
+          "limits": "USER_LIMITS",
+          "review": "USER_REVIEW",
+          "reason": "USER_DECISION",
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "collection": "pageSessions",
+      "type": "Sessioni salvate di monitoraggio UX",
+      "key": "pageSessions:page",
+      "data": {
+        "id": "page",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "route": "/tracking",
+        "participant": "",
+        "task": "USER_TRACK_TASK",
+        "prototype": "v1",
+        "width": 700,
+        "height": 1200,
+        "viewportWidth": 700,
+        "viewportHeight": 500,
+        "seconds": 5,
+        "clicks": [
+          {
+            "x": 100,
+            "y": 600,
+            "at": 300,
+            "weight": 1,
+            "area": "example",
+            "source": "click",
+            "route": "/tracking"
+          }
+        ],
+        "pointer": [
+          {
+            "x": 120,
+            "y": 800,
+            "at": 350,
+            "weight": 1,
+            "area": "example",
+            "source": "pointer"
+          }
+        ],
+        "gaze": [
+          {
+            "x": 200,
+            "y": 900,
+            "at": 400,
+            "weight": 1,
+            "area": "example",
+            "source": "camera"
+          }
+        ],
+        "simulation": [
+          {
+            "x": 240,
+            "y": 700,
+            "at": 420,
+            "weight": 1,
+            "area": "example",
+            "source": "F"
+          }
+        ],
+        "scroll": [
+          {
+            "at": 200,
+            "top": 500,
+            "depth": 80,
+            "direction": "down"
+          }
+        ],
+        "maxDepth": 80,
+        "notes": "USER_TRACK_NOTE",
+        "capped": false,
+        "target": "example",
+        "coordinateSystem": "example-content",
+        "clickCount": 1,
+        "wheelEvents": 2,
+        "exampleCondition": "good",
+        "validation": {
+          "medianErrorPx": 70,
+          "viewportWidth": 700,
+          "viewportHeight": 500,
+          "sampleCount": 5,
+          "at": "2026-10-10T12:00:00.000Z"
+        }
+      }
+    },
+    {
+      "collection": "trackingSessions",
+      "type": "Sessioni salvate di monitoraggio UX",
+      "key": "trackingSessions:oldtrack",
+      "data": {
+        "id": "oldtrack",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "example": "bad",
+        "width": 500,
+        "height": 1000,
+        "seconds": 0,
+        "clicks": [],
+        "pointer": [],
+        "gaze": [],
+        "scroll": [],
+        "wheelEvents": 0,
+        "maxDepth": 0,
+        "notes": "USER_OLD_TRACK",
+        "capped": false
+      }
+    },
+    {
+      "collection": "multimodalEvidence",
+      "type": "Attività multimodale",
+      "key": "multimodalEvidence:multimodal",
+      "data": {
+        "id": "multimodal",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "device": "mobile",
+        "practice": "good",
+        "vision": "normal",
+        "notes": "USER_MULTIMODAL",
+        "confidence": 4,
+        "demoStatus": "Original demonstration status",
+        "channelStatus": "Original channel status"
+      }
+    },
+    {
+      "collection": "events",
+      "type": "Evento del flusso di prenotazione",
+      "key": "events:event",
+      "data": {
+        "id": "event",
+        "at": "2026-10-10T12:00:00.000Z",
+        "type": "flow-complete",
+        "detail": "booking-good",
+        "duration": 0
+      }
+    },
+    {
+      "collection": "a11yChecks",
+      "type": "Lista di controllo di accessibilità",
+      "key": "a11yChecks:checks",
+      "data": {
+        "keyboard": true,
+        "contrast": false,
+        "id": "checks"
+      }
+    }
+  ]
+}
