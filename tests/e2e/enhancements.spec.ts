@@ -23,7 +23,7 @@ test('concepts are grouped and produce evidence from an actual task',async({page
 test('page telemetry separates real clicks, scroll and simulated points',async({page},testInfo)=>{
   await page.goto('/hci-lab-ia/#/quality');await page.getByRole('button',{name:'Seguimiento de página'}).click();const tracker=page.locator('.page-tracker');
   await tracker.getByLabel('Alias (opcional)',{exact:true}).fill('P02');await tracker.getByLabel('Tarea',{exact:true}).fill('Consultar comandos');await tracker.getByLabel('Modo de recorrido',{exact:true}).selectOption('F');await tracker.getByRole('button',{name:'Iniciar captura'}).click();await tracker.getByRole('button',{name:'Iniciar recorrido',exact:true}).click();
-  await page.locator('main h1').click();await tracker.getByRole('button',{name:'Seguimiento de página'}).click();
+  await tracker.getByRole('button',{name:'Seguimiento de página'}).click();await page.locator('main h1').click();
   await page.mouse.move(400,400);await page.mouse.wheel(0,550);await page.waitForTimeout(1200);
   await page.getByRole('button',{name:'Seguimiento de página'}).click();await tracker.getByRole('button',{name:'Detener captura'}).click();await tracker.getByLabel('Observación de la sesión').fill('Datos separados por canal.');await tracker.getByRole('button',{name:'Guardar sesión en proyecto'}).click();
   const s=await page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!).pageSessions[0]);expect(s.clicks.length).toBe(1);expect(s.simulation.length).toBeGreaterThan(0);expect(s.gaze.length).toBe(0);expect(s.scroll.length).toBeGreaterThan(1);expect(s.participant).toBe('P02');
