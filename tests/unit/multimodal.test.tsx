@@ -4,6 +4,7 @@ import i18n from '../../src/i18n';
 import App from '../../src/App';
 import { ProjectProvider } from '../../src/store';
 import type { ProjectState } from '../../src/domain';
+import { sampleProject } from '../../src/domain';
 const renderApp = (path = '/multimodal') => render(<MemoryRouter initialEntries={[path]}><ProjectProvider><App/></ProjectProvider></MemoryRouter>);
 const readProject = () => JSON.parse(localStorage.getItem('hci-lab-ia-project-v2') || '{}') as ProjectState;
 beforeEach(() => { localStorage.clear(); void i18n.changeLanguage('es-CO'); });
@@ -25,8 +26,9 @@ describe('Multimodal integration', () => {
   expect(screen.getByRole('status',{name:'Estado de la demostración'})).toHaveTextContent('Ruta simulada preparada');
  });
  it('requires a real observation and preserves evidence after remount with legacy project data', () => {
+  localStorage.setItem('hci-lab-ia-project-v2',JSON.stringify(sampleProject));
   renderApp(); fireEvent.click(screen.getByRole('button',{name:'Guardar evidencia'}));
-  expect(readProject().multimodalEvidence).toBeUndefined();
+  expect(readProject().multimodalEvidence).toEqual([]);
   fireEvent.change(screen.getByLabelText('Observación, problema y corrección propuesta'), { target: { value:'El texto del reloj permitió entender la confirmación.' } });
   fireEvent.click(screen.getByRole('button',{name:'Confirmar'}));
   fireEvent.click(screen.getByRole('button',{name:'Guardar evidencia'}));
@@ -48,9 +50,9 @@ describe('Multimodal integration', () => {
  });
  it('stores a concept observation as a pending human finding', () => {
   renderApp('/concepts');
-  fireEvent.change(screen.getByLabelText('Observación de Awareness'), { target: {value:'No reconocí si se había guardado.'} });
-  const buttons=screen.getAllByRole('button',{name:'Guardar observación',hidden:true});
-  fireEvent.click(buttons[3]);
+  fireEvent.click(screen.getByRole('button',{name:'Abrir actividad: Awareness'}));
+  fireEvent.change(screen.getByLabelText('Observación'), { target: {value:'No reconocí si se había guardado.'} });
+  fireEvent.click(screen.getByRole('button',{name:'Guardar observación como hallazgo'}));
   expect(readProject().findings[0]).toMatchObject({heuristic:'Awareness',source:'human',status:'pending',problem:'No reconocí si se había guardado.'});
  });
 });

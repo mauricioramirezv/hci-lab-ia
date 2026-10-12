@@ -1,0 +1,602 @@
+{
+  "format": "hci-lab-ia-evidence",
+  "version": 1,
+  "language": "en-US",
+  "report": "# Project reports\n\nReport language: en-US\n\n## Project identification and objective\n\nProject name: No information provided.\nProject objective: No information provided.\n\n## Personas and scenarios\n\n### Persona ficticia Álex\n\nField | Value | Unit\n--- | --- | ---\nName | Persona ficticia Álex | \nAge or range (optional) | Not recorded | \nDevice | USER\\_DEVICE | \nContext | USER\\_CONTEXT | \nPersona goal | Completar reserva | \nNeeds or barriers | Texto pequeño | \nInformation or rule used | Observations and assumptions | \nObserved data | Observación directa | \nAssumptions awaiting validation | Supuesto pendiente | \nSource of emotions | Self-reported | \nWhat they say | USER\\_SAYS | \nWhat they think | USER\\_THINKS | \nWhat they do | USER\\_DOES | \nWhat they feel | USER\\_FEELS | \n\n### Escenario ficticio\n\nField | Value | Unit\n--- | --- | ---\nTitle | Escenario ficticio | \nPersona and empathy map | Persona ficticia Álex | \nPersona and empathy map | persona | \nContext | Universidad | \nConstraint or difficulty | Sin sonido | \nObservable success criterion | Una confirmación | \nFictional example | Yes | \n\n## Activities and evaluation method\n\nNo information provided.\n\nTime: recorded seconds. Errors: observed count. Success: mean of 0/1, proportion of completed tasks. SUS: instrument score (0–100). Raw TLX: unweighted mean of six dimensions (0–100). Different tasks or methods are never pooled.\n\nType | Task | Condition | Version | Records used (n)\n--- | --- | --- | --- | ---\nPersona and empathy map | Persona ficticia Álex | Not recorded | Not recorded | 1\nScenario | Escenario ficticio | Not recorded | Not recorded | 1\nFictional booking | Fictional university advice session | Good practice | Not recorded | 1\nHeuristic finding | Reserva | Reviewed and validated | Not recorded | 1\nUsability test | Legacy task | Not recorded | Not recorded | 1\nConcept activity | Emotions | Good practice | concepts-iteration3 | 1\nPattern or anti-pattern | Form | Anti-pattern | patterns-iteration-4 | 1\nUsability test | Reserva | Good practice | iteration7 | 1\nUsability test | Reserva | Anti-pattern | iteration7 | 1\nSUS | Reserva | Self-reported data | iteration7 | 1\nRaw NASA-TLX | Reserva | Self-reported data | iteration7 | 1\nFitts or Hick experiment | Fitts | Large targets: 64 px | iteration7 | 1\nFitts or Hick experiment | Hick | 3 options | iteration7 | 1\nHuman chatbot rubric | Reserva | Chatbot B: good practice | chatbots | 1\nHuman decision about simulated AI | USER\\_AI\\_CONTEXT | Accept proposal | local-template-iteration7 | 1\nSaved UX tracking sessions | USER\\_TRACK\\_TASK | Good practice | v1 | 1\nSaved UX tracking sessions | Saved UX tracking sessions | Anti-pattern | Not recorded | 1\nMultimodal activity | Multimodal activity | Good practice | Not recorded | 1\nBooking flow event | booking-good | Not recorded | Not recorded | 1\nAccessibility checklist | Accessibility checklist | Not recorded | Not recorded | 1\n\n## Results\n\nIndicators are grouped by task, condition, version and method; only present, finite values are used. Mean = sum / n. Observed zero is retained; missing data is not calculated.\n\n### Legacy task · Not recorded · Not recorded · Usability test\n\nResults | Mean | Records used (n)\n--- | --- | ---\nTime (s) | 0.000 | 1\nErrors (count) | 0.000 | 1\nTask success (0/1) | 0.000 | 1\nSUS (0–100) | 50.000 | 1\n\n### Reserva · Good practice · iteration7 · Usability test\n\nResults | Mean | Records used (n)\n--- | --- | ---\nTime (s) | 20.000 | 1\nErrors (count) | 2.000 | 1\nTask success (0/1) | 1.000 | 1\n\n### Reserva · Anti-pattern · iteration7 · Usability test\n\nResults | Mean | Records used (n)\n--- | --- | ---\nTime (s) | 10.000 | 1\nErrors (count) | 0.000 | 1\nTask success (0/1) | 1.000 | 1\n\n### Reserva · Self-reported data · iteration7 · SUS\n\nResults | Mean | Records used (n)\n--- | --- | ---\nSUS (0–100) | 50.000 | 1\n\n### Reserva · Self-reported data · iteration7 · Raw NASA-TLX\n\nResults | Mean | Records used (n)\n--- | --- | ---\nRaw NASA-TLX (0–100) | 35.000 | 1\n\n### Fitts · Large targets: 64 px · iteration7 · Fitts · Pointer · Measured trial: 8\n\nResults | Mean | Records used (n)\n--- | --- | ---\nTime (s) | 1.000 | 1\nErrors (count) | 0.000 | 1\n\n### Hick · 3 options · iteration7 · Hick · Keyboard · Measured trial: 8\n\nResults | Mean | Records used (n)\n--- | --- | ---\nTime (s) | 2.000 | 1\nErrors (count) | 0.000 | 1\n\n### Persona and empathy map · Persona ficticia Álex\n\nField | Value\n--- | ---\nRecord date | Not recorded\nCondition | Not recorded\nOptional alias | No alias\nVersion | Not recorded\nType | Human record or evaluation\nID | personas:persona\n\nField | Value | Unit\n--- | --- | ---\nName | Persona ficticia Álex | \nAge or range (optional) | Not recorded | \nDevice | USER\\_DEVICE | \nContext | USER\\_CONTEXT | \nPersona goal | Completar reserva | \nNeeds or barriers | Texto pequeño | \nInformation or rule used | Observations and assumptions | \nObserved data | Observación directa | \nAssumptions awaiting validation | Supuesto pendiente | \nSource of emotions | Self-reported | \nWhat they say | USER\\_SAYS | \nWhat they think | USER\\_THINKS | \nWhat they do | USER\\_DOES | \nWhat they feel | USER\\_FEELS | \n\nObservations: Observación directa\nSupuesto pendiente\n\n### Scenario · Escenario ficticio\n\nField | Value\n--- | ---\nRecord date | Not recorded\nCondition | Not recorded\nOptional alias | No alias\nVersion | Not recorded\nType | Simulated data / fictional example\nID | scenarios:scenario\n\nField | Value | Unit\n--- | --- | ---\nTitle | Escenario ficticio | \nPersona and empathy map | Persona ficticia Álex | \nPersona and empathy map | persona | \nContext | Universidad | \nConstraint or difficulty | Sin sonido | \nObservable success criterion | Una confirmación | \nFictional example | Yes | \n\nObservations: Sin sonido\n\n### Fictional booking · Fictional university advice session\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Good practice\nOptional alias | No alias\nVersion | Not recorded\nType | Simulated data / fictional example\nID | appointments:booking\n\nField | Value | Unit\n--- | --- | ---\nService | Servicio ficticio | \nService | advice | \nRecord date | 2026-11-11 | \nTime (s) | 10:00 | \nHuman review status | Confirmed | \n\nObservations: Not recorded\n\n### Heuristic finding · Reserva\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Reviewed and validated\nOptional alias | No alias\nVersion | Not recorded\nType | Human record or evaluation\nID | findings:finding\n\nField | Value | Unit\n--- | --- | ---\nHeuristic | Visibility of status | \nHeuristic | h1 | \nSeverity | 2 | \nObserved problem | USER\\_PROBLEM | \nEvidence or location | USER\\_LOCATION | \nCorrection recommendation | USER\\_FIX | \nRecord source | Human evaluation | \nHuman review status | Reviewed and validated | \n\nObservations: USER_PROBLEM\n\n### Usability test · Legacy task\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Not recorded\nOptional alias | No alias\nVersion | Not recorded\nType | Measured and self-reported data\nID | sessions:legacy\n\nField | Value | Unit\n--- | --- | ---\nTask success (0/1) | No | \nTime (s) | 0 | s\nErrors (count) | 0 | \nSUS (0–100) | 50 | 0–100\nOriginal field: susResponses · 1 | 3 | \nOriginal field: susResponses · 2 | 3 | \nOriginal field: susResponses · 3 | 3 | \nOriginal field: susResponses · 4 | 3 | \nOriginal field: susResponses · 5 | 3 | \nOriginal field: susResponses · 6 | 3 | \nOriginal field: susResponses · 7 | 3 | \nOriginal field: susResponses · 8 | 3 | \nOriginal field: susResponses · 9 | 3 | \nOriginal field: susResponses · 10 | 3 | \nSEQ: reported ease (1 difficult, 7 easy) | 4 | 1–7\nReported emotion (1 negative, 5 positive) | 3 | 1–5\n\nObservations: USER_LEGACY\n\n### Concept activity · Emotions\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Good practice\nOptional alias | No alias\nVersion | concepts-iteration3\nType | Measured and self-reported data\nID | evidence:concept\n\nField | Value | Unit\n--- | --- | ---\nType | Concept activity | \nTime (s) | 12 | s\nErrors (count) | 0 | \nInteractions | 3 | \nEmotion before the trial | 2 | 1–5\nEmotion after the trial | 4 | 1–5\nOriginal field: id | emotions | \nOriginal field: outcome | Task completed | \nFictional description (not recorded) | USER\\_FEEDBACK | \nComparability justification | USER\\_REASON | \nReturn to editing | Not recorded | \nHuman decision | Not recorded | \n\nObservations: USER_NOTE_concept\n\n### Pattern or anti-pattern · Form\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Anti-pattern\nOptional alias | No alias\nVersion | patterns-iteration-4\nType | Human record or evaluation\nID | evidence:pattern\n\nField | Value | Unit\n--- | --- | ---\nType | Pattern or anti-pattern | \nOriginal field: id | form | \nObserved problem | USER\\_PATTERN\\_PROBLEM | \nOriginal field: principle | USER\\_PRINCIPLE | \nHow to address the problem | USER\\_PATTERN\\_FIX | \n\nObservations: USER_NOTE_pattern\n\n### Usability test · Reserva\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Good practice\nOptional alias | No alias\nVersion | iteration7\nType | Measured and self-reported data\nID | evidence:ux-before\n\nField | Value | Unit\n--- | --- | ---\nType | Usability test | \nTime (s) | 20 | s\nErrors (count) | 2 | \nTask success (0/1) | 1 | \n\nObservations: USER_NOTE_ux-before\n\n### Usability test · Reserva\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Anti-pattern\nOptional alias | No alias\nVersion | iteration7\nType | Measured and self-reported data\nID | evidence:ux-after\n\nField | Value | Unit\n--- | --- | ---\nType | Usability test | \nTime (s) | 10 | s\nErrors (count) | 0 | \nTask success (0/1) | 1 | \n\nObservations: USER_NOTE_ux-after\n\n### SUS · Reserva\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Self-reported data\nOptional alias | No alias\nVersion | iteration7\nType | Self-reported data\nID | evidence:sus\n\nField | Value | Unit\n--- | --- | ---\nType | SUS | \nSUS (0–100) | 50 | 0–100\nIndividual response 1 (1–5) | 3 | 1–5\nIndividual response 2 (1–5) | 3 | 1–5\nIndividual response 3 (1–5) | 3 | 1–5\nIndividual response 4 (1–5) | 3 | 1–5\nIndividual response 5 (1–5) | 3 | 1–5\nIndividual response 6 (1–5) | 3 | 1–5\nIndividual response 7 (1–5) | 3 | 1–5\nIndividual response 8 (1–5) | 3 | 1–5\nIndividual response 9 (1–5) | 3 | 1–5\nIndividual response 10 (1–5) | 3 | 1–5\n\nObservations: USER_NOTE_sus\n\n### Raw NASA-TLX · Reserva\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Self-reported data\nOptional alias | No alias\nVersion | iteration7\nType | Self-reported data\nID | evidence:tlx\n\nField | Value | Unit\n--- | --- | ---\nType | Raw NASA-TLX | \nRaw NASA-TLX (0–100) | 35 | 0–100\nMental demand | 10 | 0–100\nPhysical demand | 20 | 0–100\nTemporal demand | 30 | 0–100\nPerformance: 0 excellent, 100 poor | 40 | 0–100\nEffort | 50 | 0–100\nFrustration | 60 | 0–100\n\nObservations: USER_NOTE_tlx\n\n### Fitts or Hick experiment · Fitts\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Large targets: 64 px\nOptional alias | No alias\nVersion | iteration7\nType | Measured data\nID | evidence:fitts\n\nField | Value | Unit\n--- | --- | ---\nType | Experiment | \nTime (s) | 1 | s\nErrors (count) | 0 | \nMeasured trials | 8 | \nTarget width (px) | 64 | px\nType | Fitts | \nCondition | Large targets: 64 px | \nExcluded practice trials | 2 | \nTime (s) · 1 | 1 | s\nErrors (count) · 1 | 0 | \nInput method · 1 | Pointer | \nTime (s) · 2 | 1 | s\nErrors (count) · 2 | 0 | \nInput method · 2 | Pointer | \nDistance between centers (px) · 2 | 80 | px\nFitts index of difficulty (bits) · 2 | 1.169925 | bits\nTime (s) · 3 | 1 | s\nErrors (count) · 3 | 0 | \nInput method · 3 | Pointer | \nDistance between centers (px) · 3 | 80 | px\nFitts index of difficulty (bits) · 3 | 1.169925 | bits\nTime (s) · 4 | 1 | s\nErrors (count) · 4 | 0 | \nInput method · 4 | Pointer | \nDistance between centers (px) · 4 | 80 | px\nFitts index of difficulty (bits) · 4 | 1.169925 | bits\nTime (s) · 5 | 1 | s\nErrors (count) · 5 | 0 | \nInput method · 5 | Pointer | \nDistance between centers (px) · 5 | 80 | px\nFitts index of difficulty (bits) · 5 | 1.169925 | bits\nTime (s) · 6 | 1 | s\nErrors (count) · 6 | 0 | \nInput method · 6 | Pointer | \nDistance between centers (px) · 6 | 80 | px\nFitts index of difficulty (bits) · 6 | 1.169925 | bits\nTime (s) · 7 | 1 | s\nErrors (count) · 7 | 0 | \nInput method · 7 | Pointer | \nDistance between centers (px) · 7 | 80 | px\nFitts index of difficulty (bits) · 7 | 1.169925 | bits\nTime (s) · 8 | 1 | s\nErrors (count) · 8 | 0 | \nInput method · 8 | Pointer | \nDistance between centers (px) · 8 | 80 | px\nFitts index of difficulty (bits) · 8 | 1.169925 | bits\n\nObservations: USER_NOTE_fitts\n\n### Fitts or Hick experiment · Hick\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | 3 options\nOptional alias | No alias\nVersion | iteration7\nType | Measured data\nID | evidence:hick\n\nField | Value | Unit\n--- | --- | ---\nType | Experiment | \nTime (s) | 2 | s\nErrors (count) | 0 | \nMeasured trials | 8 | \nNumber of options | 3 | \nType | Hick | \nCondition | 3 options | \nExcluded practice trials | 2 | \nTime (s) · 1 | 2 | s\nErrors (count) · 1 | 0 | \nInput method · 1 | Keyboard | \nTime (s) · 2 | 2 | s\nErrors (count) · 2 | 0 | \nInput method · 2 | Keyboard | \nTime (s) · 3 | 2 | s\nErrors (count) · 3 | 0 | \nInput method · 3 | Keyboard | \nTime (s) · 4 | 2 | s\nErrors (count) · 4 | 0 | \nInput method · 4 | Keyboard | \nTime (s) · 5 | 2 | s\nErrors (count) · 5 | 0 | \nInput method · 5 | Keyboard | \nTime (s) · 6 | 2 | s\nErrors (count) · 6 | 0 | \nInput method · 6 | Keyboard | \nTime (s) · 7 | 2 | s\nErrors (count) · 7 | 0 | \nInput method · 7 | Keyboard | \nTime (s) · 8 | 2 | s\nErrors (count) · 8 | 0 | \nInput method · 8 | Keyboard | \n\nObservations: USER_NOTE_hick\n\n### Human chatbot rubric · Reserva\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Chatbot B: good practice\nOptional alias | No alias\nVersion | chatbots\nType | Self-reported data\nID | evidence:chatbot\n\nField | Value | Unit\n--- | --- | ---\nType | Human chatbot rubric | \nClarity | 4 | 1–5\nControl | 3 | 1–5\nTone | 4 | 1–5\nTransparency | 2 | 1–5\nContext and observed evidence | USER\\_CHAT\\_PROMPT | \nIndividual response | USER\\_CHAT\\_RESPONSE | \nHuman record or evaluation | Yes | \n\nObservations: USER_NOTE_chatbot\n\n### Human decision about simulated AI · USER\\_AI\\_CONTEXT\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Accept proposal\nOptional alias | No alias\nVersion | local-template-iteration7\nType | Human record or evaluation\nID | evidence:ai\n\nField | Value | Unit\n--- | --- | ---\nType | Human decision about simulated AI | \nProposal accepted (0/1) | 1 | \nType | Interface alternative | \nContext and observed evidence | USER\\_AI\\_CONTEXT | \nEditable proposal | USER\\_PROPOSAL | \nInformation or rule used | USER\\_BASIS | \nLimitations | USER\\_LIMITS | \nHuman review | USER\\_REVIEW | \nHuman rationale | USER\\_DECISION | \nHuman decision | Accept proposal | \n\nObservations: USER_NOTE_ai\n\n### Saved UX tracking sessions · USER\\_TRACK\\_TASK\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Good practice\nOptional alias | No alias\nVersion | v1\nType | Measured and self-reported data\nID | pageSessions:page\n\nField | Value | Unit\n--- | --- | ---\nRecorded route | /tracking | \nContent width (px) | 700 | px\nContent height (px) | 1200 | px\nViewport width (px) | 700 | px\nViewport height (px) | 500 | px\nTime (s) | 5 | s\nMaximum scroll depth (%) | 80 | %\nSample limit reached | No | \nRecorded content | Tracking example | \nCoordinate system | Example content coordinates | \nClicks (count) | 1 | \nWheel events | 2 | \nCondition | Good practice | \nMedian validation error (px) | 70 | px\nViewport width (px) | 700 | px\nViewport height (px) | 500 | px\nSamples (count) | 5 | \nRecord date | 2026-10-10T12:00:00.000Z | \n\nClicks (count) · Samples (count): 1\n\nCursor: attention proxy · Samples (count): 1\n\nCamera-estimated gaze · Samples (count): 1\n\nSimulated attention path · Samples (count): 1\n\nEffective scrolls · Samples (count): 1\n\nOriginal samples are available in JSON/CSV. The report gives counts by channel and textual results, without treating a map as measured attention.\n\nObservations: USER_TRACK_NOTE\n\n### Saved UX tracking sessions · Saved UX tracking sessions\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Anti-pattern\nOptional alias | No alias\nVersion | Not recorded\nType | Measured and self-reported data\nID | trackingSessions:oldtrack\n\nField | Value | Unit\n--- | --- | ---\nFictional example | Anti-pattern | \nContent width (px) | 500 | px\nContent height (px) | 1000 | px\nTime (s) | 0 | s\nWheel events | 0 | \nMaximum scroll depth (%) | 0 | %\nSample limit reached | No | \n\nClicks (count) · Samples (count): 0\n\nCursor: attention proxy · Samples (count): 0\n\nCamera-estimated gaze · Samples (count): 0\n\nEffective scrolls · Samples (count): 0\n\nOriginal samples are available in JSON/CSV. The report gives counts by channel and textual results, without treating a map as measured attention.\n\nObservations: USER_OLD_TRACK\n\n### Multimodal activity · Multimodal activity\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Good practice\nOptional alias | No alias\nVersion | Not recorded\nType | Self-reported data\nID | multimodalEvidence:multimodal\n\nField | Value | Unit\n--- | --- | ---\nDevice | Phone | \nCondition | Good practice | \nSimulated color perception | Unfiltered perception | \nSelf-reported confidence (1–5) | 4 | 1–5\nDemonstration status | Original demonstration status | \nRecorded channel status | Original channel status | \n\nObservations: USER_MULTIMODAL\n\n### Booking flow event · booking-good\n\nField | Value\n--- | ---\nRecord date | 10/10/2026, 7:00:00 AM\nCondition | Not recorded\nOptional alias | No alias\nVersion | Not recorded\nType | Measured data\nID | events:event\n\nField | Value | Unit\n--- | --- | ---\nRecord date | 2026-10-10T12:00:00.000Z | \nType | Flow completed | \nRecorded detail | booking-good | \nDuration (seconds) | 0 | s\n\nObservations: Not recorded\n\n### Accessibility checklist · Accessibility checklist\n\nField | Value\n--- | ---\nRecord date | Not recorded\nCondition | Not recorded\nOptional alias | No alias\nVersion | Not recorded\nType | Human record or evaluation\nID | a11yChecks:checks\n\nField | Value | Unit\n--- | --- | ---\nKeyboard check | Yes | \nContrast check | No | \n\nObservations: Not recorded\n\n## Before/after comparison\n\nNo information provided.\n\n## Student-written interpretation\n\nNo information provided.\n\n## Proposed improvements\n\nNo information provided.\n\n## Limitations\n\nNo information provided.\n\nSUS is not a usability percentage. Scroll does not demonstrate reading or comprehension; cursor and simulation are not real gaze. Camera data are estimates with recorded validation. A checklist does not certify accessibility. Human–AI agreement is not model accuracy.\n\n## Conclusions\n\nNo information provided.\n\n## References actually used\n\nNo information provided.",
+  "records": [
+    {
+      "collection": "personas",
+      "type": "Persona and empathy map",
+      "key": "personas:persona",
+      "data": {
+        "id": "persona",
+        "name": "Persona ficticia Álex",
+        "age": "",
+        "device": "USER_DEVICE",
+        "context": "USER_CONTEXT",
+        "goal": "Completar reserva",
+        "barrier": "Texto pequeño",
+        "basis": "mixed",
+        "observed": "Observación directa",
+        "assumptions": "Supuesto pendiente",
+        "emotionSource": "declared",
+        "empathy": {
+          "says": "USER_SAYS",
+          "thinks": "USER_THINKS",
+          "does": "USER_DOES",
+          "feels": "USER_FEELS"
+        }
+      }
+    },
+    {
+      "collection": "scenarios",
+      "type": "Scenario",
+      "key": "scenarios:scenario",
+      "data": {
+        "id": "scenario",
+        "title": "Escenario ficticio",
+        "actor": "Persona ficticia Álex",
+        "personaId": "persona",
+        "context": "Universidad",
+        "task": "Reservar",
+        "constraint": "Sin sonido",
+        "success": "Una confirmación",
+        "fictional": true
+      }
+    },
+    {
+      "collection": "appointments",
+      "type": "Fictional booking",
+      "key": "appointments:booking",
+      "data": {
+        "id": "booking",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "service": "Servicio ficticio",
+        "serviceId": "advice",
+        "date": "2026-11-11",
+        "time": "10:00",
+        "status": "confirmed",
+        "condition": "good"
+      }
+    },
+    {
+      "collection": "findings",
+      "type": "Heuristic finding",
+      "key": "findings:finding",
+      "data": {
+        "id": "finding",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "task": "Reserva",
+        "heuristic": "Original heuristic",
+        "heuristicId": "h1",
+        "severity": 2,
+        "problem": "USER_PROBLEM",
+        "evidence": "USER_LOCATION",
+        "recommendation": "USER_FIX",
+        "source": "human",
+        "status": "validated"
+      }
+    },
+    {
+      "collection": "sessions",
+      "type": "Usability test",
+      "key": "sessions:legacy",
+      "data": {
+        "id": "legacy",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "participant": "",
+        "task": "Legacy task",
+        "success": false,
+        "seconds": 0,
+        "errors": 0,
+        "sus": 50,
+        "susResponses": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "seq": 4,
+        "emotion": 3,
+        "notes": "USER_LEGACY"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Concept activity",
+      "key": "evidence:concept",
+      "data": {
+        "id": "concept",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "concept",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "good",
+        "prototype": "concepts-iteration3",
+        "scores": {
+          "seconds": 12,
+          "errors": 0,
+          "interactions": 3,
+          "emotionBefore": 2,
+          "emotionAfter": 4
+        },
+        "notes": "USER_NOTE_concept",
+        "concept": {
+          "id": "emotions",
+          "outcome": "completed",
+          "response": {
+            "text": "USER_FEEDBACK",
+            "reason": "USER_REASON",
+            "edit": "",
+            "decision": ""
+          }
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Pattern or anti-pattern",
+      "key": "evidence:pattern",
+      "data": {
+        "id": "pattern",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "pattern",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "bad",
+        "prototype": "patterns-iteration-4",
+        "scores": {},
+        "notes": "USER_NOTE_pattern",
+        "pattern": {
+          "id": "form",
+          "problem": "USER_PATTERN_PROBLEM",
+          "principle": "USER_PRINCIPLE",
+          "correction": "USER_PATTERN_FIX"
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Usability test",
+      "key": "evidence:ux-before",
+      "data": {
+        "id": "ux-before",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ux",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "good",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 20,
+          "errors": 2,
+          "success": 1
+        },
+        "notes": "USER_NOTE_ux-before"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Usability test",
+      "key": "evidence:ux-after",
+      "data": {
+        "id": "ux-after",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ux",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "bad",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 10,
+          "errors": 0,
+          "success": 1
+        },
+        "notes": "USER_NOTE_ux-after"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "SUS",
+      "key": "evidence:sus",
+      "data": {
+        "id": "sus",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "sus",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "autodeclarado",
+        "prototype": "iteration7",
+        "scores": {
+          "sus": 50,
+          "response1": 3,
+          "response2": 3,
+          "response3": 3,
+          "response4": 3,
+          "response5": 3,
+          "response6": 3,
+          "response7": 3,
+          "response8": 3,
+          "response9": 3,
+          "response10": 3
+        },
+        "notes": "USER_NOTE_sus"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Raw NASA-TLX",
+      "key": "evidence:tlx",
+      "data": {
+        "id": "tlx",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "tlx",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "autodeclarado",
+        "prototype": "iteration7",
+        "scores": {
+          "rawTLX": 35,
+          "mental": 10,
+          "physical": 20,
+          "temporal": 30,
+          "performance": 40,
+          "effort": 50,
+          "frustration": 60
+        },
+        "notes": "USER_NOTE_tlx"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Fitts or Hick experiment",
+      "key": "evidence:fitts",
+      "data": {
+        "id": "fitts",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "experiment",
+        "participant": "",
+        "task": "Fitts",
+        "condition": "simple",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 1,
+          "errors": 0,
+          "trials": 8,
+          "size": 64
+        },
+        "notes": "USER_NOTE_fitts",
+        "experiment": {
+          "kind": "Fitts",
+          "condition": "simple",
+          "practiceCount": 2,
+          "trials": [
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer"
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            }
+          ]
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Fitts or Hick experiment",
+      "key": "evidence:hick",
+      "data": {
+        "id": "hick",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "experiment",
+        "participant": "",
+        "task": "Hick",
+        "condition": "simple",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 2,
+          "errors": 0,
+          "trials": 8,
+          "options": 3
+        },
+        "notes": "USER_NOTE_hick",
+        "experiment": {
+          "kind": "Hick",
+          "condition": "simple",
+          "practiceCount": 2,
+          "trials": [
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Human chatbot rubric",
+      "key": "evidence:chatbot",
+      "data": {
+        "id": "chatbot",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "chatbot",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "B-buena",
+        "prototype": "chatbots",
+        "scores": {
+          "clarity": 4,
+          "control": 3,
+          "tone": 4,
+          "transparency": 2
+        },
+        "notes": "USER_NOTE_chatbot",
+        "chatbot": {
+          "prompt": "USER_CHAT_PROMPT",
+          "response": "USER_CHAT_RESPONSE",
+          "human": true
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Human decision about simulated AI",
+      "key": "evidence:ai",
+      "data": {
+        "id": "ai",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ai",
+        "participant": "",
+        "task": "USER_AI_CONTEXT",
+        "condition": "aceptar",
+        "prototype": "local-template-iteration7",
+        "scores": {
+          "accepted": 1
+        },
+        "notes": "USER_NOTE_ai",
+        "review": {
+          "type": "interface",
+          "prompt": "USER_AI_CONTEXT",
+          "proposal": "USER_PROPOSAL",
+          "basis": "USER_BASIS",
+          "limits": "USER_LIMITS",
+          "review": "USER_REVIEW",
+          "reason": "USER_DECISION",
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "collection": "pageSessions",
+      "type": "Saved UX tracking sessions",
+      "key": "pageSessions:page",
+      "data": {
+        "id": "page",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "route": "/tracking",
+        "participant": "",
+        "task": "USER_TRACK_TASK",
+        "prototype": "v1",
+        "width": 700,
+        "height": 1200,
+        "viewportWidth": 700,
+        "viewportHeight": 500,
+        "seconds": 5,
+        "clicks": [
+          {
+            "x": 100,
+            "y": 600,
+            "at": 300,
+            "weight": 1,
+            "area": "example",
+            "source": "click",
+            "route": "/tracking"
+          }
+        ],
+        "pointer": [
+          {
+            "x": 120,
+            "y": 800,
+            "at": 350,
+            "weight": 1,
+            "area": "example",
+            "source": "pointer"
+          }
+        ],
+        "gaze": [
+          {
+            "x": 200,
+            "y": 900,
+            "at": 400,
+            "weight": 1,
+            "area": "example",
+            "source": "camera"
+          }
+        ],
+        "simulation": [
+          {
+            "x": 240,
+            "y": 700,
+            "at": 420,
+            "weight": 1,
+            "area": "example",
+            "source": "F"
+          }
+        ],
+        "scroll": [
+          {
+            "at": 200,
+            "top": 500,
+            "depth": 80,
+            "direction": "down"
+          }
+        ],
+        "maxDepth": 80,
+        "notes": "USER_TRACK_NOTE",
+        "capped": false,
+        "target": "example",
+        "coordinateSystem": "example-content",
+        "clickCount": 1,
+        "wheelEvents": 2,
+        "exampleCondition": "good",
+        "validation": {
+          "medianErrorPx": 70,
+          "viewportWidth": 700,
+          "viewportHeight": 500,
+          "sampleCount": 5,
+          "at": "2026-10-10T12:00:00.000Z"
+        }
+      }
+    },
+    {
+      "collection": "trackingSessions",
+      "type": "Saved UX tracking sessions",
+      "key": "trackingSessions:oldtrack",
+      "data": {
+        "id": "oldtrack",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "example": "bad",
+        "width": 500,
+        "height": 1000,
+        "seconds": 0,
+        "clicks": [],
+        "pointer": [],
+        "gaze": [],
+        "scroll": [],
+        "wheelEvents": 0,
+        "maxDepth": 0,
+        "notes": "USER_OLD_TRACK",
+        "capped": false
+      }
+    },
+    {
+      "collection": "multimodalEvidence",
+      "type": "Multimodal activity",
+      "key": "multimodalEvidence:multimodal",
+      "data": {
+        "id": "multimodal",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "device": "mobile",
+        "practice": "good",
+        "vision": "normal",
+        "notes": "USER_MULTIMODAL",
+        "confidence": 4,
+        "demoStatus": "Original demonstration status",
+        "channelStatus": "Original channel status"
+      }
+    },
+    {
+      "collection": "events",
+      "type": "Booking flow event",
+      "key": "events:event",
+      "data": {
+        "id": "event",
+        "at": "2026-10-10T12:00:00.000Z",
+        "type": "flow-complete",
+        "detail": "booking-good",
+        "duration": 0
+      }
+    },
+    {
+      "collection": "a11yChecks",
+      "type": "Accessibility checklist",
+      "key": "a11yChecks:checks",
+      "data": {
+        "keyboard": true,
+        "contrast": false,
+        "id": "checks"
+      }
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+import type { Evidence, PageSession } from './enhancements/model';
+import type { TrackingSession } from './components/tracking/model';
 export type Source = 'human' | 'ai';
 export type FindingStatus = 'pending' | 'validated' | 'rejected';
 
@@ -8,6 +10,8 @@ export type Appointment = {
   time: string;
   status: 'confirmed' | 'cancelled';
   createdAt: string;
+  serviceId?: 'advice' | 'workshop' | 'health' | 'visit' | 'culture';
+  condition?: 'good' | 'bad';
 };
 
 export type Persona = {
@@ -19,6 +23,10 @@ export type Persona = {
   barrier: string;
   device: string;
   empathy: { says: string; thinks: string; does: string; feels: string };
+  basis?: 'observed' | 'assumed' | 'mixed';
+  observed?: string;
+  assumptions?: string;
+  emotionSource?: 'observed' | 'declared';
 };
 
 export type Scenario = {
@@ -29,10 +37,14 @@ export type Scenario = {
   task: string;
   constraint: string;
   success: string;
+  personaId?: string;
+  fictional?: boolean;
 };
 
 export type Finding = {
   id: string;
+  task?:string;
+  heuristicId?:string;
   heuristic: string;
   severity: number;
   problem: string;
@@ -53,6 +65,7 @@ export type TestSession = {
   seq: number;
   emotion: number;
   sus: number;
+  susResponses?: number[];
   notes: string;
   createdAt: string;
 };
@@ -67,6 +80,9 @@ export type LabEvent = {
 
 export type ProjectState = {
   version: 2;
+  reportDraft?: ReportDraft;
+  evidence?: Evidence[];
+  pageSessions?: PageSession[];
   appointments: Appointment[];
   personas: Persona[];
   scenarios: Scenario[];
@@ -75,7 +91,10 @@ export type ProjectState = {
   events: LabEvent[];
   a11yChecks: Record<string, boolean>;
   multimodalEvidence?: MultimodalEvidence[];
+  trackingSessions?: TrackingSession[];
 };
+
+export type ReportDraft = { selected:string[]; before:string[]; after:string[]; includeComparison:boolean; justification:string; projectName:string; objective:string; method:string; interpretation:string; improvements:string; limits:string; conclusions:string; references:string };
 
 export const uid = () => `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
@@ -121,6 +140,8 @@ export function calculateMetrics(state: ProjectState): Metrics {
   const started = state.events.filter((event) => event.type === 'flow-start').length;
   const durations = completed.map((event) => event.duration || 0).filter(Boolean);
   const sessions = state.sessions;
+  const taskSessions=(state.evidence||[]).filter(e=>e.kind==='ux'&&!e.demo);
+  const observed=(key:string)=>taskSessions.map(e=>e.scores[key]).filter(Number.isFinite);
   const checked = Object.values(state.a11yChecks).filter(Boolean).length;
   const human = state.findings.filter((finding) => finding.source === 'human');
   const ai = state.findings.filter((finding) => finding.source === 'ai');
@@ -131,11 +152,11 @@ export function calculateMetrics(state: ProjectState): Metrics {
     attempts: started,
     completionRate: started ? Math.round((completed.length / started) * 100) : 0,
     averageSeconds: Math.round(average(durations)),
-    flowErrors: state.events.filter((event) => event.type === 'flow-error').length + sessions.reduce((sum, session) => sum + session.errors, 0),
-    sus: Math.round(average(sessions.map((session) => session.sus))),
-    seq: Number(average(sessions.map((session) => session.seq)).toFixed(1)),
-    emotion: Number(average(sessions.map((session) => session.emotion)).toFixed(1)),
-    accessibility: Math.round((checked / Object.keys(state.a11yChecks).length) * 100),
+    flowErrors: state.events.filter((event) => event.type === 'flow-error').length + sessions.reduce((sum, session) => sum + session.errors, 0)+observed('errors').reduce((a,b)=>a+b,0),
+    sus: Math.round(average([...sessions.map((session) => session.sus),...(state.evidence||[]).filter(e=>e.kind==='sus'&&!e.demo).map(e=>e.scores.sus)])),
+    seq: Number(average([...sessions.map((session) => session.seq),...observed('seq')]).toFixed(1)),
+    emotion: Number(average([...sessions.map((session) => session.emotion),...observed('emotion')]).toFixed(1)),
+    accessibility: Object.keys(state.a11yChecks).length ? Math.round((checked / Object.keys(state.a11yChecks).length) * 100) : 0,
     aiAgreement: ai.length ? Math.round((matches / ai.length) * 100) : 0,
   };
 }

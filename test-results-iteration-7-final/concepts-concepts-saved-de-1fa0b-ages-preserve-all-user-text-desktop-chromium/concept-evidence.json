@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "appointments": [],
+  "personas": [],
+  "scenarios": [],
+  "findings": [],
+  "sessions": [],
+  "events": [],
+  "a11yChecks": {},
+  "multimodalEvidence": [],
+  "trackingSessions": [],
+  "evidence": [
+    {
+      "kind": "concept",
+      "participant": "",
+      "task": "IA responsable",
+      "condition": "good",
+      "prototype": "concepts-iteration-3",
+      "scores": {
+        "seconds": 0.11820000004768372,
+        "interactions": 2
+      },
+      "notes": "Observación sin traducir",
+      "concept": {
+        "id": "responsibleAI",
+        "outcome": "completed",
+        "response": {
+          "text": "",
+          "reason": "Razón en español",
+          "edit": "Propuesta escrita",
+          "decision": "editDecision"
+        }
+      },
+      "id": "1791666051534-9qvyr0",
+      "createdAt": "2026-10-10T21:00:51.534Z"
+    }
+  ],
+  "pageSessions": [],
+  "backup": {
+    "format": "hci-lab-ia-backup",
+    "version": 1,
+    "exportedAt": "2026-10-10T21:00:51.633Z",
+    "preferences": {
+      "dark": false,
+      "contrast": false,
+      "font": 100,
+      "spacing": false,
+      "dyslexia": false,
+      "motion": false
+    },
+    "language": "fr-FR"
+  }
+}

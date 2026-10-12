@@ -1,0 +1,566 @@
+{
+  "version": 2,
+  "appointments": [
+    {
+      "id": "booking",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "service": "Servicio ficticio",
+      "serviceId": "advice",
+      "date": "2026-11-11",
+      "time": "10:00",
+      "status": "confirmed",
+      "condition": "good"
+    }
+  ],
+  "personas": [
+    {
+      "id": "persona",
+      "name": "Persona ficticia Álex",
+      "age": "",
+      "device": "USER_DEVICE",
+      "context": "USER_CONTEXT",
+      "goal": "Completar reserva",
+      "barrier": "Texto pequeño",
+      "basis": "mixed",
+      "observed": "Observación directa",
+      "assumptions": "Supuesto pendiente",
+      "emotionSource": "declared",
+      "empathy": {
+        "says": "USER_SAYS",
+        "thinks": "USER_THINKS",
+        "does": "USER_DOES",
+        "feels": "USER_FEELS"
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario",
+      "title": "Escenario ficticio",
+      "actor": "Persona ficticia Álex",
+      "personaId": "persona",
+      "context": "Universidad",
+      "task": "Reservar",
+      "constraint": "Sin sonido",
+      "success": "Una confirmación",
+      "fictional": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "finding",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "task": "Reserva",
+      "heuristic": "Original heuristic",
+      "heuristicId": "h1",
+      "severity": 2,
+      "problem": "USER_PROBLEM",
+      "evidence": "USER_LOCATION",
+      "recommendation": "USER_FIX",
+      "source": "human",
+      "status": "validated"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "legacy",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "participant": "",
+      "task": "Legacy task",
+      "success": false,
+      "seconds": 0,
+      "errors": 0,
+      "sus": 50,
+      "susResponses": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "seq": 4,
+      "emotion": 3,
+      "notes": "USER_LEGACY"
+    }
+  ],
+  "events": [
+    {
+      "id": "event",
+      "at": "2026-10-10T12:00:00.000Z",
+      "type": "flow-complete",
+      "detail": "booking-good",
+      "duration": 0
+    }
+  ],
+  "a11yChecks": {
+    "keyboard": true,
+    "contrast": false
+  },
+  "multimodalEvidence": [
+    {
+      "id": "multimodal",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "device": "mobile",
+      "practice": "good",
+      "vision": "normal",
+      "notes": "USER_MULTIMODAL",
+      "confidence": 4,
+      "demoStatus": "Original demonstration status",
+      "channelStatus": "Original channel status"
+    }
+  ],
+  "trackingSessions": [
+    {
+      "id": "oldtrack",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "example": "bad",
+      "width": 500,
+      "height": 1000,
+      "seconds": 0,
+      "clicks": [],
+      "pointer": [],
+      "gaze": [],
+      "scroll": [],
+      "wheelEvents": 0,
+      "maxDepth": 0,
+      "notes": "USER_OLD_TRACK",
+      "capped": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "concept",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "concept",
+      "participant": "",
+      "task": "Reserva",
+      "condition": "good",
+      "prototype": "concepts-iteration3",
+      "scores": {
+        "seconds": 12,
+        "errors": 0,
+        "interactions": 3,
+        "emotionBefore": 2,
+        "emotionAfter": 4
+      },
+      "notes": "USER_NOTE_concept",
+      "concept": {
+        "id": "emotions",
+        "outcome": "completed",
+        "response": {
+          "text": "USER_FEEDBACK",
+          "reason": "USER_REASON",
+          "edit": "",
+          "decision": ""
+        }
+      }
+    },
+    {
+      "id": "pattern",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "pattern",
+      "participant": "",
+      "task": "Reserva",
+      "condition": "bad",
+      "prototype": "patterns-iteration-4",
+      "scores": {},
+      "notes": "USER_NOTE_pattern",
+      "pattern": {
+        "id": "form",
+        "problem": "USER_PATTERN_PROBLEM",
+        "principle": "USER_PRINCIPLE",
+        "correction": "USER_PATTERN_FIX"
+      }
+    },
+    {
+      "id": "ux-before",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "ux",
+      "participant": "",
+      "task": "Reserva",
+      "condition": "good",
+      "prototype": "iteration7",
+      "scores": {
+        "seconds": 20,
+        "errors": 2,
+        "success": 1
+      },
+      "notes": "USER_NOTE_ux-before"
+    },
+    {
+      "id": "ux-after",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "ux",
+      "participant": "",
+      "task": "Reserva",
+      "condition": "bad",
+      "prototype": "iteration7",
+      "scores": {
+        "seconds": 10,
+        "errors": 0,
+        "success": 1
+      },
+      "notes": "USER_NOTE_ux-after"
+    },
+    {
+      "id": "sus",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "sus",
+      "participant": "",
+      "task": "Reserva",
+      "condition": "autodeclarado",
+      "prototype": "iteration7",
+      "scores": {
+        "sus": 50,
+        "response1": 3,
+        "response2": 3,
+        "response3": 3,
+        "response4": 3,
+        "response5": 3,
+        "response6": 3,
+        "response7": 3,
+        "response8": 3,
+        "response9": 3,
+        "response10": 3
+      },
+      "notes": "USER_NOTE_sus"
+    },
+    {
+      "id": "tlx",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "tlx",
+      "participant": "",
+      "task": "Reserva",
+      "condition": "autodeclarado",
+      "prototype": "iteration7",
+      "scores": {
+        "rawTLX": 35,
+        "mental": 10,
+        "physical": 20,
+        "temporal": 30,
+        "performance": 40,
+        "effort": 50,
+        "frustration": 60
+      },
+      "notes": "USER_NOTE_tlx"
+    },
+    {
+      "id": "fitts",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "experiment",
+      "participant": "",
+      "task": "Fitts",
+      "condition": "simple",
+      "prototype": "iteration7",
+      "scores": {
+        "seconds": 1,
+        "errors": 0,
+        "trials": 8,
+        "size": 64
+      },
+      "notes": "USER_NOTE_fitts",
+      "experiment": {
+        "kind": "Fitts",
+        "condition": "simple",
+        "practiceCount": 2,
+        "trials": [
+          {
+            "seconds": 1,
+            "errors": 0,
+            "input": "pointer"
+          },
+          {
+            "seconds": 1,
+            "errors": 0,
+            "input": "pointer",
+            "distance": 80,
+            "indexDifficulty": 1.169925
+          },
+          {
+            "seconds": 1,
+            "errors": 0,
+            "input": "pointer",
+            "distance": 80,
+            "indexDifficulty": 1.169925
+          },
+          {
+            "seconds": 1,
+            "errors": 0,
+            "input": "pointer",
+            "distance": 80,
+            "indexDifficulty": 1.169925
+          },
+          {
+            "seconds": 1,
+            "errors": 0,
+            "input": "pointer",
+            "distance": 80,
+            "indexDifficulty": 1.169925
+          },
+          {
+            "seconds": 1,
+            "errors": 0,
+            "input": "pointer",
+            "distance": 80,
+            "indexDifficulty": 1.169925
+          },
+          {
+            "seconds": 1,
+            "errors": 0,
+            "input": "pointer",
+            "distance": 80,
+            "indexDifficulty": 1.169925
+          },
+          {
+            "seconds": 1,
+            "errors": 0,
+            "input": "pointer",
+            "distance": 80,
+            "indexDifficulty": 1.169925
+          }
+        ]
+      }
+    },
+    {
+      "id": "hick",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "experiment",
+      "participant": "",
+      "task": "Hick",
+      "condition": "simple",
+      "prototype": "iteration7",
+      "scores": {
+        "seconds": 2,
+        "errors": 0,
+        "trials": 8,
+        "options": 3
+      },
+      "notes": "USER_NOTE_hick",
+      "experiment": {
+        "kind": "Hick",
+        "condition": "simple",
+        "practiceCount": 2,
+        "trials": [
+          {
+            "seconds": 2,
+            "errors": 0,
+            "input": "keyboard"
+          },
+          {
+            "seconds": 2,
+            "errors": 0,
+            "input": "keyboard"
+          },
+          {
+            "seconds": 2,
+            "errors": 0,
+            "input": "keyboard"
+          },
+          {
+            "seconds": 2,
+            "errors": 0,
+            "input": "keyboard"
+          },
+          {
+            "seconds": 2,
+            "errors": 0,
+            "input": "keyboard"
+          },
+          {
+            "seconds": 2,
+            "errors": 0,
+            "input": "keyboard"
+          },
+          {
+            "seconds": 2,
+            "errors": 0,
+            "input": "keyboard"
+          },
+          {
+            "seconds": 2,
+            "errors": 0,
+            "input": "keyboard"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chatbot",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "chatbot",
+      "participant": "",
+      "task": "Reserva",
+      "condition": "B-buena",
+      "prototype": "chatbots",
+      "scores": {
+        "clarity": 4,
+        "control": 3,
+        "tone": 4,
+        "transparency": 2
+      },
+      "notes": "USER_NOTE_chatbot",
+      "chatbot": {
+        "prompt": "USER_CHAT_PROMPT",
+        "response": "USER_CHAT_RESPONSE",
+        "human": true
+      }
+    },
+    {
+      "id": "ai",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "kind": "ai",
+      "participant": "",
+      "task": "USER_AI_CONTEXT",
+      "condition": "aceptar",
+      "prototype": "local-template-iteration7",
+      "scores": {
+        "accepted": 1
+      },
+      "notes": "USER_NOTE_ai",
+      "review": {
+        "type": "interface",
+        "prompt": "USER_AI_CONTEXT",
+        "proposal": "USER_PROPOSAL",
+        "basis": "USER_BASIS",
+        "limits": "USER_LIMITS",
+        "review": "USER_REVIEW",
+        "reason": "USER_DECISION",
+        "decision": "accept"
+      }
+    }
+  ],
+  "pageSessions": [
+    {
+      "id": "page",
+      "createdAt": "2026-10-10T12:00:00.000Z",
+      "route": "/tracking",
+      "participant": "",
+      "task": "USER_TRACK_TASK",
+      "prototype": "v1",
+      "width": 700,
+      "height": 1200,
+      "viewportWidth": 700,
+      "viewportHeight": 500,
+      "seconds": 5,
+      "clicks": [
+        {
+          "x": 100,
+          "y": 600,
+          "at": 300,
+          "weight": 1,
+          "area": "example",
+          "source": "click",
+          "route": "/tracking"
+        }
+      ],
+      "pointer": [
+        {
+          "x": 120,
+          "y": 800,
+          "at": 350,
+          "weight": 1,
+          "area": "example",
+          "source": "pointer"
+        }
+      ],
+      "gaze": [
+        {
+          "x": 200,
+          "y": 900,
+          "at": 400,
+          "weight": 1,
+          "area": "example",
+          "source": "camera"
+        }
+      ],
+      "simulation": [
+        {
+          "x": 240,
+          "y": 700,
+          "at": 420,
+          "weight": 1,
+          "area": "example",
+          "source": "F"
+        }
+      ],
+      "scroll": [
+        {
+          "at": 200,
+          "top": 500,
+          "depth": 80,
+          "direction": "down"
+        }
+      ],
+      "maxDepth": 80,
+      "notes": "USER_TRACK_NOTE",
+      "capped": false,
+      "target": "example",
+      "coordinateSystem": "example-content",
+      "clickCount": 1,
+      "wheelEvents": 2,
+      "exampleCondition": "good",
+      "validation": {
+        "medianErrorPx": 70,
+        "viewportWidth": 700,
+        "viewportHeight": 500,
+        "sampleCount": 5,
+        "at": "2026-10-10T12:00:00.000Z"
+      }
+    }
+  ],
+  "reportDraft": {
+    "selected": [
+      "personas:persona",
+      "scenarios:scenario",
+      "appointments:booking",
+      "findings:finding",
+      "sessions:legacy",
+      "evidence:concept",
+      "evidence:pattern",
+      "evidence:ux-before",
+      "evidence:ux-after",
+      "evidence:sus",
+      "evidence:tlx",
+      "evidence:fitts",
+      "evidence:hick",
+      "evidence:chatbot",
+      "evidence:ai",
+      "pageSessions:page",
+      "trackingSessions:oldtrack",
+      "multimodalEvidence:multimodal",
+      "events:event",
+      "a11yChecks:checks"
+    ],
+    "before": [],
+    "after": [],
+    "includeComparison": false,
+    "justification": "",
+    "projectName": "USER_PROJECT_DRAFT",
+    "objective": "",
+    "method": "",
+    "interpretation": "USER_INTERPRETATION_DRAFT",
+    "improvements": "",
+    "limits": "",
+    "conclusions": "",
+    "references": ""
+  },
+  "backup": {
+    "format": "hci-lab-ia-backup",
+    "version": 1,
+    "exportedAt": "2026-10-12T15:06:15.454Z",
+    "preferences": {
+      "dark": false,
+      "contrast": false,
+      "font": 100,
+      "spacing": false,
+      "dyslexia": false,
+      "motion": true
+    },
+    "language": "es-CO"
+  }
+}

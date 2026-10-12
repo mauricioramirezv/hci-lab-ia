@@ -1,5 +1,13 @@
+import {evaluationResources} from './iteration7/locales';
+import { upgradeResources, italianBase, catalanBase } from './enhancements/locales';
 import { multimodalResources } from './components/multimodal/translations';
 import i18n from 'i18next';
+import { conceptResources } from './enhancements/concepts/locales';
+import { patternResources } from './enhancements/patterns/locales';
+import { activityResources } from './projectActivities/locales';
+import { trackingResources } from './components/tracking/locales';
+import { shellResources } from './shellLocales';
+import { manageResources } from './manageLocales';
 import { initReactI18next } from 'react-i18next';
 
 const es = {
@@ -65,4 +73,15 @@ i18n.use(initReactI18next).init({
   interpolation: { escapeValue: false },
 });
 
+Object.entries(upgradeResources).forEach(([lang, upgrade]) => i18n.addResourceBundle(lang, 'translation', { upgrade, multimodal: multimodalResources[lang as keyof typeof multimodalResources] }, true, true));
+i18n.addResourceBundle('it-IT', 'translation', italianBase, true, true);
+i18n.addResourceBundle('ca-ES', 'translation', catalanBase, true, true);
+Object.entries(shellResources).forEach(([lang, shell]) => i18n.addResourceBundle(lang, 'translation', { shell }, true, true));
+Object.entries(manageResources).forEach(([lang, manage]) => i18n.addResourceBundle(lang, 'translation', { manage }, true, true));
+Object.entries(conceptResources).forEach(([lang, conceptLab]) => i18n.addResourceBundle(lang, 'translation', { conceptLab }, true, true));
+Object.entries(patternResources).forEach(([lang, patternLab]) => i18n.addResourceBundle(lang, 'translation', { patternLab }, true, true));
 export default i18n;
+Object.entries(trackingResources).forEach(([lang, trackingUX]) => i18n.addResourceBundle(lang, 'translation', { trackingUX }, true, true));
+Object.entries(activityResources).forEach(([lang, projectActivities]) => i18n.addResourceBundle(lang, 'translation', { projectActivities }, true, true));
+
+Object.entries(evaluationResources).forEach(([lang,evaluationLab])=>i18n.addResourceBundle(lang,'translation',{evaluationLab},true,true));

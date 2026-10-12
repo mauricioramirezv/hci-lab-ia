@@ -12,7 +12,8 @@ test('multimodal evidence persists and is exported with the project', async ({ p
  const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('hci-lab-ia-project-v2') || '{}'));
  expect(stored.multimodalEvidence[0]).toMatchObject({device:'watch',vision:'protanopia'});
  const download = page.waitForEvent('download');
- await page.getByRole('button',{name:'Exportar proyecto',exact:true}).click();
+ await page.getByRole('button',{name:'Gestionar proyecto',exact:true}).click();
+ await page.getByRole('button',{name:'Descargar respaldo JSON',exact:true}).click();
  expect((await download).suggestedFilename()).toBe('hci-lab-ia-project.json');
 });
 test('vehicle controls, keyboard and automatic accessibility check', async ({ page }) => {

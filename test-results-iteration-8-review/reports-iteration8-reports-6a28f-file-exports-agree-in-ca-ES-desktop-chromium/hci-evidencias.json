@@ -1,0 +1,602 @@
+{
+  "format": "hci-lab-ia-evidence",
+  "version": 1,
+  "language": "ca-ES",
+  "report": "# Informes del projecte\n\nIdioma de l’informe: ca-ES\n\n## Identificació i objectiu del projecte\n\nNom del projecte: Sense informació aportada.\nObjectiu del projecte: Sense informació aportada.\n\n## Persones i escenaris\n\n### Persona ficticia Álex\n\nCamp | Valor | Unitat\n--- | --- | ---\nNom | Persona ficticia Álex | \nEdat o franja (opcional) | No registrat | \nDispositiu | USER\\_DEVICE | \nContext | USER\\_CONTEXT | \nObjectiu de la persona | Completar reserva | \nNecessitats o barreres | Texto pequeño | \nInformació o regla utilitzada | Observacions i supòsits | \nDades observades | Observación directa | \nSupòsits pendents de validar | Supuesto pendiente | \nFont de les emocions | Autodeclarades | \nQuè diu | USER\\_SAYS | \nQuè pensa | USER\\_THINKS | \nQuè fa | USER\\_DOES | \nQuè sent | USER\\_FEELS | \n\n### Escenario ficticio\n\nCamp | Valor | Unitat\n--- | --- | ---\nTítol | Escenario ficticio | \nPersona i mapa d’empatia | Persona ficticia Álex | \nPersona i mapa d’empatia | persona | \nContext | Universidad | \nRestricció o dificultat | Sin sonido | \nCriteri d’èxit observable | Una confirmación | \nExemple fictici | Sí | \n\n## Activitats i mètode d’avaluació\n\nSense informació aportada.\n\nTemps: segons registrats. Errors: recompte observat. Èxit: mitjana de 0/1, proporció de tasques completades. SUS: puntuació (0–100). Raw TLX: mitjana sense ponderació de sis dimensions (0–100). Tasques i mètodes diferents separats.\n\nTipus | Tasca | Condició | Versió | Registres utilitzats (n)\n--- | --- | --- | --- | ---\nPersona i mapa d’empatia | Persona ficticia Álex | No registrat | No registrat | 1\nEscenari | Escenario ficticio | No registrat | No registrat | 1\nReserva fictícia | Assessorament universitari fictici | Bona pràctica | No registrat | 1\nTroballa heurística | Reserva | Revisat i validat | No registrat | 1\nProva d’usabilitat | Legacy task | No registrat | No registrat | 1\nActivitat de Conceptes | Emocions | Bona pràctica | concepts-iteration3 | 1\nPatró o antipatró | Formulari | Antipatró | patterns-iteration-4 | 1\nProva d’usabilitat | Reserva | Bona pràctica | iteration7 | 1\nProva d’usabilitat | Reserva | Antipatró | iteration7 | 1\nSUS | Reserva | Dades autodeclarades | iteration7 | 1\nRaw NASA-TLX | Reserva | Dades autodeclarades | iteration7 | 1\nExperiment de Fitts o Hick | Fitts | Objectius grans: 64 px | iteration7 | 1\nExperiment de Fitts o Hick | Hick | 3 opcions | iteration7 | 1\nRúbrica humana de chatbot | Reserva | Bot B: bona pràctica | chatbots | 1\nDecisió humana sobre IA simulada | USER\\_AI\\_CONTEXT | Acceptar proposta | local-template-iteration7 | 1\nSessions desades de Seguiment UX | USER\\_TRACK\\_TASK | Bona pràctica | v1 | 1\nSessions desades de Seguiment UX | Sessions desades de Seguiment UX | Antipatró | No registrat | 1\nActivitat multimodal | Activitat multimodal | Bona pràctica | No registrat | 1\nEsdeveniment del flux de reserva | booking-good | No registrat | No registrat | 1\nLlista de comprovació d’accessibilitat | Llista de comprovació d’accessibilitat | No registrat | No registrat | 1\n\n## Resultats\n\nIndicadors per tasca, condició, versió i mètode; només valors presents i finits. Mitjana = suma / n. Zero observat conservat; dades absents no calculades.\n\n### Legacy task · No registrat · No registrat · Prova d’usabilitat\n\nResultats | Mitjana | Registres utilitzats (n)\n--- | --- | ---\nTemps (s) | 0.000 | 1\nErrors (recompte) | 0.000 | 1\nÈxit de tasca (0/1) | 0.000 | 1\nSUS (0–100) | 50.000 | 1\n\n### Reserva · Bona pràctica · iteration7 · Prova d’usabilitat\n\nResultats | Mitjana | Registres utilitzats (n)\n--- | --- | ---\nTemps (s) | 20.000 | 1\nErrors (recompte) | 2.000 | 1\nÈxit de tasca (0/1) | 1.000 | 1\n\n### Reserva · Antipatró · iteration7 · Prova d’usabilitat\n\nResultats | Mitjana | Registres utilitzats (n)\n--- | --- | ---\nTemps (s) | 10.000 | 1\nErrors (recompte) | 0.000 | 1\nÈxit de tasca (0/1) | 1.000 | 1\n\n### Reserva · Dades autodeclarades · iteration7 · SUS\n\nResultats | Mitjana | Registres utilitzats (n)\n--- | --- | ---\nSUS (0–100) | 50.000 | 1\n\n### Reserva · Dades autodeclarades · iteration7 · Raw NASA-TLX\n\nResultats | Mitjana | Registres utilitzats (n)\n--- | --- | ---\nRaw NASA-TLX (0–100) | 35.000 | 1\n\n### Fitts · Objectius grans: 64 px · iteration7 · Fitts · Punter · Intent mesurat: 8\n\nResultats | Mitjana | Registres utilitzats (n)\n--- | --- | ---\nTemps (s) | 1.000 | 1\nErrors (recompte) | 0.000 | 1\n\n### Hick · 3 opcions · iteration7 · Hick · Teclat · Intent mesurat: 8\n\nResultats | Mitjana | Registres utilitzats (n)\n--- | --- | ---\nTemps (s) | 2.000 | 1\nErrors (recompte) | 0.000 | 1\n\n### Persona i mapa d’empatia · Persona ficticia Álex\n\nCamp | Valor\n--- | ---\nData del registre | No registrat\nCondició | No registrat\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Registre o avaluació humana\nID | personas:persona\n\nCamp | Valor | Unitat\n--- | --- | ---\nNom | Persona ficticia Álex | \nEdat o franja (opcional) | No registrat | \nDispositiu | USER\\_DEVICE | \nContext | USER\\_CONTEXT | \nObjectiu de la persona | Completar reserva | \nNecessitats o barreres | Texto pequeño | \nInformació o regla utilitzada | Observacions i supòsits | \nDades observades | Observación directa | \nSupòsits pendents de validar | Supuesto pendiente | \nFont de les emocions | Autodeclarades | \nQuè diu | USER\\_SAYS | \nQuè pensa | USER\\_THINKS | \nQuè fa | USER\\_DOES | \nQuè sent | USER\\_FEELS | \n\nObservacions: Observación directa\nSupuesto pendiente\n\n### Escenari · Escenario ficticio\n\nCamp | Valor\n--- | ---\nData del registre | No registrat\nCondició | No registrat\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Dades simulades / exemple fictici\nID | scenarios:scenario\n\nCamp | Valor | Unitat\n--- | --- | ---\nTítol | Escenario ficticio | \nPersona i mapa d’empatia | Persona ficticia Álex | \nPersona i mapa d’empatia | persona | \nContext | Universidad | \nRestricció o dificultat | Sin sonido | \nCriteri d’èxit observable | Una confirmación | \nExemple fictici | Sí | \n\nObservacions: Sin sonido\n\n### Reserva fictícia · Assessorament universitari fictici\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Bona pràctica\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Dades simulades / exemple fictici\nID | appointments:booking\n\nCamp | Valor | Unitat\n--- | --- | ---\nServei | Servicio ficticio | \nServei | advice | \nData del registre | 2026-11-11 | \nTemps (s) | 10:00 | \nEstat de revisió humana | Confirmada | \n\nObservacions: No registrat\n\n### Troballa heurística · Reserva\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Revisat i validat\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Registre o avaluació humana\nID | findings:finding\n\nCamp | Valor | Unitat\n--- | --- | ---\nHeurística | Visibilitat de l’estat | \nHeurística | h1 | \nGravetat | 2 | \nProblema observat | USER\\_PROBLEM | \nEvidència o ubicació | USER\\_LOCATION | \nRecomanació de correcció | USER\\_FIX | \nOrigen del registre | Avaluació humana | \nEstat de revisió humana | Revisat i validat | \n\nObservacions: USER_PROBLEM\n\n### Prova d’usabilitat · Legacy task\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | No registrat\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Dades mesurades i autodeclarades\nID | sessions:legacy\n\nCamp | Valor | Unitat\n--- | --- | ---\nÈxit de tasca (0/1) | No | \nTemps (s) | 0 | s\nErrors (recompte) | 0 | \nSUS (0–100) | 50 | 0–100\nCamp original: susResponses · 1 | 3 | \nCamp original: susResponses · 2 | 3 | \nCamp original: susResponses · 3 | 3 | \nCamp original: susResponses · 4 | 3 | \nCamp original: susResponses · 5 | 3 | \nCamp original: susResponses · 6 | 3 | \nCamp original: susResponses · 7 | 3 | \nCamp original: susResponses · 8 | 3 | \nCamp original: susResponses · 9 | 3 | \nCamp original: susResponses · 10 | 3 | \nSEQ: facilitat declarada (1 difícil, 7 fàcil) | 4 | 1–7\nEmoció declarada (1 negativa, 5 positiva) | 3 | 1–5\n\nObservacions: USER_LEGACY\n\n### Activitat de Conceptes · Emocions\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Bona pràctica\nÀlies opcional | Sense àlies\nVersió | concepts-iteration3\nTipus | Dades mesurades i autodeclarades\nID | evidence:concept\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Activitat de Conceptes | \nTemps (s) | 12 | s\nErrors (recompte) | 0 | \nInteraccions | 3 | \nEmoció abans de la prova | 2 | 1–5\nEmoció després de la prova | 4 | 1–5\nCamp original: id | emotions | \nCamp original: outcome | Tasca completada | \nDescripció fictícia (no es registra) | USER\\_FEEDBACK | \nJustificació de comparabilitat | USER\\_REASON | \nTornar a editar | No registrat | \nDecisió humana | No registrat | \n\nObservacions: USER_NOTE_concept\n\n### Patró o antipatró · Formulari\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Antipatró\nÀlies opcional | Sense àlies\nVersió | patterns-iteration-4\nTipus | Registre o avaluació humana\nID | evidence:pattern\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Patró o antipatró | \nCamp original: id | form | \nProblema observat | USER\\_PATTERN\\_PROBLEM | \nCamp original: principle | USER\\_PRINCIPLE | \nCom corregir el problema | USER\\_PATTERN\\_FIX | \n\nObservacions: USER_NOTE_pattern\n\n### Prova d’usabilitat · Reserva\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Bona pràctica\nÀlies opcional | Sense àlies\nVersió | iteration7\nTipus | Dades mesurades i autodeclarades\nID | evidence:ux-before\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Prova d’usabilitat | \nTemps (s) | 20 | s\nErrors (recompte) | 2 | \nÈxit de tasca (0/1) | 1 | \n\nObservacions: USER_NOTE_ux-before\n\n### Prova d’usabilitat · Reserva\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Antipatró\nÀlies opcional | Sense àlies\nVersió | iteration7\nTipus | Dades mesurades i autodeclarades\nID | evidence:ux-after\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Prova d’usabilitat | \nTemps (s) | 10 | s\nErrors (recompte) | 0 | \nÈxit de tasca (0/1) | 1 | \n\nObservacions: USER_NOTE_ux-after\n\n### SUS · Reserva\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Dades autodeclarades\nÀlies opcional | Sense àlies\nVersió | iteration7\nTipus | Dades autodeclarades\nID | evidence:sus\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | SUS | \nSUS (0–100) | 50 | 0–100\nResposta individual 1 (1–5) | 3 | 1–5\nResposta individual 2 (1–5) | 3 | 1–5\nResposta individual 3 (1–5) | 3 | 1–5\nResposta individual 4 (1–5) | 3 | 1–5\nResposta individual 5 (1–5) | 3 | 1–5\nResposta individual 6 (1–5) | 3 | 1–5\nResposta individual 7 (1–5) | 3 | 1–5\nResposta individual 8 (1–5) | 3 | 1–5\nResposta individual 9 (1–5) | 3 | 1–5\nResposta individual 10 (1–5) | 3 | 1–5\n\nObservacions: USER_NOTE_sus\n\n### Raw NASA-TLX · Reserva\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Dades autodeclarades\nÀlies opcional | Sense àlies\nVersió | iteration7\nTipus | Dades autodeclarades\nID | evidence:tlx\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Raw NASA-TLX | \nRaw NASA-TLX (0–100) | 35 | 0–100\nExigència mental | 10 | 0–100\nExigència física | 20 | 0–100\nExigència temporal | 30 | 0–100\nRendiment: 0 excel·lent, 100 deficient | 40 | 0–100\nEsforç | 50 | 0–100\nFrustració | 60 | 0–100\n\nObservacions: USER_NOTE_tlx\n\n### Experiment de Fitts o Hick · Fitts\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Objectius grans: 64 px\nÀlies opcional | Sense àlies\nVersió | iteration7\nTipus | Dades mesurades\nID | evidence:fitts\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Experiment | \nTemps (s) | 1 | s\nErrors (recompte) | 0 | \nIntents mesurats | 8 | \nAmplada de l’objectiu (px) | 64 | px\nTipus | Fitts | \nCondició | Objectius grans: 64 px | \nIntents de pràctica exclosos | 2 | \nTemps (s) · 1 | 1 | s\nErrors (recompte) · 1 | 0 | \nMètode d’interacció · 1 | Punter | \nTemps (s) · 2 | 1 | s\nErrors (recompte) · 2 | 0 | \nMètode d’interacció · 2 | Punter | \nDistància entre centres (px) · 2 | 80 | px\nÍndex de dificultat de Fitts (bits) · 2 | 1.169925 | bits\nTemps (s) · 3 | 1 | s\nErrors (recompte) · 3 | 0 | \nMètode d’interacció · 3 | Punter | \nDistància entre centres (px) · 3 | 80 | px\nÍndex de dificultat de Fitts (bits) · 3 | 1.169925 | bits\nTemps (s) · 4 | 1 | s\nErrors (recompte) · 4 | 0 | \nMètode d’interacció · 4 | Punter | \nDistància entre centres (px) · 4 | 80 | px\nÍndex de dificultat de Fitts (bits) · 4 | 1.169925 | bits\nTemps (s) · 5 | 1 | s\nErrors (recompte) · 5 | 0 | \nMètode d’interacció · 5 | Punter | \nDistància entre centres (px) · 5 | 80 | px\nÍndex de dificultat de Fitts (bits) · 5 | 1.169925 | bits\nTemps (s) · 6 | 1 | s\nErrors (recompte) · 6 | 0 | \nMètode d’interacció · 6 | Punter | \nDistància entre centres (px) · 6 | 80 | px\nÍndex de dificultat de Fitts (bits) · 6 | 1.169925 | bits\nTemps (s) · 7 | 1 | s\nErrors (recompte) · 7 | 0 | \nMètode d’interacció · 7 | Punter | \nDistància entre centres (px) · 7 | 80 | px\nÍndex de dificultat de Fitts (bits) · 7 | 1.169925 | bits\nTemps (s) · 8 | 1 | s\nErrors (recompte) · 8 | 0 | \nMètode d’interacció · 8 | Punter | \nDistància entre centres (px) · 8 | 80 | px\nÍndex de dificultat de Fitts (bits) · 8 | 1.169925 | bits\n\nObservacions: USER_NOTE_fitts\n\n### Experiment de Fitts o Hick · Hick\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | 3 opcions\nÀlies opcional | Sense àlies\nVersió | iteration7\nTipus | Dades mesurades\nID | evidence:hick\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Experiment | \nTemps (s) | 2 | s\nErrors (recompte) | 0 | \nIntents mesurats | 8 | \nQuantitat d’opcions | 3 | \nTipus | Hick | \nCondició | 3 opcions | \nIntents de pràctica exclosos | 2 | \nTemps (s) · 1 | 2 | s\nErrors (recompte) · 1 | 0 | \nMètode d’interacció · 1 | Teclat | \nTemps (s) · 2 | 2 | s\nErrors (recompte) · 2 | 0 | \nMètode d’interacció · 2 | Teclat | \nTemps (s) · 3 | 2 | s\nErrors (recompte) · 3 | 0 | \nMètode d’interacció · 3 | Teclat | \nTemps (s) · 4 | 2 | s\nErrors (recompte) · 4 | 0 | \nMètode d’interacció · 4 | Teclat | \nTemps (s) · 5 | 2 | s\nErrors (recompte) · 5 | 0 | \nMètode d’interacció · 5 | Teclat | \nTemps (s) · 6 | 2 | s\nErrors (recompte) · 6 | 0 | \nMètode d’interacció · 6 | Teclat | \nTemps (s) · 7 | 2 | s\nErrors (recompte) · 7 | 0 | \nMètode d’interacció · 7 | Teclat | \nTemps (s) · 8 | 2 | s\nErrors (recompte) · 8 | 0 | \nMètode d’interacció · 8 | Teclat | \n\nObservacions: USER_NOTE_hick\n\n### Rúbrica humana de chatbot · Reserva\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Bot B: bona pràctica\nÀlies opcional | Sense àlies\nVersió | chatbots\nTipus | Dades autodeclarades\nID | evidence:chatbot\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Rúbrica humana de chatbot | \nClaredat | 4 | 1–5\nControl | 3 | 1–5\nTo | 4 | 1–5\nTransparència | 2 | 1–5\nContext i evidència observada | USER\\_CHAT\\_PROMPT | \nResposta individual | USER\\_CHAT\\_RESPONSE | \nRegistre o avaluació humana | Sí | \n\nObservacions: USER_NOTE_chatbot\n\n### Decisió humana sobre IA simulada · USER\\_AI\\_CONTEXT\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Acceptar proposta\nÀlies opcional | Sense àlies\nVersió | local-template-iteration7\nTipus | Registre o avaluació humana\nID | evidence:ai\n\nCamp | Valor | Unitat\n--- | --- | ---\nTipus | Decisió humana sobre IA simulada | \nProposta acceptada (0/1) | 1 | \nTipus | Alternativa d’interfície | \nContext i evidència observada | USER\\_AI\\_CONTEXT | \nProposta editable | USER\\_PROPOSAL | \nInformació o regla utilitzada | USER\\_BASIS | \nLimitacions | USER\\_LIMITS | \nRevisió humana | USER\\_REVIEW | \nJustificació humana | USER\\_DECISION | \nDecisió humana | Acceptar proposta | \n\nObservacions: USER_NOTE_ai\n\n### Sessions desades de Seguiment UX · USER\\_TRACK\\_TASK\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Bona pràctica\nÀlies opcional | Sense àlies\nVersió | v1\nTipus | Dades mesurades i autodeclarades\nID | pageSessions:page\n\nCamp | Valor | Unitat\n--- | --- | ---\nRuta registrada | /tracking | \nAmplada del contingut (px) | 700 | px\nAlçada del contingut (px) | 1200 | px\nAmplada visible (px) | 700 | px\nAlçada visible (px) | 500 | px\nTemps (s) | 5 | s\nProfunditat màxima de desplaçament (%) | 80 | %\nLímit de mostres assolit | No | \nContingut que es registra | Exemple de seguiment | \nSistema de coordenades | Coordenades del contingut de l’exemple | \nClics (recompte) | 1 | \nEsdeveniments de roda | 2 | \nCondició | Bona pràctica | \nError medià de validació (px) | 70 | px\nAmplada visible (px) | 700 | px\nAlçada visible (px) | 500 | px\nMostres (recompte) | 5 | \nData del registre | 2026-10-10T12:00:00.000Z | \n\nClics (recompte) · Mostres (recompte): 1\n\nCursor: aproximació d’atenció · Mostres (recompte): 1\n\nMirada estimada per càmera · Mostres (recompte): 1\n\nRecorregut d’atenció simulat · Mostres (recompte): 1\n\nDesplaçaments efectius · Mostres (recompte): 1\n\nLes mostres originals són en JSON/CSV. L’informe presenta recomptes per canal i resultats textuals, sense tractar el mapa com atenció mesurada.\n\nObservacions: USER_TRACK_NOTE\n\n### Sessions desades de Seguiment UX · Sessions desades de Seguiment UX\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Antipatró\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Dades mesurades i autodeclarades\nID | trackingSessions:oldtrack\n\nCamp | Valor | Unitat\n--- | --- | ---\nExemple fictici | Antipatró | \nAmplada del contingut (px) | 500 | px\nAlçada del contingut (px) | 1000 | px\nTemps (s) | 0 | s\nEsdeveniments de roda | 0 | \nProfunditat màxima de desplaçament (%) | 0 | %\nLímit de mostres assolit | No | \n\nClics (recompte) · Mostres (recompte): 0\n\nCursor: aproximació d’atenció · Mostres (recompte): 0\n\nMirada estimada per càmera · Mostres (recompte): 0\n\nDesplaçaments efectius · Mostres (recompte): 0\n\nLes mostres originals són en JSON/CSV. L’informe presenta recomptes per canal i resultats textuals, sense tractar el mapa com atenció mesurada.\n\nObservacions: USER_OLD_TRACK\n\n### Activitat multimodal · Activitat multimodal\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | Bona pràctica\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Dades autodeclarades\nID | multimodalEvidence:multimodal\n\nCamp | Valor | Unitat\n--- | --- | ---\nDispositiu | Mòbil | \nCondició | Bona pràctica | \nPercepció del color simulada | Percepció sense filtre | \nConfiança autodeclarada (1–5) | 4 | 1–5\nEstat de la demostració | Original demonstration status | \nEstat del canal registrat | Original channel status | \n\nObservacions: USER_MULTIMODAL\n\n### Esdeveniment del flux de reserva · booking-good\n\nCamp | Valor\n--- | ---\nData del registre | 10/10/2026 7:00:00\nCondició | No registrat\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Dades mesurades\nID | events:event\n\nCamp | Valor | Unitat\n--- | --- | ---\nData del registre | 2026-10-10T12:00:00.000Z | \nTipus | Flux complet | \nDetall registrat | booking-good | \nDurada (segons) | 0 | s\n\nObservacions: No registrat\n\n### Llista de comprovació d’accessibilitat · Llista de comprovació d’accessibilitat\n\nCamp | Valor\n--- | ---\nData del registre | No registrat\nCondició | No registrat\nÀlies opcional | Sense àlies\nVersió | No registrat\nTipus | Registre o avaluació humana\nID | a11yChecks:checks\n\nCamp | Valor | Unitat\n--- | --- | ---\nComprovació del teclat | Sí | \nComprovació de contrast | No | \n\nObservacions: No registrat\n\n## Comparació abans/després\n\nSense informació aportada.\n\n## Interpretació escrita per l’estudiant\n\nSense informació aportada.\n\n## Millores proposades\n\nSense informació aportada.\n\n## Limitacions\n\nSense informació aportada.\n\nSUS no és un percentatge d’usabilitat. El desplaçament no demostra lectura ni comprensió; cursor i simulació no són mirada real. La càmera aporta estimacions amb validació registrada. Una llista no certifica accessibilitat. L’acord humà–IA no mesura precisió del model.\n\n## Conclusions\n\nSense informació aportada.\n\n## Referències realment utilitzades\n\nSense informació aportada.",
+  "records": [
+    {
+      "collection": "personas",
+      "type": "Persona i mapa d’empatia",
+      "key": "personas:persona",
+      "data": {
+        "id": "persona",
+        "name": "Persona ficticia Álex",
+        "age": "",
+        "device": "USER_DEVICE",
+        "context": "USER_CONTEXT",
+        "goal": "Completar reserva",
+        "barrier": "Texto pequeño",
+        "basis": "mixed",
+        "observed": "Observación directa",
+        "assumptions": "Supuesto pendiente",
+        "emotionSource": "declared",
+        "empathy": {
+          "says": "USER_SAYS",
+          "thinks": "USER_THINKS",
+          "does": "USER_DOES",
+          "feels": "USER_FEELS"
+        }
+      }
+    },
+    {
+      "collection": "scenarios",
+      "type": "Escenari",
+      "key": "scenarios:scenario",
+      "data": {
+        "id": "scenario",
+        "title": "Escenario ficticio",
+        "actor": "Persona ficticia Álex",
+        "personaId": "persona",
+        "context": "Universidad",
+        "task": "Reservar",
+        "constraint": "Sin sonido",
+        "success": "Una confirmación",
+        "fictional": true
+      }
+    },
+    {
+      "collection": "appointments",
+      "type": "Reserva fictícia",
+      "key": "appointments:booking",
+      "data": {
+        "id": "booking",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "service": "Servicio ficticio",
+        "serviceId": "advice",
+        "date": "2026-11-11",
+        "time": "10:00",
+        "status": "confirmed",
+        "condition": "good"
+      }
+    },
+    {
+      "collection": "findings",
+      "type": "Troballa heurística",
+      "key": "findings:finding",
+      "data": {
+        "id": "finding",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "task": "Reserva",
+        "heuristic": "Original heuristic",
+        "heuristicId": "h1",
+        "severity": 2,
+        "problem": "USER_PROBLEM",
+        "evidence": "USER_LOCATION",
+        "recommendation": "USER_FIX",
+        "source": "human",
+        "status": "validated"
+      }
+    },
+    {
+      "collection": "sessions",
+      "type": "Prova d’usabilitat",
+      "key": "sessions:legacy",
+      "data": {
+        "id": "legacy",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "participant": "",
+        "task": "Legacy task",
+        "success": false,
+        "seconds": 0,
+        "errors": 0,
+        "sus": 50,
+        "susResponses": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "seq": 4,
+        "emotion": 3,
+        "notes": "USER_LEGACY"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Activitat de Conceptes",
+      "key": "evidence:concept",
+      "data": {
+        "id": "concept",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "concept",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "good",
+        "prototype": "concepts-iteration3",
+        "scores": {
+          "seconds": 12,
+          "errors": 0,
+          "interactions": 3,
+          "emotionBefore": 2,
+          "emotionAfter": 4
+        },
+        "notes": "USER_NOTE_concept",
+        "concept": {
+          "id": "emotions",
+          "outcome": "completed",
+          "response": {
+            "text": "USER_FEEDBACK",
+            "reason": "USER_REASON",
+            "edit": "",
+            "decision": ""
+          }
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Patró o antipatró",
+      "key": "evidence:pattern",
+      "data": {
+        "id": "pattern",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "pattern",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "bad",
+        "prototype": "patterns-iteration-4",
+        "scores": {},
+        "notes": "USER_NOTE_pattern",
+        "pattern": {
+          "id": "form",
+          "problem": "USER_PATTERN_PROBLEM",
+          "principle": "USER_PRINCIPLE",
+          "correction": "USER_PATTERN_FIX"
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Prova d’usabilitat",
+      "key": "evidence:ux-before",
+      "data": {
+        "id": "ux-before",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ux",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "good",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 20,
+          "errors": 2,
+          "success": 1
+        },
+        "notes": "USER_NOTE_ux-before"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Prova d’usabilitat",
+      "key": "evidence:ux-after",
+      "data": {
+        "id": "ux-after",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ux",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "bad",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 10,
+          "errors": 0,
+          "success": 1
+        },
+        "notes": "USER_NOTE_ux-after"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "SUS",
+      "key": "evidence:sus",
+      "data": {
+        "id": "sus",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "sus",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "autodeclarado",
+        "prototype": "iteration7",
+        "scores": {
+          "sus": 50,
+          "response1": 3,
+          "response2": 3,
+          "response3": 3,
+          "response4": 3,
+          "response5": 3,
+          "response6": 3,
+          "response7": 3,
+          "response8": 3,
+          "response9": 3,
+          "response10": 3
+        },
+        "notes": "USER_NOTE_sus"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Raw NASA-TLX",
+      "key": "evidence:tlx",
+      "data": {
+        "id": "tlx",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "tlx",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "autodeclarado",
+        "prototype": "iteration7",
+        "scores": {
+          "rawTLX": 35,
+          "mental": 10,
+          "physical": 20,
+          "temporal": 30,
+          "performance": 40,
+          "effort": 50,
+          "frustration": 60
+        },
+        "notes": "USER_NOTE_tlx"
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Experiment de Fitts o Hick",
+      "key": "evidence:fitts",
+      "data": {
+        "id": "fitts",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "experiment",
+        "participant": "",
+        "task": "Fitts",
+        "condition": "simple",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 1,
+          "errors": 0,
+          "trials": 8,
+          "size": 64
+        },
+        "notes": "USER_NOTE_fitts",
+        "experiment": {
+          "kind": "Fitts",
+          "condition": "simple",
+          "practiceCount": 2,
+          "trials": [
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer"
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            },
+            {
+              "seconds": 1,
+              "errors": 0,
+              "input": "pointer",
+              "distance": 80,
+              "indexDifficulty": 1.169925
+            }
+          ]
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Experiment de Fitts o Hick",
+      "key": "evidence:hick",
+      "data": {
+        "id": "hick",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "experiment",
+        "participant": "",
+        "task": "Hick",
+        "condition": "simple",
+        "prototype": "iteration7",
+        "scores": {
+          "seconds": 2,
+          "errors": 0,
+          "trials": 8,
+          "options": 3
+        },
+        "notes": "USER_NOTE_hick",
+        "experiment": {
+          "kind": "Hick",
+          "condition": "simple",
+          "practiceCount": 2,
+          "trials": [
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            },
+            {
+              "seconds": 2,
+              "errors": 0,
+              "input": "keyboard"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Rúbrica humana de chatbot",
+      "key": "evidence:chatbot",
+      "data": {
+        "id": "chatbot",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "chatbot",
+        "participant": "",
+        "task": "Reserva",
+        "condition": "B-buena",
+        "prototype": "chatbots",
+        "scores": {
+          "clarity": 4,
+          "control": 3,
+          "tone": 4,
+          "transparency": 2
+        },
+        "notes": "USER_NOTE_chatbot",
+        "chatbot": {
+          "prompt": "USER_CHAT_PROMPT",
+          "response": "USER_CHAT_RESPONSE",
+          "human": true
+        }
+      }
+    },
+    {
+      "collection": "evidence",
+      "type": "Decisió humana sobre IA simulada",
+      "key": "evidence:ai",
+      "data": {
+        "id": "ai",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "kind": "ai",
+        "participant": "",
+        "task": "USER_AI_CONTEXT",
+        "condition": "aceptar",
+        "prototype": "local-template-iteration7",
+        "scores": {
+          "accepted": 1
+        },
+        "notes": "USER_NOTE_ai",
+        "review": {
+          "type": "interface",
+          "prompt": "USER_AI_CONTEXT",
+          "proposal": "USER_PROPOSAL",
+          "basis": "USER_BASIS",
+          "limits": "USER_LIMITS",
+          "review": "USER_REVIEW",
+          "reason": "USER_DECISION",
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "collection": "pageSessions",
+      "type": "Sessions desades de Seguiment UX",
+      "key": "pageSessions:page",
+      "data": {
+        "id": "page",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "route": "/tracking",
+        "participant": "",
+        "task": "USER_TRACK_TASK",
+        "prototype": "v1",
+        "width": 700,
+        "height": 1200,
+        "viewportWidth": 700,
+        "viewportHeight": 500,
+        "seconds": 5,
+        "clicks": [
+          {
+            "x": 100,
+            "y": 600,
+            "at": 300,
+            "weight": 1,
+            "area": "example",
+            "source": "click",
+            "route": "/tracking"
+          }
+        ],
+        "pointer": [
+          {
+            "x": 120,
+            "y": 800,
+            "at": 350,
+            "weight": 1,
+            "area": "example",
+            "source": "pointer"
+          }
+        ],
+        "gaze": [
+          {
+            "x": 200,
+            "y": 900,
+            "at": 400,
+            "weight": 1,
+            "area": "example",
+            "source": "camera"
+          }
+        ],
+        "simulation": [
+          {
+            "x": 240,
+            "y": 700,
+            "at": 420,
+            "weight": 1,
+            "area": "example",
+            "source": "F"
+          }
+        ],
+        "scroll": [
+          {
+            "at": 200,
+            "top": 500,
+            "depth": 80,
+            "direction": "down"
+          }
+        ],
+        "maxDepth": 80,
+        "notes": "USER_TRACK_NOTE",
+        "capped": false,
+        "target": "example",
+        "coordinateSystem": "example-content",
+        "clickCount": 1,
+        "wheelEvents": 2,
+        "exampleCondition": "good",
+        "validation": {
+          "medianErrorPx": 70,
+          "viewportWidth": 700,
+          "viewportHeight": 500,
+          "sampleCount": 5,
+          "at": "2026-10-10T12:00:00.000Z"
+        }
+      }
+    },
+    {
+      "collection": "trackingSessions",
+      "type": "Sessions desades de Seguiment UX",
+      "key": "trackingSessions:oldtrack",
+      "data": {
+        "id": "oldtrack",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "example": "bad",
+        "width": 500,
+        "height": 1000,
+        "seconds": 0,
+        "clicks": [],
+        "pointer": [],
+        "gaze": [],
+        "scroll": [],
+        "wheelEvents": 0,
+        "maxDepth": 0,
+        "notes": "USER_OLD_TRACK",
+        "capped": false
+      }
+    },
+    {
+      "collection": "multimodalEvidence",
+      "type": "Activitat multimodal",
+      "key": "multimodalEvidence:multimodal",
+      "data": {
+        "id": "multimodal",
+        "createdAt": "2026-10-10T12:00:00.000Z",
+        "device": "mobile",
+        "practice": "good",
+        "vision": "normal",
+        "notes": "USER_MULTIMODAL",
+        "confidence": 4,
+        "demoStatus": "Original demonstration status",
+        "channelStatus": "Original channel status"
+      }
+    },
+    {
+      "collection": "events",
+      "type": "Esdeveniment del flux de reserva",
+      "key": "events:event",
+      "data": {
+        "id": "event",
+        "at": "2026-10-10T12:00:00.000Z",
+        "type": "flow-complete",
+        "detail": "booking-good",
+        "duration": 0
+      }
+    },
+    {
+      "collection": "a11yChecks",
+      "type": "Llista de comprovació d’accessibilitat",
+      "key": "a11yChecks:checks",
+      "data": {
+        "keyboard": true,
+        "contrast": false,
+        "id": "checks"
+      }
+    }
+  ]
+}
