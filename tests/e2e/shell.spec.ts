@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { shellResources } from '../../src/shellLocales';
-import { manageResources } from '../../src/manageLocales';
+import { shellResources } from '../../src/app/locales/shell';
+import { manageResources } from '../../src/features/project/locales';
 
 const routes = ['/', '/lab', '/concepts', '/research', '/practices', '/devices', '/multimodal', '/tracking', '/experiments', '/chatbots', '/reports', '/accessibility', '/evaluation', '/user-testing', '/metrics', '/ai', '/quality', '/course'];
 for (const theme of ['light', 'dark', 'contrast', 'dark-contrast']) {

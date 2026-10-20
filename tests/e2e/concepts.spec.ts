@@ -1,11 +1,11 @@
 ﻿import { test,expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { conceptResources } from '../../src/enhancements/concepts/locales';
-import { conceptIds } from '../../src/enhancements/concepts/model';
-import type { ConceptId } from '../../src/enhancements/concepts/model';
-import { emptyProject } from '../../src/projectBackup';
-import { manageResources } from '../../src/manageLocales';
+import { conceptResources } from '../../src/features/concepts/locales';
+import { conceptIds } from '../../src/features/concepts/model';
+import type { ConceptId } from '../../src/features/concepts/model';
+import { emptyProject } from '../../src/features/project/backup';
+import { manageResources } from '../../src/features/project/locales';
 type Language=keyof typeof conceptResources;
 type Labels=typeof conceptResources['es-CO']['ui'];
 const read=(page:Page)=>page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!));

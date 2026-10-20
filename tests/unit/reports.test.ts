@@ -1,9 +1,9 @@
 import {describe,it,expect} from 'vitest';
-import {collectRecords,emptyDraft,compareGroups,metricGroups,buildReport,blocksMarkdown,evidenceCSV,evidenceJSON,flatten,detailRows,recordCondition} from '../../src/reports/model';
-import {reportLanguages,reportResources} from '../../src/reports/locales';
+import {collectRecords,emptyDraft,compareGroups,metricGroups,buildReport,blocksMarkdown,evidenceCSV,evidenceJSON,flatten,detailRows,recordCondition} from '../../src/features/reports/model';
+import {reportLanguages,reportResources} from '../../src/features/reports/locales';
 import {reportsProject} from '../fixtures/reportsProject';
-import {parseBackup,createBackup,defaultPrefs,emptyProject} from '../../src/projectBackup';
-describe('iteration8 report model',()=>{
+import {parseBackup,createBackup,defaultPrefs,emptyProject} from '../../src/features/project/backup';
+describe('report model',()=>{
  it('preserves unknown historical conditions instead of inventing a rejection or an anti-pattern',()=>{const s=reportsProject();s.evidence=s.evidence!.filter(e=>['chatbot','ai','experiment'].includes(e.kind)).map(e=>({...e,condition:'ORIGINAL_UNKNOWN_CONDITION',review:undefined}));for(const record of collectRecords(s).filter(r=>r.collection==='evidence')){expect(recordCondition(record,'fr-FR')).toBe('ORIGINAL_UNKNOWN_CONDITION');}});
  it('integrates every collection without changing data and retains originals',()=>{const s=reportsProject(),old=JSON.stringify(s),records=collectRecords(s);expect(new Set(records.map(r=>r.collection))).toEqual(new Set(['personas','scenarios','appointments','findings','sessions','evidence','pageSessions','trackingSessions','multimodalEvidence','events','a11yChecks']));expect(records.find(r=>r.type==='persona')!.raw).toBe(s.personas[0]);expect(records.find(r=>r.collection==='pageSessions')!.raw).toBe(s.pageSessions![0]);expect(JSON.stringify(s)).toBe(old);expect(parseBackup(s).project).toEqual(s);});
  it('distinguishes absence from zero and does not combine task, condition, version or method',()=>{expect(metricGroups(collectRecords(emptyProject()))).toEqual([]);const s=reportsProject(),records=collectRecords(s);const legacy=records.find(r=>r.key==='sessions:legacy')!;expect(legacy.metrics.seconds).toBe(0);expect(legacy.metrics.success).toBe(0);expect(metricGroups(records).find(g=>g.record.key==='sessions:legacy')!.values.find(v=>v.key==='seconds')).toEqual({key:'seconds',mean:0,n:1});s.evidence!.push({...s.evidence![2],id:'other-task',task:'Different task'});const groups=metricGroups(collectRecords(s));expect(groups.find(g=>g.record.key==='evidence:ux-before')!.values.find(v=>v.key==='seconds')!.n).toBe(1);});

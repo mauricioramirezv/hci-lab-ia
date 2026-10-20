@@ -1,0 +1,51 @@
+# Iteración 7: experimentos, evaluación e IA responsable
+
+Se conservaron las rutas `/experiments`, `/evaluation`, `/ai`, `/chatbots` y `/user-testing`, los datos antiguos y las mejoras de las iteraciones anteriores. Informes recibió únicamente la integración necesaria para consultar y exportar los nuevos registros. No se publicó ni se hizo push, ni se avanzó a la iteración 8.
+
+## Implementación
+
+- Fitts y Hick se presentan uno a la vez con objetivo, instrucciones, práctica de dos intentos, ocho intentos medidos y resultado. Fitts compara 64/24 px; Hick compara 3/12 opciones. Práctica y medición están separadas; cancelar o cambiar de condición elimina el intento abierto, sin alterar registros guardados. Se guardan tiempos, errores, método de entrada y distancia/ID cuando corresponden, además del resumen. Los controles pequeños están limitados al tablero de Fitts.
+- Catálogo de diez heurísticas con explicación, pregunta y ejemplo ficticio. Hallazgos con interfaz/tarea, criterio, problema, evidencia/ubicación, gravedad explicada y recomendación; creación, consulta, edición y eliminación confirmada. La cantidad de hallazgos no genera una calificación global de usabilidad.
+- Los hallazgos antiguos conservan evidencia, identidad y gravedad. Se muestra su origen humano o de IA simulada y estado de revisión; al editar un hallazgo de IA se puede registrar explícitamente validación o rechazo, sin crear duplicados.
+- Propuestas locales simuladas para personas, escenarios, interfaces y recomendaciones. Cada propuesta muestra regla, límites y revisión necesaria. Aceptar, editar o rechazar guarda una decisión humana; no añade hallazgos automáticamente. La incorporación de una persona, escenario o hallazgo es una acción posterior, explícita y única. Los escenarios requieren una persona válida. Las personas propuestas se marcan como supuestos y sus campos de empatía quedan vacíos.
+- Dos chatbots con guiones equivalentes de accesibilidad. El antipatrón demuestra espera sin progreso ni detención en el ejemplo; el laboratorio permanece operable. La buena práctica permite detener, editar y regenerar, muestra estado y declara límites. La referencia WCAG es real. La rúbrica de claridad, control, tono y transparencia se guarda como valoración humana junto al mensaje y la respuesta revisada.
+- SUS y Raw TLX son formularios independientes, sin respuestas precargadas y con tarea y alias opcional. SUS conserva diez respuestas y calcula 0–100, sin interpretarlo como porcentaje. Raw TLX conserva las seis dimensiones y calcula promedio simple sin ponderación. Los borradores sobreviven al alternar formularios y al cambiar de idioma. Se conserva también el registro manual de sesión de tarea: tiempo, errores y éxito observados, con SEQ y emoción autodeclaradas opcionales, sin valores inventados.
+- Todo el contenido nuevo se tradujo a español, inglés, portugués, francés, italiano y catalán. Los textos de usuario, propuestas revisadas, guiones ya generados y registros históricos se conservan en su idioma original; cambiar el idioma modifica los controles, no reescribe evidencia.
+- Nuevos datos integrados con Informes, exportación CSV/Markdown, reset y respaldos. Los campos nuevos son opcionales para registros antiguos. Al importar nuevos registros se comprueban estructura y resultados SUS, Raw TLX y experimentales. Los cuestionarios nuevos se guardan en `evidence`, evitando crear sesiones antiguas con éxito, tiempo, SEQ o emociones ficticios.
+
+## Verificación
+
+- `npm run lint`: aprobado, sin advertencias de ESLint.
+- `npm test`: 101 pruebas aprobadas en 12 archivos. Incluye SUS 0, 50 y 100; Raw TLX 35 y 0; rechazo de respuestas parciales, fuera de rango, no enteras en SUS o no finitas; traducciones; respaldos antiguos y nuevos; informes.
+- `npm run build`: aprobado. Advertencia no bloqueante de Vite por paquete principal mayor de 500 kB (aproximadamente 785 kB antes de gzip).
+- Verificación final: 60 casos aprobados (`test-results-iteration-7-accepted`), incluida la edición y revisión humana de hallazgos heredados, sin duplicarlos.
+- Revisión focalizada: 57 casos aprobados (`test-results-iteration-7-review`), incluidos experimentos en ambas condiciones, hallazgos, IA, chatbots, cuestionarios, borradores, cambio de idioma, reset, recuperación y axe.
+- Regresión completa: `npm run test:e2e -- --workers=4 --output=test-results-iteration-7-final`, 339 aprobadas y 3 omisiones previstas (342 casos, 9,8 minutos), sin fallos. Se omiten zoom real en tableta/celular y el adaptador antiguo de cámara en celular; las pruebas nuevas de cámara simulada se mantienen en los tres tamaños.
+
+Axe y revisiones de ancho/foco cubren las cinco rutas y estados en claro, oscuro, alto contraste y oscuro con alto contraste. Los seis idiomas se comprueban en cada ruta, incluidas preguntas y ejemplos de las diez heurísticas y respuestas SUS. Los tamaños de escritorio, tableta y celular se prueban con Chromium; tableta y celular se emulan en Playwright. La regresión conserva la prueba existente de zoom real al 200 % en escritorio y las pruebas de las iteraciones anteriores.
+
+## Revisión manual
+
+1. Ejecute `npm run preview -- --host 127.0.0.1`. Abra `http://127.0.0.1:4173/hci-lab-ia/#/experiments`. Complete práctica y medición de Fitts, pruebe un objetivo equivocado y el fondo, guarde y cambie de tamaño. Repita con Hick y ambas cantidades de opciones. Compruebe cancelación, repetición, tiempos, errores y que solo se guardan ocho intentos medidos.
+2. En `/evaluation`, abra las diez heurísticas. Cree un hallazgo con evidencia real; pruebe guardar incompleto, corregir sin perder texto, editar y cancelar la eliminación, y luego eliminar con confirmación.
+3. En `/ai`, escriba contexto propio y genere una propuesta simulada. Revise regla, limitaciones y comprobaciones humanas. Acepte una, edite otra y rechace otra. Verifique que esas decisiones no crean varios hallazgos. Para incorporar, complete los campos revisados; un escenario requiere persona y criterio observable. Compruebe que la incorporación no puede repetirse con el mismo borrador.
+4. En `/chatbots`, escriba el mismo mensaje en ambos ejemplos. Compare la espera y el control. En la buena práctica detenga, edite y regenere; valore los cuatro criterios con justificación humana y guarde. No interprete el contenido deliberadamente falso del antipatrón como resultado.
+5. En `/user-testing`, abra SUS. Complete diez respuestas alternando 5/1: debe resultar 100; con todas en 3: 50; alternando 1/5: 0. Abra Raw TLX: 10, 20, 30, 40, 50 y 60 deben resultar 35. Un campo vacío o fuera de rango debe impedir guardar. Verifique los borradores al alternar, y registre una sesión manual sin SEQ/emoción para comprobar que no se inventan valores.
+6. Cambie entre los seis idiomas mientras escribe. Revise con Tab, Shift+Tab y Enter; compruebe el foco al abrir, iniciar, detener, cancelar y guardar, y pruebe lector de pantalla. Repita con los temas existentes, celular/tableta y zoom del navegador al 200 %.
+7. Consulte resultados en cada módulo e Informes. Exporte CSV/Markdown y un respaldo JSON; recargue. Descargue un respaldo antes de borrar datos propios. Pruebe cancelar reset, reset confirmado y recuperación. Los registros borrados no deben reaparecer al recargar. Pruebe reset mientras corre un experimento o un chatbot.
+
+## Límites y comprobaciones pendientes
+
+- Son actividades didácticas: ocho intentos no demuestran las leyes de Fitts/Hick, ni permiten inferir parámetros de una población. El tiempo incluye la activación y depende del navegador, dispositivo y forma de entrada. El primer intento de Fitts no inventa una distancia previa; los resultados de teclado y puntero no deben mezclarse sin justificar equivalencia.
+- IA y chatbots usan plantillas/guiones locales. No hay análisis automático de interfaces, modelo conectado, probabilidades ni confianza calculada. La alternativa de interfaz se guarda como propuesta revisada; no despliega ni modifica una interfaz automáticamente.
+- Raw TLX no implementa ponderación por comparaciones pareadas. Las traducciones de los cuestionarios son didácticas y no se presentan como versiones con validación psicométrica. Una investigación formal necesita revisar la versión del instrumento y su adecuación lingüística.
+- Falta la revisión humana de lector de pantalla, dispositivos físicos y calidad lingüística. Axe detecta solo parte de los problemas. Informes conserva su organización y los textos generales existentes; su rediseño/traducción completa sigue fuera de esta iteración.
+- No queda una función solicitada sin implementar; conexión a un modelo real, NASA-TLX ponderado y rediseño de Informes están fuera del alcance acordado.
+
+Referencias para revisar los métodos: [heurísticas de Nielsen](https://www.nngroup.com/articles/ten-usability-heuristics/), [gravedad de problemas](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/), [NASA-TLX](https://www.nasa.gov/human-systems-integration-division/nasa-task-load-index-tlx/), [Raw TLX: Hart, 2006](https://humanfactors.arc.nasa.gov/groups/tlx/downloads/HFES_2006_Paper.pdf), [SUS: Brooke, 1996](https://www.researchgate.net/publication/319394819_SUS_--_a_quick_and_dirty_usability_scale) y [WCAG 2.2](https://www.w3.org/TR/WCAG22/).
+
+## Archivos
+
+Capturas de revisión: [experimentos en escritorio](../../evidencias/evaluacion/desktop-experiments.png), [evaluación en tableta](../../evidencias/evaluacion/tablet-evaluation.png), [IA en celular](../../evidencias/evaluacion/mobile-ai.png), [chatbots en celular](../../evidencias/evaluacion/mobile-chatbots.png) y [Raw TLX](../../evidencias/evaluacion/desktop-user-testing.png). La carpeta contiene las cinco rutas en los tres tamaños.
+
+Componentes, traducciones y estilos en `src/iteration7/`; integración de rutas conservadas en `src/pages.tsx` y los componentes existentes de `src/enhancements/`. Tipos y validación en `src/domain.ts`, `src/enhancements/model.ts` y `src/projectBackup.ts`. Integración mínima de evidencia en `src/enhancements/Reports.tsx` y `reportModel.ts`. Pruebas nuevas en `tests/unit/iteration7.test.ts`, `tests/e2e/iteration7.spec.ts` e `iteration7-integrity.spec.ts` y `iteration7-legacy.spec.ts`; pruebas anteriores actualizadas para los nuevos controles y flujos.

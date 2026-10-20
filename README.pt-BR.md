@@ -51,4 +51,4 @@ MIT.
 
 Nova rota `#/multimodal`: oito contextos simulados; filtros aproximados de percepção de cores; reconhecimento e síntese de voz opcionais; som e vibração com resposta visual; observações persistentes no JSON do projeto. Controles e tabela do novo módulo estão traduzidos. Algumas páginas herdadas e atividades de conceitos permanecem em espanhol. APIs dependem do navegador; o hardware real exige verificação.
 
-See [README.md](README.md) and [ACTUALIZAR_WINDOWS.md](ACTUALIZAR_WINDOWS.md).
+See [README.md](README.md) and [ACTUALIZAR_WINDOWS.md](docs/historico/ACTUALIZAR_WINDOWS.md).

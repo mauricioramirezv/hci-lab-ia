@@ -15,3 +15,13 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run build
       - run: npm run test:e2e
+      - name: Downloadable Playwright reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-reports-${{ github.run_attempt }}
+          path: |
+            tests/reports/playwright/
+            tests/results/playwright/
+          retention-days: 14
+          if-no-files-found: ignore

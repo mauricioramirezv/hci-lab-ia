@@ -1,8 +1,13 @@
-node_modules
-dist
-playwright-report
-test-results
-coverage
+/node_modules/
+/dist/
+/playwright-report/
+/test-results*/
+/coverage/
+/tmp/
+/.tools/
+/Microsoft/
+__pycache__/
+*.pyc
 .env
 *.log
 *.tsbuildinfo
@@ -12,3 +17,10 @@ vitest.config.js
 vitest.config.d.ts
 playwright.config.js
 playwright.config.d.ts
+
+# Test outputs and optional local test tools
+/tests/results/
+/tests/reports/
+/tests/.tools/
+/tests/.cache/
+/.lighthouseci/

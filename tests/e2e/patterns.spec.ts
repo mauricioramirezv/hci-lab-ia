@@ -1,12 +1,12 @@
 import {test,expect} from '@playwright/test';
 import type {Page} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import {patternResources} from '../../src/enhancements/patterns/locales';
-import {patternIds} from '../../src/enhancements/patterns/model';
-import type {PatternId} from '../../src/enhancements/patterns/model';
-import {emptyProject} from '../../src/projectBackup';
+import {patternResources} from '../../src/features/patterns/locales';
+import {patternIds} from '../../src/features/patterns/model';
+import type {PatternId} from '../../src/features/patterns/model';
+import {emptyProject} from '../../src/features/project/backup';
 import {representativeProject} from '../fixtures/representativeProject';
-import {manageResources} from '../../src/manageLocales';
+import {manageResources} from '../../src/features/project/locales';
 type Language=keyof typeof patternResources;
 type Labels=typeof patternResources['es-CO']['ui'];
 const read=(page:Page)=>page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!));

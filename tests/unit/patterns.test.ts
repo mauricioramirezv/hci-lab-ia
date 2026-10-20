@@ -1,10 +1,10 @@
 import {describe,it,expect} from 'vitest';
-import {patternResources} from '../../src/enhancements/patterns/locales';
-import {patternIds,patternSearch} from '../../src/enhancements/patterns/model';
-import {patternObservationMarkdown} from '../../src/enhancements/patterns/report';
-import {createBackup,parseBackup,emptyProject,defaultPrefs} from '../../src/projectBackup';
-import {reportMarkdown} from '../../src/enhancements/reportModel';
-import type {Evidence} from '../../src/enhancements/model';
+import {patternResources} from '../../src/features/patterns/locales';
+import {patternIds,patternSearch} from '../../src/features/patterns/model';
+import {patternObservationMarkdown} from '../../src/features/patterns/report';
+import {createBackup,parseBackup,emptyProject,defaultPrefs} from '../../src/features/project/backup';
+import {reportMarkdown} from '../../src/features/reports/markdown';
+import type { Evidence } from '../../src/features/project/evidence';
 const observation:Evidence={id:'pattern-record',createdAt:'2026-10-09T12:00:00.000Z',kind:'pattern',participant:'',task:'Formulario',condition:'bad',prototype:'patterns-iteration-4',scores:{},notes:'Texto original ✍️',pattern:{id:'form',problem:'Texto original ✍️',principle:'Control del usuario',correction:'Conservar mi texto\nY explicar el error.'}};
 describe('pattern observations and resources',()=>{
   it('fully translates six distinct categories and examples in six languages',()=>{

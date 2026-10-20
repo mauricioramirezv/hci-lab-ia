@@ -51,4 +51,4 @@ MIT.
 
 Nouvelle route `#/multimodal` : huit contextes simulés ; filtres approximatifs de perception des couleurs ; reconnaissance et synthèse vocales facultatives ; son et vibration avec retour visuel ; observations persistantes dans le JSON du projet. Les commandes et le tableau du module sont traduits. Certaines pages existantes et activités conceptuelles restent en espagnol. Les API dépendent du navigateur ; le matériel réel doit être vérifié séparément.
 
-See [README.md](README.md) and [ACTUALIZAR_WINDOWS.md](ACTUALIZAR_WINDOWS.md).
+See [README.md](README.md) and [ACTUALIZAR_WINDOWS.md](docs/historico/ACTUALIZAR_WINDOWS.md).

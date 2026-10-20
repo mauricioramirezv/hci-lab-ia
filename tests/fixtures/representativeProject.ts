@@ -1,5 +1,5 @@
-import type { ProjectState } from '../../src/domain';
-import { sampleProject } from '../../src/domain';
+import type { ProjectState } from '../../src/features/project/domain';
+import { sampleProject } from '../../src/features/project/domain';
 export function representativeProject():ProjectState {
   const createdAt='2026-10-09T15:00:00.000Z';
   const point={x:20,y:30,at:100,weight:1,source:'mouse'};

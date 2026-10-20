@@ -1,6 +1,6 @@
-import {emptyProject} from '../../src/projectBackup';
-import type {ProjectState} from '../../src/domain';
-import type {Evidence} from '../../src/enhancements/model';
+import {emptyProject} from '../../src/features/project/backup';
+import type {ProjectState} from '../../src/features/project/domain';
+import type { Evidence } from '../../src/features/project/evidence';
 export function reportsProject():ProjectState{
  const s=emptyProject(),date='2026-10-10T12:00:00.000Z';
  s.personas=[{id:'persona',name:'Persona ficticia Álex',age:'',device:'USER_DEVICE',context:'USER_CONTEXT',goal:'Completar reserva',barrier:'Texto pequeño',basis:'mixed',observed:'Observación directa',assumptions:'Supuesto pendiente',emotionSource:'declared',empathy:{says:'USER_SAYS',thinks:'USER_THINKS',does:'USER_DOES',feels:'USER_FEELS'}}];

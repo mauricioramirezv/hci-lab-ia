@@ -1,10 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { activityLanguages, activityResources } from '../../src/projectActivities/locales';
-import { deletePersona, linkedPersona, localDay, sameBooking, savePersona, scheduleError, services, serviceContexts } from '../../src/projectActivities/model';
-import { createBackup, defaultPrefs, emptyProject, parseBackup } from '../../src/projectBackup';
+import { activityLanguages, activityResources } from '../../src/app/locales/projectActivities';
+import { deletePersona, linkedPersona, savePersona } from '../../src/features/research/model';
+import { localDay, sameBooking, scheduleError, services, serviceContexts } from '../../src/features/reservations/model';
+import { createBackup, defaultPrefs, emptyProject, parseBackup } from '../../src/features/project/backup';
 import { representativeProject } from '../fixtures/representativeProject';
 
-describe('iteration 5 data and compatibility',()=>{
+describe('reservations and research data and compatibility',()=>{
  it.each(activityLanguages)('provides every translated label in %s',lang=>{
   expect(Object.keys(activityResources[lang]).sort()).toEqual(Object.keys(activityResources['es-CO']).sort());
   expect(Object.values(activityResources[lang]).every(v=>typeof v==='string'&&v.trim().length>0)).toBe(true);

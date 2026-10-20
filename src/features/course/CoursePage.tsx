@@ -1,0 +1,6 @@
+import { course } from './content';
+import { PageHead, StatusPill } from '../../shared/ui/Page';
+
+export function CoursePage() {
+  return <><PageHead eyebrow="8 CLASSES" title="Evolución del curso" intro="Cada taller agrega evidencia al mismo sistema; las entregas consolidan, corrigen y justifican lo construido."/><div className="timeline">{course.map(([number, title, description, evidence]) => <article key={number}><span>{number}</span><div><div className="card-top"><h2>{title}</h2><StatusPill>{evidence}</StatusPill></div><p>{description}</p></div></article>)}</div><section className="panel traceability"><h2>Trazabilidad conceptual</h2><div className="table-wrap"><table><thead><tr><th>Artefacto</th><th>Decisión</th><th>Evidencia posterior</th></tr></thead><tbody><tr><td>Persona + empatía</td><td>Prioridad y contexto</td><td>Escenario y criterio de éxito</td></tr><tr><td>Flujo multiformato</td><td>Jerarquía por dispositivo</td><td>Prototipo y prueba E2E</td></tr><tr><td>Hallazgo heurístico</td><td>Corrección priorizada</td><td>Versión corregida y nueva prueba</td></tr><tr><td>Sesión de usuario</td><td>Valida o refuta hipótesis</td><td>Métricas y reflexión final</td></tr></tbody></table></div></section></>;
+}

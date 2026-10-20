@@ -1,4 +1,4 @@
-import { calculateMetrics, sampleProject } from '../../src/domain';
+import { calculateMetrics, sampleProject } from '../../src/features/project/domain';
 
 describe('calculated evidence metrics', () => {
   it('calculates completion, accessibility and user-study averages from evidence', () => {

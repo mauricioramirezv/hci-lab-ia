@@ -11,5 +11,15 @@ jobs:
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: npm run lint
-      - run: npm test
+      - run: npm test -- --reporter=default --reporter=junit --outputFile=tests/results/vitest.xml
       - run: npm run build
+      - name: Downloadable quality reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-reports-${{ github.run_attempt }}
+          path: |
+            tests/results/vitest.xml
+            tests/reports/coverage/
+          retention-days: 14
+          if-no-files-found: ignore

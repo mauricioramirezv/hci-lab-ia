@@ -1,8 +1,0 @@
-2026/10/10-11:46:31.497 1c240 Creating DB C:\Users\gramirez\Downloads\HCI_Lab_IA_V2-4\test-results-iteration-5-targeted\browser-zoom-actual-Chromium-browser-zoom-at-200--desktop-chromium\profile\Default\shared_proto_db since it was missing.
-2026/10/10-11:46:31.517 1c240 Reusing MANIFEST C:\Users\gramirez\Downloads\HCI_Lab_IA_V2-4\test-results-iteration-5-targeted\browser-zoom-actual-Chromium-browser-zoom-at-200--desktop-chromium\profile\Default\shared_proto_db/MANIFEST-000001
-2026/10/10-11:46:34.789 1fa68 Level-0 table #5: started
-2026/10/10-11:46:34.794 1fa68 Level-0 table #5: 524534 bytes OK
-2026/10/10-11:46:34.796 1fa68 Delete type=0 #3
-2026/10/10-11:46:36.299 f4e0 Level-0 table #7: started
-2026/10/10-11:46:36.304 f4e0 Level-0 table #7: 580498 bytes OK
-2026/10/10-11:46:36.308 f4e0 Delete type=0 #4

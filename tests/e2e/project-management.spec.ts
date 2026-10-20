@@ -2,9 +2,9 @@ import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { representativeProject } from '../fixtures/representativeProject';
-import { sampleProject } from '../../src/domain';
-import { defaultPrefs, emptyProject, createBackup } from '../../src/projectBackup';
-import { manageResources } from '../../src/manageLocales';
+import { sampleProject } from '../../src/features/project/domain';
+import { defaultPrefs, emptyProject, createBackup } from '../../src/features/project/backup';
+import { manageResources } from '../../src/features/project/locales';
 
 const project=representativeProject();
 const prefs={...defaultPrefs,dark:true,font:125,spacing:true,motion:true};

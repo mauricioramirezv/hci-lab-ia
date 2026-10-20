@@ -1,6 +1,6 @@
 # Actualización 2.4
 
-Proyecto completo para ejecución local: lea [LEEME_2_4.md](LEEME_2_4.md).
+Proyecto completo para ejecución local: lea [LEEME_2_4.md](docs/historico/LEEME_2_4.md).
 
 Incluye conceptos por temáticas, actividades medidas, reset global, seguimiento de página y ejemplos, mirada simulada/webcam, experimentos, chatbots guionizados, Raw TLX e informes académicos. Italiano/catalán amplían los controles y etiquetas; el contenido académico continúa en español.
 
@@ -78,7 +78,7 @@ Las pruebas E2E usan escritorio Chromium y emulación Pixel 7. La emulación no 
 
 ## Publicar en GitHub
 
-Siga [ACTUALIZAR_WINDOWS.md](ACTUALIZAR_WINDOWS.md). La copia no publica cambios; primero pruebe, haga commit e integre la rama en `main`. El workflow existente despliega GitHub Pages al recibir el push de `main`.
+Siga [ACTUALIZAR_WINDOWS.md](docs/historico/ACTUALIZAR_WINDOWS.md). La copia no publica cambios; primero pruebe, haga commit e integre la rama en `main`. El workflow existente despliega GitHub Pages al recibir el push de `main`.
 
 ## Referencias
 
@@ -89,4 +89,4 @@ Siga [ACTUALIZAR_WINDOWS.md](ACTUALIZAR_WINDOWS.md). La copia no publica cambios
 
 ## Arquitectura y contribución
 
-El código nuevo está en `src/components/multimodal/`; usa el contexto del proyecto en `src/store.tsx` y tipos aditivos en `src/domain.ts`. Consulte [docs/arquitectura.md](docs/arquitectura.md), [CONTRIBUTING.md](CONTRIBUTING.md) y [ACCESSIBILITY.md](ACCESSIBILITY.md).
+El código nuevo está en `src/features/multimodal/`; usa el contexto del proyecto en `src/features/project/store.tsx` y tipos aditivos en `src/features/project/domain.ts`. Consulte [docs/arquitectura.md](docs/arquitectura.md), [CONTRIBUTING.md](docs/contribuir.md) y [ACCESSIBILITY.md](docs/accesibilidad.md).

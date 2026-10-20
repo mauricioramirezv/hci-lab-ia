@@ -1,8 +1,0 @@
-"id","fecha","tipo","participante","tarea","condición","versión","datos","notas","Problema que identificó","Principio afectado","Cómo lo corregiría"
-"evidence-0","2026-10-09T15:00:00.000Z","concept","P01","Actividad concept","buena","v2.4","{""seconds"":12,""score"":50}","Evidencia representativa","","",""
-"evidence-1","2026-10-09T15:00:00.000Z","experiment","P01","Actividad experiment","buena","v2.4","{""seconds"":12,""score"":50}","Evidencia representativa","","",""
-"evidence-2","2026-10-09T15:00:00.000Z","tlx","P01","Actividad tlx","buena","v2.4","{""seconds"":12,""score"":50}","Evidencia representativa","","",""
-"evidence-3","2026-10-09T15:00:00.000Z","chatbot","P01","Actividad chatbot","buena","v2.4","{""seconds"":12,""score"":50}","Evidencia representativa","","",""
-"evidence-4","2026-10-09T15:00:00.000Z","ai","P01","Actividad ai","buena","v2.4","{""seconds"":12,""score"":50}","Evidencia representativa","","",""
-"evidence-5","2026-10-09T15:00:00.000Z","comparison","P01","Actividad comparison","buena","v2.4","{""seconds"":12,""score"":50}","Evidencia representativa","","",""
-"1791663204182-79p29o","2026-10-10T20:13:24.182Z","pattern","","Retroalimentación","good","patterns-iteration-4","{}","Problema escrito","Problema escrito","Visibilidad","Confirmación persistente"

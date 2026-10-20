@@ -1,8 +1,8 @@
 import { describe,it,expect,vi,afterEach } from 'vitest';
-import { sampleProject,calculateMetrics } from '../../src/domain';
-import { commitProject,createBackup,defaultPrefs,emptyProject,parseBackup,PROJECT_KEY,PREFS_KEY } from '../../src/projectBackup';
+import { sampleProject,calculateMetrics } from '../../src/features/project/domain';
+import { commitProject,createBackup,defaultPrefs,emptyProject,parseBackup,PROJECT_KEY,PREFS_KEY } from '../../src/features/project/backup';
 import { representativeProject } from '../fixtures/representativeProject';
-import { manageResources } from '../../src/manageLocales';
+import { manageResources } from '../../src/features/project/locales';
 
 afterEach(()=>vi.restoreAllMocks());
 describe('project backup validation',()=>{

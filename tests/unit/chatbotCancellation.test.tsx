@@ -1,14 +1,14 @@
 import {act,cleanup,fireEvent,render,screen,within} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
-import {ProjectProvider} from '../../src/store';
-import {Chatbots7} from '../../src/iteration7/Chatbots';
-import i18n from '../../src/i18n';
+import {ProjectProvider} from '../../src/features/project/store';
+import { Chatbots } from '../../src/features/chatbots/Chatbots';
+import i18n from '../../src/app/i18n';
 
 afterEach(()=>{cleanup();vi.useRealTimers();});
 
 it('keeps an editable, focused response when stopped before the first word, including regeneration',async()=>{
   localStorage.clear();await i18n.changeLanguage('es-CO');vi.useFakeTimers();
-  render(<MemoryRouter><ProjectProvider><Chatbots7/></ProjectProvider></MemoryRouter>);
+  render(<MemoryRouter><ProjectProvider><Chatbots/></ProjectProvider></MemoryRouter>);
   const chat=within(screen.getByRole('heading',{name:'Chatbot B: buena práctica'}).closest('section')!);
   fireEvent.change(chat.getByLabelText('Mensaje editable'),{target:{value:'Review keyboard access'}});
   fireEvent.click(chat.getByRole('button',{name:'Enviar mensaje'}));
