@@ -1,19 +1,10 @@
 import type { Evidence } from './evidence';
 import type { PageSession } from '../tracking/pageSession';
 import type { TrackingSession } from '../tracking/model';
+import type { Appointment } from '../reservations/domain/types';
+export type { Appointment } from '../reservations/domain/types';
 export type Source = 'human' | 'ai';
 export type FindingStatus = 'pending' | 'validated' | 'rejected';
-
-export type Appointment = {
-  id: string;
-  service: string;
-  date: string;
-  time: string;
-  status: 'confirmed' | 'cancelled';
-  createdAt: string;
-  serviceId?: 'advice' | 'workshop' | 'health' | 'visit' | 'culture';
-  condition?: 'good' | 'bad';
-};
 
 export type Persona = {
   id: string;

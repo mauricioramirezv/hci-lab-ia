@@ -21,7 +21,7 @@ import { CoursePage } from '../features/course/CoursePage';
 import { DashboardPage } from '../features/dashboard/DashboardPage';
 import { DevicesPage } from '../features/devices/DevicesPage';
 import { EvaluationPage } from '../features/evaluation/EvaluationPage';
-import { LabPage } from '../features/reservations/LabPage';
+import { LabPage } from '../features/reservations/presentation/LabPage';
 import { MetricsPage } from '../features/metrics/MetricsPage';
 import { QualityPage } from '../features/quality/QualityPage';
 import { ResearchPage } from '../features/research/ResearchPage';

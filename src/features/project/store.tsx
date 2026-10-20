@@ -10,11 +10,14 @@ import { useTranslation } from 'react-i18next';
 import { shutdownGazer, getGazer } from '../tracking/webgazer';
 import type { TrackingSession } from '../tracking/model';
 import { savePersona, deletePersona } from '../research/model';
-import { sameBooking } from '../reservations/model';
+import { createReservationOperations } from '../reservations/application/operations';
+import type { ReservationOperations } from '../reservations/application/operations';
+import { createProjectReservationRepository } from '../reservations/infrastructure/projectReservationRepository';
 
 const STORAGE_KEY = PROJECT_KEY;
 
 type Store = {
+  reservations: ReservationOperations;
   saveReportDraft: (draft:ReportDraft) => boolean;
   epoch: number;
   addEvidence: (item: Omit<Evidence, 'id' | 'createdAt'>) => void;
@@ -63,6 +66,8 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
   const { t } = useTranslation();
   const [initial] = useState(readProject);
   const [state, setState] = useState<ProjectState>(initial.state);
+  // One project object: the ref makes commands atomic before React publishes its view.
+  const currentProject = useRef(state);
   const [errorKey, setErrorKey] = useState(initial.invalid ? 'manage.storedInvalid' : '');
   const storageError = errorKey ? t(errorKey) : '';
   useEffect(() => {
@@ -76,22 +81,42 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
     generation.current++;
     try { shutdownGazer(); void getGazer()?.clearData().catch(()=>{}); } catch { /* Component cleanup also releases camera. */ }
     try { window.speechSynthesis?.cancel(); navigator.vibrate?.(0); } catch { /* Optional browser APIs. */ }
-    setState(project); setEpoch(v=>v+1); setErrorKey('');
+    currentProject.current=project; setState(project); setEpoch(v=>v+1); setErrorKey('');
     return true;
   };
-  const update = (fn: (current: ProjectState) => ProjectState) => setState((current) => generation.current===revision ? fn(current) : current);
+  const update = (fn: (current: ProjectState) => ProjectState) => {
+    if (generation.current!==revision) return;
+    const next=fn(currentProject.current);
+    currentProject.current=next; setState(next);
+  };
   const log = (event: Omit<LabEvent, 'id' | 'at'>) => update((current) => ({ ...current, events: [...current.events, { ...event, id: uid(), at: new Date().toISOString() }] }));
+  const reservations = createReservationOperations(createProjectReservationRepository({
+    read: () => currentProject.current,
+    isCurrent: () => generation.current===revision,
+    save: project => {
+      if (initial.invalid && currentProject.current===initial.state) throw new Error('Invalid stored project requires recovery');
+      commitProject(project);
+      currentProject.current=project; setState(project); setErrorKey('');
+    },
+    onStorageError: () => setErrorKey('manage.storageFailed'),
+  }), {id:uid, now:() => new Date()});
 
   const value: Store = {
-    saveReportDraft: draft => {if(generation.current!==revision)return false;try {commitProject({...state,reportDraft:draft});update(current=>({...current,reportDraft:draft}));setErrorKey('');return true;}catch{setErrorKey('manage.storageFailed');return false;}},
+    saveReportDraft: draft => {if(generation.current!==revision)return false;try {commitProject({...currentProject.current,reportDraft:draft});update(current=>({...current,reportDraft:draft}));setErrorKey('');return true;}catch{setErrorKey('manage.storageFailed');return false;}},
+    reservations,
     state, epoch,
     addEvidence: (item) => update(current => ({...current, evidence: [...(current.evidence || []), {...item, id: uid(), createdAt: new Date().toISOString()}]})),
     removeEvidence: (id) => update(current => ({...current, evidence: (current.evidence || []).filter(e => e.id !== id)})),
     addPageSession: (item) => update(current => ({...current, pageSessions: [...(current.pageSessions || []), {...item, id: uid(), createdAt: new Date().toISOString()}]})),
     removePageSession: (id) => update(current => ({...current, pageSessions: (current.pageSessions || []).filter(e => e.id !== id)})),
     storageError,
-    addAppointment: (item) => update((current) => current.appointments.some(a=>sameBooking(a,item)) ? current : ({ ...current, appointments: [...current.appointments, { ...item, id: uid(), status: 'confirmed', createdAt: new Date().toISOString() }] })),
-    updateAppointment: (id, patch) => update((current) => ({ ...current, appointments: current.appointments.map((item) => item.id === id ? { ...item, ...patch } : item) })),
+    // Compatibility for existing project callers; the legacy example keeps its date policy.
+    addAppointment: item => { reservations.create(item,{variant:'example'}); },
+    updateAppointment: (id, patch) => {
+      if (patch.status==='cancelled') { reservations.cancel(id); return; }
+      const previous=reservations.get(id);
+      if (previous) reservations.reschedule(id,{...previous,...patch},'example');
+    },
     addPersona: (item) => update((current) => ({ ...current, personas: [...current.personas, item] })),
     savePersona: (item) => update(current=>savePersona(current,item)),
     removePersona: (id) => update(current=>deletePersona(current,id)),

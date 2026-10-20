@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 import { AlertTriangle, CalendarCheck, Check, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useProject } from '../project/store';
-import { StatusPill } from '../../shared/ui/Page';
+import { useReservations } from './useReservations';
+import { StatusPill } from '../../../shared/ui/Page';
 
 export function AppointmentFlow({ bad = false, compact = false }: { bad?: boolean; compact?: boolean }) {
   const { t } = useTranslation();
-  const { addAppointment, log } = useProject();
+  const { create, validate, log } = useReservations();
   const [step, setStep] = useState(1);
   const [service, setService] = useState('');
   const [date, setDate] = useState('');
@@ -17,14 +17,15 @@ export function AppointmentFlow({ bad = false, compact = false }: { bad?: boolea
   const ensureStart = () => { if (!startLogged.current) { log({ type: 'flow-start', detail: bad ? 'bad' : 'good' }); startLogged.current = true; } };
   const next = () => {
     ensureStart();
-    if (!bad && ((step === 1 && !service) || (step === 2 && (!date || !time)))) { setMessage(step === 1 ? t('lab.select') : t('lab.goodMessage')); log({ type: 'flow-error', detail: `step-${step}` }); return; }
+    const errors=validate({service,date,time},{variant:'example',stage:step===1?'selection':'schedule'});
+    if (!bad && Object.keys(errors).length) { setMessage(step === 1 ? t('lab.select') : t('lab.goodMessage')); log({ type: 'flow-error', detail: `step-${step}` }); return; }
     setMessage(''); setStep((current) => Math.min(3, current + 1));
   };
   const confirm = () => {
     ensureStart();
     if (bad) { setMessage(t('lab.badMessage')); log({ type: 'flow-error', detail: 'bad-confirmation' }); return; }
-    if (!service || !date || !time) { setMessage(t('lab.goodMessage')); log({ type: 'flow-error', detail: 'incomplete-confirmation' }); return; }
-    addAppointment({ service, date, time });
+    const result=create({service,date,time},{variant:'example'});
+    if (!result.ok) { setMessage(result.reason==='storageFailed'?t('manage.storageFailed'):t('lab.goodMessage')); log({ type: 'flow-error', detail: 'incomplete-confirmation' }); return; }
     log({ type: 'flow-complete', duration: Math.round((Date.now() - started.current) / 1000), detail: service });
     setMessage(t('lab.success'));
   };

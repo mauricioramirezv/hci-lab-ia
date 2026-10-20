@@ -14,6 +14,7 @@ Los documentos de esta carpeta registran trabajo y paquetes anteriores. Sus coma
 - [Informes académicos](informes/informes.md).
 - [Limpieza de generados](informes/limpieza.md).
 - [Organización por dominios](informes/organizacion-repositorio.md).
+- [Arquitectura del módulo de reservas](informes/arquitectura-reservas.md).
 
 ## Paquetes anteriores
 

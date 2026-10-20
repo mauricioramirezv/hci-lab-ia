@@ -9,7 +9,7 @@ src/
   app/                  entrada, navegación, composición, idioma y estilos globales
   features/
     project/            estado, respaldo y gestión del proyecto
-    reservations/       flujo de reserva y ejemplos de citas
+    reservations/       dominio, operaciones, adaptador y presentación de reservas
     research/           personas, empatía y escenarios
     concepts/           catálogo y actividades de conceptos
     patterns/           catálogo y actividades de patrones
@@ -65,3 +65,5 @@ Las copias locales y el inventario del estado recibido se conservan fuera del se
 Las pantallas antes reunidas en un único archivo se ubican en su dominio. Se conservan las demostraciones anteriores y se eliminan tres archivos que solo reenviaban exportaciones; sus consumidores importan los componentes concretos con el mismo nombre local.
 
 Vite conserva la base `/hci-lab-ia/` y toma `src/app/main.tsx` desde `index.html`. Los comandos npm pasan la configuración de pruebas explícitamente. Pages sigue compilando `dist/` con el mismo workflow.
+
+Reservas organiza sus archivos en `domain/`, `application/`, `infrastructure/` y `presentation/`; la [guía de arquitectura](arquitectura.md) explica sus dependencias y la integración con el store. Esta separación se aplica únicamente a reservas.

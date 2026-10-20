@@ -4,7 +4,9 @@ import { ProjectProvider, useProject } from '../../src/features/project/store';
 import { sampleProject } from '../../src/features/project/domain';
 import { defaultPrefs, emptyProject, PROJECT_KEY, PREFS_KEY, LANGUAGE_KEY } from '../../src/features/project/backup';
 import i18n from '../../src/app/i18n';
-import {emptyDraft} from '../../src/features/reports/model';
+import {collectRecords,emptyDraft} from '../../src/features/reports/model';
+import { StrictMode } from 'react';
+import { createBackup, parseBackup } from '../../src/features/project/backup';
 
 let store:ReturnType<typeof useProject>;
 function Probe(){store=useProject();return null;}
@@ -70,4 +72,57 @@ it('preserves an invalid original storage record until explicit recovery or rese
   act(()=>{expect(store.reset()).toBe(true);});
   expect(JSON.parse(localStorage.getItem(PROJECT_KEY)!)).toEqual(emptyProject());
   expect(store.storageError).toBe('');
+});
+
+it('commits reservation operations against the latest project, including batched events and report drafts in StrictMode',()=>{
+  render(<StrictMode><ProjectProvider><Probe/></ProjectProvider></StrictMode>);
+  const command={service:'Consulta RAW',serviceId:'health' as const,date:'2099-10-20',time:'10:30'};
+  act(()=>{
+    store.log({type:'flow-start',detail:'Keep this event'});
+    expect(store.reservations.create(command,{context:'healthcare'}).ok).toBe(true);
+    expect(store.reservations.create({...command,service:'Other language'},{context:'healthcare'})).toEqual({ok:false,errors:{time:'duplicate'}});
+    expect(store.saveReportDraft({...emptyDraft(),projectName:'Keep this draft'})).toBe(true);
+  });
+  expect(store.state.appointments).toHaveLength(1);
+  expect(store.state.events[0].detail).toBe('Keep this event');
+  expect(store.state.reportDraft?.projectName).toBe('Keep this draft');
+  expect(collectRecords(store.state).some(record=>record.key===`appointments:${store.state.appointments[0].id}`)).toBe(true);
+  const persisted=JSON.parse(localStorage.getItem(PROJECT_KEY)!);
+  expect(persisted).toEqual(JSON.parse(JSON.stringify(store.state)));
+  expect(parseBackup(createBackup(store.state,defaultPrefs,'ca-ES')).project).toEqual(store.state);
+});
+
+it('does not publish unpersisted creation, rescheduling or cancellation and allows a retry',()=>{
+  render(<ProjectProvider><Probe/></ProjectProvider>);
+  const command={service:'Consulta',serviceId:'health' as const,date:'2099-10-20',time:'10:30'};
+  const before=store.state;
+  const failure=vi.spyOn(Storage.prototype,'setItem').mockImplementation(()=>{throw new Error('quota');});
+  act(()=>{expect(store.reservations.create(command,{context:'healthcare'})).toEqual({ok:false,errors:{},reason:'storageFailed'});});
+  expect(store.state).toBe(before);expect(store.storageError).toBe(i18n.t('manage.storageFailed'));
+  failure.mockRestore();
+  act(()=>{expect(store.reservations.create(command,{context:'healthcare'}).ok).toBe(true);});
+  const original=store.state.appointments[0],saved=localStorage.getItem(PROJECT_KEY);
+  const anotherFailure=vi.spyOn(Storage.prototype,'setItem').mockImplementation(()=>{throw new Error('quota');});
+  act(()=>{
+    expect(store.reservations.reschedule(original.id,{...command,date:'2099-10-21'}).ok).toBe(false);
+    expect(store.reservations.cancel(original.id).ok).toBe(false);
+  });
+  expect(store.state.appointments[0]).toBe(original);expect(localStorage.getItem(PROJECT_KEY)).toBe(saved);
+  anotherFailure.mockRestore();act(()=>{expect(store.reservations.cancel(original.id).ok).toBe(true);});
+  expect(store.state.appointments[0]).toMatchObject({id:original.id,createdAt:original.createdAt,status:'cancelled'});
+});
+
+it('invalidates reservation commands on reset and recovery without introducing another source of data',()=>{
+  render(<ProjectProvider><Probe/></ProjectProvider>);
+  const command={service:'Consulta',serviceId:'health' as const,date:'2099-10-20',time:'10:30'};
+  act(()=>{store.reservations.create(command,{context:'healthcare'});});
+  const original=store.state,old=store.reservations;
+  act(()=>{expect(store.reset()).toBe(true);});
+  act(()=>{expect(old.create(command,{context:'healthcare'})).toEqual({ok:false,errors:{},reason:'staleProject'});});
+  expect(store.state.appointments).toEqual([]);expect(store.reservations.list()).toEqual([]);
+  const resetCommands=store.reservations;
+  act(()=>{expect(store.importProject(original)).toBe(true);});
+  act(()=>{expect(resetCommands.cancel(original.appointments[0].id)).toEqual({ok:false,errors:{},reason:'staleProject'});});
+  expect(store.reservations.get(original.appointments[0].id)).toEqual(original.appointments[0]);
+  expect(JSON.parse(localStorage.getItem(PROJECT_KEY)!).appointments).toEqual(JSON.parse(JSON.stringify(original.appointments)));
 });
