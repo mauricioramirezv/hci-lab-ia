@@ -1,6 +1,6 @@
 import { Presets } from './Presets';
 import { calculateMetrics } from '../project/domain';
-import { useProject } from '../project/store';
+import { useProject } from '../project/presentation';
 import { PageHead } from '../../shared/ui/Page';
 
 export function DashboardPage() {

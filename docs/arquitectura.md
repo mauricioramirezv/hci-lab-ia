@@ -1,63 +1,74 @@
 # Arquitectura
 
-HCI Lab + IA usa React, TypeScript y Vite. Es una aplicación front-end sin base de datos: conserva el proyecto académico en `localStorage`, permite importar/exportar JSON y se publica mediante GitHub Pages.
+HCI Lab + IA usa React, TypeScript y Vite. Conserva un proyecto académico local, sin backend ni base de datos. Las rutas, claves de almacenamiento, identificadores y formatos de respaldo existentes se mantienen.
 
-## Capas
+## Organización y dependencias
 
-La [estructura del repositorio](estructura.md) asigna entrada y composición a `src/app/`, funcionalidades a `src/features/` y UI/utilidades compartidas a `src/shared/`. Las responsabilidades siguientes describen el funcionamiento existente; no requieren capas adicionales de carpetas.
+`src/app/` compone navegación, proveedores, idiomas y estilos globales. `src/features/` agrupa funcionalidades por dominio. `src/shared/` contiene UI y utilidades usadas por varios dominios; no importa funcionalidades.
 
-1. **Dominio:** citas, personas, escenarios, hallazgos, sesiones y eventos tipados.
-2. **Estado:** `ProjectProvider` aplica CRUD y persistencia local versionada.
-3. **Experiencia:** flujo real, patrones, dispositivos, accesibilidad e instrumentos UX.
-4. **Evaluación:** heurísticas humanas y propuestas de IA con validación o rechazo.
-5. **Evidencia:** métricas derivadas, JSON del proyecto y CSV de indicadores.
-6. **IA:** contrato `AiProvider`, proveedor local y adaptador para proxy seguro.
-7. **Calidad:** Vitest, Testing Library, Playwright, Selenium, axe, Lighthouse y Katalon.
+Reservas sirve como referencia. Los módulos solicitados separan responsabilidades en capas con contenido concreto:
 
-El proveedor de IA es simulado para evitar exponer claves. Un proveedor real debe implementar el contrato `AiProvider` mediante un servicio seguro y configurarse con `VITE_AI_PROXY_URL`. La clave permanece exclusivamente en el servidor.
+| Capa | Responsabilidad |
+| --- | --- |
+| `domain/` | Entidades, validaciones y cálculos puros. No importa React, DOM, traducciones, almacenamiento ni aplicación. |
+| `application/` | Operaciones, entradas/salidas y contratos mínimos. Recibe persistencia, escritores, identificadores o reloj cuando los necesita. |
+| `infrastructure/` | Almacenamiento, proveedores externos y adaptadores del navegador. La composición de los servicios del proyecto también reside aquí. |
+| `presentation/` | Componentes, hooks, textos, foco y efectos de interfaz, con su liberación al salir. |
 
-## Flujo de datos
+No se crean repositorios independientes para cada evidencia. Los módulos sin almacenamiento propio usan el escritor de evidencias del proyecto. Conceptos, patrones, evaluación y experimentos no necesitan una carpeta de infraestructura propia. Las traducciones y catálogos existentes siguen en sus módulos con las mismas claves.
 
-`Interacción → acción del store → localStorage → cálculo de métricas → exportación`.
+Cada capa publica un `index.ts`. Los imports entre módulos usan esos puntos de entrada; los imports internos se mantienen locales. El agregado necesita únicamente el contrato `reports/domain/draft.ts`, que se importa directamente para evitar un ciclo de tipos con el catálogo de informes. `evaluation/content.ts`, `reports/format.ts` y `tracking/format.ts` son entradas de contenido o formato sin componentes ni CSS, utilizables desde Node y exportaciones. Los `index.ts` de presentación incluyen componentes y se reservan para la interfaz.
 
-Los videos LSC nunca se suben ni se conservan: la URL temporal existe solo durante la sesión. La muestra debe ser validada por una persona competente en Lengua de Señas Colombiana.
+## Módulos
 
+| Módulo | Dominio | Operaciones y adaptadores | Presentación |
+| --- | --- | --- | --- |
+| Reservas | Fechas, obligatoriedad, duplicados y estados | Consultar, crear, reprogramar y cancelar; adaptador del mismo proyecto | Flujo, citas y hook |
+| Personas, empatía y escenarios | Procedencia, campos, nombres y vínculos antiguos | Guardar y eliminar sobre el proyecto vigente; compatibilidad explícita con ejemplos antiguos | Formularios y detalles |
+| Conceptos y patrones | Puntuaciones declaradas, mediciones y observaciones | Construcción y registro de evidencias, propagando fallos | Catálogos y demostraciones |
+| Evaluación | Entidades, validación de hallazgos/tareas, SUS y Raw TLX | Hallazgos, sesiones y cuestionarios | Instrumentos, registros y contenido traducido |
+| Experimentos | Geometría de Fitts, ensayos y agregados | Registro de ocho mediciones, sin incluir la práctica | Objetivos, eventos, reloj y controles |
+| IA y chatbots | Revisión, incorporación, progresión de respuesta y rúbrica | Incorporación explícita y evidencia humana; contrato de proveedor, proxy/local y temporizador como adaptadores | Propuestas, conversación y decisiones |
+| Seguimiento y multimodal | Geometría, muestras acotadas, validación de mirada, comandos y estados | Sesiones/evidencias sobre el proyecto; coordenadas DOM y WebGazer como adaptadores | Captura, cámara, mapas, voz y simuladores |
+| Informes | Colecciones, comparaciones compatibles, unidades y bloques | Guardado explícito de borrador y exportación con renderizador/escritor recibidos | Filtros, formatos traducidos y vista imprimible |
+| Proyecto y accesibilidad | Agregado, preferencias, validación de respaldos y desplazamiento motriz | Evidencias, eventos, reset, recuperación y checklist; almacenamiento y recursos sensoriales aislados | Proveedor React, diálogo y demostraciones |
 
-## Multimodal
+Dashboard, dispositivos, métricas, curso y calidad conservan sus pantallas existentes y consumen las entradas públicas actualizadas. No se presentan como migraciones adicionales.
 
-`src/app/App.tsx` registra la ruta; `src/features/multimodal/MultimodalPage.tsx` coordina selección, demostraciones y evidencias. Componentes separados implementan color, comparación, smartwatch, vehículo, voz y respuestas hápticas/sonoras. `ConceptActivity.tsx` registra observaciones humanas como hallazgos. Los recursos JSON se añaden a i18next.
+## Estado y persistencia
 
-`ProjectState.multimodalEvidence` es opcional para mantener compatibilidad con JSON de v2. El store añade evidencias mediante actualizaciones funcionales, conserva los datos anteriores y utiliza el almacenamiento/exportación ya existente.
+El único agregado es `ProjectState`. `ProjectProvider` mantiene el objeto vigente en una referencia y publica su vista en React. `createProjectServices` compone las operaciones; `ProjectRepository.transact` aplica cada cambio sobre el objeto vigente, persiste y solo entonces publica el resultado. Reservas conserva su contrato específico y adapta el mismo agregado. No hay almacenamiento secundario de reservas ni de evidencias.
 
-El modelo, el store y los respaldos se encuentran en `src/features/project/`. `src/app/i18n.ts` registra los recursos de los seis idiomas sin cambiar sus claves. Las [pruebas y sus recursos](pruebas.md) están centralizados en `tests/`.
+Todas las escrituras de almacenamiento están en `features/project/infrastructure/storage.ts`. Se mantienen `hci-lab-ia-project-v2`, `hci-prefs-v2` y `hci-language`, los datos de proyecto versión 2 y los metadatos de respaldo versión 1. `commitProject` conserva su restauración de claves anteriores si falla una sustitución con preferencias.
 
-## Arquitectura de reservas
+Las operaciones consecutivas observan las anteriores antes del siguiente render. La inicialización no reescribe una instantánea antigua si un efecto hijo ya ejecutó un comando. Una escritura fallida devuelve fallo, conserva memoria y almacenamiento anteriores, mantiene los borradores y permite reintentar. Los componentes confirman guardado solo después del éxito. Los borradores de informes conservan su guardado explícito y formato; guardarlos combina el borrador con el agregado vigente.
 
-Solo `src/features/reservations/` adopta esta separación. Los demás módulos conservan su organización y no se declaran migrados.
-
-| Carpeta | Responsabilidad y dependencias |
-|---|---|
-| `domain/` | Tipo `Appointment`, servicios, campos obligatorios, fechas locales, duplicados y estados. Solo TypeScript y `Date`; devuelve códigos como `dateInvalid`, `timePast` o `duplicate`. |
-| `application/` | Consultar, crear, reprogramar y cancelar. Depende del dominio y del contrato concreto `ReservationRepository`; recibe reloj e identificadores. |
-| `infrastructure/` | Adapta el contrato al proyecto completo vigente. Conserva las otras colecciones y delega el guardado al mecanismo existente del store. |
-| `presentation/` | Páginas, componentes y `useReservations`. Traduce códigos, controla pasos, foco y anuncios; no accede al almacenamiento. |
+Reset y recuperación persisten antes de sustituir el agregado, incrementan la generación y rechazan los comandos anteriores. La lectura asíncrona de un respaldo también comprueba si sigue vigente. Se mantienen los ejemplos didácticos y las políticas de datos antiguos; los métodos de compatibilidad no imponen retroactivamente requisitos nuevos a esos ejemplos.
 
 ```mermaid
 flowchart LR
-    UI[Reservations / useReservations] --> OP[Operación crear o reprogramar]
-    OP --> RULES[Reglas del dominio]
-    OP --> PORT[ReservationRepository]
-    PORT --> ADAPTER[Adaptador del proyecto]
-    ADAPTER --> STORE[commitProject y publicación en el store]
-    STORE --> STORAGE[localStorage: hci-lab-ia-project-v2]
+    UI[Interfaz / hook] --> OP[Operación del módulo]
+    OP --> RULES[Reglas y cálculos puros]
+    OP --> PORT[Transacción o escritor del proyecto]
+    PORT --> SAVE[commitProject]
+    SAVE --> STORAGE[localStorage existente]
+    SAVE --> VIEW[Publicar estado vigente en React]
 ```
 
-Por ejemplo, al confirmar una reserva, la interfaz entrega servicio, fecha, hora y condición a `create`. La operación valida sobre las reservas actuales dentro de `transact`, asigna el identificador mediante el mismo `uid` del proyecto y devuelve el registro. El adaptador guarda el proyecto completo mediante `commitProject`; solo después publica el nuevo estado y confirma éxito a la interfaz. Si falla el almacenamiento, no publica la reserva ni muestra una confirmación de guardado.
+Por ejemplo, guardar una persona ejecuta `research.savePersona`: valida sobre las personas y escenarios actuales, conserva o actualiza sus vínculos y solicita una transacción del proyecto. El adaptador guarda el agregado mediante `commitProject`. Solo si termina correctamente la interfaz vuelve a la lista y anuncia el guardado. Reservas sigue el mismo recorrido con `ReservationRepository`.
 
-El store sigue siendo la única fuente del proyecto. Una referencia al mismo objeto mantiene disponibles los cambios más recientes mientras React publica su vista, de modo que dos comandos consecutivos no validen contra una lista antigua. Todas las actualizaciones del store pasan por esa referencia; reset y recuperación la sustituyen e invalidan los comandos de generaciones anteriores. No hay una tabla, caché de reservas, clave de almacenamiento o persistencia adicional. Las firmas antiguas `addAppointment` y `updateAppointment` delegan en las operaciones para mantener compatibilidad con consumidores existentes.
+## Navegador, recursos y exportaciones
 
-Se mantienen rutas, identificadores, `createdAt`, condiciones, historial de canceladas, respaldo versión 2, informes y preferencias. El tipo `Appointment` se reexporta desde el dominio del proyecto para no romper sus consumidores. Los seis idiomas continúan usando las claves existentes. El ejemplo multiformato conserva su validación mínima de presencia; el flujo del catálogo conserva fechas futuras y validación completa. Ambos comparten la comprobación de duplicados al guardar. La variante deliberadamente mala del ejemplo sigue siendo una demostración y no confirma reservas.
+Los temporizadores y eventos permanecen en adaptadores o efectos de presentación. La geometría, el muestreo, las puntuaciones y la validación de mirada pueden probarse sin navegador ni cámara. WebGazer sigue siendo un adaptador opcional; la mirada y las rutas simuladas se conservan separadas. Reset y las salidas de pantalla liberan los recursos existentes de cámara, micrófono, voz y temporizadores.
 
-Las pruebas de reglas, operaciones y adaptador están en `tests/unit/reservation*.test.ts` y se ejecutan en Node sin React, DOM ni `localStorage`. `projectStore.test.tsx` comprueba integración, guardado fallido, escrituras consecutivas, reset y recuperación. `reservations-persistence.spec.ts` comprueba que la interfaz no confirme escrituras fallidas y permita reintentar. Los recorridos existentes cubren idiomas, temas, reservas históricas y respaldos.
+Las demostraciones de IA siguen siendo locales y requieren revisión humana. El contrato `AiProvider` y sus implementaciones existentes quedan separados; el proxy opcional usa `VITE_AI_PROXY_URL` y no incorpora claves en el cliente. No se añade una conexión ni un backend.
 
-Para comprobar dependencias, ejecute desde la raíz `node tests/tools/check-reservation-dependencies.cjs`. El análisis recorre imports, reexports e imports de tipos de todo `src/`, detecta ciclos y comprueba que dominio y aplicación de reservas no dependan de React, DOM, almacenamiento ni otros módulos. No añade herramientas ni dependencias.
+Los formatos Markdown, CSV, JSON e impresión conservan nombres y contenido. Los renderizadores traducidos se suministran a la operación de exportación; dominio y aplicación no importan traducciones. El escape CSV realmente compartido está en `shared/csv.ts`; la descarga DOM permanece en `shared/files.ts`.
+
+## Verificación y límites
+
+Las pruebas y recursos exclusivos están en `tests/`. Las reglas y operaciones nuevas se prueban en Node; la integración comprueba fallos, reintentos, comandos consecutivos y generaciones invalidadas. Los E2E cubren idiomas, temas, teclado, disposición visual, reset, recuperación y exportaciones.
+
+Ejecute `node tests/tools/check-architecture.cjs` para analizar imports y reexports, incluidos tipos y dependencias transitivas. Comprueba ciclos, aislamiento de dominio/aplicación, entradas públicas y que `shared/` no dependa de funcionalidades. No resuelve imports construidos mediante cadenas en ejecución.
+
+El [registro de migración y verificaciones](historico/informes/arquitectura-dominios.md) distingue resultados automáticos y revisiones manuales pendientes. Cámara, audio, háptica y reconocimiento físicos, lectores de pantalla y validación de LSC requieren comprobación manual. No se añade sincronización entre pestañas, CRUD de usuarios ni nuevas funcionalidades.

@@ -1,8 +1,13 @@
 import {describe,it,expect} from 'vitest';
-import {collectRecords,emptyDraft,compareGroups,metricGroups,buildReport,blocksMarkdown,evidenceCSV,evidenceJSON,flatten,detailRows,recordCondition} from '../../src/features/reports/model';
+import {collectRecords,emptyDraft} from '../../src/features/reports/domain';
+import {compareGroups,metricGroups} from '../../src/features/reports/domain';
+import {buildReport,evidenceCSV,evidenceJSON,detailRows,recordCondition} from '../../src/features/reports/format';
+import {blocksMarkdown} from '../../src/features/reports/domain';
+import {flatten} from '../../src/features/reports/domain';
 import {reportLanguages,reportResources} from '../../src/features/reports/locales';
 import {reportsProject} from '../fixtures/reportsProject';
-import {parseBackup,createBackup,defaultPrefs,emptyProject} from '../../src/features/project/backup';
+import {parseBackup,createBackup,emptyProject} from '../../src/features/project/domain';
+import {defaultPrefs} from '../../src/features/project/domain';
 describe('report model',()=>{
  it('preserves unknown historical conditions instead of inventing a rejection or an anti-pattern',()=>{const s=reportsProject();s.evidence=s.evidence!.filter(e=>['chatbot','ai','experiment'].includes(e.kind)).map(e=>({...e,condition:'ORIGINAL_UNKNOWN_CONDITION',review:undefined}));for(const record of collectRecords(s).filter(r=>r.collection==='evidence')){expect(recordCondition(record,'fr-FR')).toBe('ORIGINAL_UNKNOWN_CONDITION');}});
  it('integrates every collection without changing data and retains originals',()=>{const s=reportsProject(),old=JSON.stringify(s),records=collectRecords(s);expect(new Set(records.map(r=>r.collection))).toEqual(new Set(['personas','scenarios','appointments','findings','sessions','evidence','pageSessions','trackingSessions','multimodalEvidence','events','a11yChecks']));expect(records.find(r=>r.type==='persona')!.raw).toBe(s.personas[0]);expect(records.find(r=>r.collection==='pageSessions')!.raw).toBe(s.pageSessions![0]);expect(JSON.stringify(s)).toBe(old);expect(parseBackup(s).project).toEqual(s);});

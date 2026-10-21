@@ -1,8 +1,8 @@
 // @vitest-environment node
 import { describe, expect, it, vi } from 'vitest';
-import { createReservationOperations } from '../../src/features/reservations/application/operations';
-import type { ReservationRepository } from '../../src/features/reservations/application/ReservationRepository';
-import type { Appointment, ReservationDraft } from '../../src/features/reservations/domain/types';
+import { createReservationOperations } from '../../src/features/reservations/application';
+import type { ReservationRepository } from '../../src/features/reservations/application';
+import type { Appointment, ReservationDraft } from '../../src/features/reservations/domain';
 
 const now=new Date(2026,9,19,12);
 const draft: ReservationDraft={service:'Consulta',serviceId:'health',date:'2099-10-20',time:'10:30',condition:'bad'};

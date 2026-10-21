@@ -15,6 +15,7 @@ Los documentos de esta carpeta registran trabajo y paquetes anteriores. Sus coma
 - [Limpieza de generados](informes/limpieza.md).
 - [Organización por dominios](informes/organizacion-repositorio.md).
 - [Arquitectura del módulo de reservas](informes/arquitectura-reservas.md).
+- [Separación de responsabilidades en los dominios restantes](informes/arquitectura-dominios.md).
 
 ## Paquetes anteriores
 

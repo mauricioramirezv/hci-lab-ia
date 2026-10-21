@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import { representativeProject } from '../fixtures/representativeProject';
 import { manageResources } from '../../src/features/project/locales';
-import { emptyProject } from '../../src/features/project/backup';
+import {emptyProject} from '../../src/features/project/domain';
 const root='/hci-lab-ia/';
 async function seed(page:Page,duplicate=false){await page.goto(root);const p=representativeProject();if(duplicate)p.personas.push({...p.personas[0],id:'other-ana',goal:'Otro objetivo'});await page.evaluate(p=>localStorage.setItem('hci-lab-ia-project-v2',JSON.stringify(p)),p);await page.reload();}
 const snapshot=(page:Page)=>page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!));

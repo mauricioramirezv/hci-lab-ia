@@ -1,8 +1,8 @@
 // @vitest-environment node
 import { describe, expect, it, vi } from 'vitest';
-import { createProjectReservationRepository } from '../../src/features/reservations/infrastructure/projectReservationRepository';
-import { createReservationOperations } from '../../src/features/reservations/application/operations';
-import { emptyProject } from '../../src/features/project/backup';
+import { createProjectReservationRepository } from '../../src/features/reservations/infrastructure';
+import { createReservationOperations } from '../../src/features/reservations/application';
+import {emptyProject} from '../../src/features/project/domain';
 import type { ProjectState } from '../../src/features/project/domain';
 
 function setup() {

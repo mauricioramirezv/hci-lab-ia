@@ -32,7 +32,7 @@ tests/
   e2e/                  recorridos Playwright y ejemplo Selenium
   fixtures/             proyectos y extensión de zoom usados solo por pruebas
   katalon/              proyecto y recursos de la alternativa Katalon
-  tools/                auditoría de los PDF producidos por pruebas
+  tools/                auditoría PDF y comprobación de arquitectura
   playwright.config.ts  descubrimiento E2E, servidor y reportes
   vitest.config.ts      entorno unitario y configuración de cobertura
   lighthouserc.json     configuración de la revisión opcional de rendimiento
@@ -45,16 +45,16 @@ docs/
 scripts/                scripts propios ajenos a pruebas
 ```
 
-Solo se crean carpetas con contenido existente. Los archivos que mezclan pantallas se dividen conservando sus cuerpos; las utilidades se distribuyen por los símbolos que usan sus consumidores. No se introducen servicios, repositorios, alias de importación ni capas nuevas.
+Solo se crean carpetas con contenido existente. Los archivos que mezclan pantallas se dividen conservando sus cuerpos; las utilidades se distribuyen por los símbolos que usan sus consumidores. Las capas y contratos actuales responden a operaciones concretas; no se añaden dependencias ni alias de importación.
 
-## Etapas verificables
+## Comprobaciones al reubicar archivos
 
-1. Registrar el estado recibido y una copia de los archivos que se van a mover. Centralizar pruebas, recursos y configuraciones; comprobar descubrimiento y pruebas unitarias.
-2. Reubicar la aplicación por dominio, separar las pantallas de `pages.tsx` y eliminar agrupaciones cronológicas. Actualizar imports y la entrada de Vite. Comprobar lint, pruebas unitarias y compilación.
-3. Consolidar las instrucciones actuales y separar informes históricos. Nombrar evidencias por función, corregir referencias y verificar enlaces.
-4. Comprobar integridad contra el estado recibido y ejecutar la regresión E2E. Documentar resultados y límites sin publicar.
+1. Registrar el estado recibido y conservar todos los cambios pendientes.
+2. Actualizar imports y entradas públicas, comprobar dependencias, lint, pruebas y compilación antes de continuar con otro módulo.
+3. Corregir documentación y enlaces; mantener las instrucciones vigentes separadas de los informes históricos.
+4. Revisar la integridad de pruebas, traducciones, configuraciones y recursos; ejecutar la regresión E2E y documentar sus límites.
 
-Las copias locales y el inventario del estado recibido se conservan fuera del seguimiento. Las bajas de generados que ya estaban en el índice no se deshacen ni se mezclan con nuevos cambios de contenido.
+Las salidas y herramientas locales permanecen ignoradas. Los fixtures, ejemplos, traducciones y evidencias académicas seleccionadas se conservan.
 
 ## Dependencias prácticas
 
@@ -62,8 +62,8 @@ Las copias locales y el inventario del estado recibido se conservan fuera del se
 
 `features/project/` mantiene el estado persistente y los respaldos. Los módulos que producen o consumen evidencias usan esos tipos. `features/evaluation/` conserva instrumentos y presentación de registros que también usan experimentos, IA y chatbots. `shared/` contiene únicamente UI de página/formulario, atributos de validación, estilos de formulario y exportación de archivos compartidos.
 
-Las pantallas antes reunidas en un único archivo se ubican en su dominio. Se conservan las demostraciones anteriores y se eliminan tres archivos que solo reenviaban exportaciones; sus consumidores importan los componentes concretos con el mismo nombre local.
+Los consumidores de otros módulos usan las entradas públicas de cada capa. Las entradas de formato sin componentes permiten usar exportaciones desde Node sin cargar React ni CSS.
 
 Vite conserva la base `/hci-lab-ia/` y toma `src/app/main.tsx` desde `index.html`. Los comandos npm pasan la configuración de pruebas explícitamente. Pages sigue compilando `dist/` con el mismo workflow.
 
-Reservas organiza sus archivos en `domain/`, `application/`, `infrastructure/` y `presentation/`; la [guía de arquitectura](arquitectura.md) explica sus dependencias y la integración con el store. Esta separación se aplica únicamente a reservas.
+Reservas, investigación, conceptos, patrones, evaluación, experimentos, IA/chatbots, seguimiento/multimodal, informes y proyecto/accesibilidad separan responsabilidades por capas. Solo se crean las capas necesarias: los módulos que escriben evidencias usan la persistencia común. Los `index.ts` de cada capa son entradas públicas; las entradas de formato sin React se documentan en la [guía de arquitectura](arquitectura.md).

@@ -1,5 +1,5 @@
-import type { Evidence } from '../project/evidence';
-import {patternIds} from './model';
+import type { Evidence } from '../project/domain';
+import {patternIds} from './domain/model';
 import {patternResource} from './locales';
 export function patternObservationMarkdown(record:Evidence,language:string){
   const data=record.pattern;if(!data)return '';

@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom';
 import i18n from '../../src/app/i18n';
 import App from '../../src/app/App';
-import { ProjectProvider } from '../../src/features/project/store';
+import { ProjectProvider } from '../../src/features/project/presentation';
 import type { ProjectState } from '../../src/features/project/domain';
 import { sampleProject } from '../../src/features/project/domain';
 const renderApp = (path = '/multimodal') => render(<MemoryRouter initialEntries={[path]}><ProjectProvider><App/></ProjectProvider></MemoryRouter>);

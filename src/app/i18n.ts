@@ -1,3 +1,4 @@
+import {readLanguage} from '../features/project/infrastructure';
 import {evaluationResources} from '../features/evaluation/locales';
 import { upgradeResources, italianBase, catalanBase } from './locales/activities';
 import { multimodalResources } from '../features/multimodal/translations';
@@ -68,7 +69,7 @@ const fr = {
 
 i18n.use(initReactI18next).init({
   resources: { 'es-CO': { translation: { ...es, multimodal: multimodalResources['es-CO'] } }, 'en-US': { translation: { ...en, multimodal: multimodalResources['en-US'] } }, 'pt-BR': { translation: { ...pt, multimodal: multimodalResources['pt-BR'] } }, 'fr-FR': { translation: { ...fr, multimodal: multimodalResources['fr-FR'] } } },
-  lng: localStorage.getItem('hci-language') || 'es-CO',
+  lng: readLanguage(),
   fallbackLng: 'es-CO',
   interpolation: { escapeValue: false },
 });

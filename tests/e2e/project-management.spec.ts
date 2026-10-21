@@ -3,7 +3,8 @@ import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { representativeProject } from '../fixtures/representativeProject';
 import { sampleProject } from '../../src/features/project/domain';
-import { defaultPrefs, emptyProject, createBackup } from '../../src/features/project/backup';
+import {defaultPrefs} from '../../src/features/project/domain';
+import {emptyProject,createBackup} from '../../src/features/project/domain';
 import { manageResources } from '../../src/features/project/locales';
 
 const project=representativeProject();

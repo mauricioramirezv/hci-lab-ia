@@ -1,7 +1,7 @@
 import {act,cleanup,fireEvent,render,screen,within} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
-import {ProjectProvider} from '../../src/features/project/store';
-import { Chatbots } from '../../src/features/chatbots/Chatbots';
+import {ProjectProvider} from '../../src/features/project/presentation';
+import { Chatbots } from '../../src/features/chatbots/presentation';
 import i18n from '../../src/app/i18n';
 
 afterEach(()=>{cleanup();vi.useRealTimers();});

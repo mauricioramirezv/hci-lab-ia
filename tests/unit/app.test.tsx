@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '../../src/app/i18n';
 import App from '../../src/app/App';
-import { ProjectProvider } from '../../src/features/project/store';
+import { ProjectProvider } from '../../src/features/project/presentation';
 
 const renderApp = (path = '/') => render(<MemoryRouter initialEntries={[path]}><ProjectProvider><App /></ProjectProvider></MemoryRouter>);
 

@@ -6,6 +6,6 @@ import './styles.css';
 import './activities.css';
 import './shell.css';
 import App from './App';
-import { ProjectProvider } from '../features/project/store';
+import { ProjectProvider } from '../features/project/presentation';
 
 createRoot(document.getElementById('root')!).render(<StrictMode><HashRouter><ProjectProvider><App /></ProjectProvider></HashRouter></StrictMode>);

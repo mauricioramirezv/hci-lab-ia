@@ -2,11 +2,12 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom';
 import { vi } from 'vitest';
 import i18n from '../../src/app/i18n';
-import { Concepts } from '../../src/features/concepts/Concepts';
-import { ProjectProvider } from '../../src/features/project/store';
+import { Concepts } from '../../src/features/concepts/presentation';
+import { ProjectProvider } from '../../src/features/project/presentation';
 import { conceptResources } from '../../src/features/concepts/locales';
-import { conceptGroups,conceptIds } from '../../src/features/concepts/model';
-import { createBackup,defaultPrefs,emptyProject,parseBackup } from '../../src/features/project/backup';
+import { conceptGroups,conceptIds } from '../../src/features/concepts/domain';
+import {createBackup,emptyProject,parseBackup} from '../../src/features/project/domain';
+import {defaultPrefs} from '../../src/features/project/domain';
 import { representativeProject } from '../fixtures/representativeProject';
 const app=()=>render(<MemoryRouter><ProjectProvider><Concepts/></ProjectProvider></MemoryRouter>);
 const stored=()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!);

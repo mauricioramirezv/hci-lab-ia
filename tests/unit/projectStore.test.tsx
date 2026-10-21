@@ -1,12 +1,13 @@
 import { act, cleanup, render } from '@testing-library/react';
 import { vi } from 'vitest';
-import { ProjectProvider, useProject } from '../../src/features/project/store';
+import { ProjectProvider, useProject } from '../../src/features/project/presentation';
 import { sampleProject } from '../../src/features/project/domain';
-import { defaultPrefs, emptyProject, PROJECT_KEY, PREFS_KEY, LANGUAGE_KEY } from '../../src/features/project/backup';
+import {defaultPrefs,PROJECT_KEY,PREFS_KEY,LANGUAGE_KEY} from '../../src/features/project/domain';
+import {emptyProject} from '../../src/features/project/domain';
 import i18n from '../../src/app/i18n';
-import {collectRecords,emptyDraft} from '../../src/features/reports/model';
+import {collectRecords,emptyDraft} from '../../src/features/reports/domain';
 import { StrictMode } from 'react';
-import { createBackup, parseBackup } from '../../src/features/project/backup';
+import {createBackup,parseBackup} from '../../src/features/project/domain';
 
 let store:ReturnType<typeof useProject>;
 function Probe(){store=useProject();return null;}

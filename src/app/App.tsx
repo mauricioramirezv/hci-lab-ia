@@ -1,31 +1,32 @@
-import { Patterns } from '../features/patterns/Patterns';
-import { Concepts } from '../features/concepts/Concepts';
-import { Experiments } from '../features/experiments/Experiments';
-import { Chatbots } from '../features/chatbots/Chatbots';
-import { ReportsModule as Reports } from '../features/reports/ReportsModule';
-import { PageTracker } from '../features/tracking/PageTracker';
-import { ProjectManager } from '../features/project/ProjectManager';
-import { readPreferences } from '../features/project/backup';
-import type { Preferences } from '../features/project/backup';
-import { useProject } from '../features/project/store';
-import { MultimodalPage } from '../features/multimodal/MultimodalPage';
-import { TrackingPage } from '../features/tracking/TrackingPage';
-import { TrackingProvider } from '../features/tracking/TrackingProvider';
+import {persistPreferences,persistLanguage} from '../features/project/infrastructure';
+import { Patterns } from '../features/patterns/presentation';
+import { Concepts } from '../features/concepts/presentation';
+import { Experiments } from '../features/experiments/presentation';
+import { Chatbots } from '../features/chatbots/presentation';
+import {ReportsModule as Reports} from '../features/reports/presentation';
+import {PageTracker} from '../features/tracking/presentation';
+import { ProjectManager } from '../features/project/presentation';
+import {readPreferences} from '../features/project/infrastructure';
+import type {Preferences} from '../features/project/domain';
+import { useProject } from '../features/project/presentation';
+import { MultimodalPage } from '../features/multimodal/presentation';
+import {TrackingPage} from '../features/tracking/presentation';
+import {TrackingProvider} from '../features/tracking/presentation';
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Accessibility, BarChart3, Bot, Brain, CalendarCheck, Eye, FlaskConical, Gauge, Languages, LayoutTemplate, Menu, Monitor, Moon, ShieldCheck, Sun, TestTube2, Users, X } from 'lucide-react';
-import { AccessibilityPage } from '../features/accessibility/AccessibilityPage';
-import { AiStudioPage } from '../features/ai/AiStudioPage';
+import { AccessibilityPage } from '../features/accessibility/presentation';
+import { AiStudioPage } from '../features/ai/presentation';
 import { CoursePage } from '../features/course/CoursePage';
 import { DashboardPage } from '../features/dashboard/DashboardPage';
 import { DevicesPage } from '../features/devices/DevicesPage';
-import { EvaluationPage } from '../features/evaluation/EvaluationPage';
-import { LabPage } from '../features/reservations/presentation/LabPage';
+import {EvaluationPage} from '../features/evaluation/presentation';
+import { LabPage } from '../features/reservations/presentation';
 import { MetricsPage } from '../features/metrics/MetricsPage';
 import { QualityPage } from '../features/quality/QualityPage';
-import { ResearchPage } from '../features/research/ResearchPage';
-import { TestingPage } from '../features/evaluation/TestingPage';
+import { ResearchPage } from '../features/research/presentation';
+import {TestingPage} from '../features/evaluation/presentation';
 
 type Prefs = Preferences;
 
@@ -82,7 +83,7 @@ function AppShell() {
   }, [menu]);
   const [prefs, setPrefs] = useState<Prefs>(readPreferences);
   useEffect(() => {
-    try { localStorage.setItem('hci-prefs-v2', JSON.stringify(prefs)); } catch { /* Project storage reports failures; preferences remain in memory. */ }
+    persistPreferences(prefs);
     document.documentElement.lang = i18n.language;
     document.documentElement.dataset.theme = prefs.dark ? 'dark' : 'light';
     document.documentElement.dataset.contrast = String(prefs.contrast);
@@ -105,7 +106,7 @@ function AppShell() {
     ['validate', ['/accessibility', '/evaluation', '/user-testing', '/tracking', '/metrics', '/reports']],
     ['tools', ['/chatbots', '/ai', '/quality']],
   ] as const;
-  const setLanguage = (language: string) => { void i18n.changeLanguage(language); localStorage.setItem('hci-language', language); };
+  const setLanguage = (language: string) => { void i18n.changeLanguage(language); persistLanguage(language); };
 
   return <div className="app-shell">
     <a className="skip-link" href="#main-content" onClick={e => { e.preventDefault(); document.getElementById('main-content')?.focus(); }}>{t('shell.skip')}</a>

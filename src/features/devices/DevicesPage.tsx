@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Check, Clock3, Monitor, MousePointer2, Smartphone, Tablet, Watch } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { PageHead } from '../../shared/ui/Page';
-import { AppointmentFlow } from '../reservations/presentation/AppointmentFlow';
+import { AppointmentFlow } from '../reservations/presentation';
 
 export type Device = 'desktop' | 'tablet' | 'mobile' | 'watch';
 

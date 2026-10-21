@@ -4,7 +4,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { activityLanguages, activityResources } from '../../src/app/locales/projectActivities';
 import { manageResources } from '../../src/features/project/locales';
 import { representativeProject } from '../fixtures/representativeProject';
-import { emptyProject } from '../../src/features/project/backup';
+import {emptyProject} from '../../src/features/project/domain';
 
 const root='/hci-lab-ia/';
 const snapshot=(page:Page)=>page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!));

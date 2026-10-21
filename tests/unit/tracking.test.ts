@@ -1,4 +1,4 @@
-import { contentPoint, heatCells, median, scrollDepth } from '../../src/features/tracking/model';
+import { contentPoint, heatCells, median, scrollDepth } from '../../src/features/tracking/domain';
 describe('Tracking geometry and aggregation', () => {
   it('converts viewport coordinates into content coordinates after scroll and borders', () => {
     expect(contentPoint(175,245,{left:100,top:150},0,400,2,2)).toEqual({x:73,y:493});

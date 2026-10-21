@@ -1,0 +1,1 @@
+export type ReportDraft = { selected:string[]; before:string[]; after:string[]; includeComparison:boolean; justification:string; projectName:string; objective:string; method:string; interpretation:string; improvements:string; limits:string; conclusions:string; references:string };

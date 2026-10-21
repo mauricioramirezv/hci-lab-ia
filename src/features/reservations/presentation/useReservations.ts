@@ -1,4 +1,4 @@
-import { useProject } from '../../project/store';
+import { useProject } from '../../project/presentation';
 
 export function useReservations() {
   const {reservations, log} = useProject();

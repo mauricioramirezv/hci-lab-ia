@@ -11,7 +11,7 @@ Todos los comandos se ejecutan desde la raíz. Las pruebas, fixtures, herramient
 | `tests/vitest.config.ts` | Descubrimiento, jsdom y ubicación de cobertura |
 | `tests/playwright.config.ts` | Chromium, servidor y reportes |
 | `tests/katalon/` | Proyecto y recursos de Katalon |
-| `tests/tools/` | Auditoría PDF opcional |
+| `tests/tools/` | Comprobación de arquitectura y auditoría PDF opcional |
 | `tests/results/` | Resultados locales ignorados, incluido el archivo de ejecuciones anteriores |
 | `tests/reports/` | Reportes HTML y cobertura ignorados |
 
@@ -63,3 +63,9 @@ Sustituya `ruta-del-caso` por la carpeta real de una ejecución. También puede 
 - Selenium: con Chrome y el servidor de preview activos, `node tests/e2e/selenium-example.mjs`.
 - [Katalon](katalon.md): abra `tests/katalon/HCI-Lab-IA.prj`.
 - Lighthouse: con Lighthouse CI disponible en su entorno y `dist/` compilado, ejecute `lhci autorun --config=tests/lighthouserc.json`. La configuración se conserva; no se instala ni añade Lighthouse CI como dependencia.
+
+## Arquitectura y persistencia
+
+`node tests/tools/check-architecture.cjs` comprueba ciclos, imports públicos, aislamiento transitivo y dependencias de `shared/`. Las pruebas de operaciones nuevas usan Node sin React ni almacenamiento real; `projectTransactions.test.tsx` comprueba la composición con React. `module-persistence.spec.ts` provoca fallos de escritura en cada productor migrado, verifica que conserva los datos y comprueba el reintento y la recarga.
+
+Las omisiones previstas de la suite existente son el zoom real por extensión en tableta/celular y el adaptador de validación de cámara en celular. La prueba de cámara usa dobles de prueba: no valida hardware físico.

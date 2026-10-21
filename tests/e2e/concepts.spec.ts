@@ -2,9 +2,9 @@
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { conceptResources } from '../../src/features/concepts/locales';
-import { conceptIds } from '../../src/features/concepts/model';
-import type { ConceptId } from '../../src/features/concepts/model';
-import { emptyProject } from '../../src/features/project/backup';
+import { conceptIds } from '../../src/features/concepts/domain';
+import type { ConceptId } from '../../src/features/concepts/domain';
+import {emptyProject} from '../../src/features/project/domain';
 import { manageResources } from '../../src/features/project/locales';
 type Language=keyof typeof conceptResources;
 type Labels=typeof conceptResources['es-CO']['ui'];

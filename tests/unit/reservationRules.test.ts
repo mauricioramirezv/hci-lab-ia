@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
-import { appointmentStateError, sameBooking, validateReservation } from '../../src/features/reservations/domain/rules';
-import type { Appointment, ReservationDraft } from '../../src/features/reservations/domain/types';
+import { appointmentStateError, sameBooking, validateReservation } from '../../src/features/reservations/domain';
+import type { Appointment, ReservationDraft } from '../../src/features/reservations/domain';
 
 const now = new Date(2026, 9, 19, 12, 0);
 const draft: ReservationDraft = {service:'Consulta', serviceId:'health', date:'2026-10-20', time:'10:30'};

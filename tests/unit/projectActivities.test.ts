@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { activityLanguages, activityResources } from '../../src/app/locales/projectActivities';
-import { deletePersona, linkedPersona, savePersona } from '../../src/features/research/model';
-import { localDay, sameBooking, scheduleError, serviceContexts } from '../../src/features/reservations/domain/rules';
-import { services } from '../../src/features/reservations/domain/types';
-import { createBackup, defaultPrefs, emptyProject, parseBackup } from '../../src/features/project/backup';
+import { deletePersona, linkedPersona, savePersona } from '../../src/features/research/domain';
+import { localDay, sameBooking, scheduleError, serviceContexts } from '../../src/features/reservations/domain';
+import { services } from '../../src/features/reservations/domain';
+import {createBackup,emptyProject,parseBackup} from '../../src/features/project/domain';
+import {defaultPrefs} from '../../src/features/project/domain';
 import { representativeProject } from '../fixtures/representativeProject';
 
 describe('reservations and research data and compatibility',()=>{

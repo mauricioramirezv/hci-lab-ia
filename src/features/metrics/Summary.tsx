@@ -1,4 +1,4 @@
-import { useProject } from '../project/store';
+import { useProject } from '../project/presentation';
 export function Summary() {
   const {state}=useProject();const e=(state.evidence || []).filter(x=>!x.demo),tlx=e.filter(x=>x.kind==='tlx'),ai=e.filter(x=>x.kind==='ai'),sessions=state.pageSessions || [];
   const mean=tlx.length?tlx.reduce((s,x)=>s+x.scores.rawTLX,0)/tlx.length:undefined;

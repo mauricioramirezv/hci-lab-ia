@@ -1,9 +1,9 @@
-import { susScore, validAnswers } from '../../src/features/evaluation/model';
-import { rawTLX } from '../../src/features/evaluation/workload';
-import {emptyProject,parseBackup} from '../../src/features/project/backup';
+import { susScore, validAnswers } from '../../src/features/evaluation/domain';
+import { rawTLX } from '../../src/features/evaluation/domain';
+import {emptyProject,parseBackup} from '../../src/features/project/domain';
 import {evaluationResources,evalLanguages} from '../../src/features/evaluation/locales';
-import {heuristicContent} from '../../src/features/evaluation/heuristics';
-import {reportMarkdown} from '../../src/features/reports/markdown';
+import {heuristicContent} from '../../src/features/evaluation/content';
+import {reportMarkdown} from '../../src/features/reports/format';
 it('scores known SUS responses without treating 0 as missing result',()=>{expect(susScore([5,1,5,1,5,1,5,1,5,1])).toBe(100);expect(susScore([1,5,1,5,1,5,1,5,1,5])).toBe(0);expect(susScore(Array(10).fill(3))).toBe(50);});
 it('rejects partial, noninteger and nonfinite SUS responses',()=>{for(const answers of [[5],Array(10).fill(0),Array(10).fill(6),Array(10).fill(2.5),Array(10).fill(NaN)])expect(()=>susScore(answers)).toThrow();});
 it('separates blanks from valid zero in Raw TLX',()=>{expect(validAnswers(Array(6).fill(''),6,100)).toBe(false);expect(validAnswers(Array(6).fill('0'),6,100)).toBe(true);expect(validAnswers(['10','20','30','40','50','101'],6,100)).toBe(false);expect(rawTLX([10,20,30,40,50,60])).toBe(35);expect(rawTLX(Array(6).fill(0))).toBe(0);});

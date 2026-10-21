@@ -1,7 +1,7 @@
 import { Summary } from './Summary';
 import { Download } from 'lucide-react';
 import { calculateMetrics } from '../project/domain';
-import { useProject } from '../project/store';
+import { useProject } from '../project/presentation';
 import { PageHead } from '../../shared/ui/Page';
 
 export function MetricsPage() {

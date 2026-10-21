@@ -3,8 +3,10 @@ import type {Page} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import {reportsProject} from '../fixtures/reportsProject';
 import {reportLanguages,reportResources} from '../../src/features/reports/locales';
-import {collectRecords,emptyDraft,buildReport,blocksMarkdown,evidenceCSV} from '../../src/features/reports/model';
-import {emptyProject} from '../../src/features/project/backup';
+import {collectRecords,emptyDraft} from '../../src/features/reports/domain';
+import {buildReport,evidenceCSV} from '../../src/features/reports/format';
+import {blocksMarkdown} from '../../src/features/reports/domain';
+import {emptyProject} from '../../src/features/project/domain';
 async function seed(page:Page,language='es-CO',theme='light'){await page.addInitScript(({project,language,theme})=>{if(!sessionStorage.getItem('r8seed')){localStorage.setItem('hci-lab-ia-project-v2',JSON.stringify(project));sessionStorage.setItem('r8seed','1');}localStorage.setItem('hci-language',language);localStorage.setItem('hci-prefs-v2',JSON.stringify({dark:theme.includes('dark'),contrast:theme.includes('contrast'),font:100,spacing:false,dyslexia:false,motion:true}));},{project:reportsProject(),language,theme});await page.goto('/hci-lab-ia/#/reports');}
 const snapshot=(page:Page)=>page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')||'{}'));
 async function preview(page:Page,r=reportResources['es-CO']){await page.getByRole('button',{name:r.generate,exact:true}).click();await page.getByRole('button',{name:r.previewAction,exact:true}).click();await expect(page.getByRole('heading',{name:r.preview,exact:true})).toBeFocused();}

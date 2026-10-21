@@ -1,6 +1,8 @@
 import { describe,it,expect,vi,afterEach } from 'vitest';
 import { sampleProject,calculateMetrics } from '../../src/features/project/domain';
-import { commitProject,createBackup,defaultPrefs,emptyProject,parseBackup,PROJECT_KEY,PREFS_KEY } from '../../src/features/project/backup';
+import {commitProject} from '../../src/features/project/infrastructure';
+import {createBackup,emptyProject,parseBackup} from '../../src/features/project/domain';
+import {defaultPrefs,PROJECT_KEY,PREFS_KEY} from '../../src/features/project/domain';
 import { representativeProject } from '../fixtures/representativeProject';
 import { manageResources } from '../../src/features/project/locales';
 

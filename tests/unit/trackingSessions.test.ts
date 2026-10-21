@@ -1,7 +1,10 @@
-import {appendSample,calibrationTargets,independentTargets,interactionArea,sessionCSV,simulationPosition,trackingMarkdown} from '../../src/features/tracking/session';
-import type {Capture} from '../../src/features/tracking/session';
-import {POINT_LIMIT} from '../../src/features/tracking/model';
-import {emptyProject,createBackup,parseBackup,defaultPrefs} from '../../src/features/project/backup';
+import {appendSample,calibrationTargets,independentTargets,sessionCSV,simulationPosition} from '../../src/features/tracking/domain';
+import {interactionArea} from '../../src/features/tracking/infrastructure';
+import {trackingMarkdown} from '../../src/features/tracking/format';
+import type {Capture} from '../../src/features/tracking/domain';
+import {POINT_LIMIT} from '../../src/features/tracking/domain';
+import {emptyProject,createBackup,parseBackup} from '../../src/features/project/domain';
+import {defaultPrefs} from '../../src/features/project/domain';
 import {trackingResources,trackingLanguages} from '../../src/features/tracking/locales';
 const capture=():Capture=>({route:'/tracking',participant:'',task:'Explore',prototype:'good',width:400,height:1600,viewportWidth:1280,viewportHeight:720,seconds:1,clicks:[],pointer:[],simulation:[],gaze:[],scroll:[],maxDepth:25,capped:false,notes:'',target:'example',coordinateSystem:'example-content',wheelEvents:0,clickCount:0,modeChanges:[{at:0,mode:'cursor'}],exampleCondition:'good'});
 describe('unified tracking sessions',()=>{

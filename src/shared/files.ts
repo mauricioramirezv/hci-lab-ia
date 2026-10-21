@@ -6,7 +6,4 @@ export function download(name: string, body: string, type = 'text/plain;charset=
   setTimeout(() => URL.revokeObjectURL(url),1000);
 }
 
-export function csvCell(value: unknown) {
-  const text = String(value ?? '');
-  return '"'+(/^[=+\-@\t\r]/.test(text) ? "'"+text : text).replaceAll('"','""')+'"';
-}
+export { csvCell } from './csv';
