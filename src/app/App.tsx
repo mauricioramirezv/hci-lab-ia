@@ -49,7 +49,7 @@ function AppShell() {
   useEffect(() => {
     if (previousPath.current !== pathname) {
       previousPath.current = pathname;
-      requestAnimationFrame(() => { const active=document.activeElement;if(document.querySelector('dialog[open]')||active?.closest('header'))return;document.getElementById('main-content')?.focus({ preventScroll:true }); window.scrollTo(0, 0); });
+      requestAnimationFrame(() => { const active=document.activeElement;if(document.querySelector('dialog[open]')||active?.closest('.display-preferences'))return;document.getElementById('main-content')?.focus({ preventScroll:true }); window.scrollTo(0, 0); });
     }
     const heading = document.querySelector('main h1')?.textContent;
     document.title = `${heading || t('common.title')} · HCI Lab + IA`;
