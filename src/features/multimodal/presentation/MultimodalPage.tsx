@@ -1,3 +1,4 @@
+import {version} from '../../../../package.json';
 import { actionState, voiceCommand } from '../domain/commands';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -33,7 +34,7 @@ export function MultimodalPage() {
     if(!addMultimodalEvidence({ device, practice, vision, notes: notes.trim(), confidence, demoStatus: t(`multimodal.${status}`), channelStatus }))return;
     setNotes(''); setSaved(t('multimodal.saved'));
   };
-  return <div className="mm-page"><PageHead eyebrow="HCI · v2.2" title={t('multimodal.title')} intro={t('multimodal.intro')}/>
+  return <div className="mm-page"><PageHead eyebrow={`HCI · ${t('closure.version',{version})}`} title={t('multimodal.title')} intro={t('multimodal.intro')}/>
     <div className="panel mm-controls"><label>{t('multimodal.device')}<select value={device} onChange={e => { setDevice(e.target.value as DeviceContext); setStatus('pending'); setChannelStatus(''); }}>{deviceIds.map(k => <option value={k} key={k}>{t(`multimodal.${k}`)}</option>)}</select></label><label>{t('multimodal.practice')}<select value={practice} onChange={e => setPractice(e.target.value as 'good' | 'bad')}><option value="good">{t('multimodal.good')}</option><option value="bad">{t('multimodal.bad')}</option></select></label></div>
     <div className="mm-grid"><section className="panel mm-panel"><h2>{t('multimodal.task')} · {t(`multimodal.${device}`)}</h2><p className="fine-print">{t('multimodal.demo')}</p>
       {device === 'watch' ? <SmartwatchSimulator good={good} onAction={action}/> : device === 'car' ? <InfotainmentSimulator moving={moving} setMoving={setMoving} good={good} onAction={action}/> : <div className={`mm-device mm-${device} ${good ? '' : 'mm-dense'}`}>

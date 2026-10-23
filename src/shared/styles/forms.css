@@ -23,3 +23,6 @@
 .project-activity-dialog {width:min(560px,calc(100% - 2rem));max-height:85vh;overflow:auto;padding:1.5rem;border:2px solid var(--green);border-radius:16px;background:var(--surface);color:var(--text)}
 .project-activity-dialog::backdrop {background:rgb(0 0 0 / .55)}
 .project-activity-dialog .activity-actions {display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+.field-label{display:flex;align-items:baseline;gap:.25rem}
+.field-label label{flex:0 1 auto}
+.activity-panel [data-field]{min-width:0}

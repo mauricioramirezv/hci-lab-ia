@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './e2e',
   outputDir: './results/playwright',
-  reporter: [['list'], ['html', { outputFolder: './reports/playwright', open: 'never' }]],
+  reporter: [['list'], ['html', { outputFolder: './reports/playwright', open: 'never' }], ['json',{outputFile:'./reports/playwright/results.json'}]],
   captureGitInfo: { commit: true, diff: false },
   use: { baseURL: 'http://127.0.0.1:4173', trace: 'on-first-retry' },
   webServer: { cwd: '.', command: 'npm run preview -- --host 127.0.0.1', port: 4173, reuseExistingServer: true },

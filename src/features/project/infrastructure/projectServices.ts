@@ -1,3 +1,5 @@
+import {createUserOperations} from '../../users/application';
+import {createProjectUserRepository} from '../../users/infrastructure';
 import {createProjectRepository} from './projectRepository';
 import {createResearchOperations} from '../../research';
 import {createEvaluationOperations} from '../../evaluation';
@@ -13,7 +15,8 @@ import type {Appointment} from '../../reservations/domain';
 export function createProjectServices(host:Parameters<typeof createProjectRepository>[0],id:()=>string,now:()=>Date) {
  const repository=createProjectRepository(host),research=createResearchOperations(repository),evaluation=createEvaluationOperations(repository,id,now),tracking=createTrackingOperations(repository,id,now),multimodal=createMultimodalOperations(repository,id,now),reports=createReportOperations(repository),evidence=createEvidenceOperations(repository,id,now),events=createEventOperations(repository,id,now),accessibility=createAccessibilityOperations(repository);
  const reservations=createReservationOperations(createProjectReservationRepository(host),{id,now});
- return {research,evaluation,reservations,saveReportDraft:reports.saveDraft,addEvidence:evidence.add,removeEvidence:evidence.remove,...tracking,addMultimodalEvidence:multimodal.record,...events,...accessibility,
+ const users=createUserOperations(createProjectUserRepository(host,id,now),{id,now});
+ return {users,research,evaluation,reservations,saveReportDraft:reports.saveDraft,addEvidence:evidence.add,removeEvidence:evidence.remove,...tracking,addMultimodalEvidence:multimodal.record,...events,...accessibility,
   addPersona:research.appendLegacyPersona,savePersona:(item:Parameters<typeof research.savePersona>[0])=>research.savePersona(item,true),removePersona:research.removePersona,
   addScenario:research.appendLegacyScenario,saveScenario:(item:Parameters<typeof research.saveScenario>[0])=>research.saveScenario(item,true),removeScenario:research.removeScenario,
   addFinding:evaluation.addFinding,updateFinding:evaluation.updateFinding,removeFinding:evaluation.removeFinding,addSession:evaluation.addSession,

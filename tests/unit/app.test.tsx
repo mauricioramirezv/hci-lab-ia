@@ -18,13 +18,14 @@ describe('HCI Lab + IA', () => {
   });
   it('completes and persists an appointment in the visible list', () => {
     renderApp('/lab');
+    fireEvent.click(screen.getByRole('button',{name:'Crear reserva'}));
     fireEvent.change(screen.getByLabelText('Contexto'), { target: { value: 'university' } });
     fireEvent.change(screen.getByLabelText('Servicio'), { target: { value: 'advice' } });
     fireEvent.click(screen.getByRole('button', { name: /continuar/i }));
     fireEvent.change(screen.getByLabelText('Fecha'), { target: { value: '2099-10-15' } });
     fireEvent.change(screen.getByLabelText('Hora'), { target: { value: '10:30' } });
     fireEvent.click(screen.getByRole('button', { name: /continuar/i }));
-    fireEvent.click(screen.getByRole('button', { name: /confirmar reserva/i }));
+    fireEvent.click(screen.getByRole('button', { name: /^guardar$/i }));
     expect(screen.getByRole('status')).toHaveTextContent(/reserva confirmada/i);
     expect(screen.getByRole('heading', { name: 'Asesoría universitaria ficticia' })).toBeInTheDocument();
   });

@@ -10,6 +10,7 @@ src/
   features/
     project/            estado, respaldo y gestión del proyecto
     reservations/       dominio, operaciones, adaptador y presentación de reservas
+    users/              registros ficticios del Laboratorio, separados de investigación
     research/           personas, empatía y escenarios
     concepts/           catálogo y actividades de conceptos
     patterns/           catálogo y actividades de patrones

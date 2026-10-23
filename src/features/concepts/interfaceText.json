@@ -1,0 +1,882 @@
+{
+  "Experiencia completa antes, durante y después de la interacción.": {
+    "es-CO": "Experiencia completa antes, durante y después de la interacción.",
+    "en-US": "The complete experience before, during and after interaction.",
+    "pt-BR": "A experiência completa antes, durante e após a interação.",
+    "fr-FR": "L’expérience complète avant, pendant et après l’interaction.",
+    "it-IT": "L’esperienza completa prima, durante e dopo l’interazione.",
+    "ca-ES": "L’experiència completa abans, durant i després de la interacció."
+  },
+  "SUS, SEQ y satisfacción": {
+    "es-CO": "SUS, SEQ y satisfacción",
+    "en-US": "SUS, SEQ and satisfaction",
+    "pt-BR": "SUS, SEQ e satisfação",
+    "fr-FR": "SUS, SEQ et satisfaction",
+    "it-IT": "SUS, SEQ e soddisfazione",
+    "ca-ES": "SUS, SEQ i satisfacció"
+  },
+  "Un flujo coherente conserva el contexto entre dispositivos.": {
+    "es-CO": "Un flujo coherente conserva el contexto entre dispositivos.",
+    "en-US": "A coherent flow preserves context across devices.",
+    "pt-BR": "Um fluxo coerente preserva o contexto entre dispositivos.",
+    "fr-FR": "Un parcours cohérent préserve le contexte entre appareils.",
+    "it-IT": "Un flusso coerente conserva il contesto tra dispositivi.",
+    "ca-ES": "Un flux coherent conserva el context entre dispositius."
+  },
+  "Usabilidad": {
+    "es-CO": "Usabilidad",
+    "en-US": "Usability",
+    "pt-BR": "Usabilidade",
+    "fr-FR": "Utilisabilité",
+    "it-IT": "Usabilità",
+    "ca-ES": "Usabilitat"
+  },
+  "Efectividad, eficiencia, aprendizaje y recuperación.": {
+    "es-CO": "Efectividad, eficiencia, aprendizaje y recuperación.",
+    "en-US": "Effectiveness, efficiency, learning and recovery.",
+    "pt-BR": "Eficácia, eficiência, aprendizagem e recuperação.",
+    "fr-FR": "Efficacité, efficience, apprentissage et récupération.",
+    "it-IT": "Efficacia, efficienza, apprendimento e recupero.",
+    "ca-ES": "Efectivitat, eficiència, aprenentatge i recuperació."
+  },
+  "Éxito, tiempo y errores": {
+    "es-CO": "Éxito, tiempo y errores",
+    "en-US": "Success, time and errors",
+    "pt-BR": "Sucesso, tempo e erros",
+    "fr-FR": "Réussite, temps et erreurs",
+    "it-IT": "Successo, tempo ed errori",
+    "ca-ES": "Èxit, temps i errors"
+  },
+  "La reserva guía, valida y permite corregir.": {
+    "es-CO": "La reserva guía, valida y permite corregir.",
+    "en-US": "The booking guides, validates and allows corrections.",
+    "pt-BR": "A reserva orienta, valida e permite corrigir.",
+    "fr-FR": "La réservation guide, valide et permet de corriger.",
+    "it-IT": "La prenotazione guida, convalida e permette correzioni.",
+    "ca-ES": "La reserva guia, valida i permet corregir."
+  },
+  "Contenido perceptible, operable, comprensible y robusto.": {
+    "es-CO": "Contenido perceptible, operable, comprensible y robusto.",
+    "en-US": "Perceivable, operable, understandable and robust content.",
+    "pt-BR": "Conteúdo perceptível, operável, compreensível e robusto.",
+    "fr-FR": "Contenu perceptible, utilisable, compréhensible et robuste.",
+    "it-IT": "Contenuto percepibile, utilizzabile, comprensibile e robusto.",
+    "ca-ES": "Contingut perceptible, operable, comprensible i robust."
+  },
+  "WCAG, teclado y lector": {
+    "es-CO": "WCAG, teclado y lector",
+    "en-US": "WCAG, keyboard and screen reader",
+    "pt-BR": "WCAG, teclado e leitor",
+    "fr-FR": "WCAG, clavier et lecteur",
+    "it-IT": "WCAG, tastiera e lettore",
+    "ca-ES": "WCAG, teclat i lector"
+  },
+  "Foco visible, etiquetas, contraste y zoom.": {
+    "es-CO": "Foco visible, etiquetas, contraste y zoom.",
+    "en-US": "Visible focus, labels, contrast and zoom.",
+    "pt-BR": "Foco visível, rótulos, contraste e zoom.",
+    "fr-FR": "Focus visible, libellés, contraste et zoom.",
+    "it-IT": "Focus visibile, etichette, contrasto e zoom.",
+    "ca-ES": "Focus visible, etiquetes, contrast i zoom."
+  },
+  "Awareness": {
+    "es-CO": "Comprensión del estado",
+    "en-US": "State awareness",
+    "pt-BR": "Compreensão do estado",
+    "fr-FR": "Compréhension de l’état",
+    "it-IT": "Consapevolezza dello stato",
+    "ca-ES": "Comprensió de l’estat"
+  },
+  "Comprensión del estado, ubicación, cambios y siguiente acción.": {
+    "es-CO": "Comprensión del estado, ubicación, cambios y siguiente acción.",
+    "en-US": "Understanding status, location, changes and the next action.",
+    "pt-BR": "Compreensão do estado, localização, mudanças e próxima ação.",
+    "fr-FR": "Compréhension de l’état, de la position, des changements et de l’action suivante.",
+    "it-IT": "Comprensione di stato, posizione, cambiamenti e azione successiva.",
+    "ca-ES": "Comprensió de l’estat, la ubicació, els canvis i l’acció següent."
+  },
+  "Reconocimiento del estado": {
+    "es-CO": "Reconocimiento del estado",
+    "en-US": "Status recognition",
+    "pt-BR": "Reconhecimento do estado",
+    "fr-FR": "Reconnaissance de l’état",
+    "it-IT": "Riconoscimento dello stato",
+    "ca-ES": "Reconeixement de l’estat"
+  },
+  "Paso actual, guardado y confirmación visibles.": {
+    "es-CO": "Paso actual, guardado y confirmación visibles.",
+    "en-US": "Visible current step, saving and confirmation.",
+    "pt-BR": "Etapa atual, salvamento e confirmação visíveis.",
+    "fr-FR": "Étape actuelle, enregistrement et confirmation visibles.",
+    "it-IT": "Passo attuale, salvataggio e conferma visibili.",
+    "ca-ES": "Pas actual, desament i confirmació visibles."
+  },
+  "Engagement ético": {
+    "es-CO": "Participación ética",
+    "en-US": "Ethical engagement",
+    "pt-BR": "Engajamento ético",
+    "fr-FR": "Engagement éthique",
+    "it-IT": "Coinvolgimento etico",
+    "ca-ES": "Participació ètica"
+  },
+  "Participación sostenida sin presión ni patrones oscuros.": {
+    "es-CO": "Participación sostenida sin presión ni patrones oscuros.",
+    "en-US": "Sustained participation without pressure or dark patterns.",
+    "pt-BR": "Participação contínua sem pressão nem padrões obscuros.",
+    "fr-FR": "Participation durable sans pression ni interfaces trompeuses.",
+    "it-IT": "Partecipazione sostenuta senza pressioni né modelli ingannevoli.",
+    "ca-ES": "Participació sostinguda sense pressió ni patrons foscos."
+  },
+  "Finalización y abandono": {
+    "es-CO": "Finalización y abandono",
+    "en-US": "Completion and abandonment",
+    "pt-BR": "Conclusão e abandono",
+    "fr-FR": "Achèvement et abandon",
+    "it-IT": "Completamento e abbandono",
+    "ca-ES": "Finalització i abandonament"
+  },
+  "Valor y progreso claros; cancelación disponible.": {
+    "es-CO": "Valor y progreso claros; cancelación disponible.",
+    "en-US": "Clear value and progress; cancellation available.",
+    "pt-BR": "Valor e progresso claros; cancelamento disponível.",
+    "fr-FR": "Valeur et progression claires ; annulation disponible.",
+    "it-IT": "Valore e progresso chiari; annullamento disponibile.",
+    "ca-ES": "Valor i progrés clars; cancel·lació disponible."
+  },
+  "Emoción positiva": {
+    "es-CO": "Emoción positiva",
+    "en-US": "Positive emotion",
+    "pt-BR": "Emoção positiva",
+    "fr-FR": "Émotion positive",
+    "it-IT": "Emozione positiva",
+    "ca-ES": "Emoció positiva"
+  },
+  "Confianza, tranquilidad, control y satisfacción.": {
+    "es-CO": "Confianza, tranquilidad, control y satisfacción.",
+    "en-US": "Confidence, calm, control and satisfaction.",
+    "pt-BR": "Confiança, tranquilidade, controle e satisfação.",
+    "fr-FR": "Confiance, sérénité, contrôle et satisfaction.",
+    "it-IT": "Fiducia, tranquillità, controllo e soddisfazione.",
+    "ca-ES": "Confiança, tranquil·litat, control i satisfacció."
+  },
+  "Valencia y confianza": {
+    "es-CO": "Valencia y confianza",
+    "en-US": "Valence and confidence",
+    "pt-BR": "Valência e confiança",
+    "fr-FR": "Valence et confiance",
+    "it-IT": "Valenza e fiducia",
+    "ca-ES": "València i confiança"
+  },
+  "Mensajes específicos y reversibilidad.": {
+    "es-CO": "Mensajes específicos y reversibilidad.",
+    "en-US": "Specific messages and reversibility.",
+    "pt-BR": "Mensagens específicas e reversibilidade.",
+    "fr-FR": "Messages précis et réversibilité.",
+    "it-IT": "Messaggi specifici e reversibilità.",
+    "ca-ES": "Missatges específics i reversibilitat."
+  },
+  "Ergonomía": {
+    "es-CO": "Ergonomía",
+    "en-US": "Ergonomics",
+    "pt-BR": "Ergonomia",
+    "fr-FR": "Ergonomie",
+    "it-IT": "Ergonomia",
+    "ca-ES": "Ergonomia"
+  },
+  "Alcance, tamaño táctil, postura y densidad por contexto.": {
+    "es-CO": "Alcance, tamaño táctil, postura y densidad por contexto.",
+    "en-US": "Reach, touch target size, posture and density by context.",
+    "pt-BR": "Alcance, tamanho dos alvos, postura e densidade por contexto.",
+    "fr-FR": "Portée, taille tactile, posture et densité selon le contexte.",
+    "it-IT": "Raggiungibilità, dimensione tattile, postura e densità per contesto.",
+    "ca-ES": "Abast, mida tàctil, postura i densitat segons el context."
+  },
+  "Esfuerzo y precisión": {
+    "es-CO": "Esfuerzo y precisión",
+    "en-US": "Effort and precision",
+    "pt-BR": "Esforço e precisão",
+    "fr-FR": "Effort et précision",
+    "it-IT": "Sforzo e precisione",
+    "ca-ES": "Esforç i precisió"
+  },
+  "Objetivos táctiles amplios y acciones alcanzables.": {
+    "es-CO": "Objetivos táctiles amplios y acciones alcanzables.",
+    "en-US": "Large touch targets and reachable actions.",
+    "pt-BR": "Alvos de toque grandes e ações ao alcance.",
+    "fr-FR": "Grandes cibles tactiles et actions accessibles.",
+    "it-IT": "Bersagli tattili ampi e azioni raggiungibili.",
+    "ca-ES": "Objectius tàctils grans i accions a l’abast."
+  },
+  "Cognición": {
+    "es-CO": "Cognición",
+    "en-US": "Cognition",
+    "pt-BR": "Cognição",
+    "fr-FR": "Cognition",
+    "it-IT": "Cognizione",
+    "ca-ES": "Cognició"
+  },
+  "Atención, memoria de trabajo, percepción y modelos mentales.": {
+    "es-CO": "Atención, memoria de trabajo, percepción y modelos mentales.",
+    "en-US": "Attention, working memory, perception and mental models.",
+    "pt-BR": "Atenção, memória de trabalho, percepção e modelos mentais.",
+    "fr-FR": "Attention, mémoire de travail, perception et modèles mentaux.",
+    "it-IT": "Attenzione, memoria di lavoro, percezione e modelli mentali.",
+    "ca-ES": "Atenció, memòria de treball, percepció i models mentals."
+  },
+  "Carga y recuerdo": {
+    "es-CO": "Carga y recuerdo",
+    "en-US": "Workload and recall",
+    "pt-BR": "Carga e recordação",
+    "fr-FR": "Charge et mémorisation",
+    "it-IT": "Carico e ricordo",
+    "ca-ES": "Càrrega i record"
+  },
+  "Tres pasos, lenguaje familiar y reconocimiento.": {
+    "es-CO": "Tres pasos, lenguaje familiar y reconocimiento.",
+    "en-US": "Three steps, familiar language and recognition.",
+    "pt-BR": "Três etapas, linguagem familiar e reconhecimento.",
+    "fr-FR": "Trois étapes, langage familier et reconnaissance.",
+    "it-IT": "Tre passi, linguaggio familiare e riconoscimento.",
+    "ca-ES": "Tres passos, llenguatge familiar i reconeixement."
+  },
+  "Arquitectura de información": {
+    "es-CO": "Arquitectura de información",
+    "en-US": "Information architecture",
+    "pt-BR": "Arquitetura da informação",
+    "fr-FR": "Architecture de l’information",
+    "it-IT": "Architettura dell’informazione",
+    "ca-ES": "Arquitectura de la informació"
+  },
+  "Organización, etiquetado, navegación y búsqueda.": {
+    "es-CO": "Organización, etiquetado, navegación y búsqueda.",
+    "en-US": "Organization, labeling, navigation and search.",
+    "pt-BR": "Organização, rotulagem, navegação e busca.",
+    "fr-FR": "Organisation, étiquetage, navigation et recherche.",
+    "it-IT": "Organizzazione, etichettatura, navigazione e ricerca.",
+    "ca-ES": "Organització, etiquetatge, navegació i cerca."
+  },
+  "Éxito de localización": {
+    "es-CO": "Éxito de localización",
+    "en-US": "Findability success",
+    "pt-BR": "Sucesso de localização",
+    "fr-FR": "Réussite de localisation",
+    "it-IT": "Successo nel reperimento",
+    "ca-ES": "Èxit de localització"
+  },
+  "Tareas agrupadas por intención del usuario.": {
+    "es-CO": "Tareas agrupadas por intención del usuario.",
+    "en-US": "Tasks grouped by user intent.",
+    "pt-BR": "Tarefas agrupadas pela intenção do usuário.",
+    "fr-FR": "Tâches regroupées selon l’intention de l’utilisateur.",
+    "it-IT": "Attività raggruppate per intenzione dell’utente.",
+    "ca-ES": "Tasques agrupades segons la intenció de l’usuari."
+  },
+  "Diseño universal": {
+    "es-CO": "Diseño universal",
+    "en-US": "Universal design",
+    "pt-BR": "Design universal",
+    "fr-FR": "Conception universelle",
+    "it-IT": "Progettazione universale",
+    "ca-ES": "Disseny universal"
+  },
+  "Soluciones útiles para la mayor diversidad posible.": {
+    "es-CO": "Soluciones útiles para la mayor diversidad posible.",
+    "en-US": "Useful solutions for the widest possible diversity.",
+    "pt-BR": "Soluções úteis para a maior diversidade possível.",
+    "fr-FR": "Solutions utiles pour la plus grande diversité possible.",
+    "it-IT": "Soluzioni utili per la massima diversità possibile.",
+    "ca-ES": "Solucions útils per a la diversitat més gran possible."
+  },
+  "Cobertura de contextos": {
+    "es-CO": "Cobertura de contextos",
+    "en-US": "Context coverage",
+    "pt-BR": "Cobertura de contextos",
+    "fr-FR": "Couverture des contextes",
+    "it-IT": "Copertura dei contesti",
+    "ca-ES": "Cobertura de contextos"
+  },
+  "Múltiples formas de percibir y operar.": {
+    "es-CO": "Múltiples formas de percibir y operar.",
+    "en-US": "Multiple ways to perceive and operate.",
+    "pt-BR": "Múltiplas formas de perceber e operar.",
+    "fr-FR": "Plusieurs façons de percevoir et d’agir.",
+    "it-IT": "Molteplici modi di percepire e operare.",
+    "ca-ES": "Múltiples maneres de percebre i operar."
+  },
+  "IA responsable": {
+    "es-CO": "IA responsable",
+    "en-US": "Responsible AI",
+    "pt-BR": "IA responsável",
+    "fr-FR": "IA responsable",
+    "it-IT": "IA responsabile",
+    "ca-ES": "IA responsable"
+  },
+  "Control humano, transparencia, privacidad y trazabilidad.": {
+    "es-CO": "Control humano, transparencia, privacidad y trazabilidad.",
+    "en-US": "Human control, transparency, privacy and traceability.",
+    "pt-BR": "Controle humano, transparência, privacidade e rastreabilidade.",
+    "fr-FR": "Contrôle humain, transparence, confidentialité et traçabilité.",
+    "it-IT": "Controllo umano, trasparenza, riservatezza e tracciabilità.",
+    "ca-ES": "Control humà, transparència, privadesa i traçabilitat."
+  },
+  "La IA propone; la persona valida o rechaza.": {
+    "es-CO": "La IA propone; la persona valida o rechaza.",
+    "en-US": "AI proposes; the person validates or rejects.",
+    "pt-BR": "A IA propõe; a pessoa valida ou rejeita.",
+    "fr-FR": "L’IA propose ; la personne valide ou rejette.",
+    "it-IT": "L’IA propone; la persona convalida o rifiuta.",
+    "ca-ES": "La IA proposa; la persona valida o rebutja."
+  },
+  "Mapa integral de conceptos": {
+    "es-CO": "Mapa integral de conceptos",
+    "en-US": "Integrated concept map",
+    "pt-BR": "Mapa integrado de conceitos",
+    "fr-FR": "Carte intégrée des concepts",
+    "it-IT": "Mappa integrata dei concetti",
+    "ca-ES": "Mapa integral de conceptes"
+  },
+  "Cada dimensión se conecta con una decisión observable y una forma de medirla.": {
+    "es-CO": "Cada dimensión se conecta con una decisión observable y una forma de medirla.",
+    "en-US": "Each dimension connects to an observable decision and a way to measure it.",
+    "pt-BR": "Cada dimensão se conecta a uma decisão observável e uma forma de medi-la.",
+    "fr-FR": "Chaque dimension est liée à une décision observable et à un moyen de la mesurer.",
+    "it-IT": "Ogni dimensione si collega a una decisione osservabile e a un modo per misurarla.",
+    "ca-ES": "Cada dimensió es connecta amb una decisió observable i una manera de mesurar-la."
+  },
+  "En el laboratorio": {
+    "es-CO": "En el laboratorio",
+    "en-US": "In the lab",
+    "pt-BR": "No laboratório",
+    "fr-FR": "Dans le laboratoire",
+    "it-IT": "Nel laboratorio",
+    "ca-ES": "Al laboratori"
+  },
+  "Variante": {
+    "es-CO": "Variante",
+    "en-US": "Variant",
+    "pt-BR": "Variante",
+    "fr-FR": "Variante",
+    "it-IT": "Variante",
+    "ca-ES": "Variant"
+  },
+  "Tarea completada": {
+    "es-CO": "Tarea completada. Puede guardar la evidencia después de añadir su observación.",
+    "en-US": "Task completed. Add your observation to save the evidence.",
+    "pt-BR": "Tarefa concluída. Adicione sua observação para salvar a evidência.",
+    "fr-FR": "Tâche terminée. Ajoutez votre observation pour enregistrer la preuve.",
+    "it-IT": "Attività completata. Aggiungi la tua osservazione per salvare l’evidenza.",
+    "ca-ES": "Tasca completada. Afegiu la vostra observació per desar l’evidència."
+  },
+  "Revise el código; puede corregir sin perder datos.": {
+    "es-CO": "Revise el código; escriba UX y vuelva a verificar sin perder los datos.",
+    "en-US": "Check the code; enter UX and verify again without losing data.",
+    "pt-BR": "Confira o código; digite UX e verifique novamente sem perder os dados.",
+    "fr-FR": "Vérifiez le code ; saisissez UX et réessayez sans perdre les données.",
+    "it-IT": "Controlla il codice; inserisci UX e verifica di nuovo senza perdere i dati.",
+    "ca-ES": "Reviseu el codi; escriviu UX i torneu a verificar sense perdre les dades."
+  },
+  "ERROR 405: dato inválido.": {
+    "es-CO": "ERROR 405: dato inválido.",
+    "en-US": "ERROR 405: invalid data.",
+    "pt-BR": "ERRO 405: dado inválido.",
+    "fr-FR": "ERREUR 405 : donnée invalide.",
+    "it-IT": "ERRORE 405: dato non valido.",
+    "ca-ES": "ERROR 405: dada no vàlida."
+  },
+  "Cambie de dispositivo y confirme que conserva el contexto.": {
+    "es-CO": "Cambie de dispositivo y confirme que conserva el contexto.",
+    "en-US": "Change device and confirm that context is preserved.",
+    "pt-BR": "Mude de dispositivo e confirme que o contexto é preservado.",
+    "fr-FR": "Changez d’appareil et vérifiez que le contexte est conservé.",
+    "it-IT": "Cambia dispositivo e verifica che il contesto sia conservato.",
+    "ca-ES": "Canvieu de dispositiu i confirmeu que conserva el context."
+  },
+  "Seleccione Reservar asesoría.": {
+    "es-CO": "Seleccione Reservar asesoría.",
+    "en-US": "Select Book consultation.",
+    "pt-BR": "Selecione Reservar consultoria.",
+    "fr-FR": "Sélectionnez Réserver un conseil.",
+    "it-IT": "Seleziona Prenota consulenza.",
+    "ca-ES": "Seleccioneu Reservar assessorament."
+  },
+  "Identifique y confirme el estado de la reserva.": {
+    "es-CO": "Identifique y confirme el estado de la reserva.",
+    "en-US": "Identify and confirm the booking status.",
+    "pt-BR": "Identifique e confirme o estado da reserva.",
+    "fr-FR": "Identifiez et confirmez l’état de la réservation.",
+    "it-IT": "Identifica e conferma lo stato della prenotazione.",
+    "ca-ES": "Identifiqueu i confirmeu l’estat de la reserva."
+  },
+  "Guarde el cambio y explique su estado.": {
+    "es-CO": "Guarde el cambio y explique su estado.",
+    "en-US": "Save the change and explain its status.",
+    "pt-BR": "Salve a alteração e explique seu estado.",
+    "fr-FR": "Enregistrez la modification et expliquez son état.",
+    "it-IT": "Salva la modifica e spiegane lo stato.",
+    "ca-ES": "Deseu el canvi i expliqueu-ne l’estat."
+  },
+  "Decida si continuar o abandonar libremente.": {
+    "es-CO": "Decida si continuar o abandonar libremente.",
+    "en-US": "Decide freely whether to continue or leave.",
+    "pt-BR": "Decida livremente se deseja continuar ou sair.",
+    "fr-FR": "Décidez librement de continuer ou de quitter.",
+    "it-IT": "Decidi liberamente se continuare o abbandonare.",
+    "ca-ES": "Decidiu lliurement si voleu continuar o abandonar."
+  },
+  "Ingrese el código UX y observe el mensaje de recuperación.": {
+    "es-CO": "Ingrese el código UX y observe el mensaje de recuperación.",
+    "en-US": "Enter code UX and observe the recovery message.",
+    "pt-BR": "Digite o código UX e observe a mensagem de recuperação.",
+    "fr-FR": "Saisissez le code UX et observez le message de récupération.",
+    "it-IT": "Inserisci il codice UX e osserva il messaggio di recupero.",
+    "ca-ES": "Introduïu el codi UX i observeu el missatge de recuperació."
+  },
+  "Seleccione el objetivo.": {
+    "es-CO": "Seleccione el objetivo.",
+    "en-US": "Select the target.",
+    "pt-BR": "Selecione o alvo.",
+    "fr-FR": "Sélectionnez la cible.",
+    "it-IT": "Seleziona il bersaglio.",
+    "ca-ES": "Seleccioneu l’objectiu."
+  },
+  "Recuerde el código UX y escríbalo tras ocultarlo.": {
+    "es-CO": "Recuerde el código UX y escríbalo tras ocultarlo.",
+    "en-US": "Remember code UX and enter it after hiding it.",
+    "pt-BR": "Lembre o código UX e digite-o após ocultá-lo.",
+    "fr-FR": "Mémorisez le code UX et saisissez-le après l’avoir masqué.",
+    "it-IT": "Ricorda il codice UX e inseriscilo dopo averlo nascosto.",
+    "ca-ES": "Recordeu el codi UX i escriviu-lo després d’amagar-lo."
+  },
+  "Localice la opción para reservar.": {
+    "es-CO": "Localice la opción para reservar.",
+    "en-US": "Find the booking option.",
+    "pt-BR": "Localize a opção para reservar.",
+    "fr-FR": "Trouvez l’option de réservation.",
+    "it-IT": "Trova l’opzione per prenotare.",
+    "ca-ES": "Localitzeu l’opció per reservar."
+  },
+  "Complete la tarea con teclado o voz.": {
+    "es-CO": "Complete la tarea con teclado o voz.",
+    "en-US": "Complete the task using keyboard or speech.",
+    "pt-BR": "Conclua a tarefa com teclado ou voz.",
+    "fr-FR": "Réalisez la tâche au clavier ou à la voix.",
+    "it-IT": "Completa l’attività con tastiera o voce.",
+    "ca-ES": "Completeu la tasca amb teclat o veu."
+  },
+  "Revise y acepte o rechace una sugerencia simulada.": {
+    "es-CO": "Revise y acepte o rechace una sugerencia simulada.",
+    "en-US": "Review and accept or reject a simulated suggestion.",
+    "pt-BR": "Revise e aceite ou rejeite uma sugestão simulada.",
+    "fr-FR": "Examinez puis acceptez ou rejetez une suggestion simulée.",
+    "it-IT": "Esamina e accetta o rifiuta un suggerimento simulato.",
+    "ca-ES": "Reviseu i accepteu o rebutgeu un suggeriment simulat."
+  },
+  "Reserva en": {
+    "es-CO": "Reserva en",
+    "en-US": "Booking on",
+    "pt-BR": "Reserva em",
+    "fr-FR": "Réservation sur",
+    "it-IT": "Prenotazione su",
+    "ca-ES": "Reserva en"
+  },
+  "Asesoría UX, pendiente de confirmar": {
+    "es-CO": "Asesoría UX, pendiente de confirmar",
+    "en-US": "UX consultation, awaiting confirmation",
+    "pt-BR": "Consultoria UX, aguardando confirmação",
+    "fr-FR": "Conseil UX, en attente de confirmation",
+    "it-IT": "Consulenza UX, in attesa di conferma",
+    "ca-ES": "Assessorament UX, pendent de confirmar"
+  },
+  "Asesoría UX": {
+    "es-CO": "Asesoría UX",
+    "en-US": "UX consultation",
+    "pt-BR": "Consultoria UX",
+    "fr-FR": "Conseil UX",
+    "it-IT": "Consulenza UX",
+    "ca-ES": "Assessorament UX"
+  },
+  "Sin contexto": {
+    "es-CO": "Sin contexto",
+    "en-US": "No context",
+    "pt-BR": "Sem contexto",
+    "fr-FR": "Sans contexte",
+    "it-IT": "Senza contesto",
+    "ca-ES": "Sense context"
+  },
+  "Celular": {
+    "es-CO": "Celular",
+    "en-US": "Phone",
+    "pt-BR": "Celular",
+    "fr-FR": "Téléphone",
+    "it-IT": "Telefono",
+    "ca-ES": "Mòbil"
+  },
+  "Cambiar dispositivo": {
+    "es-CO": "Cambiar dispositivo",
+    "en-US": "Change device",
+    "pt-BR": "Mudar dispositivo",
+    "fr-FR": "Changer d’appareil",
+    "it-IT": "Cambia dispositivo",
+    "ca-ES": "Canviar dispositiu"
+  },
+  "Confirmar reserva": {
+    "es-CO": "Confirmar reserva",
+    "en-US": "Confirm booking",
+    "pt-BR": "Confirmar reserva",
+    "fr-FR": "Confirmer la réservation",
+    "it-IT": "Conferma prenotazione",
+    "ca-ES": "Confirmar reserva"
+  },
+  "Reservar asesoría": {
+    "es-CO": "Reservar asesoría",
+    "en-US": "Book consultation",
+    "pt-BR": "Reservar consultoria",
+    "fr-FR": "Réserver un conseil",
+    "it-IT": "Prenota consulenza",
+    "ca-ES": "Reservar assessorament"
+  },
+  "Cancelar": {
+    "es-CO": "Cancelar",
+    "en-US": "Cancel",
+    "pt-BR": "Cancelar",
+    "fr-FR": "Annuler",
+    "it-IT": "Annulla",
+    "ca-ES": "Cancel·lar"
+  },
+  "Operación X1": {
+    "es-CO": "Operación X1",
+    "en-US": "Operation X1",
+    "pt-BR": "Operação X1",
+    "fr-FR": "Opération X1",
+    "it-IT": "Operazione X1",
+    "ca-ES": "Operació X1"
+  },
+  "Operación X2": {
+    "es-CO": "Operación X2",
+    "en-US": "Operation X2",
+    "pt-BR": "Operação X2",
+    "fr-FR": "Opération X2",
+    "it-IT": "Operazione X2",
+    "ca-ES": "Operació X2"
+  },
+  "✓ Reserva confirmada": {
+    "es-CO": "✓ Reserva confirmada",
+    "en-US": "✓ Booking confirmed",
+    "pt-BR": "✓ Reserva confirmada",
+    "fr-FR": "✓ Réservation confirmée",
+    "it-IT": "✓ Prenotazione confermata",
+    "ca-ES": "✓ Reserva confirmada"
+  },
+  "¿Cuál es el estado?": {
+    "es-CO": "¿Cuál es el estado?",
+    "en-US": "What is the status?",
+    "pt-BR": "Qual é o estado?",
+    "fr-FR": "Quel est l’état ?",
+    "it-IT": "Qual è lo stato?",
+    "ca-ES": "Quin és l’estat?"
+  },
+  "Confirmada": {
+    "es-CO": "Confirmada",
+    "en-US": "Confirmed",
+    "pt-BR": "Confirmada",
+    "fr-FR": "Confirmée",
+    "it-IT": "Confermata",
+    "ca-ES": "Confirmada"
+  },
+  "Pendiente": {
+    "es-CO": "Pendiente",
+    "en-US": "Pending",
+    "pt-BR": "Pendente",
+    "fr-FR": "En attente",
+    "it-IT": "In attesa",
+    "ca-ES": "Pendent"
+  },
+  "Guardando…": {
+    "es-CO": "Guardando…",
+    "en-US": "Saving…",
+    "pt-BR": "Salvando…",
+    "fr-FR": "Enregistrement…",
+    "it-IT": "Salvataggio…",
+    "ca-ES": "S’està desant…"
+  },
+  "Guardado. Puede continuar.": {
+    "es-CO": "Guardado. Puede continuar.",
+    "en-US": "Saved. You can continue.",
+    "pt-BR": "Salvo. Você pode continuar.",
+    "fr-FR": "Enregistré. Vous pouvez continuer.",
+    "it-IT": "Salvato. Puoi continuare.",
+    "ca-ES": "Desat. Podeu continuar."
+  },
+  "La operación terminó sin indicar el resultado.": {
+    "es-CO": "La operación terminó sin indicar el resultado.",
+    "en-US": "The operation ended without indicating the result.",
+    "pt-BR": "A operação terminou sem indicar o resultado.",
+    "fr-FR": "L’opération s’est terminée sans indiquer le résultat.",
+    "it-IT": "L’operazione è terminata senza indicare il risultato.",
+    "ca-ES": "L’operació ha acabat sense indicar el resultat."
+  },
+  "Guardar cambio": {
+    "es-CO": "Guardar cambio",
+    "en-US": "Save change",
+    "pt-BR": "Salvar alteração",
+    "fr-FR": "Enregistrer la modification",
+    "it-IT": "Salva modifica",
+    "ca-ES": "Desar canvi"
+  },
+  "Puede continuar cuando lo desee.": {
+    "es-CO": "Puede continuar cuando lo desee.",
+    "en-US": "You can continue whenever you want.",
+    "pt-BR": "Você pode continuar quando quiser.",
+    "fr-FR": "Vous pouvez continuer quand vous le souhaitez.",
+    "it-IT": "Puoi continuare quando vuoi.",
+    "ca-ES": "Podeu continuar quan vulgueu."
+  },
+  "¡Última oportunidad! Solo quedan 5 segundos (urgencia ficticia).": {
+    "es-CO": "¡Última oportunidad! Solo quedan 5 segundos (urgencia ficticia).",
+    "en-US": "Last chance! Only 5 seconds left (fictional urgency).",
+    "pt-BR": "Última chance! Só restam 5 segundos (urgência fictícia).",
+    "fr-FR": "Dernière chance ! Plus que 5 secondes (urgence fictive).",
+    "it-IT": "Ultima occasione! Restano solo 5 secondi (urgenza fittizia).",
+    "ca-ES": "Última oportunitat! Només queden 5 segons (urgència fictícia)."
+  },
+  "Continuar": {
+    "es-CO": "Continuar",
+    "en-US": "Continue",
+    "pt-BR": "Continuar",
+    "fr-FR": "Continuer",
+    "it-IT": "Continua",
+    "ca-ES": "Continuar"
+  },
+  "Abandono voluntario registrado": {
+    "es-CO": "Abandono voluntario registrado. Puede iniciar otro intento.",
+    "en-US": "Voluntary exit recorded. You can start another attempt.",
+    "pt-BR": "Saída voluntária registrada. Você pode iniciar outra tentativa.",
+    "fr-FR": "Abandon volontaire enregistré. Vous pouvez commencer un nouvel essai.",
+    "it-IT": "Abbandono volontario registrato. Puoi iniziare un altro tentativo.",
+    "ca-ES": "Abandonament voluntari registrat. Podeu iniciar un altre intent."
+  },
+  "Abandonar": {
+    "es-CO": "Abandonar",
+    "en-US": "Leave",
+    "pt-BR": "Sair",
+    "fr-FR": "Quitter",
+    "it-IT": "Abbandona",
+    "ca-ES": "Abandonar"
+  },
+  "Código necesario: UX": {
+    "es-CO": "Código necesario: UX",
+    "en-US": "Required code: UX",
+    "pt-BR": "Código necessário: UX",
+    "fr-FR": "Code requis : UX",
+    "it-IT": "Codice richiesto: UX",
+    "ca-ES": "Codi necessari: UX"
+  },
+  "Recuerde el código de la pantalla anterior": {
+    "es-CO": "Recuerde el código de la pantalla anterior",
+    "en-US": "Recall the code from the previous screen",
+    "pt-BR": "Lembre o código da tela anterior",
+    "fr-FR": "Rappelez-vous le code de l’écran précédent",
+    "it-IT": "Ricorda il codice della schermata precedente",
+    "ca-ES": "Recordeu el codi de la pantalla anterior"
+  },
+  "Escriba UX; pruebe también un código incorrecto.": {
+    "es-CO": "Escriba UX; pruebe también un código incorrecto.",
+    "en-US": "Enter UX; also try an incorrect code.",
+    "pt-BR": "Digite UX; tente também um código incorreto.",
+    "fr-FR": "Saisissez UX ; essayez aussi un code incorrect.",
+    "it-IT": "Inserisci UX; prova anche un codice errato.",
+    "ca-ES": "Escriviu UX; proveu també un codi incorrecte."
+  },
+  "Ocultar código": {
+    "es-CO": "Ocultar código",
+    "en-US": "Hide code",
+    "pt-BR": "Ocultar código",
+    "fr-FR": "Masquer le code",
+    "it-IT": "Nascondi codice",
+    "ca-ES": "Amagar codi"
+  },
+  "Código de prueba": {
+    "es-CO": "Código de prueba",
+    "en-US": "Test code",
+    "pt-BR": "Código de teste",
+    "fr-FR": "Code de test",
+    "it-IT": "Codice di prova",
+    "ca-ES": "Codi de prova"
+  },
+  "Verificar código": {
+    "es-CO": "Verificar código",
+    "en-US": "Verify code",
+    "pt-BR": "Verificar código",
+    "fr-FR": "Vérifier le code",
+    "it-IT": "Verifica codice",
+    "ca-ES": "Verificar codi"
+  },
+  "Seleccionar objetivo": {
+    "es-CO": "Seleccionar objetivo",
+    "en-US": "Select target",
+    "pt-BR": "Selecionar alvo",
+    "fr-FR": "Sélectionner la cible",
+    "it-IT": "Seleziona bersaglio",
+    "ca-ES": "Seleccionar objectiu"
+  },
+  "Reservar": {
+    "es-CO": "Reservar",
+    "en-US": "Book",
+    "pt-BR": "Reservar",
+    "fr-FR": "Réserver",
+    "it-IT": "Prenota",
+    "ca-ES": "Reservar"
+  },
+  "Mis reservas": {
+    "es-CO": "Mis reservas",
+    "en-US": "My bookings",
+    "pt-BR": "Minhas reservas",
+    "fr-FR": "Mes réservations",
+    "it-IT": "Le mie prenotazioni",
+    "ca-ES": "Les meves reserves"
+  },
+  "Ayuda": {
+    "es-CO": "Ayuda",
+    "en-US": "Help",
+    "pt-BR": "Ajuda",
+    "fr-FR": "Aide",
+    "it-IT": "Aiuto",
+    "ca-ES": "Ajuda"
+  },
+  "Confirmar (también con Enter)": {
+    "es-CO": "Confirmar (también con Enter)",
+    "en-US": "Confirm (also with Enter)",
+    "pt-BR": "Confirmar (também com Enter)",
+    "fr-FR": "Confirmer (aussi avec Entrée)",
+    "it-IT": "Conferma (anche con Invio)",
+    "ca-ES": "Confirmar (també amb Retorn)"
+  },
+  "Puede confirmar con Enter.": {
+    "es-CO": "Puede confirmar con Enter.",
+    "en-US": "You can confirm with Enter.",
+    "pt-BR": "Você pode confirmar com Enter.",
+    "fr-FR": "Vous pouvez confirmer avec Entrée.",
+    "it-IT": "Puoi confermare con Invio.",
+    "ca-ES": "Podeu confirmar amb Retorn."
+  },
+  "Ayuda de voz solicitada": {
+    "es-CO": "Ayuda de voz solicitada. También puede usar las instrucciones escritas.",
+    "en-US": "Speech help requested. You can also use the written instructions.",
+    "pt-BR": "Ajuda de voz solicitada. Você também pode usar as instruções escritas.",
+    "fr-FR": "Aide vocale demandée. Vous pouvez aussi utiliser les instructions écrites.",
+    "it-IT": "Aiuto vocale richiesto. Puoi anche usare le istruzioni scritte.",
+    "ca-ES": "Ajuda de veu sol·licitada. També podeu seguir les instruccions escrites."
+  },
+  "Voz no disponible; use el texto.": {
+    "es-CO": "Voz no disponible; use las instrucciones escritas y el teclado.",
+    "en-US": "Speech unavailable; use the written instructions and keyboard.",
+    "pt-BR": "Voz indisponível; use as instruções escritas e o teclado.",
+    "fr-FR": "Voix indisponible ; utilisez les instructions écrites et le clavier.",
+    "it-IT": "Voce non disponibile; usa le istruzioni scritte e la tastiera.",
+    "ca-ES": "Veu no disponible; feu servir les instruccions escrites i el teclat."
+  },
+  "Escuchar ayuda": {
+    "es-CO": "Escuchar ayuda",
+    "en-US": "Listen to help",
+    "pt-BR": "Ouvir ajuda",
+    "fr-FR": "Écouter l’aide",
+    "it-IT": "Ascolta aiuto",
+    "ca-ES": "Escoltar ajuda"
+  },
+  "Pruebe Tab y Enter; la voz es opcional.": {
+    "es-CO": "Pruebe Tab y Enter; la voz es opcional.",
+    "en-US": "Try Tab and Enter; speech is optional.",
+    "pt-BR": "Experimente Tab e Enter; a voz é opcional.",
+    "fr-FR": "Essayez Tab et Entrée ; la voix est facultative.",
+    "it-IT": "Prova Tab e Invio; la voce è facoltativa.",
+    "ca-ES": "Proveu Tab i Retorn; la veu és opcional."
+  },
+  "Propuesta simulada: añadir una etiqueta visible. Revise la evidencia antes de decidir.": {
+    "es-CO": "Propuesta simulada: añadir una etiqueta visible. Revise la evidencia antes de decidir.",
+    "en-US": "Simulated suggestion: add a visible label. Review the evidence before deciding.",
+    "pt-BR": "Proposta simulada: adicionar um rótulo visível. Revise a evidência antes de decidir.",
+    "fr-FR": "Proposition simulée : ajouter un libellé visible. Examinez les preuves avant de décider.",
+    "it-IT": "Proposta simulata: aggiungere un’etichetta visibile. Esamina le evidenze prima di decidere.",
+    "ca-ES": "Proposta simulada: afegir una etiqueta visible. Reviseu l’evidència abans de decidir."
+  },
+  "La IA siempre tiene razón: aplique automáticamente.": {
+    "es-CO": "La IA siempre tiene razón: aplique automáticamente.",
+    "en-US": "AI is always right: apply automatically.",
+    "pt-BR": "A IA sempre está certa: aplique automaticamente.",
+    "fr-FR": "L’IA a toujours raison : appliquez automatiquement.",
+    "it-IT": "L’IA ha sempre ragione: applica automaticamente.",
+    "ca-ES": "La IA sempre té raó: apliqueu automàticament."
+  },
+  "Aceptar tras revisar": {
+    "es-CO": "Aceptar tras revisar",
+    "en-US": "Accept after review",
+    "pt-BR": "Aceitar após revisar",
+    "fr-FR": "Accepter après examen",
+    "it-IT": "Accetta dopo verifica",
+    "ca-ES": "Acceptar després de revisar"
+  },
+  "Propuesta rechazada por decisión humana": {
+    "es-CO": "Propuesta rechazada por decisión humana. Puede iniciar otra tarea.",
+    "en-US": "Suggestion rejected by human decision. You can start another task.",
+    "pt-BR": "Proposta rejeitada por decisão humana. Você pode iniciar outra tarefa.",
+    "fr-FR": "Proposition rejetée par décision humaine. Vous pouvez commencer une autre tâche.",
+    "it-IT": "Proposta rifiutata per decisione umana. Puoi iniziare un’altra attività.",
+    "ca-ES": "Proposta rebutjada per decisió humana. Podeu iniciar una altra tasca."
+  },
+  "Rechazar": {
+    "es-CO": "Rechazar",
+    "en-US": "Reject",
+    "pt-BR": "Rejeitar",
+    "fr-FR": "Rejeter",
+    "it-IT": "Rifiuta",
+    "ca-ES": "Rebutjar"
+  },
+  "Tiempo:": {
+    "es-CO": "Tiempo:",
+    "en-US": "Time:",
+    "pt-BR": "Tempo:",
+    "fr-FR": "Temps :",
+    "it-IT": "Tempo:",
+    "ca-ES": "Temps:"
+  },
+  "s · Clics:": {
+    "es-CO": "s · Clics:",
+    "en-US": "s · Clicks:",
+    "pt-BR": "s · Cliques:",
+    "fr-FR": "s · Clics :",
+    "it-IT": "s · Clic:",
+    "ca-ES": "s · Clics:"
+  },
+  "· Errores registrados:": {
+    "es-CO": "· Errores registrados:",
+    "en-US": "· Recorded errors:",
+    "pt-BR": "· Erros registrados:",
+    "fr-FR": "· Erreurs enregistrées :",
+    "it-IT": "· Errori registrati:",
+    "ca-ES": "· Errors registrats:"
+  },
+  "Confianza/satisfacción declarada:": {
+    "es-CO": "Confianza/satisfacción declarada:",
+    "en-US": "Self-reported confidence/satisfaction:",
+    "pt-BR": "Confiança/satisfação declarada:",
+    "fr-FR": "Confiance/satisfaction déclarée :",
+    "it-IT": "Fiducia/soddisfazione dichiarata:",
+    "ca-ES": "Confiança/satisfacció declarada:"
+  },
+  "Evidencia guardada en Informes.": {
+    "es-CO": "Evidencia guardada en Informes. Puede revisarla allí o iniciar otra tarea.",
+    "en-US": "Evidence saved in Reports. Review it there or start another task.",
+    "pt-BR": "Evidência salva em Relatórios. Revise lá ou inicie outra tarefa.",
+    "fr-FR": "Preuve enregistrée dans Rapports. Consultez-la ou commencez une autre tâche.",
+    "it-IT": "Evidenza salvata in Rapporti. Consultala o inizia un’altra attività.",
+    "ca-ES": "Evidència desada a Informes. Podeu revisar-la allà o iniciar una altra tasca."
+  },
+  "Resultados de esta tarea, sin inferir emociones mediante cámara. Las variantes adversas son ejemplos didácticos.": {
+    "es-CO": "Resultados de esta tarea, sin inferir emociones mediante cámara. Las variantes adversas son ejemplos didácticos.",
+    "en-US": "Results from this task, without inferring emotions through a camera. Adverse variants are teaching examples.",
+    "pt-BR": "Resultados desta tarefa, sem inferir emoções pela câmera. As variantes adversas são exemplos didáticos.",
+    "fr-FR": "Résultats de cette tâche, sans déduire d’émotions par caméra. Les variantes défavorables sont pédagogiques.",
+    "it-IT": "Risultati di questa attività, senza dedurre emozioni dalla videocamera. Le varianti avverse sono esempi didattici.",
+    "ca-ES": "Resultats d’aquesta tasca, sense inferir emocions amb càmera. Les variants adverses són exemples didàctics."
+  }
+}

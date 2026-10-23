@@ -1,0 +1,12 @@
+.users-filters,.users-comparison{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem;margin:1rem 0}
+.users-filters>div,.users-form [data-field]{display:grid;gap:.4rem}
+.users-list{list-style:none;padding:0;display:grid;gap:1rem}
+.users-page input,.users-page select{max-width:100%;min-width:0}
+.users-page p,.users-page dd,.users-page h3{overflow-wrap:anywhere}
+.users-form{display:grid;gap:1rem;max-width:44rem}
+.users-page dd{margin:0 0 1rem}
+.users-page .activity-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.users-page [data-track-area="users-example"]>label{display:block;margin-top:1rem}
+.users-page [data-track-area="users-example"]>input{display:block;margin:.5rem 0}
+.lab-navigation{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+.lab-navigation a[aria-current]{font-weight:700;text-decoration-thickness:3px}

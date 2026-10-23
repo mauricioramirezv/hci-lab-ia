@@ -32,6 +32,8 @@ La [guía de pruebas](pruebas.md) describe configuraciones, fixtures y reportes.
 
 ## Publicación existente
 
-El workflow `.github/workflows/deploy-pages.yml` instala dependencias, compila, sube `dist/` como artefacto de Pages y despliega al recibir cambios en `main`. Vite conserva la base `/hci-lab-ia/`; `public/` conserva los recursos necesarios. En GitHub Pages se usa GitHub Actions como origen.
+El workflow `.github/workflows/deploy-pages.yml` instala dependencias y verifica lint, dependencias, unitarias/integración, build y E2E antes de subir `dist/` como artefacto de Pages. Un job dependiente despliega al recibir cambios en `main`. Los reportes de verificación se conservan como artefactos durante 14 días, también si hay fallos. Vite conserva la base `/hci-lab-ia/`; `public/` conserva los recursos necesarios. En GitHub Pages se usa GitHub Actions como origen.
 
 Publicar requiere una instrucción explícita posterior. No hace falta ejecutar los scripts de paquetes antiguos para trabajar con este checkout.
+
+La versión propuesta y las limitaciones conocidas están en el [cierre integral](cierre-integral.md). Revise [persistencia y privacidad](persistencia-privacidad.md) antes de usar datos o compartir respaldos. El único sitio previsto es https://mauricioramirezv.github.io/hci-lab-ia/; una comprobación de preview local no valida el despliegue remoto.

@@ -209,10 +209,11 @@ test('management: reset cancels chatbot generation and clears an open booking fo
   await expect(chat.getByLabel('Mensaje editable')).toHaveValue('');await expect(chat.getByRole('button',{name:'Enviar mensaje'})).toBeDisabled();
   await page.waitForTimeout(1200);expect((await snapshot(page)).project).toEqual(emptyProject());
   await page.goto('/hci-lab-ia/#/lab');
+  await page.getByRole('button',{name:'Crear reserva',exact:true}).click();
   await page.getByLabel('Contexto',{exact:true}).selectOption('university');
   await page.getByLabel('Servicio',{exact:true}).selectOption({index:1});
   await page.getByRole('button',{name:'Continuar',exact:true}).click();
   await expect(page.getByLabel('Fecha',{exact:true})).toBeVisible();await reset(page);
-  await expect(page.getByLabel('Servicio',{exact:true})).toHaveValue('');
+  await expect(page.locator('form')).toHaveCount(0);await page.getByRole('button',{name:'Crear reserva',exact:true}).click();await expect(page.getByLabel('Servicio',{exact:true})).toHaveValue('');
   await expect(page.getByLabel('Fecha',{exact:true})).toHaveCount(0);
 });

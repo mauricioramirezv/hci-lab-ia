@@ -4,26 +4,47 @@ on:
     branches: [main]
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
       - run: npm ci
+      - run: npm run lint
+      - run: node tests/tools/check-architecture.cjs
+      - run: node tests/tools/check-translations.cjs
+      - run: npm test -- --reporter=default --reporter=junit --outputFile=tests/results/vitest.xml
       - run: npm run build
-      - uses: actions/configure-pages@v5
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - name: Downloadable verification reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-verification-${{ github.run_attempt }}
+          path: |
+            tests/results/
+            tests/reports/
+          retention-days: 14
+          if-no-files-found: ignore
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
+  deploy:
+    needs: verify
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/configure-pages@v5
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,0 +1,434 @@
+{
+  "EVOLVING COURSE PROJECT": {
+    "es-CO": "PROYECTO EVOLUTIVO DEL CURSO",
+    "en-US": "EVOLVING COURSE PROJECT",
+    "pt-BR": "PROJETO EVOLUTIVO DO CURSO",
+    "fr-FR": "PROJET ÉVOLUTIF DU COURS",
+    "it-IT": "PROGETTO EVOLUTIVO DEL CORSO",
+    "ca-ES": "PROJECTE EVOLUTIU DEL CURS"
+  },
+  "Un laboratorio front-end para diseñar, comparar, evaluar y medir experiencias multiformato con control humano sobre la IA.": {
+    "es-CO": "Un laboratorio front-end para diseñar, comparar, evaluar y medir experiencias multiformato con control humano sobre la IA.",
+    "en-US": "A front-end lab to design, compare, evaluate and measure experiences across formats, with human control over AI.",
+    "pt-BR": "Um laboratório front-end para projetar, comparar, avaliar e medir experiências multiformato com controle humano sobre a IA.",
+    "fr-FR": "Un laboratoire front-end pour concevoir, comparer, évaluer et mesurer des expériences multiformats, avec un contrôle humain sur l’IA.",
+    "it-IT": "Un laboratorio front-end per progettare, confrontare, valutare e misurare esperienze multiformato con controllo umano sull’IA.",
+    "ca-ES": "Un laboratori front-end per dissenyar, comparar, avaluar i mesurar experiències multiformat amb control humà sobre la IA."
+  },
+  "PROYECTO ACTIVO · V2": {
+    "es-CO": "PROYECTO ACTIVO · V2",
+    "en-US": "ACTIVE PROJECT · V2",
+    "pt-BR": "PROJETO ATIVO · V2",
+    "fr-FR": "PROJET ACTIF · V2",
+    "it-IT": "PROGETTO ATTIVO · V2",
+    "ca-ES": "PROJECTE ACTIU · V2"
+  },
+  "Del diagnóstico a la evidencia": {
+    "es-CO": "Del diagnóstico a la evidencia",
+    "en-US": "From diagnosis to evidence",
+    "pt-BR": "Do diagnóstico à evidência",
+    "fr-FR": "Du diagnostic aux preuves",
+    "it-IT": "Dalla diagnosi alle evidenze",
+    "ca-ES": "Del diagnòstic a l’evidència"
+  },
+  "Los artefactos que cree en cada módulo permanecen en este navegador y alimentan las métricas del proyecto.": {
+    "es-CO": "Los artefactos que cree en cada módulo permanecen en este navegador y alimentan las métricas del proyecto.",
+    "en-US": "The artifacts you create in each module remain in this browser and contribute to project metrics.",
+    "pt-BR": "Os artefatos criados em cada módulo permanecem neste navegador e alimentam as métricas do projeto.",
+    "fr-FR": "Les éléments créés dans chaque module restent dans ce navigateur et alimentent les métriques du projet.",
+    "it-IT": "Gli artefatti creati in ogni modulo rimangono in questo browser e alimentano le metriche del progetto.",
+    "ca-ES": "Els artefactes creats a cada mòdul romanen en aquest navegador i alimenten les mètriques del projecte."
+  },
+  "{{percent}}% del laboratorio explorado": {
+    "es-CO": "{{percent}}% del laboratorio explorado",
+    "en-US": "{{percent}}% of the lab explored",
+    "pt-BR": "{{percent}}% do laboratório explorado",
+    "fr-FR": "{{percent}} % du laboratoire exploré",
+    "it-IT": "{{percent}}% del laboratorio esplorato",
+    "ca-ES": "{{percent}}% del laboratori explorat"
+  },
+  "% de módulos con evidencia": {
+    "es-CO": "% de módulos con evidencia",
+    "en-US": "% of modules with evidence",
+    "pt-BR": "% dos módulos com evidências",
+    "fr-FR": "% des modules avec des preuves",
+    "it-IT": "% dei moduli con evidenze",
+    "ca-ES": "% de mòduls amb evidències"
+  },
+  "Estado del laboratorio": {
+    "es-CO": "Estado del laboratorio",
+    "en-US": "Lab status",
+    "pt-BR": "Estado do laboratório",
+    "fr-FR": "État du laboratoire",
+    "it-IT": "Stato del laboratorio",
+    "ca-ES": "Estat del laboratori"
+  },
+  "Personas": {
+    "es-CO": "Personas",
+    "en-US": "Research personas",
+    "pt-BR": "Personas de pesquisa",
+    "fr-FR": "Personas de recherche",
+    "it-IT": "Personas di ricerca",
+    "ca-ES": "Persones de recerca"
+  },
+  "Escenarios": {
+    "es-CO": "Escenarios",
+    "en-US": "Scenarios",
+    "pt-BR": "Cenários",
+    "fr-FR": "Scénarios",
+    "it-IT": "Scenari",
+    "ca-ES": "Escenaris"
+  },
+  "Hallazgos": {
+    "es-CO": "Hallazgos",
+    "en-US": "Findings",
+    "pt-BR": "Achados",
+    "fr-FR": "Constats",
+    "it-IT": "Riscontri",
+    "ca-ES": "Troballes"
+  },
+  "Sesiones": {
+    "es-CO": "Sesiones",
+    "en-US": "Sessions",
+    "pt-BR": "Sessões",
+    "fr-FR": "Sessions",
+    "it-IT": "Sessioni",
+    "ca-ES": "Sessions"
+  },
+  "HILO CONDUCTOR": {
+    "es-CO": "HILO CONDUCTOR",
+    "en-US": "COMMON THREAD",
+    "pt-BR": "FIO CONDUTOR",
+    "fr-FR": "FIL CONDUCTEUR",
+    "it-IT": "FILO CONDUTTORE",
+    "ca-ES": "FIL CONDUCTOR"
+  },
+  "El mismo sistema evoluciona con el curso": {
+    "es-CO": "El mismo sistema evoluciona con el curso",
+    "en-US": "The same system evolves with the course",
+    "pt-BR": "O mesmo sistema evolui com o curso",
+    "fr-FR": "Le même système évolue avec le cours",
+    "it-IT": "Lo stesso sistema evolve con il corso",
+    "ca-ES": "El mateix sistema evoluciona amb el curs"
+  },
+  "Comprender": {
+    "es-CO": "Comprender",
+    "en-US": "Understand",
+    "pt-BR": "Compreender",
+    "fr-FR": "Comprendre",
+    "it-IT": "Comprendere",
+    "ca-ES": "Comprendre"
+  },
+  "Personas, empatía, contexto y dos funcionalidades.": {
+    "es-CO": "Personas, empatía, contexto y dos funcionalidades.",
+    "en-US": "Personas, empathy, context and two features.",
+    "pt-BR": "Personas, empatia, contexto e duas funcionalidades.",
+    "fr-FR": "Personas, empathie, contexte et deux fonctionnalités.",
+    "it-IT": "Personas, empatia, contesto e due funzionalità.",
+    "ca-ES": "Persones, empatia, context i dues funcionalitats."
+  },
+  "Diseñar": {
+    "es-CO": "Diseñar",
+    "en-US": "Design",
+    "pt-BR": "Projetar",
+    "fr-FR": "Concevoir",
+    "it-IT": "Progettare",
+    "ca-ES": "Dissenyar"
+  },
+  "Arquitectura, flujos y adaptación por dispositivo.": {
+    "es-CO": "Arquitectura, flujos y adaptación por dispositivo.",
+    "en-US": "Architecture, flows and adaptation by device.",
+    "pt-BR": "Arquitetura, fluxos e adaptação por dispositivo.",
+    "fr-FR": "Architecture, parcours et adaptation par appareil.",
+    "it-IT": "Architettura, flussi e adattamento per dispositivo.",
+    "ca-ES": "Arquitectura, fluxos i adaptació per dispositiu."
+  },
+  "Prototipar": {
+    "es-CO": "Prototipar",
+    "en-US": "Prototype",
+    "pt-BR": "Prototipar",
+    "fr-FR": "Prototyper",
+    "it-IT": "Prototipare",
+    "ca-ES": "Prototipar"
+  },
+  "Buenas prácticas y alternativas generadas con IA.": {
+    "es-CO": "Buenas prácticas y alternativas generadas con IA.",
+    "en-US": "Good practices and AI-generated alternatives.",
+    "pt-BR": "Boas práticas e alternativas geradas com IA.",
+    "fr-FR": "Bonnes pratiques et alternatives générées par IA.",
+    "it-IT": "Buone pratiche e alternative generate con IA.",
+    "ca-ES": "Bones pràctiques i alternatives generades amb IA."
+  },
+  "Evaluar": {
+    "es-CO": "Evaluar",
+    "en-US": "Evaluate",
+    "pt-BR": "Avaliar",
+    "fr-FR": "Évaluer",
+    "it-IT": "Valutare",
+    "ca-ES": "Avaluar"
+  },
+  "Heurísticas humanas, IA, accesibilidad y pruebas.": {
+    "es-CO": "Heurísticas humanas, IA, accesibilidad y pruebas.",
+    "en-US": "Human heuristics, AI, accessibility and testing.",
+    "pt-BR": "Heurísticas humanas, IA, acessibilidade e testes.",
+    "fr-FR": "Heuristiques humaines, IA, accessibilité et tests.",
+    "it-IT": "Euristiche umane, IA, accessibilità e test.",
+    "ca-ES": "Heurístiques humanes, IA, accessibilitat i proves."
+  },
+  "Medir": {
+    "es-CO": "Medir",
+    "en-US": "Measure",
+    "pt-BR": "Medir",
+    "fr-FR": "Mesurer",
+    "it-IT": "Misurare",
+    "ca-ES": "Mesurar"
+  },
+  "{{completion}}% de finalización registrada y {{errors}} errores observados.": {
+    "es-CO": "{{completion}}% de finalización registrada y {{errors}} errores observados.",
+    "en-US": "{{completion}}% recorded completion and {{errors}} observed errors.",
+    "pt-BR": "{{completion}}% de conclusão registrada e {{errors}} erros observados.",
+    "fr-FR": "{{completion}} % d’achèvement enregistré et {{errors}} erreurs observées.",
+    "it-IT": "{{completion}}% di completamento registrato e {{errors}} errori osservati.",
+    "ca-ES": "{{completion}}% de finalització registrada i {{errors}} errors observats."
+  },
+  "Modo exposición": {
+    "es-CO": "Modo exposición",
+    "en-US": "Presentation mode",
+    "pt-BR": "Modo de apresentação",
+    "fr-FR": "Mode présentation",
+    "it-IT": "Modalità presentazione",
+    "ca-ES": "Mode de presentació"
+  },
+  "Añade personas y escenarios de ejemplo. No genera mediciones ficticias.": {
+    "es-CO": "Añade personas y escenarios de ejemplo. No genera mediciones ficticias.",
+    "en-US": "Adds example personas and scenarios. It does not generate fabricated measurements.",
+    "pt-BR": "Adiciona personas e cenários de exemplo. Não gera medições fictícias.",
+    "fr-FR": "Ajoute des personas et des scénarios d’exemple, sans fabriquer de mesures.",
+    "it-IT": "Aggiunge personas e scenari di esempio. Non genera misurazioni fittizie.",
+    "ca-ES": "Afegeix persones i escenaris d’exemple. No genera mesures fictícies."
+  },
+  "Cargar caso: cita médica": {
+    "es-CO": "Cargar caso: cita médica",
+    "en-US": "Load example: medical appointment",
+    "pt-BR": "Carregar exemplo: consulta médica",
+    "fr-FR": "Charger l’exemple : rendez-vous médical",
+    "it-IT": "Carica esempio: visita medica",
+    "ca-ES": "Carregar exemple: cita mèdica"
+  },
+  "Cargar caso: vehículo": {
+    "es-CO": "Cargar caso: vehículo",
+    "en-US": "Load example: vehicle",
+    "pt-BR": "Carregar exemplo: veículo",
+    "fr-FR": "Charger l’exemple : véhicule",
+    "it-IT": "Carica esempio: veicolo",
+    "ca-ES": "Carregar exemple: vehicle"
+  },
+  "Caso añadido sin reemplazar el proyecto.": {
+    "es-CO": "Caso añadido sin reemplazar el proyecto. Revíselo en Personas e Informes.",
+    "en-US": "Example added without replacing the project. Review it in Research personas and Reports.",
+    "pt-BR": "Exemplo adicionado sem substituir o projeto. Revise em Personas e Relatórios.",
+    "fr-FR": "Exemple ajouté sans remplacer le projet. Consultez Personas et Rapports.",
+    "it-IT": "Esempio aggiunto senza sostituire il progetto. Consultalo in Personas e Rapporti.",
+    "ca-ES": "Exemple afegit sense substituir el projecte. Reviseu-lo a Persones i Informes."
+  },
+  "Conductor de demostración": {
+    "es-CO": "Conductor de demostración",
+    "en-US": "Demo driver",
+    "pt-BR": "Motorista de demonstração",
+    "fr-FR": "Conducteur de démonstration",
+    "it-IT": "Conducente dimostrativo",
+    "ca-ES": "Conductor de demostració"
+  },
+  "Persona mayor de demostración": {
+    "es-CO": "Persona mayor de demostración",
+    "en-US": "Demo older adult",
+    "pt-BR": "Pessoa idosa de demonstração",
+    "fr-FR": "Personne âgée de démonstration",
+    "it-IT": "Persona anziana dimostrativa",
+    "ca-ES": "Persona gran de demostració"
+  },
+  "Vehículo detenido, interacción breve": {
+    "es-CO": "Vehículo detenido, interacción breve",
+    "en-US": "Stationary vehicle, brief interaction",
+    "pt-BR": "Veículo parado, interação breve",
+    "fr-FR": "Véhicule à l’arrêt, interaction brève",
+    "it-IT": "Veicolo fermo, interazione breve",
+    "ca-ES": "Vehicle aturat, interacció breu"
+  },
+  "Trámite médico con texto ampliado": {
+    "es-CO": "Trámite médico con texto ampliado",
+    "en-US": "Medical procedure with enlarged text",
+    "pt-BR": "Procedimento médico com texto ampliado",
+    "fr-FR": "Démarche médicale avec texte agrandi",
+    "it-IT": "Procedura medica con testo ingrandito",
+    "ca-ES": "Tràmit mèdic amb text ampliat"
+  },
+  "Consultar una ruta sin distracción": {
+    "es-CO": "Consultar una ruta sin distracción",
+    "en-US": "Check a route without distraction",
+    "pt-BR": "Consultar uma rota sem distração",
+    "fr-FR": "Consulter un itinéraire sans distraction",
+    "it-IT": "Consulta un percorso senza distrazioni",
+    "ca-ES": "Consultar una ruta sense distracció"
+  },
+  "Solicitar una cita con confirmación clara": {
+    "es-CO": "Solicitar una cita con confirmación clara",
+    "en-US": "Request an appointment with clear confirmation",
+    "pt-BR": "Solicitar consulta com confirmação clara",
+    "fr-FR": "Demander un rendez-vous avec confirmation claire",
+    "it-IT": "Richiedi un appuntamento con conferma chiara",
+    "ca-ES": "Demanar una cita amb confirmació clara"
+  },
+  "Atención compartida": {
+    "es-CO": "Atención compartida",
+    "en-US": "Divided attention",
+    "pt-BR": "Atenção dividida",
+    "fr-FR": "Attention partagée",
+    "it-IT": "Attenzione divisa",
+    "ca-ES": "Atenció compartida"
+  },
+  "Visión reducida y poca experiencia digital": {
+    "es-CO": "Visión reducida y poca experiencia digital",
+    "en-US": "Reduced vision and little digital experience",
+    "pt-BR": "Visão reduzida e pouca experiência digital",
+    "fr-FR": "Vision réduite et faible expérience numérique",
+    "it-IT": "Vista ridotta e poca esperienza digitale",
+    "ca-ES": "Visió reduïda i poca experiència digital"
+  },
+  "Vehículo": {
+    "es-CO": "Vehículo",
+    "en-US": "Vehicle",
+    "pt-BR": "Veículo",
+    "fr-FR": "Véhicule",
+    "it-IT": "Veicolo",
+    "ca-ES": "Vehicle"
+  },
+  "Tableta": {
+    "es-CO": "Tableta",
+    "en-US": "Tablet",
+    "pt-BR": "Tablet",
+    "fr-FR": "Tablette",
+    "it-IT": "Tablet",
+    "ca-ES": "Tauleta"
+  },
+  "Necesito claridad": {
+    "es-CO": "Necesito claridad",
+    "en-US": "I need clarity",
+    "pt-BR": "Preciso de clareza",
+    "fr-FR": "J’ai besoin de clarté",
+    "it-IT": "Ho bisogno di chiarezza",
+    "ca-ES": "Necessito claredat"
+  },
+  "Quiero conservar el control": {
+    "es-CO": "Quiero conservar el control",
+    "en-US": "I want to stay in control",
+    "pt-BR": "Quero manter o controle",
+    "fr-FR": "Je veux garder le contrôle",
+    "it-IT": "Voglio mantenere il controllo",
+    "ca-ES": "Vull conservar el control"
+  },
+  "Comprueba el estado": {
+    "es-CO": "Comprueba el estado",
+    "en-US": "Checks the status",
+    "pt-BR": "Verifica o estado",
+    "fr-FR": "Vérifie l’état",
+    "it-IT": "Controlla lo stato",
+    "ca-ES": "Comprova l’estat"
+  },
+  "Solicita confirmación": {
+    "es-CO": "Solicita confirmación",
+    "en-US": "Requests confirmation",
+    "pt-BR": "Solicita confirmação",
+    "fr-FR": "Demande confirmation",
+    "it-IT": "Richiede conferma",
+    "ca-ES": "Demana confirmació"
+  },
+  "DEMOSTRACIÓN: {{case}}": {
+    "es-CO": "DEMOSTRACIÓN: {{case}}",
+    "en-US": "DEMONSTRATION: {{case}}",
+    "pt-BR": "DEMONSTRAÇÃO: {{case}}",
+    "fr-FR": "DÉMONSTRATION : {{case}}",
+    "it-IT": "DIMOSTRAZIONE: {{case}}",
+    "ca-ES": "DEMOSTRACIÓ: {{case}}"
+  },
+  "vehículo": {
+    "es-CO": "vehículo",
+    "en-US": "vehicle",
+    "pt-BR": "veículo",
+    "fr-FR": "véhicule",
+    "it-IT": "veicolo",
+    "ca-ES": "vehicle"
+  },
+  "cita médica": {
+    "es-CO": "cita médica",
+    "en-US": "medical appointment",
+    "pt-BR": "consulta médica",
+    "fr-FR": "rendez-vous médical",
+    "it-IT": "visita medica",
+    "ca-ES": "cita mèdica"
+  },
+  "Caso precargado, no participante real": {
+    "es-CO": "Caso precargado, no participante real",
+    "en-US": "Preloaded example, not a real participant",
+    "pt-BR": "Exemplo pré-carregado, não participante real",
+    "fr-FR": "Exemple préchargé, pas un participant réel",
+    "it-IT": "Esempio precaricato, non partecipante reale",
+    "ca-ES": "Exemple precarregat, no participant real"
+  },
+  "Consultar ruta con vehículo detenido": {
+    "es-CO": "Consultar ruta con vehículo detenido",
+    "en-US": "Check a route with the vehicle stationary",
+    "pt-BR": "Consultar rota com veículo parado",
+    "fr-FR": "Consulter un itinéraire avec le véhicule à l’arrêt",
+    "it-IT": "Consulta percorso con veicolo fermo",
+    "ca-ES": "Consultar ruta amb el vehicle aturat"
+  },
+  "Reservar cita": {
+    "es-CO": "Reservar cita",
+    "en-US": "Book appointment",
+    "pt-BR": "Reservar consulta",
+    "fr-FR": "Prendre rendez-vous",
+    "it-IT": "Prenota appuntamento",
+    "ca-ES": "Reservar cita"
+  },
+  "Texto al 150%": {
+    "es-CO": "Texto al 150%",
+    "en-US": "Text at 150%",
+    "pt-BR": "Texto a 150%",
+    "fr-FR": "Texte à 150 %",
+    "it-IT": "Testo al 150%",
+    "ca-ES": "Text al 150%"
+  },
+  "Evitar distracciones": {
+    "es-CO": "Evitar distracciones",
+    "en-US": "Avoid distractions",
+    "pt-BR": "Evitar distrações",
+    "fr-FR": "Éviter les distractions",
+    "it-IT": "Evita distrazioni",
+    "ca-ES": "Evitar distraccions"
+  },
+  "Comprende el resultado y puede cancelar": {
+    "es-CO": "Comprende el resultado y puede cancelar",
+    "en-US": "Understands the result and can cancel",
+    "pt-BR": "Compreende o resultado e pode cancelar",
+    "fr-FR": "Comprend le résultat et peut annuler",
+    "it-IT": "Comprende il risultato e può annullare",
+    "ca-ES": "Comprèn el resultat i pot cancel·lar"
+  },
+  "Cita médica": {
+    "es-CO": "Cita médica",
+    "en-US": "Medical appointment",
+    "pt-BR": "Consulta médica",
+    "fr-FR": "Rendez-vous médical",
+    "it-IT": "Visita medica",
+    "ca-ES": "Cita mèdica"
+  },
+  "Caso de exposición; sin resultados medidos.": {
+    "es-CO": "Caso de exposición; sin resultados medidos.",
+    "en-US": "Presentation example; no measured results.",
+    "pt-BR": "Exemplo de apresentação; sem resultados medidos.",
+    "fr-FR": "Exemple de présentation ; sans résultats mesurés.",
+    "it-IT": "Esempio dimostrativo; senza risultati misurati.",
+    "ca-ES": "Exemple de presentació; sense resultats mesurats."
+  }
+}

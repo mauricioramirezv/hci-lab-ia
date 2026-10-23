@@ -1,3 +1,8 @@
+import {interfaceResources} from './locales/interface';
+import {closureResources} from './locales/closure';
+import {displayResources} from '../features/accessibility/locales';
+import {crudResources} from './locales/crud';
+import {userResources} from '../features/users/locales';
 import {readLanguage} from '../features/project/infrastructure';
 import {evaluationResources} from '../features/evaluation/locales';
 import { upgradeResources, italianBase, catalanBase } from './locales/activities';
@@ -82,7 +87,15 @@ Object.entries(manageResources).forEach(([lang, manage]) => i18n.addResourceBund
 Object.entries(conceptResources).forEach(([lang, conceptLab]) => i18n.addResourceBundle(lang, 'translation', { conceptLab }, true, true));
 Object.entries(patternResources).forEach(([lang, patternLab]) => i18n.addResourceBundle(lang, 'translation', { patternLab }, true, true));
 export default i18n;
+Object.entries(interfaceResources).forEach(([language,resources])=>i18n.addResourceBundle(language,'interface',resources,true,true));
 Object.entries(trackingResources).forEach(([lang, trackingUX]) => i18n.addResourceBundle(lang, 'translation', { trackingUX }, true, true));
 Object.entries(activityResources).forEach(([lang, projectActivities]) => i18n.addResourceBundle(lang, 'translation', { projectActivities }, true, true));
 
 Object.entries(evaluationResources).forEach(([lang,evaluationLab])=>i18n.addResourceBundle(lang,'translation',{evaluationLab},true,true));
+
+Object.entries(userResources).forEach(([lang,usersLab])=>i18n.addResourceBundle(lang,'translation',{usersLab},true,true));
+
+Object.entries(crudResources).forEach(([lang,crud])=>i18n.addResourceBundle(lang,'translation',{crud},true,true));
+
+Object.entries(displayResources).forEach(([lang,displayPreferences])=>i18n.addResourceBundle(lang,'translation',{displayPreferences},true,true));
+Object.entries(closureResources).forEach(([lang,closure])=>i18n.addResourceBundle(lang,'translation',{closure},true,true));

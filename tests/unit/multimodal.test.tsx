@@ -48,9 +48,9 @@ describe('Multimodal integration', () => {
   expect(screen.getByLabelText('Color perception')).toBeInTheDocument();
   expect(screen.getByRole('button',{name:'Save evidence'})).toBeInTheDocument();
  });
- it('stores a concept observation as a pending human finding', () => {
+ it('stores a concept observation as a pending human finding', async () => {
   renderApp('/concepts');
-  fireEvent.click(screen.getByRole('button',{name:'Abrir actividad: Awareness'}));
+  fireEvent.click(await screen.findByRole('button',{name:'Abrir actividad: Awareness'}));
   fireEvent.change(screen.getByLabelText('Observación'), { target: {value:'No reconocí si se había guardado.'} });
   fireEvent.click(screen.getByRole('button',{name:'Guardar observación como hallazgo'}));
   expect(readProject().findings[0]).toMatchObject({heuristic:'Awareness',source:'human',status:'pending',problem:'No reconocí si se había guardado.'});

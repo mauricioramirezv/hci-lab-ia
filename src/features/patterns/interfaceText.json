@@ -1,0 +1,234 @@
+{
+  "Formulario": {
+    "es-CO": "Formulario",
+    "en-US": "Form",
+    "pt-BR": "Formulário",
+    "fr-FR": "Formulaire",
+    "it-IT": "Modulo",
+    "ca-ES": "Formulari"
+  },
+  "Etiqueta persistente, ayuda concreta y validación junto al campo.": {
+    "es-CO": "Etiqueta persistente, ayuda concreta y validación junto al campo.",
+    "en-US": "Persistent label, specific help and validation beside the field.",
+    "pt-BR": "Rótulo persistente, ajuda concreta e validação junto ao campo.",
+    "fr-FR": "Libellé persistant, aide précise et validation près du champ.",
+    "it-IT": "Etichetta persistente, aiuto concreto e validazione accanto al campo.",
+    "ca-ES": "Etiqueta persistent, ajuda concreta i validació al costat del camp."
+  },
+  "Placeholder como etiqueta y mensaje “Error 405”.": {
+    "es-CO": "Placeholder como etiqueta y mensaje “Error 405”.",
+    "en-US": "Placeholder as label and an “Error 405” message.",
+    "pt-BR": "Placeholder como rótulo e mensagem “Erro 405”.",
+    "fr-FR": "Texte indicatif comme libellé et message « Erreur 405 ».",
+    "it-IT": "Segnaposto come etichetta e messaggio “Errore 405”.",
+    "ca-ES": "Text indicatiu com a etiqueta i missatge «Error 405»."
+  },
+  "Prevención y recuperación": {
+    "es-CO": "Prevención y recuperación",
+    "en-US": "Prevention and recovery",
+    "pt-BR": "Prevenção e recuperação",
+    "fr-FR": "Prévention et récupération",
+    "it-IT": "Prevenzione e recupero",
+    "ca-ES": "Prevenció i recuperació"
+  },
+  "Navegación": {
+    "es-CO": "Navegación",
+    "en-US": "Navigation",
+    "pt-BR": "Navegação",
+    "fr-FR": "Navigation",
+    "it-IT": "Navigazione",
+    "ca-ES": "Navegació"
+  },
+  "Ubicación actual visible y nombres orientados a tareas.": {
+    "es-CO": "Ubicación actual visible y nombres orientados a tareas.",
+    "en-US": "Visible current location and task-oriented names.",
+    "pt-BR": "Localização atual visível e nomes orientados a tarefas.",
+    "fr-FR": "Position actuelle visible et noms orientés vers les tâches.",
+    "it-IT": "Posizione attuale visibile e nomi orientati alle attività.",
+    "ca-ES": "Ubicació actual visible i noms orientats a tasques."
+  },
+  "Iconos ambiguos, enlaces duplicados y cambios de posición.": {
+    "es-CO": "Iconos ambiguos, enlaces duplicados y cambios de posición.",
+    "en-US": "Ambiguous icons, duplicate links and position changes.",
+    "pt-BR": "Ícones ambíguos, links duplicados e mudanças de posição.",
+    "fr-FR": "Icônes ambiguës, liens dupliqués et changements de position.",
+    "it-IT": "Icone ambigue, collegamenti duplicati e cambi di posizione.",
+    "ca-ES": "Icones ambigües, enllaços duplicats i canvis de posició."
+  },
+  "Consistencia y awareness": {
+    "es-CO": "Consistencia y comprensión del estado",
+    "en-US": "Consistency and state awareness",
+    "pt-BR": "Consistência e compreensão do estado",
+    "fr-FR": "Cohérence et compréhension de l’état",
+    "it-IT": "Coerenza e consapevolezza dello stato",
+    "ca-ES": "Consistència i comprensió de l’estat"
+  },
+  "Retroalimentación": {
+    "es-CO": "Retroalimentación",
+    "en-US": "Feedback",
+    "pt-BR": "Retorno",
+    "fr-FR": "Retour d’information",
+    "it-IT": "Feedback",
+    "ca-ES": "Retroacció"
+  },
+  "Estado, progreso y resultado comunicados visual y programáticamente.": {
+    "es-CO": "Estado, progreso y resultado comunicados visual y programáticamente.",
+    "en-US": "Status, progress and result communicated visually and programmatically.",
+    "pt-BR": "Estado, progresso e resultado comunicados visual e programaticamente.",
+    "fr-FR": "État, progression et résultat communiqués visuellement et par programmation.",
+    "it-IT": "Stato, progresso e risultato comunicati visivamente e programmaticamente.",
+    "ca-ES": "Estat, progrés i resultat comunicats visualment i programàticament."
+  },
+  "Carga silenciosa y confirmación que desaparece.": {
+    "es-CO": "Carga silenciosa y confirmación que desaparece.",
+    "en-US": "Silent loading and disappearing confirmation.",
+    "pt-BR": "Carregamento silencioso e confirmação que desaparece.",
+    "fr-FR": "Chargement silencieux et confirmation qui disparaît.",
+    "it-IT": "Caricamento silenzioso e conferma che scompare.",
+    "ca-ES": "Càrrega silenciosa i confirmació que desapareix."
+  },
+  "Visibilidad del estado": {
+    "es-CO": "Visibilidad del estado",
+    "en-US": "Status visibility",
+    "pt-BR": "Visibilidade do estado",
+    "fr-FR": "Visibilité de l’état",
+    "it-IT": "Visibilità dello stato",
+    "ca-ES": "Visibilitat de l’estat"
+  },
+  "Decisiones": {
+    "es-CO": "Decisiones",
+    "en-US": "Decisions",
+    "pt-BR": "Decisões",
+    "fr-FR": "Décisions",
+    "it-IT": "Decisioni",
+    "ca-ES": "Decisions"
+  },
+  "Opciones comparables, recomendación explicada y salida disponible.": {
+    "es-CO": "Opciones comparables, recomendación explicada y salida disponible.",
+    "en-US": "Comparable options, explained recommendation and an available exit.",
+    "pt-BR": "Opções comparáveis, recomendação explicada e saída disponível.",
+    "fr-FR": "Options comparables, recommandation expliquée et sortie disponible.",
+    "it-IT": "Opzioni confrontabili, raccomandazione spiegata e uscita disponibile.",
+    "ca-ES": "Opcions comparables, recomanació explicada i sortida disponible."
+  },
+  "Opción preseleccionada, urgencia falsa y cancelación escondida.": {
+    "es-CO": "Opción preseleccionada, urgencia falsa y cancelación escondida.",
+    "en-US": "Preselected option, false urgency and hidden cancellation.",
+    "pt-BR": "Opção pré-selecionada, urgência falsa e cancelamento oculto.",
+    "fr-FR": "Option présélectionnée, fausse urgence et annulation cachée.",
+    "it-IT": "Opzione preselezionata, falsa urgenza e annullamento nascosto.",
+    "ca-ES": "Opció preseleccionada, urgència falsa i cancel·lació amagada."
+  },
+  "Control y ética": {
+    "es-CO": "Control y ética",
+    "en-US": "Control and ethics",
+    "pt-BR": "Controle e ética",
+    "fr-FR": "Contrôle et éthique",
+    "it-IT": "Controllo ed etica",
+    "ca-ES": "Control i ètica"
+  },
+  "Contenido": {
+    "es-CO": "Contenido",
+    "en-US": "Content",
+    "pt-BR": "Conteúdo",
+    "fr-FR": "Contenu",
+    "it-IT": "Contenuto",
+    "ca-ES": "Contingut"
+  },
+  "Lenguaje directo, jerarquía clara y bloques breves.": {
+    "es-CO": "Lenguaje directo, jerarquía clara y bloques breves.",
+    "en-US": "Direct language, clear hierarchy and short blocks.",
+    "pt-BR": "Linguagem direta, hierarquia clara e blocos curtos.",
+    "fr-FR": "Langage direct, hiérarchie claire et blocs courts.",
+    "it-IT": "Linguaggio diretto, gerarchia chiara e blocchi brevi.",
+    "ca-ES": "Llenguatge directe, jerarquia clara i blocs breus."
+  },
+  "Texto denso, tecnicismos y mayúsculas sostenidas.": {
+    "es-CO": "Texto denso, tecnicismos y mayúsculas sostenidas.",
+    "en-US": "Dense text, jargon and all capitals.",
+    "pt-BR": "Texto denso, jargão e maiúsculas contínuas.",
+    "fr-FR": "Texte dense, jargon et majuscules continues.",
+    "it-IT": "Testo denso, tecnicismi e tutto maiuscolo.",
+    "ca-ES": "Text dens, tecnicismes i majúscules sostingudes."
+  },
+  "Cognición y legibilidad": {
+    "es-CO": "Cognición y legibilidad",
+    "en-US": "Cognition and readability",
+    "pt-BR": "Cognição e legibilidade",
+    "fr-FR": "Cognition et lisibilité",
+    "it-IT": "Cognizione e leggibilità",
+    "ca-ES": "Cognició i llegibilitat"
+  },
+  "Privacidad": {
+    "es-CO": "Privacidad",
+    "en-US": "Privacy",
+    "pt-BR": "Privacidade",
+    "fr-FR": "Confidentialité",
+    "it-IT": "Riservatezza",
+    "ca-ES": "Privadesa"
+  },
+  "Solicita solo datos necesarios y explica su uso.": {
+    "es-CO": "Solicita solo datos necesarios y explica su uso.",
+    "en-US": "Requests only necessary data and explains its use.",
+    "pt-BR": "Solicita apenas dados necessários e explica seu uso.",
+    "fr-FR": "Ne demande que les données nécessaires et explique leur usage.",
+    "it-IT": "Richiede solo dati necessari e ne spiega l’uso.",
+    "ca-ES": "Demana només les dades necessàries i n’explica l’ús."
+  },
+  "Consentimiento acoplado y recolección excesiva.": {
+    "es-CO": "Consentimiento acoplado y recolección excesiva.",
+    "en-US": "Bundled consent and excessive collection.",
+    "pt-BR": "Consentimento acoplado e coleta excessiva.",
+    "fr-FR": "Consentement groupé et collecte excessive.",
+    "it-IT": "Consenso vincolato e raccolta eccessiva.",
+    "ca-ES": "Consentiment vinculat i recollida excessiva."
+  },
+  "Confianza y transparencia": {
+    "es-CO": "Confianza y transparencia",
+    "en-US": "Trust and transparency",
+    "pt-BR": "Confiança e transparência",
+    "fr-FR": "Confiance et transparence",
+    "it-IT": "Fiducia e trasparenza",
+    "ca-ES": "Confiança i transparència"
+  },
+  "PATTERN LIBRARY": {
+    "es-CO": "BIBLIOTECA DE PATRONES",
+    "en-US": "PATTERN LIBRARY",
+    "pt-BR": "BIBLIOTECA DE PADRÕES",
+    "fr-FR": "BIBLIOTHÈQUE DE MODÈLES",
+    "it-IT": "RACCOLTA DI PATTERN",
+    "ca-ES": "BIBLIOTECA DE PATRONS"
+  },
+  "Buenas prácticas y antipatrones": {
+    "es-CO": "Buenas prácticas y antipatrones",
+    "en-US": "Good practices and anti-patterns",
+    "pt-BR": "Boas práticas e antipadrões",
+    "fr-FR": "Bonnes pratiques et anti-modèles",
+    "it-IT": "Buone pratiche e antipattern",
+    "ca-ES": "Bones pràctiques i antipatrons"
+  },
+  "Compare decisiones equivalentes. La mala práctica es deliberada y sirve como objeto de evaluación, no como plantilla.": {
+    "es-CO": "Compare decisiones equivalentes. La mala práctica es deliberada y sirve como objeto de evaluación, no como plantilla.",
+    "en-US": "Compare equivalent decisions. Bad practice is deliberate and serves as an object of evaluation, not a template.",
+    "pt-BR": "Compare decisões equivalentes. A má prática é deliberada e serve para avaliação, não como modelo.",
+    "fr-FR": "Comparez des décisions équivalentes. La mauvaise pratique est volontaire et sert d’objet d’évaluation, pas de modèle.",
+    "it-IT": "Confronta decisioni equivalenti. La cattiva pratica è deliberata e serve come oggetto di valutazione, non come modello.",
+    "ca-ES": "Compareu decisions equivalents. La mala pràctica és deliberada i serveix com a objecte d’avaluació, no com a plantilla."
+  },
+  "Buena práctica": {
+    "es-CO": "Buena práctica",
+    "en-US": "Good practice",
+    "pt-BR": "Boa prática",
+    "fr-FR": "Bonne pratique",
+    "it-IT": "Buona pratica",
+    "ca-ES": "Bona pràctica"
+  },
+  "No se debe hacer": {
+    "es-CO": "No se debe hacer",
+    "en-US": "What to avoid",
+    "pt-BR": "O que evitar",
+    "fr-FR": "À éviter",
+    "it-IT": "Da evitare",
+    "ca-ES": "Què cal evitar"
+  }
+}

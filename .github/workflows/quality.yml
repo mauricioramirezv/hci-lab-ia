@@ -11,6 +11,8 @@ jobs:
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: npm run lint
+      - run: node tests/tools/check-architecture.cjs
+      - run: node tests/tools/check-translations.cjs
       - run: npm test -- --reporter=default --reporter=junit --outputFile=tests/results/vitest.xml
       - run: npm run build
       - name: Downloadable quality reports

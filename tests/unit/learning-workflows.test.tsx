@@ -18,8 +18,8 @@ it('groups click areas and escapes spreadsheet formula injection',()=>{
   expect(areaSummary([{x:0,y:0,at:0,weight:1,source:'mouse',area:'submit'},{x:1,y:2,at:2,weight:1,source:'keyboard',area:'submit'}])[0]).toMatchObject({count:2,percent:100});
   expect(csvCell('=cmd()')).toBe('"\'=cmd()"');expect(csvCell('a"b')).toBe('"a""b"');
 });
-it('filters concept topics and saves measured interaction evidence',()=>{
-  app('/concepts');fireEvent.change(screen.getByLabelText('Temática'),{target:{value:'0'}});
+it('filters concept topics and saves measured interaction evidence',async()=>{
+  app('/concepts');fireEvent.change(await screen.findByLabelText('Temática'),{target:{value:'0'}});
   expect(screen.queryByRole('heading',{name:'Accesibilidad'})).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole('button',{name:'Abrir actividad: Usabilidad'}));
   fireEvent.click(screen.getByRole('button',{name:'Iniciar prueba'}));

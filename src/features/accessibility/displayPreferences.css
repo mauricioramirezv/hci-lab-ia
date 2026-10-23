@@ -1,0 +1,30 @@
+.display-preferences{flex:none}
+.visualization-actions{display:flex;align-items:center;gap:.5rem;flex:none}
+:root[data-text-large="true"] .topbar{position:static}
+:root[data-dyslexia="true"] body,:root[data-dyslexia="true"] body *{font-family:Arial,Verdana,sans-serif!important}
+:root[data-spacing="true"] :where(p,li,label,button,input,select,textarea,summary,td,th,dt,dd,legend,h1,h2,h3):not(.i7-board button){line-height:1.8;letter-spacing:.08em;word-spacing:.16em}
+.topbar>*{max-width:100%}
+.demo-head{flex-wrap:wrap;gap:.5rem}
+:root[data-text-large="true"] .metric-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+.metric-card{min-width:0;overflow-wrap:anywhere}
+:root[data-text-large="true"] .funnel-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}
+:root[data-text-large="true"] .device-stage .device-frame{height:auto;min-height:320px;max-width:100%}
+:root[data-text-large="true"] .device-stage.watch .device-frame{border-radius:2rem;overflow:auto}
+:root[data-text-large="true"] .watch-glance{padding:1rem;overflow-wrap:anywhere;text-align:center}
+.display-preferences .icon-button,.visualization-actions .icon-button{width:2.75rem;height:2.75rem;min-width:44px;min-height:44px}
+.display-preferences .preference-heading .icon-button{flex:none}
+.display-preferences dialog{width:min(44rem,calc(100vw - 2rem));max-width:calc(100vw - 2rem);max-height:calc(100dvh - 2rem);overflow:auto;padding:1.25rem;border:2px solid var(--control-line);border-radius:1rem;background:var(--surface);color:var(--text);overscroll-behavior:contain}
+.display-preferences dialog::backdrop{background:#0009}
+.preference-heading{display:flex;align-items:flex-start;gap:1rem;justify-content:space-between}
+.preference-heading h2{min-width:0;overflow-wrap:anywhere}
+.display-preference-controls{display:grid;gap:1rem;min-width:0}
+.display-preference-controls fieldset{margin:0;min-width:0;border:1px solid var(--control-line);border-radius:.5rem;padding:1rem}
+.display-preference-controls legend{font-weight:700;max-width:100%;white-space:normal}
+.preference-actions{display:flex;flex-wrap:wrap;gap:.65rem}
+.preference-check{display:flex!important;align-items:flex-start;gap:.7rem;margin:1rem 0}
+.preference-check input{flex:none;width:1.15em;height:1.15em;margin-top:.2em;accent-color:var(--green)}
+.preference-check span{min-width:0}
+.display-preference-controls button{white-space:normal;overflow-wrap:anywhere;max-width:100%;height:auto}
+.display-preference-controls p{overflow-wrap:anywhere}
+@media(max-width:600px){.preference-actions>button{flex:1 1 100%}.display-preferences dialog{padding:1rem}}
+@media print{.display-preferences{display:none!important}}

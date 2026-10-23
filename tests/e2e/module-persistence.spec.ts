@@ -27,7 +27,7 @@ async function failureAndRetry(page:Page,save:Locator,collection:string,field?:L
 }
 
 test('module persistence: research keeps the form and retries a failed save',async({page})=>{
- await page.goto('/hci-lab-ia/#/research');await page.getByRole('button',{name:'Nueva persona',exact:true}).click();
+ await page.goto('/hci-lab-ia/#/research');await page.getByRole('button',{name:'Crear persona',exact:true}).click();
  for(const key of ['name','context','goal','barrier','device','assumptions'])await page.locator('#'+key).fill('RAW '+key);
  await page.locator('#basis').selectOption('assumed');
  await failureAndRetry(page,page.getByRole('button',{name:'Guardar',exact:true}),'personas',page.locator('#name'));

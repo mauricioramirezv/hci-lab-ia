@@ -1,9 +1,9 @@
 import type { ProjectState } from '../domain/state';
-import { PROJECT_KEY, PREFS_KEY, LANGUAGE_KEY, defaultPrefs } from '../domain/preferences';
+import { PROJECT_KEY, PREFS_KEY, LANGUAGE_KEY, defaultPrefs, parsePreferences } from '../domain/preferences';
 import type { Preferences } from '../domain/preferences';
-import { emptyProject, parseBackup, isPreferences } from '../domain/backup';
+import { emptyProject, parseBackup } from '../domain/backup';
 export function readPreferences():Preferences {
-  try { const value:unknown=JSON.parse(localStorage.getItem(PREFS_KEY) || 'null'); return isPreferences(value) ? value as Preferences : {...defaultPrefs}; }
+  try { const value:unknown=JSON.parse(localStorage.getItem(PREFS_KEY) || 'null'); return parsePreferences(value) || {...defaultPrefs}; }
   catch { return {...defaultPrefs}; }
 }
 /** Persist replacements before changing memory. Roll back individual keys on failure. */

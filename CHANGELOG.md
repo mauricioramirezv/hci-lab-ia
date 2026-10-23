@@ -1,3 +1,16 @@
+# 2.5.0 — preparación local, 2026-10-22
+
+- Organización por dominios, operaciones y adaptadores del proyecto; pruebas centralizadas en `tests/`.
+- Usuarios ficticios con CRUD, deshacer, persistencia, respaldo, seguimiento e informes; sin autenticación.
+- Consistencia de formularios, confirmaciones, borradores y relaciones del Laboratorio.
+- Preferencias globales compartidas, seis idiomas de controles, capturas protegidas y contextos experimentales separados.
+- Carga diferida por rutas con estados accesibles de carga/error, traducciones separadas y atajo Alt+Mayús+V.
+- Mensajes de resultado de los flujos revisados con señales de éxito/error y conservación de nombres y descripciones accesibles.
+- Verificación previa obligatoria en el workflow de Pages y artefactos de pruebas con retención de 14 días.
+- Completa seis idiomas en pantallas auxiliares, catálogos antiguos, estados, anuncios y CSV; añade verificación de cobertura sin fallback e inspección estática de JSX.
+- Conserva versión de datos, claves, respaldos y textos del usuario. Revisión lingüística humana, asistiva y física pendiente.
+- No publicada. Véase el estado de cierre y sus limitaciones en `docs/cierre-integral.md`.
+
 # 2.4.0
 
 - Integra seguimiento 2.3 y añade captura de página por ruta, canales independientes y exposición por tramo.

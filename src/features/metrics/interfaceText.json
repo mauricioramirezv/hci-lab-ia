@@ -1,0 +1,242 @@
+{
+  "MEASUREMENT": {
+    "es-CO": "MEDICIÓN",
+    "en-US": "MEASUREMENT",
+    "pt-BR": "MEDIÇÃO",
+    "fr-FR": "MESURE",
+    "it-IT": "MISURAZIONE",
+    "ca-ES": "MESURA"
+  },
+  "Panel de métricas calculadas": {
+    "es-CO": "Panel de métricas calculadas",
+    "en-US": "Calculated metrics dashboard",
+    "pt-BR": "Painel de métricas calculadas",
+    "fr-FR": "Tableau des métriques calculées",
+    "it-IT": "Pannello delle metriche calcolate",
+    "ca-ES": "Tauler de mètriques calculades"
+  },
+  "Los valores provienen de las interacciones, listas de verificación, evaluaciones y sesiones almacenadas en este proyecto.": {
+    "es-CO": "Los valores provienen de las interacciones, listas de verificación, evaluaciones y sesiones almacenadas en este proyecto.",
+    "en-US": "Values come from interactions, checklists, evaluations and sessions stored in this project.",
+    "pt-BR": "Os valores vêm de interações, listas de verificação, avaliações e sessões armazenadas neste projeto.",
+    "fr-FR": "Les valeurs proviennent des interactions, listes de contrôle, évaluations et sessions conservées dans ce projet.",
+    "it-IT": "I valori provengono da interazioni, liste di controllo, valutazioni e sessioni salvate nel progetto.",
+    "ca-ES": "Els valors provenen de les interaccions, llistes de verificació, avaluacions i sessions desades en aquest projecte."
+  },
+  "Finalización": {
+    "es-CO": "Finalización",
+    "en-US": "Completion",
+    "pt-BR": "Conclusão",
+    "fr-FR": "Achèvement",
+    "it-IT": "Completamento",
+    "ca-ES": "Finalització"
+  },
+  "Tiempo promedio": {
+    "es-CO": "Tiempo promedio",
+    "en-US": "Average time",
+    "pt-BR": "Tempo médio",
+    "fr-FR": "Temps moyen",
+    "it-IT": "Tempo medio",
+    "ca-ES": "Temps mitjà"
+  },
+  "Errores": {
+    "es-CO": "Errores",
+    "en-US": "Errors",
+    "pt-BR": "Erros",
+    "fr-FR": "Erreurs",
+    "it-IT": "Errori",
+    "ca-ES": "Errors"
+  },
+  "Accesibilidad": {
+    "es-CO": "Accesibilidad",
+    "en-US": "Accessibility",
+    "pt-BR": "Acessibilidade",
+    "fr-FR": "Accessibilité",
+    "it-IT": "Accessibilità",
+    "ca-ES": "Accessibilitat"
+  },
+  "Emoción": {
+    "es-CO": "Emoción",
+    "en-US": "Emotion",
+    "pt-BR": "Emoção",
+    "fr-FR": "Émotion",
+    "it-IT": "Emozione",
+    "ca-ES": "Emoció"
+  },
+  "Acuerdo humano–IA": {
+    "es-CO": "Acuerdo humano–IA",
+    "en-US": "Human–AI agreement",
+    "pt-BR": "Concordância humano–IA",
+    "fr-FR": "Accord humain–IA",
+    "it-IT": "Accordo umano–IA",
+    "ca-ES": "Acord humà–IA"
+  },
+  "Exportar CSV": {
+    "es-CO": "Exportar CSV",
+    "en-US": "Export CSV",
+    "pt-BR": "Exportar CSV",
+    "fr-FR": "Exporter en CSV",
+    "it-IT": "Esporta CSV",
+    "ca-ES": "Exportar CSV"
+  },
+  "Métrica": {
+    "es-CO": "Métrica",
+    "en-US": "Metric",
+    "pt-BR": "Métrica",
+    "fr-FR": "Métrique",
+    "it-IT": "Metrica",
+    "ca-ES": "Mètrica"
+  },
+  "Valor": {
+    "es-CO": "Valor",
+    "en-US": "Value",
+    "pt-BR": "Valor",
+    "fr-FR": "Valeur",
+    "it-IT": "Valore",
+    "ca-ES": "Valor"
+  },
+  "Embudo observado": {
+    "es-CO": "Embudo observado",
+    "en-US": "Observed funnel",
+    "pt-BR": "Funil observado",
+    "fr-FR": "Entonnoir observé",
+    "it-IT": "Funnel osservato",
+    "ca-ES": "Embut observat"
+  },
+  "Intentos": {
+    "es-CO": "Intentos",
+    "en-US": "Attempts",
+    "pt-BR": "Tentativas",
+    "fr-FR": "Tentatives",
+    "it-IT": "Tentativi",
+    "ca-ES": "Intents"
+  },
+  "Completados": {
+    "es-CO": "Completados",
+    "en-US": "Completed",
+    "pt-BR": "Concluídos",
+    "fr-FR": "Terminés",
+    "it-IT": "Completati",
+    "ca-ES": "Completats"
+  },
+  "Citas activas": {
+    "es-CO": "Citas activas",
+    "en-US": "Active appointments",
+    "pt-BR": "Consultas ativas",
+    "fr-FR": "Rendez-vous actifs",
+    "it-IT": "Appuntamenti attivi",
+    "ca-ES": "Cites actives"
+  },
+  "Interpretación responsable": {
+    "es-CO": "Interpretación responsable",
+    "en-US": "Responsible interpretation",
+    "pt-BR": "Interpretação responsável",
+    "fr-FR": "Interprétation responsable",
+    "it-IT": "Interpretazione responsabile",
+    "ca-ES": "Interpretació responsable"
+  },
+  "Un indicador sin meta ni contexto no demuestra calidad.": {
+    "es-CO": "Un indicador sin meta ni contexto no demuestra calidad.",
+    "en-US": "An indicator without a goal or context does not demonstrate quality.",
+    "pt-BR": "Um indicador sem meta nem contexto não demonstra qualidade.",
+    "fr-FR": "Un indicateur sans objectif ni contexte ne démontre pas la qualité.",
+    "it-IT": "Un indicatore senza obiettivo né contesto non dimostra qualità.",
+    "ca-ES": "Un indicador sense objectiu ni context no demostra qualitat."
+  },
+  "Las muestras pequeñas deben reportarse como exploratorias.": {
+    "es-CO": "Las muestras pequeñas deben reportarse como exploratorias.",
+    "en-US": "Small samples must be reported as exploratory.",
+    "pt-BR": "Amostras pequenas devem ser relatadas como exploratórias.",
+    "fr-FR": "Les petits échantillons doivent être présentés comme exploratoires.",
+    "it-IT": "I campioni piccoli vanno presentati come esplorativi.",
+    "ca-ES": "Les mostres petites s’han de presentar com a exploratòries."
+  },
+  "Accesibilidad automatizada no equivale a conformidad WCAG.": {
+    "es-CO": "Accesibilidad automatizada no equivale a conformidad WCAG.",
+    "en-US": "Automated accessibility testing does not establish WCAG conformance.",
+    "pt-BR": "Testes automatizados de acessibilidade não equivalem à conformidade WCAG.",
+    "fr-FR": "Les tests automatisés d’accessibilité ne prouvent pas la conformité WCAG.",
+    "it-IT": "I test automatizzati di accessibilità non dimostrano la conformità WCAG.",
+    "ca-ES": "Les proves automatitzades d’accessibilitat no equivalen a conformitat WCAG."
+  },
+  "El acuerdo con IA no equivale a verdad.": {
+    "es-CO": "El acuerdo con IA no equivale a verdad.",
+    "en-US": "Agreement with AI does not establish truth.",
+    "pt-BR": "Concordar com a IA não equivale à verdade.",
+    "fr-FR": "L’accord avec l’IA n’établit pas la vérité.",
+    "it-IT": "L’accordo con l’IA non equivale alla verità.",
+    "ca-ES": "L’acord amb la IA no equival a la veritat."
+  },
+  "Métricas de los nuevos módulos": {
+    "es-CO": "Métricas de los nuevos módulos",
+    "en-US": "Metrics from the additional modules",
+    "pt-BR": "Métricas dos módulos adicionais",
+    "fr-FR": "Métriques des modules supplémentaires",
+    "it-IT": "Metriche dei moduli aggiuntivi",
+    "ca-ES": "Mètriques dels mòduls addicionals"
+  },
+  "Evidencias reales:": {
+    "es-CO": "Evidencias reales:",
+    "en-US": "Recorded evidence:",
+    "pt-BR": "Evidências registradas:",
+    "fr-FR": "Preuves enregistrées :",
+    "it-IT": "Evidenze registrate:",
+    "ca-ES": "Evidències registrades:"
+  },
+  "· Raw TLX medio:": {
+    "es-CO": "· Raw TLX medio:",
+    "en-US": "· Mean Raw TLX:",
+    "pt-BR": "· Raw TLX médio:",
+    "fr-FR": "· Raw TLX moyen :",
+    "it-IT": "· Raw TLX medio:",
+    "ca-ES": "· Raw TLX mitjà:"
+  },
+  "· Sesiones de página:": {
+    "es-CO": "· Sesiones de página:",
+    "en-US": "· Page sessions:",
+    "pt-BR": "· Sessões de página:",
+    "fr-FR": "· Sessions de page :",
+    "it-IT": "· Sessioni di pagina:",
+    "ca-ES": "· Sessions de pàgina:"
+  },
+  "· Clics de página:": {
+    "es-CO": "· Clics de página:",
+    "en-US": "· Page clicks:",
+    "pt-BR": "· Cliques de página:",
+    "fr-FR": "· Clics de page :",
+    "it-IT": "· Clic della pagina:",
+    "ca-ES": "· Clics de pàgina:"
+  },
+  "Decisiones humano-IA:": {
+    "es-CO": "Decisiones humano-IA:",
+    "en-US": "Human–AI decisions:",
+    "pt-BR": "Decisões humano–IA:",
+    "fr-FR": "Décisions humain–IA :",
+    "it-IT": "Decisioni umano–IA:",
+    "ca-ES": "Decisions humà–IA:"
+  },
+  "· Ediciones o rechazos:": {
+    "es-CO": "· Ediciones o rechazos:",
+    "en-US": "· Edits or rejections:",
+    "pt-BR": "· Edições ou rejeições:",
+    "fr-FR": "· Modifications ou rejets :",
+    "it-IT": "· Modifiche o rifiuti:",
+    "ca-ES": "· Edicions o rebutjos:"
+  },
+  "sin datos": {
+    "es-CO": "sin datos",
+    "en-US": "no data",
+    "pt-BR": "sem dados",
+    "fr-FR": "aucune donnée",
+    "it-IT": "nessun dato",
+    "ca-ES": "sense dades"
+  },
+  "Revisar, comparar y exportar evidencias": {
+    "es-CO": "Revisar, comparar y exportar evidencias",
+    "en-US": "Review, compare and export evidence",
+    "pt-BR": "Revisar, comparar e exportar evidências",
+    "fr-FR": "Examiner, comparer et exporter les preuves",
+    "it-IT": "Esamina, confronta ed esporta evidenze",
+    "ca-ES": "Revisar, comparar i exportar evidències"
+  }
+}

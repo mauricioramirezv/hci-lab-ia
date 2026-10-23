@@ -88,7 +88,7 @@ for(const theme of ['light','dark','contrast','dark-contrast']){
   test(`patterns: axe, focus and responsive layout for every example and condition, ${theme}`,async({page},testInfo)=>{
     test.setTimeout(120000);const ui=patternResources['es-CO'].ui;
     await page.addInitScript(theme=>localStorage.setItem('hci-prefs-v2',JSON.stringify({dark:theme.includes('dark'),contrast:theme.includes('contrast'),font:100,spacing:false,dyslexia:false,motion:true})),theme);
-    await page.goto('/hci-lab-ia/#/practices');expect((await new AxeBuilder({page}).include('.pattern-module').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
+    await page.goto('/hci-lab-ia/#/practices');await expect(page.locator('.pattern-module')).toBeVisible();expect((await new AxeBuilder({page}).include('.pattern-module').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
     await page.screenshot({path:testInfo.outputPath(`catalog-${theme}.png`),fullPage:true});await page.screenshot({path:testInfo.outputPath(`catalog-viewport-${theme}.png`)});
     for(const [index,id] of patternIds.entries())for(const good of [true,false]){
       await page.locator(`#open-pattern-${index}`).click();await expect(activity(page).locator('h2')).toBeFocused();if(!good)await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');

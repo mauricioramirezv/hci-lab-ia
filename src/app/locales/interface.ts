@@ -1,0 +1,12 @@
+import catalog0 from '../../features/accessibility/interfaceText.json' with {type: 'json'};
+import catalog1 from '../../features/concepts/interfaceText.json' with {type: 'json'};
+import catalog2 from '../../features/course/interfaceText.json' with {type: 'json'};
+import catalog3 from '../../features/dashboard/interfaceText.json' with {type: 'json'};
+import catalog4 from '../../features/devices/interfaceText.json' with {type: 'json'};
+import catalog5 from '../../features/metrics/interfaceText.json' with {type: 'json'};
+import catalog6 from '../../features/multimodal/interfaceText.json' with {type: 'json'};
+import catalog7 from '../../features/patterns/interfaceText.json' with {type: 'json'};
+import catalog8 from '../../features/quality/interfaceText.json' with {type: 'json'};
+import catalog9 from '../../features/reservations/interfaceText.json' with {type: 'json'};
+const catalogs=[catalog0,catalog1,catalog2,catalog3,catalog4,catalog5,catalog6,catalog7,catalog8,catalog9];
+export const interfaceResources=Object.fromEntries(["es-CO","en-US","pt-BR","fr-FR","it-IT","ca-ES"].map(language=>[language,Object.fromEntries(catalogs.flatMap(catalog=>Object.entries(catalog).map(([key,values])=>[key,values[language as keyof typeof values]])))]));

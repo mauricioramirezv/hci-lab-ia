@@ -1,3 +1,4 @@
+import {crudResources} from './crud';
 // Every row contains Spanish, English, Portuguese, French, Italian and Catalan.
 const rows: Record<string,string[]> = {
  legacyAmbiguous:['Hay escenarios antiguos con este nombre y más de una persona posible. Edite esos escenarios para vincular una persona antes de cambiar el nombre.','Legacy scenarios use this name with more than one possible persona. Edit those scenarios to link a persona before changing the name.','Cenários antigos usam este nome com mais de uma persona possível. Vincule uma persona nesses cenários antes de mudar o nome.','Des scénarios anciens utilisent ce nom pour plusieurs personas possibles. Reliez une persona à ces scénarios avant de changer le nom.','Vecchi scenari usano questo nome per più personas possibili. Collega una persona a questi scenari prima di cambiare il nome.','Hi ha escenaris antics amb aquest nom i més d’una persona possible. Vinculeu-hi una persona abans de canviar el nom.'],
@@ -38,3 +39,5 @@ const rows: Record<string,string[]> = {
 };
 export const activityLanguages=['es-CO','en-US','pt-BR','fr-FR','it-IT','ca-ES'] as const;
 export const activityResources=Object.fromEntries(activityLanguages.map((lang,index)=>[lang,Object.fromEntries(Object.entries(rows).map(([key,values])=>[key,values[index]]))])) as Record<typeof activityLanguages[number],Record<string,string>>;
+
+for(const [lang,strings]of Object.entries(activityResources)){const common=crudResources[lang];for(const [key,label]of Object.entries({"newPersona": "createPersona", "newScenario": "createScenario", "view": "view", "edit": "edit", "save": "save", "back": "back", "cancel": "cancel", "editPersona": "editPersona", "editScenario": "editScenario", "newBooking": "createBooking", "startBooking": "createBooking", "reschedule": "edit", "confirmBooking": "save", "confirmReschedule": "save"}))strings[key]=common[label];}

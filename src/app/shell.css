@@ -92,3 +92,10 @@ main a:not(.primary):not(.secondary) { color:var(--navy); text-underline-offset:
 .management-message { margin-top:1rem; padding:.8rem; border:1px solid var(--control-line); border-radius:10px; }
 .management-notice { margin:1rem 1.5rem 0; padding:1rem; border:1px solid var(--control-line); border-radius:10px; background:var(--soft); }
 .management-notice:focus { outline:3px solid var(--focus); outline-offset:3px; }
+[data-outcome="success"]:not(:empty),[data-outcome="error"]:not(:empty),p[role="alert"]:not(:empty){padding:.8rem;border:2px solid;border-radius:.5rem;overflow-wrap:anywhere}
+[data-outcome="success"]:not(:empty){color:#075f4e;background:#e1f5eb;border-color:#08725e}
+[data-outcome="error"]:not(:empty),p[role="alert"]:not(:empty){color:#8e1b15;background:#fff0ef;border-color:#8e1b15;border-style:dashed}
+:root[data-theme="dark"] [data-outcome="success"]:not(:empty){color:#a9f5ca;background:#102e26;border-color:#a9f5ca}
+:root[data-theme="dark"] [data-outcome="error"]:not(:empty),:root[data-theme="dark"] p[role="alert"]:not(:empty){color:#ffd0cd;background:#391b1b;border-color:#ffd0cd}
+:root[data-contrast="true"] :is([data-outcome="success"],[data-outcome="error"],p[role="alert"]):not(:empty){color:var(--text);background:var(--surface);border-color:currentColor}
+.route-loading,.route-error{padding:1rem;border:2px solid var(--control-line);border-radius:.5rem}

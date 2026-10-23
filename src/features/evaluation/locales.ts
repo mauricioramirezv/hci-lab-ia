@@ -1,3 +1,4 @@
+import {crudResources} from '../../app/locales/crud';
 const rows:Record<string,string[]>={
  aiSource:['Origen: propuesta de IA simulada','Origin: simulated AI proposal','Origem: proposta de IA simulada','Origine : proposition d’IA simulée','Origine: proposta di IA simulata','Origen: proposta d’IA simulada'],validated:['Revisado y validado','Reviewed and validated','Revisado e validado','Vérifié et validé','Revisionato e validato','Revisat i validat'],rejected:['Rechazado','Rejected','Rejeitado','Rejeté','Rifiutato','Rebutjat'],reviewState:['Estado de revisión humana','Human review status','Estado de revisão humana','État de revue humaine','Stato di revisione umana','Estat de revisió humana'],
  trials:['Intentos medidos','Measured trials','Tentativas medidas','Essais mesurés','Tentativi misurati','Intents mesurats'],size:['Ancho del objetivo (px)','Target width (px)','Largura do alvo (px)','Largeur de cible (px)','Larghezza obiettivo (px)','Amplada de l’objectiu (px)'],options:['Cantidad de opciones','Number of options','Quantidade de opções','Nombre d’options','Numero di opzioni','Quantitat d’opcions'],input:['Método de interacción','Input method','Método de interação','Méthode d’interaction','Metodo di interazione','Mètode d’interacció'],keyboard:['Teclado','Keyboard','Teclado','Clavier','Tastiera','Teclat'],pointer:['Puntero','Pointer','Ponteiro','Pointeur','Puntatore','Punter'],
@@ -14,3 +15,5 @@ const rows:Record<string,string[]>={
 };
 export const evalLanguages=['es-CO','en-US','pt-BR','fr-FR','it-IT','ca-ES'] as const;
 export const evaluationResources=Object.fromEntries(evalLanguages.map((lang,i)=>[lang,Object.fromEntries(Object.entries(rows).map(([k,v])=>[k,v[i]]))])) as Record<string,Record<string,string>>;
+
+for(const [lang,strings]of Object.entries(evaluationResources)){const common=crudResources[lang];for(const [key,label]of Object.entries({"newFinding": "createFinding", "edit": "edit", "save": "save", "cancel": "cancel"}))strings[key]=common[label];}

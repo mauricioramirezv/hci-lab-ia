@@ -1,3 +1,4 @@
+import type {LabUser} from '../../users/domain';
 import type { Evidence } from './evidence';
 import type { PageSession } from '../../tracking/domain';
 import type { TrackingSession } from '../../tracking/domain';
@@ -19,6 +20,7 @@ export type LabEvent = {
 
 export type ProjectState = {
   version: 2;
+  users?: LabUser[];
   reportDraft?: ReportDraft;
   evidence?: Evidence[];
   pageSessions?: PageSession[];
@@ -42,6 +44,7 @@ export const uid = () => `${Date.now()}-${Math.random().toString(36).slice(2, 8)
 export const sampleProject: ProjectState = {
   version: 2,
   appointments: [],
+  users: [],
   personas: [{
     id: 'persona-ana', name: 'Ana', age: '58', device: 'Tableta',
     context: 'Realiza trámites desde casa y alterna entre tableta y celular.',

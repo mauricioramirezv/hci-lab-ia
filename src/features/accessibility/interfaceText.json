@@ -1,0 +1,330 @@
+{
+  "WCAG 2.2 + UNIVERSAL DESIGN": {
+    "es-CO": "WCAG 2.2 + DISEÑO UNIVERSAL",
+    "en-US": "WCAG 2.2 + UNIVERSAL DESIGN",
+    "pt-BR": "WCAG 2.2 + DESIGN UNIVERSAL",
+    "fr-FR": "WCAG 2.2 + CONCEPTION UNIVERSELLE",
+    "it-IT": "WCAG 2.2 + PROGETTAZIONE UNIVERSALE",
+    "ca-ES": "WCAG 2.2 + DISSENY UNIVERSAL"
+  },
+  "Demostración semántica": {
+    "es-CO": "Demostración semántica",
+    "en-US": "Semantic demonstration",
+    "pt-BR": "Demonstração semântica",
+    "fr-FR": "Démonstration sémantique",
+    "it-IT": "Dimostrazione semantica",
+    "ca-ES": "Demostració semàntica"
+  },
+  "El botón actualiza una región viva para que el cambio no dependa solo de la vista.": {
+    "es-CO": "El botón actualiza una región viva para que el cambio no dependa solo de la vista.",
+    "en-US": "The button updates a live region so the change does not rely on sight alone.",
+    "pt-BR": "O botão atualiza uma região viva para que a mudança não dependa apenas da visão.",
+    "fr-FR": "Le bouton actualise une région dynamique pour que le changement ne dépende pas uniquement de la vue.",
+    "it-IT": "Il pulsante aggiorna una regione live affinché il cambiamento non dipenda solo dalla vista.",
+    "ca-ES": "El botó actualitza una regió viva perquè el canvi no depengui només de la vista."
+  },
+  "Anunciar actualización": {
+    "es-CO": "Anunciar actualización",
+    "en-US": "Announce update",
+    "pt-BR": "Anunciar atualização",
+    "fr-FR": "Annoncer la mise à jour",
+    "it-IT": "Annuncia aggiornamento",
+    "ca-ES": "Anunciar actualització"
+  },
+  "Estado actualizado a las {{time}}": {
+    "es-CO": "Estado actualizado a las {{time}}",
+    "en-US": "Status updated at {{time}}",
+    "pt-BR": "Estado atualizado às {{time}}",
+    "fr-FR": "État mis à jour à {{time}}",
+    "it-IT": "Stato aggiornato alle {{time}}",
+    "ca-ES": "Estat actualitzat a les {{time}}"
+  },
+  "Verificación manual": {
+    "es-CO": "Verificación manual",
+    "en-US": "Manual verification",
+    "pt-BR": "Verificação manual",
+    "fr-FR": "Vérification manuelle",
+    "it-IT": "Verifica manuale",
+    "ca-ES": "Verificació manual"
+  },
+  "Recorrido completo solo con teclado": {
+    "es-CO": "Recorrido completo solo con teclado",
+    "en-US": "Complete flow using only the keyboard",
+    "pt-BR": "Fluxo completo apenas com teclado",
+    "fr-FR": "Parcours complet au clavier uniquement",
+    "it-IT": "Percorso completo solo con la tastiera",
+    "ca-ES": "Recorregut complet només amb teclat"
+  },
+  "Campos y botones tienen nombre accesible": {
+    "es-CO": "Campos y botones tienen nombre accesible",
+    "en-US": "Fields and buttons have accessible names",
+    "pt-BR": "Campos e botões têm nomes acessíveis",
+    "fr-FR": "Les champs et boutons ont un nom accessible",
+    "it-IT": "Campi e pulsanti hanno nomi accessibili",
+    "ca-ES": "Els camps i botons tenen nom accessible"
+  },
+  "Texto e interfaz cumplen contraste mínimo": {
+    "es-CO": "Texto e interfaz cumplen contraste mínimo",
+    "en-US": "Text and interface meet minimum contrast",
+    "pt-BR": "Texto e interface atendem ao contraste mínimo",
+    "fr-FR": "Le texte et l’interface respectent le contraste minimal",
+    "it-IT": "Testo e interfaccia rispettano il contrasto minimo",
+    "ca-ES": "El text i la interfície compleixen el contrast mínim"
+  },
+  "Contenido funciona con zoom del 200%": {
+    "es-CO": "Contenido funciona con zoom del 200%",
+    "en-US": "Content works at 200% zoom",
+    "pt-BR": "O conteúdo funciona com zoom de 200%",
+    "fr-FR": "Le contenu fonctionne avec un zoom de 200 %",
+    "it-IT": "Il contenuto funziona con zoom al 200%",
+    "ca-ES": "El contingut funciona amb zoom del 200%"
+  },
+  "Orden y anuncios verificados con lector de pantalla": {
+    "es-CO": "Orden y anuncios verificados con lector de pantalla",
+    "en-US": "Order and announcements checked with a screen reader",
+    "pt-BR": "Ordem e anúncios verificados com leitor de tela",
+    "fr-FR": "Ordre et annonces vérifiés avec un lecteur d’écran",
+    "it-IT": "Ordine e annunci verificati con un lettore di schermo",
+    "ca-ES": "Ordre i anuncis verificats amb lector de pantalla"
+  },
+  "Movimiento puede reducirse sin perder información": {
+    "es-CO": "Movimiento puede reducirse sin perder información",
+    "en-US": "Motion can be reduced without losing information",
+    "pt-BR": "O movimento pode ser reduzido sem perder informações",
+    "fr-FR": "Les animations peuvent être réduites sans perte d’information",
+    "it-IT": "Il movimento può essere ridotto senza perdere informazioni",
+    "ca-ES": "El moviment es pot reduir sense perdre informació"
+  },
+  "Automatizable:": {
+    "es-CO": "Automatizable:",
+    "en-US": "Automatable:",
+    "pt-BR": "Automatizável:",
+    "fr-FR": "Automatisable :",
+    "it-IT": "Automatizzabile:",
+    "ca-ES": "Automatitzable:"
+  },
+  "axe-core y Lighthouse detectan parte de los problemas. Teclado, zoom, lector y comprensión requieren revisión manual.": {
+    "es-CO": "axe-core y Lighthouse detectan parte de los problemas. Teclado, zoom, lector y comprensión requieren revisión manual.",
+    "en-US": "axe-core and Lighthouse detect some issues. Keyboard, zoom, screen readers and comprehension require manual review.",
+    "pt-BR": "axe-core e Lighthouse detectam parte dos problemas. Teclado, zoom, leitor e compreensão exigem revisão manual.",
+    "fr-FR": "axe-core et Lighthouse détectent certains problèmes. Clavier, zoom, lecteur et compréhension nécessitent un examen manuel.",
+    "it-IT": "axe-core e Lighthouse rilevano alcuni problemi. Tastiera, zoom, lettore e comprensione richiedono verifica manuale.",
+    "ca-ES": "axe-core i Lighthouse detecten part dels problemes. Teclat, zoom, lector i comprensió requereixen revisió manual."
+  },
+  "Muestra en Lengua de Señas Colombiana": {
+    "es-CO": "Muestra en Lengua de Señas Colombiana",
+    "en-US": "Colombian Sign Language sample",
+    "pt-BR": "Amostra de Língua de Sinais Colombiana",
+    "fr-FR": "Exemple en langue des signes colombienne",
+    "it-IT": "Esempio di lingua dei segni colombiana",
+    "ca-ES": "Mostra en llengua de signes colombiana"
+  },
+  "Se permite una muestra pequeña. El contenido debe ser producido o validado por una persona competente en LSC.": {
+    "es-CO": "Se permite una muestra pequeña. El contenido debe ser producido o validado por una persona competente en LSC.",
+    "en-US": "A short sample is allowed. Its content must be produced or validated by someone competent in Colombian Sign Language (LSC).",
+    "pt-BR": "Uma amostra curta é permitida. O conteúdo deve ser produzido ou validado por alguém competente em LSC.",
+    "fr-FR": "Un court exemple est autorisé. Son contenu doit être produit ou validé par une personne compétente en LSC.",
+    "it-IT": "È consentito un breve esempio. Il contenuto deve essere prodotto o validato da una persona competente in LSC.",
+    "ca-ES": "Es permet una mostra breu. El contingut ha de ser produït o validat per una persona competent en LSC."
+  },
+  "Cargar video local": {
+    "es-CO": "Cargar video local",
+    "en-US": "Load local video",
+    "pt-BR": "Carregar vídeo local",
+    "fr-FR": "Charger une vidéo locale",
+    "it-IT": "Carica video locale",
+    "ca-ES": "Carregar vídeo local"
+  },
+  "Transcripción textual": {
+    "es-CO": "Transcripción textual",
+    "en-US": "Text transcript",
+    "pt-BR": "Transcrição textual",
+    "fr-FR": "Transcription textuelle",
+    "it-IT": "Trascrizione testuale",
+    "ca-ES": "Transcripció textual"
+  },
+  "Ejemplo: “Su cita quedó confirmada. Puede modificarla o cancelarla desde Mis citas”.": {
+    "es-CO": "Ejemplo: “Su cita quedó confirmada. Puede modificarla o cancelarla desde Mis citas”.",
+    "en-US": "Example: “Your appointment is confirmed. You can change or cancel it from My appointments.”",
+    "pt-BR": "Exemplo: “Sua consulta foi confirmada. Você pode alterá-la ou cancelá-la em Minhas consultas.”",
+    "fr-FR": "Exemple : « Votre rendez-vous est confirmé. Vous pouvez le modifier ou l’annuler depuis Mes rendez-vous. »",
+    "it-IT": "Esempio: “Il tuo appuntamento è confermato. Puoi modificarlo o annullarlo da I miei appuntamenti.”",
+    "ca-ES": "Exemple: «La vostra cita està confirmada. Podeu modificar-la o cancel·lar-la des de Les meves cites.»"
+  },
+  "Demostraciones sensoriales y motrices": {
+    "es-CO": "Demostraciones sensoriales y motrices",
+    "en-US": "Sensory and motor demonstrations",
+    "pt-BR": "Demonstrações sensoriais e motoras",
+    "fr-FR": "Démonstrations sensorielles et motrices",
+    "it-IT": "Dimostrazioni sensoriali e motorie",
+    "ca-ES": "Demostracions sensorials i motrius"
+  },
+  "Aproximaciones didácticas, sin diagnóstico ni representación exacta de una condición clínica. El objetivo oscila; no se modifica el cursor real.": {
+    "es-CO": "Aproximaciones didácticas, sin diagnóstico ni representación exacta de una condición clínica. El objetivo oscila; no se modifica el cursor real.",
+    "en-US": "Teaching approximations, without diagnosis or an exact representation of a clinical condition. The target moves; the real cursor is unchanged.",
+    "pt-BR": "Aproximações didáticas, sem diagnóstico nem representação exata de uma condição clínica. O alvo oscila; o cursor real não muda.",
+    "fr-FR": "Approximations pédagogiques, sans diagnostic ni représentation exacte d’une condition clinique. La cible oscille ; le curseur réel reste inchangé.",
+    "it-IT": "Approssimazioni didattiche, senza diagnosi né rappresentazione esatta di una condizione clinica. Il bersaglio oscilla; il cursore reale non cambia.",
+    "ca-ES": "Aproximacions didàctiques, sense diagnòstic ni representació exacta d’una condició clínica. L’objectiu oscil·la; el cursor real no es modifica."
+  },
+  "Filtro visual": {
+    "es-CO": "Filtro visual",
+    "en-US": "Visual filter",
+    "pt-BR": "Filtro visual",
+    "fr-FR": "Filtre visuel",
+    "it-IT": "Filtro visivo",
+    "ca-ES": "Filtre visual"
+  },
+  "Normal": {
+    "es-CO": "Normal",
+    "en-US": "Normal",
+    "pt-BR": "Normal",
+    "fr-FR": "Normal",
+    "it-IT": "Normale",
+    "ca-ES": "Normal"
+  },
+  "Desenfoque y bajo contraste": {
+    "es-CO": "Desenfoque y bajo contraste",
+    "en-US": "Blur and low contrast",
+    "pt-BR": "Desfoque e baixo contraste",
+    "fr-FR": "Flou et faible contraste",
+    "it-IT": "Sfocatura e basso contrasto",
+    "ca-ES": "Desenfocament i baix contrast"
+  },
+  "Campo visual reducido": {
+    "es-CO": "Campo visual reducido",
+    "en-US": "Reduced visual field",
+    "pt-BR": "Campo visual reduzido",
+    "fr-FR": "Champ visuel réduit",
+    "it-IT": "Campo visivo ridotto",
+    "ca-ES": "Camp visual reduït"
+  },
+  "Dificultad de precisión: objetivo oscilante": {
+    "es-CO": "Dificultad de precisión: objetivo oscilante",
+    "en-US": "Precision difficulty: moving target",
+    "pt-BR": "Dificuldade de precisão: alvo oscilante",
+    "fr-FR": "Difficulté de précision : cible oscillante",
+    "it-IT": "Difficoltà di precisione: bersaglio oscillante",
+    "ca-ES": "Dificultat de precisió: objectiu oscil·lant"
+  },
+  "Objetivo amplio": {
+    "es-CO": "Objetivo amplio",
+    "en-US": "Large target",
+    "pt-BR": "Alvo grande",
+    "fr-FR": "Grande cible",
+    "it-IT": "Bersaglio ampio",
+    "ca-ES": "Objectiu ampli"
+  },
+  "Señal sonora opcional": {
+    "es-CO": "Señal sonora opcional",
+    "en-US": "Optional sound cue",
+    "pt-BR": "Sinal sonoro opcional",
+    "fr-FR": "Signal sonore facultatif",
+    "it-IT": "Segnale sonoro facoltativo",
+    "ca-ES": "Senyal sonor opcional"
+  },
+  "Vibración opcional": {
+    "es-CO": "Vibración opcional",
+    "en-US": "Optional vibration",
+    "pt-BR": "Vibração opcional",
+    "fr-FR": "Vibration facultative",
+    "it-IT": "Vibrazione facoltativa",
+    "ca-ES": "Vibració opcional"
+  },
+  "Reserva de asesoría · Próximo paso: confirmar": {
+    "es-CO": "Reserva de asesoría · Próximo paso: confirmar",
+    "en-US": "Consultation booking · Next step: confirm",
+    "pt-BR": "Reserva de consultoria · Próximo passo: confirmar",
+    "fr-FR": "Réservation de conseil · Étape suivante : confirmer",
+    "it-IT": "Prenotazione consulenza · Passo successivo: conferma",
+    "ca-ES": "Reserva d’assessorament · Pas següent: confirmar"
+  },
+  "Aciertos:": {
+    "es-CO": "Aciertos:",
+    "en-US": "Hits:",
+    "pt-BR": "Acertos:",
+    "fr-FR": "Réussites :",
+    "it-IT": "Successi:",
+    "ca-ES": "Encerts:"
+  },
+  "· Clics fuera del objetivo:": {
+    "es-CO": "· Clics fuera del objetivo:",
+    "en-US": "· Clicks outside the target:",
+    "pt-BR": "· Cliques fora do alvo:",
+    "fr-FR": "· Clics hors cible :",
+    "it-IT": "· Clic fuori bersaglio:",
+    "ca-ES": "· Clics fora de l’objectiu:"
+  },
+  "Escuchar nombre y estado (TTS)": {
+    "es-CO": "Escuchar nombre y estado (TTS)",
+    "en-US": "Listen to name and status (TTS)",
+    "pt-BR": "Ouvir nome e estado (TTS)",
+    "fr-FR": "Écouter le nom et l’état (TTS)",
+    "it-IT": "Ascolta nome e stato (TTS)",
+    "ca-ES": "Escoltar nom i estat (TTS)"
+  },
+  "Restablecer demostración": {
+    "es-CO": "Restablecer demostración",
+    "en-US": "Reset demonstration",
+    "pt-BR": "Restabelecer demonstração",
+    "fr-FR": "Réinitialiser la démonstration",
+    "it-IT": "Ripristina dimostrazione",
+    "ca-ES": "Restablir demostració"
+  },
+  "Acción confirmada con texto.": {
+    "es-CO": "Acción confirmada con texto. Puede repetirla o restablecer la demostración.",
+    "en-US": "Action confirmed in text. Repeat it or reset the demonstration.",
+    "pt-BR": "Ação confirmada em texto. Repita ou restabeleça a demonstração.",
+    "fr-FR": "Action confirmée par écrit. Répétez-la ou réinitialisez la démonstration.",
+    "it-IT": "Azione confermata con testo. Ripetila o ripristina la dimostrazione.",
+    "ca-ES": "Acció confirmada amb text. Podeu repetir-la o restablir la demostració."
+  },
+  "Audio no disponible; confirmación textual conservada.": {
+    "es-CO": "Audio no disponible; confirmación textual conservada. Puede continuar sin sonido.",
+    "en-US": "Audio unavailable; text confirmation preserved. You can continue without sound.",
+    "pt-BR": "Áudio indisponível; confirmação textual preservada. Você pode continuar sem som.",
+    "fr-FR": "Audio indisponible ; confirmation écrite conservée. Vous pouvez continuer sans son.",
+    "it-IT": "Audio non disponibile; conferma testuale conservata. Puoi continuare senza suono.",
+    "ca-ES": "Àudio no disponible; confirmació textual conservada. Podeu continuar sense so."
+  },
+  "Acción confirmada; vibración no disponible en este navegador.": {
+    "es-CO": "Acción confirmada; vibración no disponible en este navegador. Use la confirmación textual.",
+    "en-US": "Action confirmed; vibration unavailable in this browser. Use the text confirmation.",
+    "pt-BR": "Ação confirmada; vibração indisponível neste navegador. Use a confirmação textual.",
+    "fr-FR": "Action confirmée ; vibration indisponible dans ce navigateur. Utilisez la confirmation écrite.",
+    "it-IT": "Azione confermata; vibrazione non disponibile nel browser. Usa la conferma testuale.",
+    "ca-ES": "Acció confirmada; vibració no disponible en aquest navegador. Feu servir la confirmació textual."
+  },
+  "Voz no disponible; lea el texto.": {
+    "es-CO": "Voz no disponible; lea el texto y continúe con teclado o ratón.",
+    "en-US": "Speech unavailable; read the text and continue with keyboard or mouse.",
+    "pt-BR": "Voz indisponível; leia o texto e continue com teclado ou mouse.",
+    "fr-FR": "Voix indisponible ; lisez le texte et continuez au clavier ou à la souris.",
+    "it-IT": "Voce non disponibile; leggi il testo e continua con tastiera o mouse.",
+    "ca-ES": "Veu no disponible; llegiu el text i continueu amb teclat o ratolí."
+  },
+  "Lectura TTS solicitada; no sustituye un lector de pantalla.": {
+    "es-CO": "Lectura TTS solicitada; no sustituye un lector de pantalla.",
+    "en-US": "TTS requested; it does not replace a screen reader.",
+    "pt-BR": "Leitura TTS solicitada; não substitui um leitor de tela.",
+    "fr-FR": "Lecture TTS demandée ; elle ne remplace pas un lecteur d’écran.",
+    "it-IT": "Lettura TTS richiesta; non sostituisce un lettore di schermo.",
+    "ca-ES": "Lectura TTS sol·licitada; no substitueix un lector de pantalla."
+  },
+  "Demostración restablecida.": {
+    "es-CO": "Demostración restablecida. Puede elegir los efectos y volver a intentarlo.",
+    "en-US": "Demonstration reset. Choose effects and try again.",
+    "pt-BR": "Demonstração restabelecida. Escolha os efeitos e tente novamente.",
+    "fr-FR": "Démonstration réinitialisée. Choisissez les effets et réessayez.",
+    "it-IT": "Dimostrazione ripristinata. Scegli gli effetti e riprova.",
+    "ca-ES": "Demostració restablerta. Podeu triar els efectes i tornar-ho a provar."
+  },
+  "Botón: Confirmar reserva. Estado: acción confirmada.": {
+    "es-CO": "Botón: Confirmar reserva. Estado: acción confirmada.",
+    "en-US": "Button: Confirm booking. Status: action confirmed.",
+    "pt-BR": "Botão: Confirmar reserva. Estado: ação confirmada.",
+    "fr-FR": "Bouton : Confirmer la réservation. État : action confirmée.",
+    "it-IT": "Pulsante: Conferma prenotazione. Stato: azione confermata.",
+    "ca-ES": "Botó: Confirmar reserva. Estat: acció confirmada."
+  }
+}

@@ -79,7 +79,7 @@ for(const theme of ['light','dark','contrast','dark-contrast']){
   test(`concepts: axe, focus and layout for all eleven activities in both conditions, ${theme}`,async({page},testInfo)=>{
     test.setTimeout(120000);
     await page.addInitScript(theme=>localStorage.setItem('hci-prefs-v2',JSON.stringify({dark:theme.includes('dark'),contrast:theme.includes('contrast'),font:100,spacing:false,dyslexia:false,motion:true})),theme);
-    await page.goto('/hci-lab-ia/#/concepts');const ui=conceptResources['es-CO'].ui;
+    await page.goto('/hci-lab-ia/#/concepts');await expect(page.locator('.concept-module')).toBeVisible();const ui=conceptResources['es-CO'].ui;
     let result=await new AxeBuilder({page}).include('.concept-module').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(result.violations).toEqual([]);
     await page.screenshot({path:testInfo.outputPath(`catalog-${theme}.png`),fullPage:true});
     await page.screenshot({path:testInfo.outputPath(`catalog-viewport-${theme}.png`)});

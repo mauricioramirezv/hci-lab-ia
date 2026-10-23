@@ -15,6 +15,7 @@ export function savePersona<T extends ResearchData>(project:T, persona:Persona):
 
 export function deletePersona<T extends ResearchData>(project:T,id:string):T {
   const person=project.personas.find(p=>p.id===id);
+  if(!person)return project;
   if (project.scenarios.some(s=>s.personaId===id||linkedPersona(s,project.personas)?.id===id||(!s.personaId&&s.actor===person?.name))) return project;
   return {...project,personas:project.personas.filter(p=>p.id!==id)};
 }

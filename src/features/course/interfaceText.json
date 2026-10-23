@@ -1,0 +1,338 @@
+{
+  "8 CLASSES": {
+    "es-CO": "8 CLASES",
+    "en-US": "8 CLASSES",
+    "pt-BR": "8 AULAS",
+    "fr-FR": "8 COURS",
+    "it-IT": "8 LEZIONI",
+    "ca-ES": "8 CLASSES"
+  },
+  "Evolución del curso": {
+    "es-CO": "Evolución del curso",
+    "en-US": "Course progression",
+    "pt-BR": "Evolução do curso",
+    "fr-FR": "Progression du cours",
+    "it-IT": "Evoluzione del corso",
+    "ca-ES": "Evolució del curs"
+  },
+  "Cada taller agrega evidencia al mismo sistema; las entregas consolidan, corrigen y justifican lo construido.": {
+    "es-CO": "Cada taller agrega evidencia al mismo sistema; las entregas consolidan, corrigen y justifican lo construido.",
+    "en-US": "Each workshop adds evidence to the same system; submissions consolidate, correct and justify what was built.",
+    "pt-BR": "Cada oficina adiciona evidências ao mesmo sistema; as entregas consolidam, corrigem e justificam o que foi construído.",
+    "fr-FR": "Chaque atelier ajoute des preuves au même système ; les rendus consolident, corrigent et justifient ce qui a été construit.",
+    "it-IT": "Ogni laboratorio aggiunge evidenze allo stesso sistema; le consegne consolidano, correggono e giustificano quanto realizzato.",
+    "ca-ES": "Cada taller afegeix evidències al mateix sistema; els lliuraments consoliden, corregeixen i justifiquen el que s’ha construït."
+  },
+  "Fundamentos de IHC": {
+    "es-CO": "Fundamentos de IHC",
+    "en-US": "HCI foundations",
+    "pt-BR": "Fundamentos de IHC",
+    "fr-FR": "Fondements de l’IHM",
+    "it-IT": "Fondamenti di IUM",
+    "ca-ES": "Fonaments d’IHC"
+  },
+  "Diagnóstico de dos funcionalidades por estudiante.": {
+    "es-CO": "Diagnóstico de dos funcionalidades por estudiante.",
+    "en-US": "Diagnosis of two features per student.",
+    "pt-BR": "Diagnóstico de duas funcionalidades por estudante.",
+    "fr-FR": "Diagnostic de deux fonctionnalités par étudiant.",
+    "it-IT": "Diagnosi di due funzionalità per studente.",
+    "ca-ES": "Diagnòstic de dues funcionalitats per estudiant."
+  },
+  "Taller 1": {
+    "es-CO": "Taller 1",
+    "en-US": "Workshop 1",
+    "pt-BR": "Oficina 1",
+    "fr-FR": "Atelier 1",
+    "it-IT": "Laboratorio 1",
+    "ca-ES": "Taller 1"
+  },
+  "Usuarios y contextos": {
+    "es-CO": "Usuarios y contextos",
+    "en-US": "Users and contexts",
+    "pt-BR": "Usuários e contextos",
+    "fr-FR": "Utilisateurs et contextes",
+    "it-IT": "Utenti e contesti",
+    "ca-ES": "Usuaris i contextos"
+  },
+  "Personas, empatía, escenarios y recorridos.": {
+    "es-CO": "Personas, empatía, escenarios y recorridos.",
+    "en-US": "Personas, empathy, scenarios and journeys.",
+    "pt-BR": "Personas, empatia, cenários e jornadas.",
+    "fr-FR": "Personas, empathie, scénarios et parcours.",
+    "it-IT": "Personas, empatia, scenari e percorsi.",
+    "ca-ES": "Persones, empatia, escenaris i recorreguts."
+  },
+  "Taller 2 · Entrega 1": {
+    "es-CO": "Taller 2 · Entrega 1",
+    "en-US": "Workshop 2 · Submission 1",
+    "pt-BR": "Oficina 2 · Entrega 1",
+    "fr-FR": "Atelier 2 · Rendu 1",
+    "it-IT": "Laboratorio 2 · Consegna 1",
+    "ca-ES": "Taller 2 · Lliurament 1"
+  },
+  "Cognición y multiformato": {
+    "es-CO": "Cognición y multiformato",
+    "en-US": "Cognition and multiple formats",
+    "pt-BR": "Cognição e multiformato",
+    "fr-FR": "Cognition et multiformat",
+    "it-IT": "Cognizione e multiformato",
+    "ca-ES": "Cognició i multiformat"
+  },
+  "Modelos mentales, arquitectura, flujos y wireframes.": {
+    "es-CO": "Modelos mentales, arquitectura, flujos y wireframes.",
+    "en-US": "Mental models, architecture, flows and wireframes.",
+    "pt-BR": "Modelos mentais, arquitetura, fluxos e wireframes.",
+    "fr-FR": "Modèles mentaux, architecture, parcours et maquettes filaires.",
+    "it-IT": "Modelli mentali, architettura, flussi e wireframe.",
+    "ca-ES": "Models mentals, arquitectura, fluxos i wireframes."
+  },
+  "Taller 3": {
+    "es-CO": "Taller 3",
+    "en-US": "Workshop 3",
+    "pt-BR": "Oficina 3",
+    "fr-FR": "Atelier 3",
+    "it-IT": "Laboratorio 3",
+    "ca-ES": "Taller 3"
+  },
+  "Prototipado": {
+    "es-CO": "Prototipado",
+    "en-US": "Prototyping",
+    "pt-BR": "Prototipagem",
+    "fr-FR": "Prototypage",
+    "it-IT": "Prototipazione",
+    "ca-ES": "Prototipatge"
+  },
+  "Diseño visual, navegación y prototipo con apoyo de IA.": {
+    "es-CO": "Diseño visual, navegación y prototipo con apoyo de IA.",
+    "en-US": "Visual design, navigation and AI-assisted prototyping.",
+    "pt-BR": "Design visual, navegação e protótipo com apoio de IA.",
+    "fr-FR": "Conception visuelle, navigation et prototype assisté par IA.",
+    "it-IT": "Progettazione visiva, navigazione e prototipo con supporto IA.",
+    "ca-ES": "Disseny visual, navegació i prototip amb suport d’IA."
+  },
+  "Taller 4 · Entrega 2": {
+    "es-CO": "Taller 4 · Entrega 2",
+    "en-US": "Workshop 4 · Submission 2",
+    "pt-BR": "Oficina 4 · Entrega 2",
+    "fr-FR": "Atelier 4 · Rendu 2",
+    "it-IT": "Laboratorio 4 · Consegna 2",
+    "ca-ES": "Taller 4 · Lliurament 2"
+  },
+  "Diseño universal, WCAG y tecnologías de asistencia.": {
+    "es-CO": "Diseño universal, WCAG y tecnologías de asistencia.",
+    "en-US": "Universal design, WCAG and assistive technologies.",
+    "pt-BR": "Design universal, WCAG e tecnologias assistivas.",
+    "fr-FR": "Conception universelle, WCAG et technologies d’assistance.",
+    "it-IT": "Progettazione universale, WCAG e tecnologie assistive.",
+    "ca-ES": "Disseny universal, WCAG i tecnologies d’assistència."
+  },
+  "Evidencia A11y": {
+    "es-CO": "Evidencia A11y",
+    "en-US": "Accessibility evidence",
+    "pt-BR": "Evidência de acessibilidade",
+    "fr-FR": "Preuve d’accessibilité",
+    "it-IT": "Evidenza di accessibilità",
+    "ca-ES": "Evidència d’accessibilitat"
+  },
+  "Evaluación": {
+    "es-CO": "Evaluación",
+    "en-US": "Evaluation",
+    "pt-BR": "Avaliação",
+    "fr-FR": "Évaluation",
+    "it-IT": "Valutazione",
+    "ca-ES": "Avaluació"
+  },
+  "Heurísticas, usabilidad, emociones y awareness.": {
+    "es-CO": "Heurísticas, usabilidad, emociones y awareness.",
+    "en-US": "Heuristics, usability, emotions and state awareness.",
+    "pt-BR": "Heurísticas, usabilidade, emoções e compreensão do estado.",
+    "fr-FR": "Heuristiques, utilisabilité, émotions et compréhension de l’état.",
+    "it-IT": "Euristiche, usabilità, emozioni e consapevolezza dello stato.",
+    "ca-ES": "Heurístiques, usabilitat, emocions i comprensió de l’estat."
+  },
+  "Informe comparativo": {
+    "es-CO": "Informe comparativo",
+    "en-US": "Comparative report",
+    "pt-BR": "Relatório comparativo",
+    "fr-FR": "Rapport comparatif",
+    "it-IT": "Rapporto comparativo",
+    "ca-ES": "Informe comparatiu"
+  },
+  "Automatización": {
+    "es-CO": "Automatización",
+    "en-US": "Automation",
+    "pt-BR": "Automação",
+    "fr-FR": "Automatisation",
+    "it-IT": "Automazione",
+    "ca-ES": "Automatització"
+  },
+  "E2E, métricas, accesibilidad y rendimiento.": {
+    "es-CO": "E2E, métricas, accesibilidad y rendimiento.",
+    "en-US": "E2E, metrics, accessibility and performance.",
+    "pt-BR": "E2E, métricas, acessibilidade e desempenho.",
+    "fr-FR": "E2E, métriques, accessibilité et performance.",
+    "it-IT": "E2E, metriche, accessibilità e prestazioni.",
+    "ca-ES": "E2E, mètriques, accessibilitat i rendiment."
+  },
+  "Pipeline de calidad": {
+    "es-CO": "Pipeline de calidad",
+    "en-US": "Quality pipeline",
+    "pt-BR": "Pipeline de qualidade",
+    "fr-FR": "Pipeline qualité",
+    "it-IT": "Pipeline di qualità",
+    "ca-ES": "Pipeline de qualitat"
+  },
+  "IA aplicada": {
+    "es-CO": "IA aplicada",
+    "en-US": "Applied AI",
+    "pt-BR": "IA aplicada",
+    "fr-FR": "IA appliquée",
+    "it-IT": "IA applicata",
+    "ca-ES": "IA aplicada"
+  },
+  "Generación, evaluación, comparación y corrección humana.": {
+    "es-CO": "Generación, evaluación, comparación y corrección humana.",
+    "en-US": "Generation, evaluation, comparison and human correction.",
+    "pt-BR": "Geração, avaliação, comparação e correção humana.",
+    "fr-FR": "Génération, évaluation, comparaison et correction humaine.",
+    "it-IT": "Generazione, valutazione, confronto e correzione umana.",
+    "ca-ES": "Generació, avaluació, comparació i correcció humana."
+  },
+  "Proyecto final": {
+    "es-CO": "Proyecto final",
+    "en-US": "Final project",
+    "pt-BR": "Projeto final",
+    "fr-FR": "Projet final",
+    "it-IT": "Progetto finale",
+    "ca-ES": "Projecte final"
+  },
+  "Trazabilidad conceptual": {
+    "es-CO": "Trazabilidad conceptual",
+    "en-US": "Concept traceability",
+    "pt-BR": "Rastreabilidade conceitual",
+    "fr-FR": "Traçabilité conceptuelle",
+    "it-IT": "Tracciabilità concettuale",
+    "ca-ES": "Traçabilitat conceptual"
+  },
+  "Artefacto": {
+    "es-CO": "Artefacto",
+    "en-US": "Artifact",
+    "pt-BR": "Artefato",
+    "fr-FR": "Élément",
+    "it-IT": "Artefatto",
+    "ca-ES": "Artefacte"
+  },
+  "Decisión": {
+    "es-CO": "Decisión",
+    "en-US": "Decision",
+    "pt-BR": "Decisão",
+    "fr-FR": "Décision",
+    "it-IT": "Decisione",
+    "ca-ES": "Decisió"
+  },
+  "Evidencia posterior": {
+    "es-CO": "Evidencia posterior",
+    "en-US": "Subsequent evidence",
+    "pt-BR": "Evidência posterior",
+    "fr-FR": "Preuve ultérieure",
+    "it-IT": "Evidenza successiva",
+    "ca-ES": "Evidència posterior"
+  },
+  "Persona + empatía": {
+    "es-CO": "Persona + empatía",
+    "en-US": "Persona + empathy",
+    "pt-BR": "Persona + empatia",
+    "fr-FR": "Persona + empathie",
+    "it-IT": "Persona + empatia",
+    "ca-ES": "Persona + empatia"
+  },
+  "Prioridad y contexto": {
+    "es-CO": "Prioridad y contexto",
+    "en-US": "Priority and context",
+    "pt-BR": "Prioridade e contexto",
+    "fr-FR": "Priorité et contexte",
+    "it-IT": "Priorità e contesto",
+    "ca-ES": "Prioritat i context"
+  },
+  "Escenario y criterio de éxito": {
+    "es-CO": "Escenario y criterio de éxito",
+    "en-US": "Scenario and success criterion",
+    "pt-BR": "Cenário e critério de sucesso",
+    "fr-FR": "Scénario et critère de réussite",
+    "it-IT": "Scenario e criterio di successo",
+    "ca-ES": "Escenari i criteri d’èxit"
+  },
+  "Flujo multiformato": {
+    "es-CO": "Flujo multiformato",
+    "en-US": "Multiformat flow",
+    "pt-BR": "Fluxo multiformato",
+    "fr-FR": "Parcours multiformat",
+    "it-IT": "Flusso multiformato",
+    "ca-ES": "Flux multiformat"
+  },
+  "Jerarquía por dispositivo": {
+    "es-CO": "Jerarquía por dispositivo",
+    "en-US": "Hierarchy by device",
+    "pt-BR": "Hierarquia por dispositivo",
+    "fr-FR": "Hiérarchie par appareil",
+    "it-IT": "Gerarchia per dispositivo",
+    "ca-ES": "Jerarquia per dispositiu"
+  },
+  "Prototipo y prueba E2E": {
+    "es-CO": "Prototipo y prueba E2E",
+    "en-US": "Prototype and E2E test",
+    "pt-BR": "Protótipo e teste E2E",
+    "fr-FR": "Prototype et test E2E",
+    "it-IT": "Prototipo e test E2E",
+    "ca-ES": "Prototip i prova E2E"
+  },
+  "Hallazgo heurístico": {
+    "es-CO": "Hallazgo heurístico",
+    "en-US": "Heuristic finding",
+    "pt-BR": "Achado heurístico",
+    "fr-FR": "Constat heuristique",
+    "it-IT": "Riscontro euristico",
+    "ca-ES": "Troballa heurística"
+  },
+  "Corrección priorizada": {
+    "es-CO": "Corrección priorizada",
+    "en-US": "Prioritized correction",
+    "pt-BR": "Correção priorizada",
+    "fr-FR": "Correction priorisée",
+    "it-IT": "Correzione prioritaria",
+    "ca-ES": "Correcció prioritzada"
+  },
+  "Versión corregida y nueva prueba": {
+    "es-CO": "Versión corregida y nueva prueba",
+    "en-US": "Corrected version and new test",
+    "pt-BR": "Versão corrigida e novo teste",
+    "fr-FR": "Version corrigée et nouveau test",
+    "it-IT": "Versione corretta e nuovo test",
+    "ca-ES": "Versió corregida i nova prova"
+  },
+  "Sesión de usuario": {
+    "es-CO": "Sesión de usuario",
+    "en-US": "User session",
+    "pt-BR": "Sessão de usuário",
+    "fr-FR": "Session utilisateur",
+    "it-IT": "Sessione utente",
+    "ca-ES": "Sessió d’usuari"
+  },
+  "Valida o refuta hipótesis": {
+    "es-CO": "Valida o refuta hipótesis",
+    "en-US": "Validates or refutes hypotheses",
+    "pt-BR": "Valida ou refuta hipóteses",
+    "fr-FR": "Valide ou réfute des hypothèses",
+    "it-IT": "Convalida o confuta ipotesi",
+    "ca-ES": "Valida o refuta hipòtesis"
+  },
+  "Métricas y reflexión final": {
+    "es-CO": "Métricas y reflexión final",
+    "en-US": "Metrics and final reflection",
+    "pt-BR": "Métricas e reflexão final",
+    "fr-FR": "Métriques et réflexion finale",
+    "it-IT": "Metriche e riflessione finale",
+    "ca-ES": "Mètriques i reflexió final"
+  }
+}

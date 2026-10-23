@@ -1,0 +1,218 @@
+{
+  "QUALITY ENGINEERING": {
+    "es-CO": "INGENIERÍA DE CALIDAD",
+    "en-US": "QUALITY ENGINEERING",
+    "pt-BR": "ENGENHARIA DA QUALIDADE",
+    "fr-FR": "INGÉNIERIE QUALITÉ",
+    "it-IT": "INGEGNERIA DELLA QUALITÀ",
+    "ca-ES": "ENGINYERIA DE QUALITAT"
+  },
+  "Pruebas y automatización": {
+    "es-CO": "Pruebas y automatización",
+    "en-US": "Testing and automation",
+    "pt-BR": "Testes e automação",
+    "fr-FR": "Tests et automatisation",
+    "it-IT": "Test e automazione",
+    "ca-ES": "Proves i automatització"
+  },
+  "La interfaz explica las capas y el repositorio incluye configuraciones ejecutables. Cada capa responde preguntas diferentes.": {
+    "es-CO": "La interfaz explica las capas y el repositorio incluye configuraciones ejecutables. Cada capa responde preguntas diferentes.",
+    "en-US": "The interface explains the layers and the repository includes runnable configurations. Each layer answers different questions.",
+    "pt-BR": "A interface explica as camadas e o repositório inclui configurações executáveis. Cada camada responde a perguntas diferentes.",
+    "fr-FR": "L’interface explique les couches et le dépôt inclut des configurations exécutables. Chaque couche répond à des questions différentes.",
+    "it-IT": "L’interfaccia spiega i livelli e il repository include configurazioni eseguibili. Ogni livello risponde a domande diverse.",
+    "ca-ES": "La interfície explica les capes i el repositori inclou configuracions executables. Cada capa respon preguntes diferents."
+  },
+  "Unitarias": {
+    "es-CO": "Unitarias",
+    "en-US": "Unit tests",
+    "pt-BR": "Testes unitários",
+    "fr-FR": "Tests unitaires",
+    "it-IT": "Test unitari",
+    "ca-ES": "Proves unitàries"
+  },
+  "Métricas, transformaciones y validaciones": {
+    "es-CO": "Métricas, transformaciones y validaciones",
+    "en-US": "Metrics, transformations and validation",
+    "pt-BR": "Métricas, transformações e validações",
+    "fr-FR": "Métriques, transformations et validations",
+    "it-IT": "Metriche, trasformazioni e validazioni",
+    "ca-ES": "Mètriques, transformacions i validacions"
+  },
+  "Componentes": {
+    "es-CO": "Componentes",
+    "en-US": "Components",
+    "pt-BR": "Componentes",
+    "fr-FR": "Composants",
+    "it-IT": "Componenti",
+    "ca-ES": "Components"
+  },
+  "Formularios, estados y nombres accesibles": {
+    "es-CO": "Formularios, estados y nombres accesibles",
+    "en-US": "Forms, states and accessible names",
+    "pt-BR": "Formulários, estados e nomes acessíveis",
+    "fr-FR": "Formulaires, états et noms accessibles",
+    "it-IT": "Moduli, stati e nomi accessibili",
+    "ca-ES": "Formularis, estats i noms accessibles"
+  },
+  "E2E principal": {
+    "es-CO": "E2E principal",
+    "en-US": "Primary E2E",
+    "pt-BR": "E2E principal",
+    "fr-FR": "E2E principal",
+    "it-IT": "E2E principale",
+    "ca-ES": "E2E principal"
+  },
+  "CRUD, idiomas, dispositivos y regresión": {
+    "es-CO": "CRUD, idiomas, dispositivos y regresión",
+    "en-US": "CRUD, languages, devices and regression",
+    "pt-BR": "CRUD, idiomas, dispositivos e regressão",
+    "fr-FR": "CRUD, langues, appareils et régression",
+    "it-IT": "CRUD, lingue, dispositivi e regressione",
+    "ca-ES": "CRUD, idiomes, dispositius i regressió"
+  },
+  "E2E alternativo": {
+    "es-CO": "E2E alternativo",
+    "en-US": "Alternative E2E",
+    "pt-BR": "E2E alternativo",
+    "fr-FR": "E2E alternatif",
+    "it-IT": "E2E alternativo",
+    "ca-ES": "E2E alternatiu"
+  },
+  "Flujos mediante WebDriver": {
+    "es-CO": "Flujos mediante WebDriver",
+    "en-US": "Flows using WebDriver",
+    "pt-BR": "Fluxos com WebDriver",
+    "fr-FR": "Parcours avec WebDriver",
+    "it-IT": "Flussi con WebDriver",
+    "ca-ES": "Fluxos amb WebDriver"
+  },
+  "axe-core + manual": {
+    "es-CO": "axe-core + manual",
+    "en-US": "axe-core + manual review",
+    "pt-BR": "axe-core + revisão manual",
+    "fr-FR": "axe-core + examen manuel",
+    "it-IT": "axe-core + verifica manuale",
+    "ca-ES": "axe-core + revisió manual"
+  },
+  "WCAG automatizable, teclado y lector": {
+    "es-CO": "WCAG automatizable, teclado y lector",
+    "en-US": "Automatable WCAG checks, keyboard and screen reader",
+    "pt-BR": "Verificações WCAG automatizáveis, teclado e leitor",
+    "fr-FR": "Vérifications WCAG automatisables, clavier et lecteur d’écran",
+    "it-IT": "Controlli WCAG automatizzabili, tastiera e lettore",
+    "ca-ES": "Comprovacions WCAG automatitzables, teclat i lector"
+  },
+  "Rendimiento": {
+    "es-CO": "Rendimiento",
+    "en-US": "Performance",
+    "pt-BR": "Desempenho",
+    "fr-FR": "Performance",
+    "it-IT": "Prestazioni",
+    "ca-ES": "Rendiment"
+  },
+  "Performance, SEO y buenas prácticas": {
+    "es-CO": "Performance, SEO y buenas prácticas",
+    "en-US": "Performance, SEO and good practices",
+    "pt-BR": "Desempenho, SEO e boas práticas",
+    "fr-FR": "Performance, SEO et bonnes pratiques",
+    "it-IT": "Prestazioni, SEO e buone pratiche",
+    "ca-ES": "Rendiment, SEO i bones pràctiques"
+  },
+  "Grabación": {
+    "es-CO": "Grabación",
+    "en-US": "Recording",
+    "pt-BR": "Gravação",
+    "fr-FR": "Enregistrement",
+    "it-IT": "Registrazione",
+    "ca-ES": "Enregistrament"
+  },
+  "Caso de reserva importable": {
+    "es-CO": "Caso de reserva importable",
+    "en-US": "Importable appointment example",
+    "pt-BR": "Exemplo de reserva importável",
+    "fr-FR": "Exemple de réservation importable",
+    "it-IT": "Esempio di prenotazione importabile",
+    "ca-ES": "Exemple de reserva importable"
+  },
+  "Integración": {
+    "es-CO": "Integración",
+    "en-US": "Integration",
+    "pt-BR": "Integração",
+    "fr-FR": "Intégration",
+    "it-IT": "Integrazione",
+    "ca-ES": "Integració"
+  },
+  "Lint, test, build, E2E y Pages": {
+    "es-CO": "Lint, test, build, E2E y Pages",
+    "en-US": "Lint, tests, build, E2E and Pages",
+    "pt-BR": "Lint, testes, build, E2E e Pages",
+    "fr-FR": "Lint, tests, build, E2E et Pages",
+    "it-IT": "Lint, test, build, E2E e Pages",
+    "ca-ES": "Lint, proves, build, E2E i Pages"
+  },
+  "Flujo de integración continua": {
+    "es-CO": "Flujo de integración continua",
+    "en-US": "Continuous integration flow",
+    "pt-BR": "Fluxo de integração contínua",
+    "fr-FR": "Flux d’intégration continue",
+    "it-IT": "Flusso di integrazione continua",
+    "ca-ES": "Flux d’integració contínua"
+  },
+  "Comandos": {
+    "es-CO": "Comandos",
+    "en-US": "Commands",
+    "pt-BR": "Comandos",
+    "fr-FR": "Commandes",
+    "it-IT": "Comandi",
+    "ca-ES": "Ordres"
+  },
+  "Criterios de salida": {
+    "es-CO": "Criterios de salida",
+    "en-US": "Exit criteria",
+    "pt-BR": "Critérios de saída",
+    "fr-FR": "Critères de sortie",
+    "it-IT": "Criteri di completamento",
+    "ca-ES": "Criteris de sortida"
+  },
+  "Sin errores de lint o TypeScript.": {
+    "es-CO": "Sin errores de lint o TypeScript.",
+    "en-US": "No lint or TypeScript errors.",
+    "pt-BR": "Sem erros de lint ou TypeScript.",
+    "fr-FR": "Aucune erreur lint ou TypeScript.",
+    "it-IT": "Nessun errore lint o TypeScript.",
+    "ca-ES": "Sense errors de lint o TypeScript."
+  },
+  "Flujo crítico cubierto de extremo a extremo.": {
+    "es-CO": "Flujo crítico cubierto de extremo a extremo.",
+    "en-US": "Critical flow covered end to end.",
+    "pt-BR": "Fluxo crítico coberto de ponta a ponta.",
+    "fr-FR": "Parcours critique couvert de bout en bout.",
+    "it-IT": "Flusso critico coperto dall’inizio alla fine.",
+    "ca-ES": "Flux crític cobert d’extrem a extrem."
+  },
+  "Sin infracciones serias detectables por axe.": {
+    "es-CO": "Sin infracciones serias detectables por axe.",
+    "en-US": "No serious violations detectable by axe.",
+    "pt-BR": "Sem violações graves detectáveis pelo axe.",
+    "fr-FR": "Aucune violation grave détectable par axe.",
+    "it-IT": "Nessuna violazione grave rilevabile da axe.",
+    "ca-ES": "Sense infraccions greus detectables per axe."
+  },
+  "Revisión manual documentada.": {
+    "es-CO": "Revisión manual documentada.",
+    "en-US": "Documented manual review.",
+    "pt-BR": "Revisão manual documentada.",
+    "fr-FR": "Examen manuel documenté.",
+    "it-IT": "Verifica manuale documentata.",
+    "ca-ES": "Revisió manual documentada."
+  },
+  "Métricas interpretadas con contexto.": {
+    "es-CO": "Métricas interpretadas con contexto.",
+    "en-US": "Metrics interpreted in context.",
+    "pt-BR": "Métricas interpretadas com contexto.",
+    "fr-FR": "Métriques interprétées dans leur contexte.",
+    "it-IT": "Metriche interpretate nel contesto.",
+    "ca-ES": "Mètriques interpretades amb context."
+  }
+}

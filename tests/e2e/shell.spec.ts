@@ -10,6 +10,10 @@ for (const theme of ['light', 'dark', 'contrast', 'dark-contrast']) {
     for (const route of routes) {
       await page.goto(`/hci-lab-ia/#${route}`);
       await expect(page.locator('main h1')).toBeVisible();
+      if(route==='/course'){
+        const table=page.getByRole('region',{name:'Trazabilidad conceptual',exact:true});
+        await expect(table).toHaveAttribute('tabindex','0');await table.focus();await expect(table).toBeFocused();
+      }
       const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
       await testInfo.attach(`${theme}-${route.replace('/', '') || 'home'}-axe`, { body: JSON.stringify(results.violations, null, 2), contentType:'application/json' });
       expect.soft(results.violations.map(v => ({id:v.id, impact:v.impact, targets:v.nodes.map(n=>n.target)})), route).toEqual([]);

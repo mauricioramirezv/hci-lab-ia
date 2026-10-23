@@ -7,5 +7,9 @@ import './activities.css';
 import './shell.css';
 import App from './App';
 import { ProjectProvider } from '../features/project/presentation';
+import {installDraftNavigationGuard} from '../shared/ui/useDraftGuard';
+
+const releaseNavigationGuard=installDraftNavigationGuard();
+if(import.meta.hot)import.meta.hot.dispose(releaseNavigationGuard);
 
 createRoot(document.getElementById('root')!).render(<StrictMode><HashRouter><ProjectProvider><App /></ProjectProvider></HashRouter></StrictMode>);

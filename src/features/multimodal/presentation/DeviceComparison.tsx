@@ -2,6 +2,26 @@ import { useTranslation } from 'react-i18next';
 import type { DeviceContext } from '../../project/domain';
 import { deviceIds } from '../domain/constants';
 const contexts: Record<string, string[][]> = {
+  'it': [
+    ['Lavoro seduto','Prolungata','Tastiera / mouse','Postura e scorciatoie','Affaticamento','Tastiera e zoom'],
+    ['Uso in mano','Intermittente','Tocco / tastiera','Peso e raggiungibilità','Precisione tattile','Orientamento e bersagli ampi'],
+    ['Mobilità','Interrotta','Tocco / voce','Una mano','Distrazione','Testo scalabile e focus'],
+    ['Consultazione breve','A colpo d’occhio','Tocco / voce','Schermo minimo','Avvisi persi','Testo, voce e vibrazione facoltativa'],
+    ['Guida simulata','Priorità alla strada','Voce preferita','Distanza di raggiungimento','Distrazione critica','Bloccare modifiche in movimento'],
+    ['Soggiorno','A distanza','Telecomando / tastiera','Distanza di lettura','Focus perso','Focus visibile e testo grande'],
+    ['Servizio pubblico','Limitata dalla coda','Tocco / tastiera','Altezza e raggiungibilità','Riservatezza condivisa','Raggiungibilità e uscita chiara'],
+    ['Casa connessa','Variabile','Voce / controlli','Posizione fisica','Stato incerto','Stato testuale e controllo alternativo'],
+  ],
+  'ca': [
+    ['Treball assegut','Sostinguda','Teclat / ratolí','Postura i dreceres','Fatiga','Teclat i zoom'],
+    ['Ús a la mà','Intermitent','Tàctil / teclat','Pes i abast','Precisió tàctil','Orientació i objectius grans'],
+    ['Mobilitat','Interrompuda','Tàctil / veu','Una mà','Distracció','Text escalable i focus'],
+    ['Consulta breu','D’un cop d’ull','Tàctil / veu','Pantalla mínima','Omissió d’alertes','Text, veu i vibració opcional'],
+    ['Conducció simulada','Prioritat a la via','Veu preferent','Distància d’abast','Distracció crítica','Bloquejar edició en moviment'],
+    ['Sala d’estar','A distància','Comandament / teclat','Distància de lectura','Focus perdut','Focus visible i text gran'],
+    ['Servei públic','Limitada per la cua','Tàctil / teclat','Alçada i abast','Privadesa compartida','Abast i sortida clara'],
+    ['Llar connectada','Variable','Veu / controls','Ubicació física','Estat incert','Estat textual i control alternatiu'],
+  ],
   'es': [
     ['Trabajo sentado', 'Sostenida', 'Teclado / ratón', 'Postura y atajos', 'Fatiga', 'Teclado y zoom'],
     ['Uso en mano', 'Intermitente', 'Táctil / teclado', 'Peso y alcance', 'Precisión táctil', 'Orientación y objetivos amplios'],

@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react';
 import { CheckCircle2 } from 'lucide-react';
+import {useEffect,useId} from 'react';
 
 export function PageHead({ eyebrow, title, intro, actions }: { eyebrow: string; title: string; intro: string; actions?: ReactNode }) {
-  return <header className="page-head"><div><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{intro}</p></div>{actions}</header>;
+  const id=useId();useEffect(()=>{document.title=`${title} · HCI Lab + IA`;},[title]);
+  return <header className="page-head"><div><span className="eyebrow">{eyebrow}</span><h1 aria-describedby={`${id}-description`}>{title}</h1><p id={`${id}-description`}>{intro}</p></div>{actions}</header>;
 }
 
 export function Empty({ children }: { children: ReactNode }) {

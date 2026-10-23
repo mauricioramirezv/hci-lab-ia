@@ -1,0 +1,154 @@
+{
+  "MULTIFORMAT": {
+    "es-CO": "MULTIFORMATO",
+    "en-US": "MULTIFORMAT",
+    "pt-BR": "MULTIFORMATO",
+    "fr-FR": "MULTIFORMAT",
+    "it-IT": "MULTIFORMATO",
+    "ca-ES": "MULTIFORMAT"
+  },
+  "La misma tarea cambia jerarquía, densidad, navegación y controles según el contexto; no es solo reducir el ancho.": {
+    "es-CO": "La misma tarea cambia jerarquía, densidad, navegación y controles según el contexto; no es solo reducir el ancho.",
+    "en-US": "The same task changes hierarchy, density, navigation and controls with context; it is more than reducing width.",
+    "pt-BR": "A mesma tarefa muda hierarquia, densidade, navegação e controles conforme o contexto; não é apenas reduzir a largura.",
+    "fr-FR": "La même tâche adapte hiérarchie, densité, navigation et commandes au contexte ; il ne suffit pas de réduire la largeur.",
+    "it-IT": "La stessa attività cambia gerarchia, densità, navigazione e controlli in base al contesto; non basta ridurre la larghezza.",
+    "ca-ES": "La mateixa tasca canvia jerarquia, densitat, navegació i controls segons el context; no és només reduir l’amplada."
+  },
+  "Comparar horarios": {
+    "es-CO": "Comparar horarios",
+    "en-US": "Compare times",
+    "pt-BR": "Comparar horários",
+    "fr-FR": "Comparer les horaires",
+    "it-IT": "Confronta orari",
+    "ca-ES": "Comparar horaris"
+  },
+  "Ver contexto y ayuda": {
+    "es-CO": "Ver contexto y ayuda",
+    "en-US": "View context and help",
+    "pt-BR": "Ver contexto e ajuda",
+    "fr-FR": "Voir le contexte et l’aide",
+    "it-IT": "Visualizza contesto e aiuto",
+    "ca-ES": "Veure context i ajuda"
+  },
+  "Administrar citas": {
+    "es-CO": "Administrar citas",
+    "en-US": "Manage appointments",
+    "pt-BR": "Gerenciar consultas",
+    "fr-FR": "Gérer les rendez-vous",
+    "it-IT": "Gestisci appuntamenti",
+    "ca-ES": "Gestionar cites"
+  },
+  "Entrada táctil": {
+    "es-CO": "Entrada táctil",
+    "en-US": "Touch input",
+    "pt-BR": "Entrada por toque",
+    "fr-FR": "Saisie tactile",
+    "it-IT": "Input tattile",
+    "ca-ES": "Entrada tàctil"
+  },
+  "Orientación variable": {
+    "es-CO": "Orientación variable",
+    "en-US": "Variable orientation",
+    "pt-BR": "Orientação variável",
+    "fr-FR": "Orientation variable",
+    "it-IT": "Orientamento variabile",
+    "ca-ES": "Orientació variable"
+  },
+  "Continuidad": {
+    "es-CO": "Continuidad",
+    "en-US": "Continuity",
+    "pt-BR": "Continuidade",
+    "fr-FR": "Continuité",
+    "it-IT": "Continuità",
+    "ca-ES": "Continuïtat"
+  },
+  "Una tarea por vista": {
+    "es-CO": "Una tarea por vista",
+    "en-US": "One task per view",
+    "pt-BR": "Uma tarefa por tela",
+    "fr-FR": "Une tâche par vue",
+    "it-IT": "Un’attività per vista",
+    "ca-ES": "Una tasca per vista"
+  },
+  "Acciones al alcance": {
+    "es-CO": "Acciones al alcance",
+    "en-US": "Actions within reach",
+    "pt-BR": "Ações ao alcance",
+    "fr-FR": "Actions à portée de main",
+    "it-IT": "Azioni raggiungibili",
+    "ca-ES": "Accions a l’abast"
+  },
+  "Conectividad variable": {
+    "es-CO": "Conectividad variable",
+    "en-US": "Variable connectivity",
+    "pt-BR": "Conectividade variável",
+    "fr-FR": "Connectivité variable",
+    "it-IT": "Connettività variabile",
+    "ca-ES": "Connectivitat variable"
+  },
+  "Estado de un vistazo": {
+    "es-CO": "Estado de un vistazo",
+    "en-US": "Status at a glance",
+    "pt-BR": "Estado em um relance",
+    "fr-FR": "État en un coup d’œil",
+    "it-IT": "Stato a colpo d’occhio",
+    "ca-ES": "Estat d’un cop d’ull"
+  },
+  "Confirmar o cancelar": {
+    "es-CO": "Confirmar o cancelar",
+    "en-US": "Confirm or cancel",
+    "pt-BR": "Confirmar ou cancelar",
+    "fr-FR": "Confirmer ou annuler",
+    "it-IT": "Conferma o annulla",
+    "ca-ES": "Confirmar o cancel·lar"
+  },
+  "Sin captura extensa": {
+    "es-CO": "Sin captura extensa",
+    "en-US": "No lengthy input",
+    "pt-BR": "Sem entrada extensa",
+    "fr-FR": "Sans saisie longue",
+    "it-IT": "Senza inserimenti lunghi",
+    "ca-ES": "Sense entrada extensa"
+  },
+  "Asesoría UX": {
+    "es-CO": "Asesoría UX",
+    "en-US": "UX consultation",
+    "pt-BR": "Consultoria UX",
+    "fr-FR": "Conseil UX",
+    "it-IT": "Consulenza UX",
+    "ca-ES": "Assessorament UX"
+  },
+  "Confirmar": {
+    "es-CO": "Confirmar",
+    "en-US": "Confirm",
+    "pt-BR": "Confirmar",
+    "fr-FR": "Confirmer",
+    "it-IT": "Conferma",
+    "ca-ES": "Confirmar"
+  },
+  "Prioridades del contexto": {
+    "es-CO": "Prioridades del contexto",
+    "en-US": "Context priorities",
+    "pt-BR": "Prioridades do contexto",
+    "fr-FR": "Priorités du contexte",
+    "it-IT": "Priorità del contesto",
+    "ca-ES": "Prioritats del context"
+  },
+  "Ergonomía:": {
+    "es-CO": "Ergonomía:",
+    "en-US": "Ergonomics:",
+    "pt-BR": "Ergonomia:",
+    "fr-FR": "Ergonomie :",
+    "it-IT": "Ergonomia:",
+    "ca-ES": "Ergonomia:"
+  },
+  "objetivos táctiles amplios, separación suficiente y acción principal alcanzable.": {
+    "es-CO": "objetivos táctiles amplios, separación suficiente y acción principal alcanzable.",
+    "en-US": "large touch targets, sufficient spacing and a reachable primary action.",
+    "pt-BR": "alvos de toque grandes, espaço suficiente e ação principal ao alcance.",
+    "fr-FR": "grandes cibles tactiles, espacement suffisant et action principale accessible.",
+    "it-IT": "obiettivi tattili ampi, spazio sufficiente e azione principale raggiungibile.",
+    "ca-ES": "objectius tàctils grans, separació suficient i acció principal a l’abast."
+  }
+}

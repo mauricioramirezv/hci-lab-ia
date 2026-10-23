@@ -1,0 +1,482 @@
+{
+  "Demostración y actividad": {
+    "es-CO": "Demostración y actividad",
+    "en-US": "Demonstration and activity",
+    "pt-BR": "Demonstração e atividade",
+    "fr-FR": "Démonstration et activité",
+    "it-IT": "Dimostrazione e attività",
+    "ca-ES": "Demostració i activitat"
+  },
+  "Problema frecuente:": {
+    "es-CO": "Problema frecuente:",
+    "en-US": "Common problem:",
+    "pt-BR": "Problema frequente:",
+    "fr-FR": "Problème fréquent :",
+    "it-IT": "Problema frequente:",
+    "ca-ES": "Problema freqüent:"
+  },
+  "Buena práctica:": {
+    "es-CO": "Buena práctica:",
+    "en-US": "Good practice:",
+    "pt-BR": "Boa prática:",
+    "fr-FR": "Bonne pratique :",
+    "it-IT": "Buona pratica:",
+    "ca-ES": "Bona pràctica:"
+  },
+  "Cómo medir:": {
+    "es-CO": "Cómo medir:",
+    "en-US": "How to measure:",
+    "pt-BR": "Como medir:",
+    "fr-FR": "Comment mesurer :",
+    "it-IT": "Come misurare:",
+    "ca-ES": "Com mesurar:"
+  },
+  "Herramientas:": {
+    "es-CO": "Herramientas:",
+    "en-US": "Tools:",
+    "pt-BR": "Ferramentas:",
+    "fr-FR": "Outils :",
+    "it-IT": "Strumenti:",
+    "ca-ES": "Eines:"
+  },
+  "Actividad:": {
+    "es-CO": "Actividad:",
+    "en-US": "Activity:",
+    "pt-BR": "Atividade:",
+    "fr-FR": "Activité :",
+    "it-IT": "Attività:",
+    "ca-ES": "Activitat:"
+  },
+  "Cambiar la práctica no es una medición; registre resultados observados.": {
+    "es-CO": "Cambiar la práctica no es una medición; registre resultados observados.",
+    "en-US": "Changing the practice is not a measurement; record observed results.",
+    "pt-BR": "Mudar a prática não é uma medição; registre os resultados observados.",
+    "fr-FR": "Changer de pratique n’est pas une mesure ; consignez les résultats observés.",
+    "it-IT": "Cambiare la pratica non è una misurazione; registra i risultati osservati.",
+    "ca-ES": "Canviar la pràctica no és una mesura; registreu resultats observats."
+  },
+  "Observación de": {
+    "es-CO": "Observación de",
+    "en-US": "Observation of",
+    "pt-BR": "Observação de",
+    "fr-FR": "Observation de",
+    "it-IT": "Osservazione di",
+    "ca-ES": "Observació de"
+  },
+  "Guardar observación": {
+    "es-CO": "Guardar observación",
+    "en-US": "Save observation",
+    "pt-BR": "Salvar observação",
+    "fr-FR": "Enregistrer l’observation",
+    "it-IT": "Salva osservazione",
+    "ca-ES": "Desar observació"
+  },
+  "Escriba lo que observó antes de guardar.": {
+    "es-CO": "Escriba lo que observó antes de guardar.",
+    "en-US": "Write what you observed before saving.",
+    "pt-BR": "Escreva o que observou antes de salvar.",
+    "fr-FR": "Décrivez votre observation avant d’enregistrer.",
+    "it-IT": "Scrivi ciò che hai osservato prima di salvare.",
+    "ca-ES": "Escriviu què heu observat abans de desar."
+  },
+  "Observación guardada en Evaluación; requiere validación.": {
+    "es-CO": "Observación guardada en Evaluación; requiere validación. Puede revisarla allí.",
+    "en-US": "Observation saved in Evaluation; validation is required. You can review it there.",
+    "pt-BR": "Observação salva em Avaliação; requer validação. Você pode revisá-la lá.",
+    "fr-FR": "Observation enregistrée dans Évaluation ; une validation est requise. Vous pouvez la consulter.",
+    "it-IT": "Osservazione salvata in Valutazione; richiede convalida. Puoi consultarla lì.",
+    "ca-ES": "Observació desada a Avaluació; requereix validació. Podeu revisar-la allà."
+  },
+  "Mostrar mala práctica": {
+    "es-CO": "Mostrar mala práctica",
+    "en-US": "Show bad practice",
+    "pt-BR": "Mostrar má prática",
+    "fr-FR": "Afficher la mauvaise pratique",
+    "it-IT": "Mostra cattiva pratica",
+    "ca-ES": "Mostrar mala pràctica"
+  },
+  "Mostrar buena práctica": {
+    "es-CO": "Mostrar buena práctica",
+    "en-US": "Show good practice",
+    "pt-BR": "Mostrar boa prática",
+    "fr-FR": "Afficher la bonne pratique",
+    "it-IT": "Mostra buona pratica",
+    "ca-ES": "Mostrar bona pràctica"
+  },
+  "Se pierde el contexto al cambiar de dispositivo.": {
+    "es-CO": "Se pierde el contexto al cambiar de dispositivo.",
+    "en-US": "Context is lost when changing devices.",
+    "pt-BR": "O contexto se perde ao mudar de dispositivo.",
+    "fr-FR": "Le contexte est perdu lors du changement d’appareil.",
+    "it-IT": "Il contesto si perde cambiando dispositivo.",
+    "ca-ES": "Es perd el context en canviar de dispositiu."
+  },
+  "Se conserva el resumen y se confirma el resultado.": {
+    "es-CO": "Se conserva el resumen y se confirma el resultado.",
+    "en-US": "The summary is preserved and the result confirmed.",
+    "pt-BR": "O resumo é preservado e o resultado confirmado.",
+    "fr-FR": "Le résumé est conservé et le résultat confirmé.",
+    "it-IT": "Il riepilogo è conservato e il risultato confermato.",
+    "ca-ES": "Es conserva el resum i es confirma el resultat."
+  },
+  "Realice la tarea en dos formatos y pregunte qué falta.": {
+    "es-CO": "Realice la tarea en dos formatos y pregunte qué falta.",
+    "en-US": "Perform the task in two formats and ask what is missing.",
+    "pt-BR": "Realize a tarefa em dois formatos e pergunte o que falta.",
+    "fr-FR": "Réalisez la tâche dans deux formats et demandez ce qui manque.",
+    "it-IT": "Svolgi l’attività in due formati e chiedi cosa manca.",
+    "ca-ES": "Feu la tasca en dos formats i pregunteu què falta."
+  },
+  "Prueba de tareas, SUS y entrevista": {
+    "es-CO": "Prueba de tareas, SUS y entrevista",
+    "en-US": "Task testing, SUS and interview",
+    "pt-BR": "Teste de tarefas, SUS e entrevista",
+    "fr-FR": "Test de tâches, SUS et entretien",
+    "it-IT": "Test di attività, SUS e intervista",
+    "ca-ES": "Prova de tasques, SUS i entrevista"
+  },
+  "Una acción ambigua obliga a repetir pasos.": {
+    "es-CO": "Una acción ambigua obliga a repetir pasos.",
+    "en-US": "An ambiguous action forces repeated steps.",
+    "pt-BR": "Uma ação ambígua obriga a repetir etapas.",
+    "fr-FR": "Une action ambiguë oblige à répéter des étapes.",
+    "it-IT": "Un’azione ambigua obbliga a ripetere passi.",
+    "ca-ES": "Una acció ambigua obliga a repetir passos."
+  },
+  "La acción expresa su resultado y permite cancelar.": {
+    "es-CO": "La acción expresa su resultado y permite cancelar.",
+    "en-US": "The action expresses its result and allows cancellation.",
+    "pt-BR": "A ação expressa seu resultado e permite cancelar.",
+    "fr-FR": "L’action indique son résultat et permet d’annuler.",
+    "it-IT": "L’azione esprime il risultato e permette di annullare.",
+    "ca-ES": "L’acció expressa el resultat i permet cancel·lar."
+  },
+  "Mida éxito, segundos y errores en ambas prácticas.": {
+    "es-CO": "Mida éxito, segundos y errores en ambas prácticas.",
+    "en-US": "Measure success, seconds and errors in both practices.",
+    "pt-BR": "Meça sucesso, segundos e erros nas duas práticas.",
+    "fr-FR": "Mesurez réussite, secondes et erreurs dans les deux pratiques.",
+    "it-IT": "Misura successo, secondi ed errori in entrambe le pratiche.",
+    "ca-ES": "Mesureu èxit, segons i errors en ambdues pràctiques."
+  },
+  "Prueba de tareas y SEQ": {
+    "es-CO": "Prueba de tareas y SEQ",
+    "en-US": "Task testing and SEQ",
+    "pt-BR": "Teste de tarefas e SEQ",
+    "fr-FR": "Test de tâches et SEQ",
+    "it-IT": "Test di attività e SEQ",
+    "ca-ES": "Prova de tasques i SEQ"
+  },
+  "El estado se comunica únicamente por color.": {
+    "es-CO": "El estado se comunica únicamente por color.",
+    "en-US": "Status is communicated through color alone.",
+    "pt-BR": "O estado é comunicado apenas por cor.",
+    "fr-FR": "L’état est communiqué uniquement par la couleur.",
+    "it-IT": "Lo stato è comunicato solo dal colore.",
+    "ca-ES": "L’estat es comunica només amb color."
+  },
+  "El estado combina texto, símbolo y color.": {
+    "es-CO": "El estado combina texto, símbolo y color.",
+    "en-US": "Status combines text, symbol and color.",
+    "pt-BR": "O estado combina texto, símbolo e cor.",
+    "fr-FR": "L’état combine texte, symbole et couleur.",
+    "it-IT": "Lo stato combina testo, simbolo e colore.",
+    "ca-ES": "L’estat combina text, símbol i color."
+  },
+  "Compare filtros de color; pruebe teclado y lector.": {
+    "es-CO": "Compare filtros de color; pruebe teclado y lector.",
+    "en-US": "Compare color filters; test keyboard and screen reader.",
+    "pt-BR": "Compare filtros de cor; teste teclado e leitor.",
+    "fr-FR": "Comparez les filtres de couleur ; testez clavier et lecteur.",
+    "it-IT": "Confronta i filtri colore; prova tastiera e lettore.",
+    "ca-ES": "Compareu filtres de color; proveu teclat i lector."
+  },
+  "axe, WAVE, Lighthouse y prueba manual": {
+    "es-CO": "axe, WAVE, Lighthouse y prueba manual",
+    "en-US": "axe, WAVE, Lighthouse and manual testing",
+    "pt-BR": "axe, WAVE, Lighthouse e teste manual",
+    "fr-FR": "axe, WAVE, Lighthouse et test manuel",
+    "it-IT": "axe, WAVE, Lighthouse e test manuale",
+    "ca-ES": "axe, WAVE, Lighthouse i prova manual"
+  },
+  "No se informa si el cambio se guardó.": {
+    "es-CO": "No se informa si el cambio se guardó.",
+    "en-US": "There is no indication whether the change was saved.",
+    "pt-BR": "Não se informa se a alteração foi salva.",
+    "fr-FR": "Rien n’indique si la modification est enregistrée.",
+    "it-IT": "Non viene indicato se la modifica è stata salvata.",
+    "ca-ES": "No s’informa si el canvi s’ha desat."
+  },
+  "Se informa guardado, ubicación y siguiente paso.": {
+    "es-CO": "Se informa guardado, ubicación y siguiente paso.",
+    "en-US": "Saving, location and next step are indicated.",
+    "pt-BR": "O salvamento, a localização e o próximo passo são informados.",
+    "fr-FR": "L’enregistrement, la position et l’étape suivante sont indiqués.",
+    "it-IT": "Sono indicati salvataggio, posizione e passo successivo.",
+    "ca-ES": "S’informa del desament, la ubicació i el pas següent."
+  },
+  "Pida al usuario que explique el estado sin ayuda.": {
+    "es-CO": "Pida al usuario que explique el estado sin ayuda.",
+    "en-US": "Ask the user to explain the status without help.",
+    "pt-BR": "Peça ao usuário para explicar o estado sem ajuda.",
+    "fr-FR": "Demandez à l’utilisateur d’expliquer l’état sans aide.",
+    "it-IT": "Chiedi all’utente di spiegare lo stato senza aiuto.",
+    "ca-ES": "Demaneu a l’usuari que expliqui l’estat sense ajuda."
+  },
+  "Pregunta de comprensión y registro de errores": {
+    "es-CO": "Pregunta de comprensión y registro de errores",
+    "en-US": "Comprehension question and error log",
+    "pt-BR": "Pergunta de compreensão e registro de erros",
+    "fr-FR": "Question de compréhension et relevé des erreurs",
+    "it-IT": "Domanda di comprensione e registro errori",
+    "ca-ES": "Pregunta de comprensió i registre d’errors"
+  },
+  "Se presiona al usuario con urgencia ficticia.": {
+    "es-CO": "Se presiona al usuario con urgencia ficticia.",
+    "en-US": "The user is pressured with fictional urgency.",
+    "pt-BR": "O usuário é pressionado com urgência fictícia.",
+    "fr-FR": "L’utilisateur subit une pression d’urgence fictive.",
+    "it-IT": "L’utente subisce pressioni con urgenza fittizia.",
+    "ca-ES": "Es pressiona l’usuari amb urgència fictícia."
+  },
+  "Se explica el valor y se ofrece una salida clara.": {
+    "es-CO": "Se explica el valor y se ofrece una salida clara.",
+    "en-US": "Value is explained and a clear exit offered.",
+    "pt-BR": "O valor é explicado e uma saída clara é oferecida.",
+    "fr-FR": "La valeur est expliquée et une sortie claire proposée.",
+    "it-IT": "Il valore è spiegato e viene offerta un’uscita chiara.",
+    "ca-ES": "S’explica el valor i s’ofereix una sortida clara."
+  },
+  "Observe finalización y abandono; pregunte el motivo.": {
+    "es-CO": "Observe finalización y abandono; pregunte el motivo.",
+    "en-US": "Observe completion and abandonment; ask the reason.",
+    "pt-BR": "Observe conclusão e abandono; pergunte o motivo.",
+    "fr-FR": "Observez achèvement et abandon ; demandez la raison.",
+    "it-IT": "Osserva completamento e abbandono; chiedi il motivo.",
+    "ca-ES": "Observeu finalització i abandonament; pregunteu-ne el motiu."
+  },
+  "Observación, entrevista y embudo de tareas": {
+    "es-CO": "Observación, entrevista y embudo de tareas",
+    "en-US": "Observation, interview and task funnel",
+    "pt-BR": "Observação, entrevista e funil de tarefas",
+    "fr-FR": "Observation, entretien et entonnoir de tâches",
+    "it-IT": "Osservazione, intervista e funnel di attività",
+    "ca-ES": "Observació, entrevista i embut de tasques"
+  },
+  "Un mensaje culpa al usuario y no ofrece salida.": {
+    "es-CO": "Un mensaje culpa al usuario y no ofrece salida.",
+    "en-US": "A message blames the user and offers no way out.",
+    "pt-BR": "Uma mensagem culpa o usuário e não oferece saída.",
+    "fr-FR": "Un message accuse l’utilisateur sans offrir de solution.",
+    "it-IT": "Un messaggio incolpa l’utente senza offrire una via d’uscita.",
+    "ca-ES": "Un missatge culpa l’usuari i no ofereix sortida."
+  },
+  "Un mensaje específico permite corregir sin perder datos.": {
+    "es-CO": "Un mensaje específico permite corregir sin perder datos.",
+    "en-US": "A specific message allows correction without losing data.",
+    "pt-BR": "Uma mensagem específica permite corrigir sem perder dados.",
+    "fr-FR": "Un message précis permet de corriger sans perdre de données.",
+    "it-IT": "Un messaggio specifico permette correzioni senza perdere dati.",
+    "ca-ES": "Un missatge específic permet corregir sense perdre dades."
+  },
+  "Pregunte confianza antes y después de la tarea.": {
+    "es-CO": "Pregunte confianza antes y después de la tarea.",
+    "en-US": "Ask about confidence before and after the task.",
+    "pt-BR": "Pergunte sobre confiança antes e depois da tarefa.",
+    "fr-FR": "Interrogez la confiance avant et après la tâche.",
+    "it-IT": "Chiedi il livello di fiducia prima e dopo l’attività.",
+    "ca-ES": "Pregunteu la confiança abans i després de la tasca."
+  },
+  "Autoinforme de emoción y entrevista": {
+    "es-CO": "Autoinforme de emoción y entrevista",
+    "en-US": "Self-reported emotion and interview",
+    "pt-BR": "Autorrelato de emoção e entrevista",
+    "fr-FR": "Émotion autodéclarée et entretien",
+    "it-IT": "Emozione autodichiarata e intervista",
+    "ca-ES": "Autoinforme d’emoció i entrevista"
+  },
+  "Controles pequeños y cercanos dificultan la precisión.": {
+    "es-CO": "Controles pequeños y cercanos dificultan la precisión.",
+    "en-US": "Small, close controls make precision difficult.",
+    "pt-BR": "Controles pequenos e próximos dificultam a precisão.",
+    "fr-FR": "Des commandes petites et proches rendent la précision difficile.",
+    "it-IT": "Controlli piccoli e vicini rendono difficile la precisione.",
+    "ca-ES": "Els controls petits i propers dificulten la precisió."
+  },
+  "Controles amplios y separados reducen errores táctiles.": {
+    "es-CO": "Controles amplios y separados reducen errores táctiles.",
+    "en-US": "Large, separated controls reduce touch errors.",
+    "pt-BR": "Controles grandes e separados reduzem erros de toque.",
+    "fr-FR": "Des commandes grandes et espacées réduisent les erreurs tactiles.",
+    "it-IT": "Controlli ampi e separati riducono gli errori tattili.",
+    "ca-ES": "Els controls grans i separats redueixen errors tàctils."
+  },
+  "Compare errores y esfuerzo en celular y reloj.": {
+    "es-CO": "Compare errores y esfuerzo en celular y reloj.",
+    "en-US": "Compare errors and effort on phone and watch.",
+    "pt-BR": "Compare erros e esforço no celular e no relógio.",
+    "fr-FR": "Comparez erreurs et effort sur téléphone et montre.",
+    "it-IT": "Confronta errori e sforzo su telefono e orologio.",
+    "ca-ES": "Compareu errors i esforç en mòbil i rellotge."
+  },
+  "Prueba táctil y observación de postura": {
+    "es-CO": "Prueba táctil y observación de postura",
+    "en-US": "Touch test and posture observation",
+    "pt-BR": "Teste de toque e observação de postura",
+    "fr-FR": "Test tactile et observation de posture",
+    "it-IT": "Test tattile e osservazione della postura",
+    "ca-ES": "Prova tàctil i observació de postura"
+  },
+  "Se exige recordar un código de la pantalla anterior.": {
+    "es-CO": "Se exige recordar un código de la pantalla anterior.",
+    "en-US": "A code from the previous screen must be remembered.",
+    "pt-BR": "É preciso lembrar um código da tela anterior.",
+    "fr-FR": "Il faut mémoriser un code de l’écran précédent.",
+    "it-IT": "Occorre ricordare un codice della schermata precedente.",
+    "ca-ES": "Cal recordar un codi de la pantalla anterior."
+  },
+  "La información necesaria permanece visible.": {
+    "es-CO": "La información necesaria permanece visible.",
+    "en-US": "Necessary information remains visible.",
+    "pt-BR": "A informação necessária permanece visível.",
+    "fr-FR": "Les informations nécessaires restent visibles.",
+    "it-IT": "Le informazioni necessarie restano visibili.",
+    "ca-ES": "La informació necessària roman visible."
+  },
+  "Compare errores de recuerdo y tiempo de decisión.": {
+    "es-CO": "Compare errores de recuerdo y tiempo de decisión.",
+    "en-US": "Compare recall errors and decision time.",
+    "pt-BR": "Compare erros de memória e tempo de decisão.",
+    "fr-FR": "Comparez erreurs de mémorisation et temps de décision.",
+    "it-IT": "Confronta errori di ricordo e tempo di decisione.",
+    "ca-ES": "Compareu errors de record i temps de decisió."
+  },
+  "Prueba de tarea y autoinforme de carga": {
+    "es-CO": "Prueba de tarea y autoinforme de carga",
+    "en-US": "Task test and self-reported workload",
+    "pt-BR": "Teste de tarefa e autorrelato de carga",
+    "fr-FR": "Test de tâche et charge autodéclarée",
+    "it-IT": "Test di attività e carico autodichiarato",
+    "ca-ES": "Prova de tasca i autoinforme de càrrega"
+  },
+  "Opciones sin nombres claros dificultan localizar una tarea.": {
+    "es-CO": "Opciones sin nombres claros dificultan localizar una tarea.",
+    "en-US": "Options without clear names make tasks hard to find.",
+    "pt-BR": "Opções sem nomes claros dificultam localizar uma tarefa.",
+    "fr-FR": "Des options sans noms clairs rendent les tâches difficiles à trouver.",
+    "it-IT": "Opzioni senza nomi chiari rendono difficile trovare un’attività.",
+    "ca-ES": "Les opcions sense noms clars dificulten localitzar una tasca."
+  },
+  "Etiquetas por intención ayudan a encontrar la tarea.": {
+    "es-CO": "Etiquetas por intención ayudan a encontrar la tarea.",
+    "en-US": "Intent-based labels help users find the task.",
+    "pt-BR": "Rótulos por intenção ajudam a encontrar a tarefa.",
+    "fr-FR": "Des libellés par intention aident à trouver la tâche.",
+    "it-IT": "Etichette per intenzione aiutano a trovare l’attività.",
+    "ca-ES": "Les etiquetes per intenció ajuden a trobar la tasca."
+  },
+  "Pida encontrar la tarea sin explicar la navegación.": {
+    "es-CO": "Pida encontrar la tarea sin explicar la navegación.",
+    "en-US": "Ask users to find the task without explaining navigation.",
+    "pt-BR": "Peça para encontrar a tarefa sem explicar a navegação.",
+    "fr-FR": "Demandez de trouver la tâche sans expliquer la navigation.",
+    "it-IT": "Chiedi di trovare l’attività senza spiegare la navigazione.",
+    "ca-ES": "Demaneu trobar la tasca sense explicar la navegació."
+  },
+  "Tree testing y card sorting": {
+    "es-CO": "Tree testing y card sorting",
+    "en-US": "Tree testing and card sorting",
+    "pt-BR": "Tree testing e card sorting",
+    "fr-FR": "Test d’arborescence et tri de cartes",
+    "it-IT": "Test dell’albero e ordinamento di schede",
+    "ca-ES": "Proves d’arbre i classificació de targetes"
+  },
+  "Una tarea depende exclusivamente de un canal.": {
+    "es-CO": "Una tarea depende exclusivamente de un canal.",
+    "en-US": "A task relies exclusively on one channel.",
+    "pt-BR": "Uma tarefa depende exclusivamente de um canal.",
+    "fr-FR": "Une tâche dépend exclusivement d’un canal.",
+    "it-IT": "Un’attività dipende esclusivamente da un canale.",
+    "ca-ES": "Una tasca depèn exclusivament d’un canal."
+  },
+  "Texto, teclado y voz ofrecen vías alternativas.": {
+    "es-CO": "Texto, teclado y voz ofrecen vías alternativas.",
+    "en-US": "Text, keyboard and speech provide alternative paths.",
+    "pt-BR": "Texto, teclado e voz oferecem caminhos alternativos.",
+    "fr-FR": "Texte, clavier et voix offrent des voies alternatives.",
+    "it-IT": "Testo, tastiera e voce offrono vie alternative.",
+    "ca-ES": "Text, teclat i veu ofereixen vies alternatives."
+  },
+  "Complete la tarea sin sonido y después sin ratón.": {
+    "es-CO": "Complete la tarea sin sonido y después sin ratón.",
+    "en-US": "Complete the task without sound, then without a mouse.",
+    "pt-BR": "Conclua a tarefa sem som e depois sem mouse.",
+    "fr-FR": "Réalisez la tâche sans son, puis sans souris.",
+    "it-IT": "Completa l’attività senza suono e poi senza mouse.",
+    "ca-ES": "Completeu la tasca sense so i després sense ratolí."
+  },
+  "Matriz de contextos y prueba manual": {
+    "es-CO": "Matriz de contextos y prueba manual",
+    "en-US": "Context matrix and manual testing",
+    "pt-BR": "Matriz de contextos e teste manual",
+    "fr-FR": "Matrice des contextes et test manuel",
+    "it-IT": "Matrice dei contesti e test manuale",
+    "ca-ES": "Matriu de contextos i prova manual"
+  },
+  "Se acepta una propuesta IA sin comprobar evidencia.": {
+    "es-CO": "Se acepta una propuesta IA sin comprobar evidencia.",
+    "en-US": "An AI suggestion is accepted without checking evidence.",
+    "pt-BR": "Uma proposta de IA é aceita sem verificar evidências.",
+    "fr-FR": "Une proposition IA est acceptée sans vérifier les preuves.",
+    "it-IT": "Si accetta una proposta IA senza verificare le evidenze.",
+    "ca-ES": "S’accepta una proposta IA sense comprovar evidències."
+  },
+  "Se conserva el origen y la persona valida la propuesta.": {
+    "es-CO": "Se conserva el origen y la persona valida la propuesta.",
+    "en-US": "Provenance is preserved and a person validates the suggestion.",
+    "pt-BR": "A origem é preservada e a pessoa valida a proposta.",
+    "fr-FR": "L’origine est conservée et la personne valide la proposition.",
+    "it-IT": "L’origine è conservata e la persona convalida la proposta.",
+    "ca-ES": "Es conserva l’origen i la persona valida la proposta."
+  },
+  "Compare un hallazgo humano con uno de IA y justifique.": {
+    "es-CO": "Compare un hallazgo humano con uno de IA y justifique.",
+    "en-US": "Compare a human finding with an AI finding and justify.",
+    "pt-BR": "Compare um achado humano com um de IA e justifique.",
+    "fr-FR": "Comparez un constat humain à un constat IA et justifiez.",
+    "it-IT": "Confronta un riscontro umano con uno IA e motiva.",
+    "ca-ES": "Compareu una troballa humana amb una d’IA i justifiqueu."
+  },
+  "Evaluación humana y trazabilidad de hallazgos": {
+    "es-CO": "Evaluación humana y trazabilidad de hallazgos",
+    "en-US": "Human evaluation and finding traceability",
+    "pt-BR": "Avaliação humana e rastreabilidade dos achados",
+    "fr-FR": "Évaluation humaine et traçabilité des constats",
+    "it-IT": "Valutazione umana e tracciabilità dei riscontri",
+    "ca-ES": "Avaluació humana i traçabilitat de troballes"
+  },
+  "Actividad de conceptos: {{name}}. Práctica: {{practice}}.": {
+    "es-CO": "Actividad de conceptos: {{name}}. Práctica: {{practice}}.",
+    "en-US": "Concept activity: {{name}}. Practice: {{practice}}.",
+    "pt-BR": "Atividade de conceitos: {{name}}. Prática: {{practice}}.",
+    "fr-FR": "Activité de concepts : {{name}}. Pratique : {{practice}}.",
+    "it-IT": "Attività sui concetti: {{name}}. Pratica: {{practice}}.",
+    "ca-ES": "Activitat de conceptes: {{name}}. Pràctica: {{practice}}."
+  },
+  "buena": {
+    "es-CO": "buena",
+    "en-US": "good",
+    "pt-BR": "boa",
+    "fr-FR": "bonne",
+    "it-IT": "buona",
+    "ca-ES": "bona"
+  },
+  "mala": {
+    "es-CO": "mala",
+    "en-US": "bad",
+    "pt-BR": "má",
+    "fr-FR": "mauvaise",
+    "it-IT": "cattiva",
+    "ca-ES": "mala"
+  }
+}

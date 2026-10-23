@@ -14,6 +14,6 @@ export function createResearchOperations(repository: ProjectRepository) {
       const item={...scenario,actor:current.personas.find(p=>p.id===scenario.personaId)!.name};
       return {...current,scenarios:current.scenarios.some(s=>s.id===item.id)?current.scenarios.map(s=>s.id===item.id?item:s):[...current.scenarios,item]};
     }),
-    removeScenario: (id: string) => repository.transact(current=>({...current,scenarios:current.scenarios.filter(s=>s.id!==id)})),
+    removeScenario: (id: string) => repository.transact(current=>current.scenarios.some(s=>s.id===id)?({...current,scenarios:current.scenarios.filter(s=>s.id!==id)}):current),
   };
 }

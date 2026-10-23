@@ -1,5 +1,7 @@
+import {experimentDisplayKey} from '../../experiments/domain';
+import {validateUser} from '../../users/domain';
 import type { ProjectState } from './state';
-import { languages } from './preferences';
+import { languages,parsePreferences } from './preferences';
 import type { Preferences, BackupSettings } from './preferences';
 type Check = (value:unknown) => boolean;
 const text:Check = v => typeof v === 'string';
@@ -22,9 +24,10 @@ const point = object({x:number(),y:number(),at:number(0),weight:number(0),source
 const pagePoint = object({x:number(),y:number(),at:number(0),weight:number(0),source:text,area:text,route:text},['route']);
 const scroll = object({at:number(0),top:number(0),depth:number(0,100)});
 const validation = object({medianErrorPx:number(0),viewportWidth:number(1),viewportHeight:number(1),sampleCount:number(0,Infinity,true),at:identifier});
-const preferences = object({dark:bool,contrast:bool,font:number(100,200),spacing:bool,dyslexia:bool,motion:bool});
+const preferences:Check = value=>!!parsePreferences(value);
 const schemas:Record<string,Check> = {
   version:choices(2),
+  users:array(object({...identity,name:identifier,email:identifier,role:choices('student','teacher','evaluator'),status:choices('active','inactive')}),true),
   reportDraft:object({...strings('justification','projectName','objective','method','interpretation','improvements','limits','conclusions','references'),selected:array(identifier),before:array(identifier),after:array(identifier),includeComparison:bool}),
   appointments:array(object({...identity,...strings('service','date','time'),status:choices('confirmed','cancelled'),serviceId:choices('advice','workshop','health','visit','culture'),condition:choices('good','bad')},['serviceId','condition']),true),
   personas:array(object({id:identifier,...strings('name','age','context','goal','barrier','device'),empathy:object(strings('says','thinks','does','feels')),basis:choices('observed','assumed','mixed'),observed:text,assumptions:text,emotionSource:choices('observed','declared')},['basis','observed','assumptions','emotionSource']),true),
@@ -39,10 +42,10 @@ const schemas:Record<string,Check> = {
   pageSessions:array(object({...identity,...strings('route','participant','task','prototype','notes'),width:number(1),height:number(1),viewportWidth:number(1),viewportHeight:number(1),seconds:number(0),clicks:array(pagePoint),pointer:array(pagePoint),gaze:array(pagePoint),simulation:array(pagePoint),scroll:array(object({at:number(0),top:number(0),depth:number(0,100),direction:text})),maxDepth:number(0,100),exposure:map(number(0)),validationError:number(0),capped:bool,target:choices('example','page'),coordinateSystem:choices('example-content','document'),wheelEvents:number(0,Infinity,true),clickCount:number(0,Infinity,true),modeChanges:array(object({at:number(0),mode:choices('cursor','F','Gutenberg','none')})),validation,exampleCondition:choices('good','bad')},['exposure','validationError','target','coordinateSystem','wheelEvents','clickCount','modeChanges','validation','exampleCondition']),true),
   backup:object({format:choices('hci-lab-ia-backup'),version:choices(1),exportedAt:identifier,preferences,language:choices(...languages)}),
 };
-const optional = ['multimodalEvidence','evidence','trackingSessions','pageSessions','backup','reportDraft'];
+const optional = ['users','multimodalEvidence','evidence','trackingSessions','pageSessions','backup','reportDraft'];
 
 export function emptyProject():ProjectState {
-  return {version:2,appointments:[],personas:[],scenarios:[],findings:[],sessions:[],events:[],a11yChecks:{},multimodalEvidence:[],trackingSessions:[],evidence:[],pageSessions:[]};
+  return {version:2,users:[],appointments:[],personas:[],scenarios:[],findings:[],sessions:[],events:[],a11yChecks:{},multimodalEvidence:[],trackingSessions:[],evidence:[],pageSessions:[]};
 }
 
 export function parseBackup(value:unknown):{project:ProjectState;settings?:BackupSettings} {
@@ -50,6 +53,7 @@ export function parseBackup(value:unknown):{project:ProjectState;settings?:Backu
   if ((value as ProjectState).evidence?.some(record=>record.kind==='pattern'&&(!record.pattern||!['good','bad'].includes(record.condition)))) throw new Error('Invalid pattern observation');
   if ((value as ProjectState).pageSessions?.some(s=>s.target&&s.coordinateSystem&&s.coordinateSystem!==(s.target==='example'?'example-content':'document'))) throw new Error('Invalid tracking coordinates');
   for (const e of (value as ProjectState).evidence||[]) {
+    if(e.kind==='experiment'&&experimentDisplayKey(e.scores)===null)throw new Error('Invalid experimental display context');
     if(e.review&&(!['persona','scenario','interface','evaluation'].includes(e.review.type)||e.review.prompt!==e.task))throw new Error('Invalid AI review');
     if(e.prototype!=='iteration7')continue;
     if(e.kind==='tlx'){const values=['mental','physical','temporal','performance','effort','frustration'].map(k=>e.scores[k]);if(values.some(v=>!Number.isFinite(v)||v<0||v>100)||Math.abs(e.scores.rawTLX-values.reduce((a,b)=>a+b,0)/6)>1e-9||!Number.isFinite(e.scores.rawTLX))throw new Error('Invalid Raw TLX');}
@@ -57,10 +61,13 @@ export function parseBackup(value:unknown):{project:ProjectState;settings?:Backu
     if(e.kind==='experiment'&&(!e.experiment||e.experiment.kind!==e.task||e.experiment.condition!==e.condition||e.scores.trials!==8||!Number.isFinite(e.scores.seconds)||Math.abs(e.scores.seconds-e.experiment.trials.reduce((a,b)=>a+b.seconds,0)/8)>1e-9||e.scores.errors!==e.experiment.trials.reduce((a,b)=>a+b.errors,0)))throw new Error('Invalid experimental measurements');
   }
   if ((value as ProjectState).evidence?.some(e=>e.kind==='sus'&&(Array.from({length:10},(_,i)=>e.scores['response'+(i+1)]).some(v=>!Number.isInteger(v)||v<1||v>5)||e.scores.sus!==Array.from({length:10},(_,i)=>i%2===0?e.scores['response'+(i+1)]-1:5-e.scores['response'+(i+1)]).reduce((a,b)=>a+b,0)*2.5))) throw new Error('Invalid SUS measurement');
+  const users=(value as ProjectState).users||[];
+  if(users.some(user=>Object.keys(validateUser(user,users,user.id)).length || !Number.isFinite(Date.parse(user.createdAt))))throw new Error('Invalid users');
   const data = structuredClone(value) as ProjectState & {backup?:BackupSettings};
-  const settings = data.backup ? {preferences:data.backup.preferences,language:data.backup.language} : undefined;
+  const settings = data.backup ? {preferences:parsePreferences(data.backup.preferences)!,language:data.backup.language} : undefined;
   delete data.backup;
   const project = {...emptyProject(),...data};
+  project.users = project.users || [];
   project.trackingSessions = project.trackingSessions?.map(s=>({...s,wheelEvents:s.wheelEvents ?? 0}));
   return {project,settings};
 }
@@ -71,4 +78,4 @@ export function createBackup(project:ProjectState, prefs:Preferences, language:s
   return result;
 }
 
-export const isPreferences = (value:unknown):value is Preferences => preferences(value);
+export const isPreferences = (value:unknown):value is Preferences => preferences(value) && plain(value) && ['dark','contrast','font','spacing','dyslexia','motion'].every(key=>Object.hasOwn(value,key));

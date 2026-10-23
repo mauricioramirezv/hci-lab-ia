@@ -1,34 +1,38 @@
-import {persistPreferences,persistLanguage} from '../features/project/infrastructure';
-import { Patterns } from '../features/patterns/presentation';
-import { Concepts } from '../features/concepts/presentation';
-import { Experiments } from '../features/experiments/presentation';
-import { Chatbots } from '../features/chatbots/presentation';
-import {ReportsModule as Reports} from '../features/reports/presentation';
+import {version} from '../../package.json';
+import {RouteBoundary,RouteLoading} from './RouteBoundary';
+import {persistLanguage} from '../features/project/infrastructure';
 import {PageTracker} from '../features/tracking/presentation';
 import { ProjectManager } from '../features/project/presentation';
-import {readPreferences} from '../features/project/infrastructure';
-import type {Preferences} from '../features/project/domain';
 import { useProject } from '../features/project/presentation';
 import { MultimodalPage } from '../features/multimodal/presentation';
 import {TrackingPage} from '../features/tracking/presentation';
 import {TrackingProvider} from '../features/tracking/presentation';
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Accessibility, BarChart3, Bot, Brain, CalendarCheck, Eye, FlaskConical, Gauge, Languages, LayoutTemplate, Menu, Monitor, Moon, ShieldCheck, Sun, TestTube2, Users, X } from 'lucide-react';
+import {DisplayPreferencesPanel,useDisplayPreferences} from '../features/accessibility/presentation';
 import { AccessibilityPage } from '../features/accessibility/presentation';
-import { AiStudioPage } from '../features/ai/presentation';
-import { CoursePage } from '../features/course/CoursePage';
 import { DashboardPage } from '../features/dashboard/DashboardPage';
-import { DevicesPage } from '../features/devices/DevicesPage';
-import {EvaluationPage} from '../features/evaluation/presentation';
+import {userText} from '../features/users/locales';
 import { LabPage } from '../features/reservations/presentation';
-import { MetricsPage } from '../features/metrics/MetricsPage';
-import { QualityPage } from '../features/quality/QualityPage';
-import { ResearchPage } from '../features/research/presentation';
-import {TestingPage} from '../features/evaluation/presentation';
 
-type Prefs = Preferences;
+
+
+const Patterns=lazy(()=>import('../features/patterns/presentation').then(module=>({default:module.Patterns})));
+const Concepts=lazy(()=>import('../features/concepts/presentation').then(module=>({default:module.Concepts})));
+const Experiments=lazy(()=>import('../features/experiments/presentation').then(module=>({default:module.Experiments})));
+const Chatbots=lazy(()=>import('../features/chatbots/presentation').then(module=>({default:module.Chatbots})));
+const Reports=lazy(()=>import('../features/reports/presentation').then(module=>({default:module.ReportsModule})));
+const AiStudioPage=lazy(()=>import('../features/ai/presentation').then(module=>({default:module.AiStudioPage})));
+const CoursePage=lazy(()=>import('../features/course/CoursePage').then(module=>({default:module.CoursePage})));
+const DevicesPage=lazy(()=>import('../features/devices/DevicesPage').then(module=>({default:module.DevicesPage})));
+const EvaluationPage=lazy(()=>import('../features/evaluation/presentation').then(module=>({default:module.EvaluationPage})));
+const UsersPage=lazy(()=>import('../features/users/presentation').then(module=>({default:module.UsersPage})));
+const MetricsPage=lazy(()=>import('../features/metrics/MetricsPage').then(module=>({default:module.MetricsPage})));
+const QualityPage=lazy(()=>import('../features/quality/QualityPage').then(module=>({default:module.QualityPage})));
+const ResearchPage=lazy(()=>import('../features/research/presentation').then(module=>({default:module.ResearchPage})));
+const TestingPage=lazy(()=>import('../features/evaluation/presentation').then(module=>({default:module.TestingPage})));
 
 function AppShell() {
   const { epoch, storageError } = useProject();
@@ -37,6 +41,7 @@ function AppShell() {
   const [managementMessage,setManagementNotice] = useState({key:'',sequence:0});
   const setManagementMessage = (key:string) => setManagementNotice(current=>({key,sequence:current.sequence+1}));
   const { pathname } = useLocation();
+  const userLabel=userText(i18n.language);
   const sidebar = useRef<HTMLElement>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
   const previousPath = useRef(pathname);
@@ -48,7 +53,6 @@ function AppShell() {
     }
     const heading = document.querySelector('main h1')?.textContent;
     document.title = `${heading || t('common.title')} · HCI Lab + IA`;
-    document.querySelectorAll<HTMLElement>('.table-wrap,.mm-table-scroll').forEach(el => { el.tabIndex = 0; });
   }, [pathname, t]);
   useEffect(() => {
     if (!menu) return;
@@ -81,17 +85,8 @@ function AppShell() {
       media.removeEventListener('change', resize);
     };
   }, [menu]);
-  const [prefs, setPrefs] = useState<Prefs>(readPreferences);
-  useEffect(() => {
-    persistPreferences(prefs);
-    document.documentElement.lang = i18n.language;
-    document.documentElement.dataset.theme = prefs.dark ? 'dark' : 'light';
-    document.documentElement.dataset.contrast = String(prefs.contrast);
-    document.documentElement.dataset.spacing = String(prefs.spacing);
-    document.documentElement.dataset.dyslexia = String(prefs.dyslexia);
-    document.documentElement.dataset.motion = String(prefs.motion);
-    document.documentElement.style.fontSize = `${prefs.font}%`;
-  }, [prefs, i18n.language]);
+  const display=useDisplayPreferences(),prefs=display.prefs;
+  useEffect(()=>{document.documentElement.lang=i18n.language;},[i18n.language]);
 
   const nav = [
     ['/', Gauge, t('nav.dashboard')], ['/lab', FlaskConical, t('nav.lab')], ['/concepts', Brain, t('nav.concepts')],
@@ -113,14 +108,15 @@ function AppShell() {
     <aside ref={sidebar} id="main-navigation" className={`sidebar ${menu ? 'open' : ''}`} aria-label={t('shell.navigation')}>
       <div className="brand"><span className="brand-mark">H+</span><div><strong>{t('common.title')}</strong><small>UX · A11y · AI</small></div><button className="icon-button mobile-only" onClick={closeMenu} aria-label={t('common.close')}><X aria-hidden="true"/></button></div>
       <nav>{groups.map(([group, paths]) => <section className="nav-group" key={group}><h2>{t(`shell.${group}`)}</h2>{nav.filter(([path]) => (paths as readonly string[]).includes(path)).map(([path, Icon, label]) => <NavLink key={path} to={path} end={path === '/'} onClick={() => { setMenu(false); requestAnimationFrame(() => { document.getElementById('main-content')?.focus({preventScroll:true}); window.scrollTo(0,0); }); }} className={({ isActive }) => isActive ? 'active' : ''}><Icon aria-hidden="true"/><span>{label}</span></NavLink>)}</section>)}</nav>
-      <div className="sidebar-foot"><ShieldCheck/><span>WCAG · Nielsen · SUS · E2E</span></div>
+      <div className="sidebar-foot"><ShieldCheck aria-hidden="true"/><span>WCAG · Nielsen · SUS · E2E<br/>{t('closure.version',{version})}</span></div>
     </aside>
     {menu && <div className="menu-backdrop" onClick={closeMenu} aria-hidden="true"/>}
     <div className="page-shell">
-      <header className="topbar"><button ref={menuButton} className="icon-button mobile-only" onClick={() => setMenu(true)} aria-expanded={menu} aria-controls="main-navigation" aria-label={t('shell.openMenu')}><Menu aria-hidden="true"/></button><div className="top-title"><strong>{t('common.title')}</strong><span>{t('common.subtitle')}</span></div><PageTracker key={epoch}/><ProjectManager prefs={prefs} onSettings={(next,language)=>{setPrefs({...next});if(language)void i18n.changeLanguage(language);}} onNotice={setManagementMessage}/><label className="language"><Languages aria-hidden="true"/><span className="sr-only">{t('common.language')}</span><select value={i18n.language} onChange={(event) => setLanguage(event.target.value)}><option value="es-CO">ES</option><option value="en-US">EN</option><option value="pt-BR">PT</option><option value="fr-FR">FR</option><option value="it-IT">IT</option><option value="ca-ES">CA</option></select></label><button className="icon-button" onClick={() => setPrefs((current) => ({ ...current, dark: !current.dark }))} aria-label={prefs.dark ? t('accessibility.light') : t('accessibility.dark')}>{prefs.dark ? <Sun aria-hidden="true"/> : <Moon aria-hidden="true"/>}</button></header>
+      <header className="topbar"><button ref={menuButton} className="icon-button mobile-only" onClick={() => setMenu(true)} aria-expanded={menu} aria-controls="main-navigation" aria-label={t('shell.openMenu')}><Menu aria-hidden="true"/></button><div className="top-title"><strong>{t('common.title')}</strong><span>{t('common.subtitle')}</span></div><PageTracker key={epoch}/><ProjectManager prefs={prefs} onSettings={(next,language)=>{display.replace(next);if(language)void i18n.changeLanguage(language);}} onNotice={setManagementMessage}/><label className="language"><Languages aria-hidden="true"/><span className="sr-only">{t('common.language')}</span><select value={i18n.language} onChange={(event) => setLanguage(event.target.value)}><option value="es-CO">ES</option><option value="en-US">EN</option><option value="pt-BR">PT</option><option value="fr-FR">FR</option><option value="it-IT">IT</option><option value="ca-ES">CA</option></select></label><div className="visualization-actions"><button className="icon-button" onClick={() => display.change((current) => ({ ...current, dark: !current.dark }))} aria-label={prefs.dark ? t('accessibility.light') : t('accessibility.dark')}>{prefs.dark ? <Sun aria-hidden="true"/> : <Moon aria-hidden="true"/>}</button><DisplayPreferencesPanel prefs={prefs} onChange={display.change} error={display.error}/></div></header>
+      {display.error&&<p className="management-notice" role="alert">{t('displayPreferences.failed')}</p>}
       {storageError && <p className="management-notice" role="alert">{storageError}</p>}
-      {managementMessage.key && <p key={`management-${managementMessage.sequence}`} className="management-notice" data-management-notice role="status" tabIndex={-1}>{t(managementMessage.key)}</p>}
-      <main id="main-content" tabIndex={-1} key={epoch} lang={i18n.language}><Routes><Route path="/experiments" element={<Experiments/>}/><Route path="/chatbots" element={<Chatbots/>}/><Route path="/reports" element={<Reports/>}/><Route path="/tracking" element={<TrackingPage/>}/><Route path="/" element={<DashboardPage/>}/><Route path="/lab" element={<LabPage/>}/><Route path="/concepts" element={<Concepts/>}/><Route path="/research" element={<ResearchPage/>}/><Route path="/practices" element={<Patterns/>}/><Route path="/devices" element={<DevicesPage/>}/><Route path="/multimodal" element={<MultimodalPage/>}/><Route path="/accessibility" element={<AccessibilityPage prefs={prefs} setPrefs={setPrefs}/>}/><Route path="/evaluation" element={<EvaluationPage/>}/><Route path="/user-testing" element={<TestingPage/>}/><Route path="/metrics" element={<MetricsPage/>}/><Route path="/ai" element={<AiStudioPage/>}/><Route path="/quality" element={<QualityPage/>}/><Route path="/course" element={<CoursePage/>}/><Route path="*" element={<DashboardPage/>}/></Routes></main>
+      {managementMessage.key && <p key={`management-${managementMessage.sequence}`} className="management-notice" data-management-notice data-outcome="success" role="status" tabIndex={-1}>{t(managementMessage.key)}</p>}
+      <main id="main-content" tabIndex={-1} key={epoch} lang={i18n.language}>{pathname.startsWith('/lab')&&<nav className="lab-navigation" aria-label={t('nav.lab')}><NavLink end to="/lab">{userLabel('reservations')}</NavLink><NavLink to="/lab/users">{userLabel('title')}</NavLink></nav>}<RouteBoundary key={`${pathname}-${epoch}`}><Suspense fallback={<RouteLoading/>}><Routes><Route path="/lab/users" element={<UsersPage/>}/><Route path="/experiments" element={<Experiments/>}/><Route path="/chatbots" element={<Chatbots/>}/><Route path="/reports" element={<Reports/>}/><Route path="/tracking" element={<TrackingPage/>}/><Route path="/" element={<DashboardPage/>}/><Route path="/lab" element={<LabPage/>}/><Route path="/concepts" element={<Concepts/>}/><Route path="/research" element={<ResearchPage/>}/><Route path="/practices" element={<Patterns/>}/><Route path="/devices" element={<DevicesPage/>}/><Route path="/multimodal" element={<MultimodalPage/>}/><Route path="/accessibility" element={<AccessibilityPage prefs={prefs} onChange={display.change} error={display.error}/>}/><Route path="/evaluation" element={<EvaluationPage/>}/><Route path="/user-testing" element={<TestingPage/>}/><Route path="/metrics" element={<MetricsPage/>}/><Route path="/ai" element={<AiStudioPage/>}/><Route path="/quality" element={<QualityPage/>}/><Route path="/course" element={<CoursePage/>}/><Route path="*" element={<DashboardPage/>}/></Routes></Suspense></RouteBoundary></main>
     </div>
   </div>;
 }
