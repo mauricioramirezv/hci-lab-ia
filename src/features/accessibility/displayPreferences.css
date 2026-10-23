@@ -1,6 +1,9 @@
 .display-preferences{flex:none}
 .visualization-actions{display:flex;align-items:center;gap:.5rem;flex:none}
 :root[data-text-large="true"] .topbar{position:static}
+:root[data-text-large="true"] .page-head{flex-wrap:wrap}
+:root[data-text-large="true"] .page-head>.project-actions{flex-wrap:wrap;max-width:100%}
+:root[data-text-large="true"] .page-head>.project-actions>*{max-width:100%;white-space:normal;overflow-wrap:anywhere}
 :root[data-dyslexia="true"] body,:root[data-dyslexia="true"] body *{font-family:Arial,Verdana,sans-serif!important}
 :root[data-spacing="true"] :where(p,li,label,button,input,select,textarea,summary,td,th,dt,dd,legend,h1,h2,h3):not(.i7-board button){line-height:1.8;letter-spacing:.08em;word-spacing:.16em}
 .topbar>*{max-width:100%}
