@@ -3,6 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import {emptyProject} from '../../src/features/project/domain';
 import {interfaceResources} from '../../src/app/locales/interface';
 import {displayResources} from '../../src/features/accessibility/locales';
+import {course} from '../../src/features/course/content';
 
 const routes=['/','/lab','/lab/users','/concepts','/research','/practices','/devices','/multimodal','/tracking','/experiments','/chatbots','/reports','/accessibility','/evaluation','/user-testing','/metrics','/ai','/quality','/course'];
 for(const language of ['es-CO','en-US','pt-BR','fr-FR','it-IT','ca-ES'])test(`interface languages: every empty route, auxiliary feedback, TTS and CSV in ${language}`,async({page},info)=>{
@@ -23,6 +24,7 @@ for(const language of ['es-CO','en-US','pt-BR','fr-FR','it-IT','ca-ES'])test(`in
   });
   expect(copy.filter(text=>forbidden.includes(text)),route).toEqual([]);
   expect(copy.filter(text=>/\b(?:closure|displayPreferences|conceptLab|patternLab|evaluationLab|trackingUX|usersLab|projectActivities|multimodal)\.\w+/.test(text)),route).toEqual([]);
+  if(route==='/course')expect(copy,`${language} course sections`).toEqual(expect.arrayContaining(course.map(([, , ,section])=>tx(section))));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),route).toBe(true);
  }
  await page.goto('/hci-lab-ia/#/accessibility');await page.getByRole('button',{name:tx('Anunciar actualización'),exact:true}).click();await expect(page.locator('.live-demo')).toContainText(tx('Estado actualizado a las {{time}}').split('{{time}}')[0]);

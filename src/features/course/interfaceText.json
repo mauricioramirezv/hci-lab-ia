@@ -7,6 +7,38 @@
     "it-IT": "8 LEZIONI",
     "ca-ES": "8 CLASSES"
   },
+  "Conceptos": {
+    "es-CO": "Conceptos",
+    "en-US": "Concepts",
+    "pt-BR": "Conceitos",
+    "fr-FR": "Concepts",
+    "it-IT": "Concetti",
+    "ca-ES": "Conceptes"
+  },
+  "Prácticas": {
+    "es-CO": "Prácticas",
+    "en-US": "Practices",
+    "pt-BR": "Práticas",
+    "fr-FR": "Pratiques",
+    "it-IT": "Pratiche",
+    "ca-ES": "Pràctiques"
+  },
+  "Ejemplos": {
+    "es-CO": "Ejemplos",
+    "en-US": "Examples",
+    "pt-BR": "Exemplos",
+    "fr-FR": "Exemples",
+    "it-IT": "Esempi",
+    "ca-ES": "Exemples"
+  },
+  "Informes": {
+    "es-CO": "Informes",
+    "en-US": "Reports",
+    "pt-BR": "Relatórios",
+    "fr-FR": "Rapports",
+    "it-IT": "Rapporti",
+    "ca-ES": "Informes"
+  },
   "Evolución del curso": {
     "es-CO": "Evolución del curso",
     "en-US": "Course progression",
