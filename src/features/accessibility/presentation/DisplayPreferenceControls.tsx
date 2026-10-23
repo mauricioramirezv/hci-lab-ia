@@ -16,7 +16,7 @@ export function DisplayPreferenceControls({prefs,onChange,error,announceErrors=f
    <button type="button" className="secondary" onClick={()=>restore(true)}>{tr('sizeReset')}</button>
   </div></fieldset>
   <fieldset><legend>{tr('appearance')}</legend>{(['dark','contrast','spacing','dyslexia','motion'] as const).map(key=><label className="preference-check" key={key}><input type="checkbox" checked={prefs[key]} aria-describedby={key==='dyslexia'?`${id}-font-help`:undefined} onChange={event=>{const checked=event.target.checked;change(current=>({...current,[key]:checked}));}}/><span>{tr(key==='dyslexia'?'font':key)}</span></label>)}<p id={`${id}-font-help`}>{tr('fontHelp')}</p></fieldset>
-  <button type="button" className="secondary" onClick={()=>restore()}>{tr('restore')}</button>
+  <button type="button" className="secondary" data-preference-restore onClick={()=>restore()}>{tr('restore')}</button>
   {error?<p role={announceErrors?'alert':undefined}>{tr('failed')}</p>:<p role="status" data-outcome="success" aria-atomic="true">{notice.key&&<span key={notice.sequence}>{tr(notice.key)}</span>}</p>}
  </div>;
 }
