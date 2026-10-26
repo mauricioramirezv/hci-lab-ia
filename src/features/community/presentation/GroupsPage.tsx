@@ -4,7 +4,8 @@ import {useTranslation} from 'react-i18next';
 import {isActiveAccount,useIdentity} from '../../identity';
 import {communityClient} from '../infrastructure/client';
 import type {Group,GroupInvitation,GroupMember,Page,SharedWorkspace,Workspace} from '../domain/types';
-import {AccountGate,Feedback,PageMore} from './shared';
+import {AccountGate} from '../../../shared/ui/AccountGate';
+import {Feedback,PageMore} from './shared';
 import {refreshAfterSave,shortIdentifier} from './feedback';
 import './community.css';
 
@@ -12,7 +13,8 @@ const emptyPage=<T,>():Page<T>=>({items:[],total:0,limit:25,offset:0});
 type Confirmation={kind:'member'|'workspace'|'invitation';id:string};
 export function GroupsPage(){
   const {t}=useTranslation();const {account,status}=useIdentity();
-  return <section className="activity-page community-page" aria-labelledby="groups-title" data-no-track="true"><header className="page-head"><div><p className="eyebrow">HCI LAB + IA</p><h1 id="groups-title">{t('community.groupsTitle')}</h1><p>{t('community.groupsIntro')}</p></div></header>{!isActiveAccount(account)?<AccountGate account={account} status={status}/>:<GroupWorkspace key={account!.id} accountId={account!.id}/>}</section>;
+  const gateKey=status==='checking'?'loading':status==='error'?'unavailable':account?'inactiveAccount':'needAccount';
+  return <section className="activity-page community-page" aria-labelledby="groups-title" data-no-track="true"><header className="page-head"><div><p className="eyebrow">HCI LAB + IA</p><h1 id="groups-title">{t('community.groupsTitle')}</h1><p>{t('community.groupsIntro')}</p></div></header>{!isActiveAccount(account)?<AccountGate message={t(`community.${gateKey}`)} accountLabel={t('community.accountLink')} publicLabel={t('community.publicLink')}/>:<GroupWorkspace key={account!.id} accountId={account!.id}/>}</section>;
 }
 function GroupWorkspace({accountId}:{accountId:string}){
   const {t,i18n}=useTranslation();

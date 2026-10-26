@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { CalendarDays, RefreshCw } from 'lucide-react';
 import { PageHead, StatusPill } from '../../../shared/ui/Page';
+import { AccountGate } from '../../../shared/ui/AccountGate';
+import { HttpError } from '../../../shared/http';
 import { useIdentity, isActiveAccount } from '../../identity';
-import { AccountGate, Feedback } from '../../community/presentation/shared';
 import { progressClient } from '../infrastructure/client';
 import type { LearningExecution, Delivery } from '../domain/progress';
 import { AssignmentComposer } from './AssignmentComposer';
@@ -20,6 +21,15 @@ function date(value: string | null | undefined, locale: string) {
 }
 function isEvaluated(deliveries: Delivery[]) {
   return deliveries.some(delivery => (delivery.evaluations?.length ?? 0) > 0);
+}
+function progressErrorKey(error: unknown) {
+  const code=error instanceof HttpError?error.code:'NETWORK_ERROR';
+  if(/VERSION_CONFLICT|STATE_CONFLICT|IDEMPOTENCY_KEY_REUSED/.test(code))return 'conflict';
+  if(/UNAUTHENTICATED|CSRF|SESSION/.test(code))return 'unauthenticated';
+  if(/FORBIDDEN|NOT_FOUND|RESOURCE_NOT_FOUND/.test(code))return 'forbidden';
+  if(/INVALID_INPUT|INVALID_REQUEST/.test(code))return 'invalid';
+  if(/NETWORK|TIMEOUT|UNAVAILABLE|RATE_LIMITED/.test(code))return 'unavailable';
+  return 'generic';
 }
 function ExecutionStatus({ execution, deliveries }: { execution: LearningExecution; deliveries: Delivery[] }) {
   const { t } = useTranslation();
@@ -55,10 +65,11 @@ export function ProgressPage() {
   const assessedCount = useMemo(() => data?.ownDeliveries.filter(item => isEvaluated(item.items)).length ?? 0, [data]);
   if (identity.status === 'checking') return <section className="page-content"><PageHead eyebrow={t('learning.eyebrow')} title={t('learning.title')} intro={t('learning.intro')}/><p role="status">{t('learning.loading')}</p></section>;
   if (identity.status === 'error') return <section className="page-content"><PageHead eyebrow={t('learning.eyebrow')} title={t('learning.title')} intro={t('learning.intro')}/><p role="alert">{t('learning.unavailable')}</p></section>;
-  if (!account) return <section className="page-content"><PageHead eyebrow={t('learning.eyebrow')} title={t('learning.title')} intro={t('learning.intro')}/><AccountGate account={identity.account} status={identity.status}/></section>;
+  if (!account) return <section className="page-content"><PageHead eyebrow={t('learning.eyebrow')} title={t('learning.title')} intro={t('learning.intro')}/><AccountGate message={t(identity.account?'learning.inactiveAccount':'learning.needAccount')} accountLabel={t('learning.accountLink')} publicLabel={t('learning.publicLink')}/></section>;
   return <section className="page-content">
     <PageHead eyebrow={t('learning.eyebrow')} title={t('learning.title')} intro={t('learning.intro')} actions={<button className="secondary" type="button" onClick={() => setRetry(value => value + 1)} disabled={busy}><RefreshCw aria-hidden="true"/>{t('learning.refresh')}</button>}/>
-    <Feedback busy={busy} error={error} notice=""/>
+    {busy&&<p role="status" aria-live="polite">{t('learning.loading')}</p>}
+    {Boolean(error)&&<div role="alert"><p>{t(`learning.${progressErrorKey(error)}`)}</p>{error instanceof HttpError&&error.requestId&&<p>{t('learning.requestId',{id:error.requestId})}</p>}</div>}
     {Boolean(error) && <button className="secondary" type="button" onClick={() => setRetry(value => value + 1)} disabled={busy}>{t('learning.tryAgain')}</button>}
     {data && <>
       <div className="learning-summary" aria-label={t('learning.summary')}>

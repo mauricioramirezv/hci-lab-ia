@@ -4,9 +4,10 @@ import { MemoryRouter } from 'react-router-dom';
 import '../../src/app/i18n';
 import { IdentityProvider } from '../../src/features/identity/presentation';
 import { identityClient } from '../../src/features/identity/infrastructure/client';
+import { integrationEventsClient } from '../../src/features/integrationEvents/infrastructure/client';
 import { IntegrationEventsPage } from '../../src/features/integrationEvents/presentation/IntegrationEventsPage';
 import { integrationEventLocales } from '../../src/features/integrationEvents/locales';
-import type { IntegrationEvent } from '../../src/features/identity/infrastructure/client';
+import type { IntegrationEvent } from '../../src/features/integrationEvents/domain/types';
 import type { IdentityAccount } from '../../src/features/identity/domain/types';
 
 const copy = integrationEventLocales['es-CO'];
@@ -26,8 +27,8 @@ function renderPage(account: IdentityAccount = administrator) {
 }
 
 it('shows service inbox/outbox health and lets a permitted administrator retry a dead letter', async()=>{
-  const integration = vi.spyOn(identityClient,'integrationEvents').mockResolvedValueOnce(response([{eventId:'00000000-0000-4000-8000-000000000002',target:'aprendizaje',attempts:8,lastError:'HTTP_503',eventType:'execution.changed',aggregateType:'execution',aggregateId:'00000000-0000-4000-8000-000000000003',occurredAt:'2026-10-24T10:00:00Z'}])).mockResolvedValueOnce(response());
-  const retry = vi.spyOn(identityClient,'retryIntegrationEvent').mockResolvedValue({service:'identidad',eventId:'00000000-0000-4000-8000-000000000002',target:'aprendizaje',requeued:true});
+  const integration = vi.spyOn(integrationEventsClient,'list').mockResolvedValueOnce(response([{eventId:'00000000-0000-4000-8000-000000000002',target:'aprendizaje',attempts:8,lastError:'HTTP_503',eventType:'execution.changed',aggregateType:'execution',aggregateId:'00000000-0000-4000-8000-000000000003',occurredAt:'2026-10-24T10:00:00Z'}])).mockResolvedValueOnce(response());
+  const retry = vi.spyOn(integrationEventsClient,'retry').mockResolvedValue({service:'identidad',eventId:'00000000-0000-4000-8000-000000000002',target:'aprendizaje',requeued:true});
   renderPage();
   expect(await screen.findByRole('heading',{name:copy.title})).toBeVisible();
   expect(await screen.findByText('HTTP_503')).toBeVisible();
@@ -39,14 +40,14 @@ it('shows service inbox/outbox health and lets a permitted administrator retry a
 });
 
 it('does not query event status for non-administrator accounts', async()=>{
-  const integration = vi.spyOn(identityClient,'integrationEvents');
+  const integration = vi.spyOn(integrationEventsClient,'list');
   renderPage({...administrator,platformRole:'participant',globalRoles:['participant']});
   expect(await screen.findByText(copy.forbidden)).toBeVisible();
   expect(integration).not.toHaveBeenCalled();
 });
 
 it('keeps monitoring permission separate from retry permission', async()=>{
-  const integration=vi.spyOn(identityClient,'integrationEvents').mockResolvedValue(response([{eventId:'00000000-0000-4000-8000-000000000002',target:'aprendizaje',attempts:8,lastError:'HTTP_503',eventType:'execution.changed',aggregateType:'execution',aggregateId:'00000000-0000-4000-8000-000000000003',occurredAt:'2026-10-24T10:00:00Z'}]));
+  const integration=vi.spyOn(integrationEventsClient,'list').mockResolvedValue(response([{eventId:'00000000-0000-4000-8000-000000000002',target:'aprendizaje',attempts:8,lastError:'HTTP_503',eventType:'execution.changed',aggregateType:'execution',aggregateId:'00000000-0000-4000-8000-000000000003',occurredAt:'2026-10-24T10:00:00Z'}]));
   renderPage({...administrator,permissions:['account:manage']});
   expect(await screen.findByText(copy.retryPermission)).toBeVisible();
   expect(screen.queryByRole('button',{name:copy.retry})).not.toBeInTheDocument();

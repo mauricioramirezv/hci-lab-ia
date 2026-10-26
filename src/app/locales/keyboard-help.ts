@@ -6,3 +6,12 @@ export const keyboardHelpResources={
   'it-IT':{nav:{learningProgress:'Monitoraggio dell’apprendimento',remoteReports:'Rapporti salvati',groups:'Gruppi',suggestions:'Suggerimenti'},keyboardHelp:'Guida da tastiera',keyMove:'Spostare il focus tra i controlli',keyActivate:'Aprire link o attivare pulsanti',keyToggle:'Selezionare o deselezionare un’opzione',keyClose:'Chiudere un menu o una finestra',shortcutIntro:'Il sito non intercetta i tasti singoli; usa i controlli visibili e la navigazione standard del browser.'},
   'ca-ES':{nav:{learningProgress:'Seguiment de l’aprenentatge',remoteReports:'Informes desats',groups:'Grups',suggestions:'Suggeriments'},keyboardHelp:'Ajuda de teclat',keyMove:'Moure el focus entre controls',keyActivate:'Obrir enllaços o activar botons',keyToggle:'Marcar o desmarcar una opció',keyClose:'Tancar un menú o diàleg',shortcutIntro:'El lloc no captura tecles d’una sola lletra; fes servir els controls visibles i la navegació estàndard del navegador.'},
 } as const;
+
+export const keyboardKeyLabels={
+  'es-CO':{keyTab:'Tab',keyShift:'Mayús',keyEnter:'Enter',keySpace:'Espacio',keyEscape:'Esc'},
+  'en-US':{keyTab:'Tab',keyShift:'Shift',keyEnter:'Enter',keySpace:'Space',keyEscape:'Esc'},
+  'pt-BR':{keyTab:'Tab',keyShift:'Shift',keyEnter:'Enter',keySpace:'Espaço',keyEscape:'Esc'},
+  'fr-FR':{keyTab:'Tab',keyShift:'Maj',keyEnter:'Entrée',keySpace:'Espace',keyEscape:'Échap'},
+  'it-IT':{keyTab:'Tab',keyShift:'Maiusc',keyEnter:'Invio',keySpace:'Spazio',keyEscape:'Esc'},
+  'ca-ES':{keyTab:'Tab',keyShift:'Maj',keyEnter:'Retorn',keySpace:'Espai',keyEscape:'Esc'},
+} as const;

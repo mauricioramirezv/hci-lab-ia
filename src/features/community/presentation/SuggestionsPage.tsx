@@ -6,14 +6,16 @@ import {HttpError} from '../../../shared/http';
 import {suggestionTransitions} from '../domain/types';
 import type {Page,Suggestion,SuggestionHistory,SuggestionStatus} from '../domain/types';
 import {communityClient} from '../infrastructure/client';
-import {AccountGate,Feedback,PageMore} from './shared';
+import {AccountGate} from '../../../shared/ui/AccountGate';
+import {Feedback,PageMore} from './shared';
 import {refreshAfterSave} from './feedback';
 import './community.css';
 
 const emptyPage=<T,>():Page<T>=>({items:[],total:0,limit:25,offset:0});
 export function SuggestionsPage(){
   const {t}=useTranslation(),{account,status}=useIdentity();
-  return <section className="activity-page community-page" aria-labelledby="suggestions-title" data-no-track="true"><header className="page-head"><div><p className="eyebrow">HCI LAB + IA</p><h1 id="suggestions-title">{t('community.suggestionsTitle')}</h1><p>{t('community.suggestionsIntro')}</p></div></header>{!isActiveAccount(account)?<AccountGate account={account} status={status}/>:<SuggestionWorkspace key={account!.id} moderator={canManageAccounts(account)}/>}</section>;
+  const gateKey=status==='checking'?'loading':status==='error'?'unavailable':account?'inactiveAccount':'needAccount';
+  return <section className="activity-page community-page" aria-labelledby="suggestions-title" data-no-track="true"><header className="page-head"><div><p className="eyebrow">HCI LAB + IA</p><h1 id="suggestions-title">{t('community.suggestionsTitle')}</h1><p>{t('community.suggestionsIntro')}</p></div></header>{!isActiveAccount(account)?<AccountGate message={t(`community.${gateKey}`)} accountLabel={t('community.accountLink')} publicLabel={t('community.publicLink')}/>:<SuggestionWorkspace key={account!.id} moderator={canManageAccounts(account)}/>}</section>;
 }
 function SuggestionWorkspace({moderator}:{moderator:boolean}){
   const {t,i18n}=useTranslation();const [items,setItems]=useState(emptyPage<Suggestion>),[history,setHistory]=useState(emptyPage<SuggestionHistory>),[selected,setSelected]=useState<Suggestion>();

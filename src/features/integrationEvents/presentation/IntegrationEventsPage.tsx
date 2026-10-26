@@ -3,10 +3,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { RefreshCw, RotateCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { PageHead, StatusPill } from '../../../shared/ui/Page';
-import { AccountGate } from '../../community/presentation/shared';
+import { AccountGate } from '../../../shared/ui/AccountGate';
 import { canManageAccounts, isActiveAccount, useIdentity } from '../../identity';
-import { identityClient } from '../../identity/infrastructure/client';
-import type { IntegrationEvent } from '../../identity/infrastructure/client';
+import { integrationEventsClient } from '../infrastructure/client';
+import type { IntegrationEvent } from '../domain/types';
 import './integration-events.css';
 
 const services: IntegrationEvent['service'][] = ['identidad','aprendizaje','comunidad','evidencias'];
@@ -29,7 +29,7 @@ export function IntegrationEventsPage() {
   const load = useCallback(async (preserveNotice = false) => {
     if (!allowed) return;
     setBusy(true); setError(false); if (!preserveNotice) setNotice('');
-    try { setItems((await identityClient.integrationEvents()).items); }
+    try { setItems((await integrationEventsClient.list()).items); }
     catch { setError(true); }
     finally { setBusy(false); }
   }, [allowed]);
@@ -37,7 +37,7 @@ export function IntegrationEventsPage() {
   const retry = async (service: IntegrationEvent['service'], eventId: string, target: IntegrationEvent['service']) => {
     setBusy(true); setError(false); setNotice('');
     try {
-      const result = await identityClient.retryIntegrationEvent({ service, eventId, target });
+      const result = await integrationEventsClient.retry({ service, eventId, target });
       setNotice(result.requeued ? 'retryQueued' : 'retryUnchanged');
       await load(true);
     } catch { setError(true); setNotice('retryFailed'); }
@@ -45,11 +45,11 @@ export function IntegrationEventsPage() {
   };
   const title = (service: IntegrationEvent['service']) => t(`integrationEvents.service.${service}`);
   if (identity.status === 'checking') return <section className="page-content"><PageHead eyebrow="HCI LAB + IA" title={t('integrationEvents.title')} intro={t('integrationEvents.intro')}/><p role="status">{t('integrationEvents.loading')}</p></section>;
-  if (!account) return <section className="page-content"><PageHead eyebrow="HCI LAB + IA" title={t('integrationEvents.title')} intro={t('integrationEvents.intro')}/><AccountGate account={identity.account} status={identity.status}/></section>;
+  if (!account) return <section className="page-content"><PageHead eyebrow="HCI LAB + IA" title={t('integrationEvents.title')} intro={t('integrationEvents.intro')}/><AccountGate message={t('integrationEvents.login')} accountLabel={t('community.accountLink')} publicLabel={t('community.publicLink')}/></section>;
   if (!allowed) return <section className="page-content"><PageHead eyebrow="HCI LAB + IA" title={t('integrationEvents.title')} intro={t('integrationEvents.intro')}/><p className="integration-alert" role="status">{t('integrationEvents.forbidden')}</p></section>;
   const dead = items.flatMap(item => (item.deadLetters ?? []).map(event => ({ service: item.service, ...event })));
   return <section className="page-content integration-events">
-    <PageHead eyebrow="HCI LAB + IA · ADMINISTRACIÓN" title={t('integrationEvents.title')} intro={t('integrationEvents.intro')} actions={<button type="button" className="secondary" onClick={() => void load()} disabled={busy}><RefreshCw aria-hidden="true"/>{t('integrationEvents.refresh')}</button>}/>
+    <PageHead eyebrow={t('integrationEvents.adminEyebrow')} title={t('integrationEvents.title')} intro={t('integrationEvents.intro')} actions={<button type="button" className="secondary" onClick={() => void load()} disabled={busy}><RefreshCw aria-hidden="true"/>{t('integrationEvents.refresh')}</button>}/>
     {busy && <p role="status" aria-live="polite">{t('integrationEvents.loading')}</p>}
     {notice && <p className="integration-status" role="status" aria-live="polite" aria-atomic="true">{t(`integrationEvents.${notice}`)}</p>}
     {error && <p className="integration-alert" role="alert">{t('integrationEvents.requestFailed')}</p>}

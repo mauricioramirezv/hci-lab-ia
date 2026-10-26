@@ -6,7 +6,6 @@ type SessionResponse = {account:IdentityAccount;csrfToken?:string};
 export type AdminAccount = IdentityAccount & {disabled:boolean};
 export type DevelopmentMail = {to:string;subject:string;link:string};
 export type MailOptions = {delivery:'local'|'smtp_local'|'smtp';developmentInboxUrl?:string};
-export type IntegrationEvent = {service:'identidad'|'aprendizaje'|'comunidad'|'evidencias';state:'available'|'unavailable';outbox?:Array<{target:'identidad'|'aprendizaje'|'comunidad'|'evidencias';status:string;count:number}>;inbox?:{received:number;processed:number;pending:number;lastReceivedAt:string|null};deadLetters?:Array<{eventId:string;target:'identidad'|'aprendizaje'|'comunidad'|'evidencias';attempts:number;lastError:string|null;eventType:string;aggregateType:string;aggregateId:string;occurredAt:string}>;code?:string};
 let sessionGeneration = 0;
 async function session(path:string, method='GET', body?:unknown) {
   const generation = ++sessionGeneration;
@@ -21,8 +20,6 @@ async function session(path:string, method='GET', body?:unknown) {
 }
 export const identityClient = {
   authOptions:()=>http.request<MailOptions>('/v1/auth-options'),
-  integrationEvents:()=>http.request<{items:IntegrationEvent[];requestId:string}>('/v1/admin/integrations/events'),
-  retryIntegrationEvent:(input:{service:IntegrationEvent['service'];eventId:string;target:IntegrationEvent['service']})=>http.request<{service:IntegrationEvent['service'];eventId:string;target:IntegrationEvent['service'];requeued:boolean}>('/v1/admin/integrations/events/retry',{method:'POST',body:input}),
   register:(input:{email:string;password:string;displayName:string;lastName?:string})=>http.request<{message:string}>('/v1/accounts',{method:'POST',body:input,csrf:false}),
   resendVerification:(email:string)=>http.request<{message:string}>('/v1/email-verifications/resend',{method:'POST',body:{email},csrf:false}),
   login:(input:SignInInput)=>session('/v1/sessions','POST',input),

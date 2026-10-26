@@ -3,8 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FileDown, RefreshCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { PageHead, StatusPill } from '../../../shared/ui/Page';
+import { AccountGate } from '../../../shared/ui/AccountGate';
 import { useIdentity, isActiveAccount } from '../../identity';
-import { AccountGate, Feedback } from '../../community/presentation/shared';
 import { reportClient } from '../infrastructure/client';
 import type { ReportDefinitionInput, ReportExecution, ReportWorkspace } from '../infrastructure/client';
 import type { RemoteReport, ReportFormat } from '../domain/report';
@@ -86,10 +86,10 @@ export function RemoteReportsPage() {
     } catch (failure) { setError(failure); }
     finally { setBusy(false); }
   };
-  if (identity.status === 'checking' || !account) return <section className="page-content"><PageHead eyebrow={t('remoteReports.eyebrow')} title={t('remoteReports.title')} intro={t('remoteReports.intro')}/><AccountGate account={identity.account} status={identity.status}/></section>;
+  if (identity.status === 'checking' || !account) return <section className="page-content"><PageHead eyebrow={t('remoteReports.eyebrow')} title={t('remoteReports.title')} intro={t('remoteReports.intro')}/><AccountGate message={t(`remoteReports.${identity.status==='checking'?'loading':identity.status==='error'?'unavailable':identity.account?'inactiveAccount':'needAccount'}`)} accountLabel={t('remoteReports.accountLink')} publicLabel={t('remoteReports.publicLink')}/></section>;
   return <section className="page-content remote-reports">
     <PageHead eyebrow={t('remoteReports.eyebrow')} title={t('remoteReports.title')} intro={t('remoteReports.intro')} actions={<button type="button" className="secondary" onClick={() => void reload(workspaceId)} disabled={busy}><RefreshCw aria-hidden="true"/>{t('remoteReports.refresh')}</button>}/>
-    <Feedback busy={busy && !loaded} error={null} notice=""/>
+    {busy && !loaded && <p role="status" aria-live="polite">{t('remoteReports.loading')}</p>}
     {notice && <p role="status" aria-live="polite">{t('remoteReports.' + notice)}</p>}
     {Boolean(error) && <div className="remote-report-error" role="alert"><p>{t(`remoteReports.errors.${remoteReportErrorKind(error)}`)}</p>{remoteReportRequestId(error) && <p>{t('remoteReports.requestId', { id: remoteReportRequestId(error) })}</p>}</div>}
     {!workspaces.length && loaded && <p className="remote-report-empty">{t('remoteReports.noWorkspace')}</p>}
@@ -117,7 +117,7 @@ export function RemoteReportsPage() {
             <textarea id="report-method" value={method} onChange={event => setMethod(event.target.value)} maxLength={5000} rows={2}/>
           </details>
           <label htmlFor="report-format">{t('remoteReports.format')}</label>
-          <select id="report-format" value={format} onChange={event => setFormat(event.target.value as ReportFormat)}><option value="json">JSON</option><option value="markdown">Markdown</option><option value="csv">CSV</option></select>
+          <select id="report-format" value={format} onChange={event => setFormat(event.target.value as ReportFormat)}><option value="json">{t('remoteReports.formats.json')}</option><option value="markdown">{t('remoteReports.formats.markdown')}</option><option value="csv">{t('remoteReports.formats.csv')}</option></select>
           <p className="remote-report-note">{t('remoteReports.versionNote')}</p>
           <button className="primary" type="submit" disabled={busy || !workspaceId || !selected.length}>{busy ? t('remoteReports.saving') : t('remoteReports.saveGenerate')}</button>
         </form>
