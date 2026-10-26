@@ -8,9 +8,12 @@ import { areaSummary } from '../../src/features/tracking/domain';
 import { csvCell } from '../../src/shared/files';
 import {reportMarkdown} from '../../src/features/reports/format';
 import { sampleProject } from '../../src/features/project/domain';
+import { conceptResources } from '../../src/features/concepts/locales';
+import { conceptGroups } from '../../src/features/concepts/domain';
 import i18n from '../../src/app/i18n';
-beforeEach(()=>{localStorage.clear();void i18n.changeLanguage('es-CO');});
+beforeEach(async()=>{localStorage.clear();await i18n.changeLanguage('es-CO');});
 const app=(path='/')=>render(<MemoryRouter initialEntries={[path]}><ProjectProvider><App/></ProjectProvider></MemoryRouter>);
+const openConcept=(name:string)=>{const index=conceptResources['es-CO'].concepts.findIndex(concept=>concept.name===name),groupIndex=conceptGroups.findIndex(group=>group.includes(index)),groupName=conceptResources['es-CO'].groups[groupIndex],section=screen.getByRole('button',{name:groupName});if(section.getAttribute('aria-expanded')!=='true')fireEvent.click(section);fireEvent.click(screen.getByRole('button',{name:`Abrir actividad: ${name}`}));};
 it('calculates raw TLX with six valid dimensions and rejects invalid inputs',()=>{
   expect(rawTLX([10,20,30,40,50,60])).toBe(35);expect(()=>rawTLX([10])).toThrow();expect(()=>rawTLX([0,0,0,0,0,101])).toThrow();
 });
@@ -19,9 +22,9 @@ it('groups click areas and escapes spreadsheet formula injection',()=>{
   expect(csvCell('=cmd()')).toBe('"\'=cmd()"');expect(csvCell('a"b')).toBe('"a""b"');
 });
 it('filters concept topics and saves measured interaction evidence',async()=>{
-  app('/concepts');fireEvent.change(await screen.findByLabelText('Temática'),{target:{value:'0'}});
+  app('/concepts');fireEvent.change(await screen.findByLabelText(conceptResources['es-CO'].ui.topic),{target:{value:'0'}});
   expect(screen.queryByRole('heading',{name:'Accesibilidad'})).not.toBeInTheDocument();
-  fireEvent.click(screen.getByRole('button',{name:'Abrir actividad: Usabilidad'}));
+  openConcept('Usabilidad');
   fireEvent.click(screen.getByRole('button',{name:'Iniciar prueba'}));
   fireEvent.click(screen.getByRole('button',{name:'Una visita · 12 €'}));
   fireEvent.change(screen.getByLabelText('Alias opcional'),{target:{value:'P01'}});

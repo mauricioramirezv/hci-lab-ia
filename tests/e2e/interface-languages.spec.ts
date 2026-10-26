@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import {expandDisclosures} from '../support/disclosures';
 import {emptyProject} from '../../src/features/project/domain';
 import {interfaceResources} from '../../src/app/locales/interface';
 import {displayResources} from '../../src/features/accessibility/locales';
@@ -27,13 +28,13 @@ for(const language of ['es-CO','en-US','pt-BR','fr-FR','it-IT','ca-ES'])test(`in
   if(route==='/course')expect(copy,`${language} course sections`).toEqual(expect.arrayContaining(course.map(([, , ,section])=>tx(section))));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),route).toBe(true);
  }
- await page.goto('/hci-lab-ia/#/accessibility');await page.getByRole('button',{name:tx('Anunciar actualización'),exact:true}).click();await expect(page.locator('.live-demo')).toContainText(tx('Estado actualizado a las {{time}}').split('{{time}}')[0]);
- await page.getByRole('button',{name:tx('Escuchar nombre y estado (TTS)'),exact:true}).click();expect(await page.evaluate(()=>(window as Window&{spoken?:unknown}).spoken)).toEqual({text:tx('Botón: Confirmar reserva. Estado: acción confirmada.'),lang:language});
+ await page.goto('/hci-lab-ia/#/accessibility');await page.locator('#accessibility-semantic-heading').click();await page.getByRole('button',{name:tx('Anunciar actualización'),exact:true}).click();await expect(page.locator('.live-demo')).toContainText(tx('Estado actualizado a las {{time}}').split('{{time}}')[0]);
+ await page.locator('#accessibility-sensory-heading').click();await page.getByRole('button',{name:tx('Escuchar nombre y estado (TTS)'),exact:true}).click();expect(await page.evaluate(()=>(window as Window&{spoken?:unknown}).spoken)).toEqual({text:tx('Botón: Confirmar reserva. Estado: acción confirmada.'),lang:language});
  await page.getByRole('button',{name:tx('Restablecer demostración'),exact:true}).click();await expect(page.locator('.section-block [role=status]')).toHaveText(tx('Demostración restablecida.'));
  await page.keyboard.press('Alt+Shift+KeyV');const dialog=page.getByRole('dialog');const display=displayResources[language as keyof typeof displayResources];
  while(await dialog.getByRole('button',{name:display.increase,exact:true}).isEnabled())await dialog.getByRole('button',{name:display.increase,exact:true}).click();
  await page.keyboard.press('Escape');expect(await page.evaluate(()=>getComputedStyle(document.documentElement).fontSize)).toBe('32px');
- const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(axe.violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ await expandDisclosures(page);const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(axe.violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
  await page.goto('/hci-lab-ia/#/metrics');const download=page.waitForEvent('download');await page.getByRole('button',{name:tx('Exportar CSV'),exact:true}).click();const file=await download;const stream=await file.createReadStream();let csv='';for await(const chunk of stream!)csv+=chunk.toString();expect(csv.split('\n')[0]).toBe(`"${tx('Métrica')}","${tx('Valor')}"`);await file.saveAs(info.outputPath(`metrics-${language}.csv`));
  // Empty-project checks must not create observations or records as a side effect.
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!))).toEqual(emptyProject());

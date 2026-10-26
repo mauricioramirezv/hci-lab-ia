@@ -14,7 +14,7 @@ export function ColorBlindSimulator({ mode, setMode, good }: { mode: Accessibili
   const { t } = useTranslation();
   const id = useId().replace(/:/g, '');
   return <section className="panel mm-panel">
-    <h2>{t('multimodal.colorTitle')}</h2>
+    <h3>{t('multimodal.colorTitle')}</h3>
     <label>{t('multimodal.vision')}<select value={mode} onChange={e => setMode(e.target.value as AccessibilityMode)}>{visionModes.map(v => <option key={v} value={v}>{t(`multimodal.${v}`)}</option>)}</select></label>
     <svg className="mm-filter-defs" aria-hidden="true"><defs>{Object.entries(matrices).map(([key, values]) => <filter id={`${id}-${key}`} key={key} colorInterpolationFilters="sRGB"><feColorMatrix type="matrix" values={values}/></filter>)}</defs></svg>
     <div className="mm-color-sample" data-vision={mode} style={{ filter: mode === 'normal' ? undefined : `url(#${id}-${mode})` }}>

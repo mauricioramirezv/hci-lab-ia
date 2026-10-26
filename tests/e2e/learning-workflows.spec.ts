@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import {expandDisclosures} from '../support/disclosures';
 test('factory reset cancels safely, resets project and preferences, and persists',async({page})=>{
   await page.goto('/hci-lab-ia/');
+  await page.locator('#dashboard-presets-heading').click();
   await page.getByRole('button',{name:'Cargar caso: cita médica'}).click();
   await page.getByRole('button',{name:'Gestionar proyecto',exact:true}).click();
   await page.getByRole('button',{name:'Restablecer proyecto',exact:true}).click();
@@ -13,7 +15,7 @@ test('factory reset cancels safely, resets project and preferences, and persists
   expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('hci-prefs-v2')!).dark)).toBe(false);
 });
 test('concepts are grouped and produce evidence from an actual task',async({page})=>{
-  await page.goto('/hci-lab-ia/#/concepts');await page.getByRole('combobox',{name:'Temática',exact:true}).selectOption('0');
+  await page.goto('/hci-lab-ia/#/concepts');await page.getByRole('combobox',{name:'Temática',exact:true}).selectOption('0');await page.locator('#concept-group-0-heading').click();
   await expect(page.getByRole('heading',{name:'Accesibilidad',exact:true})).toHaveCount(0);
   await page.getByRole('button',{name:'Abrir actividad: Usabilidad',exact:true}).click();
   await page.getByRole('button',{name:'Iniciar prueba',exact:true}).click();await page.getByRole('button',{name:'Una visita · 12 €',exact:true}).click();
@@ -21,7 +23,7 @@ test('concepts are grouped and produce evidence from an actual task',async({page
   expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!).evidence[0].scores.interactions)).toBe(1);
 });
 test('page telemetry separates real clicks, scroll and simulated points',async({page},testInfo)=>{
-  await page.goto('/hci-lab-ia/#/quality');await page.getByRole('button',{name:'Seguimiento de página'}).click();const tracker=page.locator('.page-tracker');
+  await page.goto('/hci-lab-ia/#/quality');for(const id of ['quality-pipeline','quality-commands','quality-exit'])await page.locator(`#${id}-heading`).click();await page.getByRole('button',{name:'Seguimiento de página'}).click();const tracker=page.locator('.page-tracker');
   await tracker.getByLabel('Alias (opcional)',{exact:true}).fill('P02');await tracker.getByLabel('Tarea',{exact:true}).fill('Consultar comandos');await tracker.getByLabel('Modo de recorrido',{exact:true}).selectOption('F');await tracker.getByRole('button',{name:'Iniciar captura'}).click();await tracker.getByRole('button',{name:'Iniciar recorrido',exact:true}).click();
   await tracker.getByRole('button',{name:'Seguimiento de página'}).click();await page.locator('main h1').click();
   await page.mouse.move(400,400);await page.mouse.wheel(0,550);await page.waitForTimeout(1200);
@@ -46,7 +48,7 @@ test('chatbot cancellation and rubric save work',async({page})=>{
   await chat.getByLabel('Respuesta editable').fill('Respuesta revisada tras detener');await chat.getByLabel('Alias opcional').fill('P04');for(const label of ['Claridad','Control','Tono','Transparencia'])await chat.getByLabel(label,{exact:true}).selectOption('4');await chat.getByLabel('Evidencia de la evaluación').fill('Se pudo detener la respuesta.');await chat.getByRole('button',{name:'Guardar rúbrica del chatbot'}).click();expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!).evidence[0].condition)).toBe('B-buena');
 });
 test('new routes have no serious automatic accessibility violations',async({page})=>{
-  for(const route of ['concepts','experiments','chatbots','reports','accessibility']){await page.goto(`/hci-lab-ia/#/${route}`);await expect(page.locator('main h1')).toBeVisible();const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(results.violations.filter(v=>['serious','critical'].includes(v.impact || ''))).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);}
+  for(const route of ['concepts','experiments','chatbots','reports','accessibility']){await page.goto(`/hci-lab-ia/#/${route}`);await expect(page.locator('main h1')).toBeVisible();await expandDisclosures(page);const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(results.violations.filter(v=>['serious','critical'].includes(v.impact || ''))).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);}
 });
 test('eight experimental attempts are measured and SUS requires all responses',async({page})=>{
   await page.goto('/hci-lab-ia/#/experiments');await page.getByLabel('Alias opcional').fill('P05');await page.getByRole('button',{name:'Iniciar práctica'}).click();for(let i=0;i<2;i++){const status=await page.locator('.i7 [role=status]').innerText();const target=status.match(/Seleccione (\d+)/)![1];await page.getByRole('button',{name:`Objetivo ${target}`,exact:true}).click();}await page.getByRole('button',{name:'Iniciar medición'}).click();

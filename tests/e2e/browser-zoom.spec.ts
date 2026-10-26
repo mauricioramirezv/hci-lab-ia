@@ -59,7 +59,7 @@ test('actual Chromium browser zoom at 200%', async ({ browserName }, testInfo) =
       expect.soft(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth+1),route).toBe(true);
       if (route === '/lab/users') {
         await page.getByRole('button',{name:'Crear usuario',exact:true}).focus();await page.keyboard.press('Enter');
-        await expect(page.locator('.users-page h2')).toBeFocused();
+        await expect(page.locator('.users-view-heading')).toBeFocused();
         await page.getByLabel('Nombre ficticio',{exact:true}).fill('Zoom user');
         await page.getByLabel('Correo de prueba',{exact:true}).fill('zoom@example.test');
         await page.getByRole('button',{name:'Guardar',exact:true}).click();
@@ -73,6 +73,8 @@ test('actual Chromium browser zoom at 200%', async ({ browserName }, testInfo) =
         await screenshot('zoom-200-users.png');
       }
       if (route === '/concepts') {
+        const conceptSection = page.locator('#concept-group-1-heading');
+        if (await conceptSection.getAttribute('aria-expanded') !== 'true') await conceptSection.click();
         await page.locator('#open-concept-6').click();
         await page.getByRole('combobox',{name:'Condición',exact:true}).selectOption('bad');
         await page.getByRole('button',{name:'Iniciar prueba',exact:true}).focus();
@@ -88,7 +90,7 @@ test('actual Chromium browser zoom at 200%', async ({ browserName }, testInfo) =
         await page.getByLabel('Contexto',{exact:true}).selectOption('university');
         await page.getByLabel('Servicio',{exact:true}).selectOption('workshop');
         await page.getByRole('button',{name:'Continuar',exact:true}).click();
-        await expect(page.locator('.activity-panel h2')).toBeFocused();
+        await expect(page.locator('.activity-panel :is(h2,h3,h4)[tabindex="-1"]')).toBeFocused();
         expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
         await page.getByRole('button',{name:'Cancelar',exact:true}).focus();await page.keyboard.press('Enter');
         await discardChanges(page);await expect(page.getByRole('status')).toBeFocused();
@@ -102,6 +104,8 @@ test('actual Chromium browser zoom at 200%', async ({ browserName }, testInfo) =
         await expect(page.getByRole('status')).toBeFocused();
       }
       if (route === '/practices') {
+        const patternSection = page.locator('.pattern-category .disclosure-toggle').nth(3);
+        if (await patternSection.getAttribute('aria-expanded') !== 'true') await patternSection.click();
         await page.locator('#open-pattern-3').click();
         await page.getByRole('combobox',{name:'Condición',exact:true}).selectOption('bad');
         await page.getByRole('button',{name:'Comparar características y coste anual',exact:true}).click();

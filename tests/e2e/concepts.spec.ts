@@ -2,13 +2,14 @@
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { conceptResources } from '../../src/features/concepts/locales';
-import { conceptIds } from '../../src/features/concepts/domain';
+import { conceptGroups, conceptIds } from '../../src/features/concepts/domain';
 import type { ConceptId } from '../../src/features/concepts/domain';
 import {emptyProject} from '../../src/features/project/domain';
 import { manageResources } from '../../src/features/project/locales';
 type Language=keyof typeof conceptResources;
 type Labels=typeof conceptResources['es-CO']['ui'];
 const read=(page:Page)=>page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!));
+async function openConcept(page:Page,index:number,language:Language='es-CO'){const group=conceptGroups.findIndex(indices=>indices.includes(index));const heading=page.getByRole('button',{name:conceptResources[language].groups[group],exact:true});if(await heading.getAttribute('aria-expanded')!=='true')await heading.click();await page.locator(`#open-concept-${index}`).click();}
 async function button(page:Page,labels:Labels,key:keyof Labels){await page.locator('.concept-activity').getByRole('button',{name:labels[key],exact:true}).click();}
 async function finishActivity(page:Page,id:ConceptId,good:boolean,ui:Labels){
   const trial=page.locator('.concept-test-area');
@@ -52,7 +53,7 @@ for(const language of Object.keys(conceptResources) as Language[]){
     await page.goto('/hci-lab-ia/#/concepts');await page.locator('.language select').selectOption(language);
     await expect(page.locator('.concept-catalog-card')).toHaveCount(11);
     for(const [index,id] of conceptIds.entries())for(const good of [true,false]){
-      await page.locator(`#open-concept-${index}`).click();await expect(page.locator('.concept-activity')).toHaveCount(1);await expect(page.locator('.concept-catalog-card')).toHaveCount(0);
+      await openConcept(page,index,language);await expect(page.locator('.concept-activity')).toHaveCount(1);await expect(page.locator('.concept-catalog-card')).toHaveCount(0);
       if(!good)await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');
       await expect(page.locator('.concept-activity h2')).toHaveText(resource.concepts[index].name);await expect(page.getByText(resource.concepts[index].instructions,{exact:true})).toBeVisible();
       await button(page,ui,'start');await finishActivity(page,id,good,ui);
@@ -84,7 +85,7 @@ for(const theme of ['light','dark','contrast','dark-contrast']){
     await page.screenshot({path:testInfo.outputPath(`catalog-${theme}.png`),fullPage:true});
     await page.screenshot({path:testInfo.outputPath(`catalog-viewport-${theme}.png`)});
     for(const [index,id] of conceptIds.entries())for(const good of [true,false]){
-      await page.locator(`#open-concept-${index}`).click();if(!good)await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');await button(page,ui,'start');
+      await openConcept(page,index);if(!good)await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');await button(page,ui,'start');
       result=await new AxeBuilder({page}).include('.concept-module').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
       expect(result.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),`${id} ${good}`).toEqual([]);
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${id} ${good}`).toBe(true);
@@ -110,20 +111,20 @@ test('concepts: search, keyboard, explicit diagnosis, retry, condition change an
   await page.getByRole('combobox',{name:ui.topic,exact:true}).selectOption('2');await expect(page.locator('.concept-catalog-card')).toHaveCount(2);
   await page.getByLabel(ui.search).fill('COGNICION');await expect(page.locator('.concept-catalog-card')).toHaveCount(1);await page.getByLabel(ui.search).fill('sin-coincidencias');await expect(page.getByText(ui.noMatches)).toBeVisible();
   await page.getByRole('button',{name:ui.clear}).click();await expect(page.locator('.concept-catalog-card')).toHaveCount(11);
-  await page.getByLabel(ui.diagAnswer).selectOption('3');await expect(page.getByText(ui.reviewAnswer,{exact:true})).toHaveCount(0);await page.getByRole('button',{name:ui.check,exact:true}).click();await expect(page.getByText(conceptResources['es-CO'].diagnosis.explanations[2],{exact:true})).toBeVisible();
+  const diagnosis=page.getByRole('button',{name:ui.diagTitle,exact:true});await diagnosis.click();await page.getByLabel(ui.diagAnswer).selectOption('3');await expect(page.getByText(ui.reviewAnswer,{exact:true})).toHaveCount(0);await page.getByRole('button',{name:ui.check,exact:true}).click();await expect(page.getByText(conceptResources['es-CO'].diagnosis.explanations[2],{exact:true})).toBeVisible();
   await page.getByRole('button',{name:ui.retry}).click();await expect(page.getByLabel(ui.diagAnswer)).toBeFocused();await page.getByLabel(ui.diagAnswer).selectOption('1');await page.getByRole('button',{name:ui.check,exact:true}).click();await expect(page.getByText(ui.correctAnswer,{exact:true})).toBeVisible();
-  await page.locator('#open-concept-1').focus();await page.keyboard.press('Enter');await expect(page.locator('.concept-activity .concept-focus')).toBeFocused();
+  await openConcept(page,1);await expect(page.locator('.concept-activity .concept-focus')).toBeFocused();
   await page.getByRole('textbox',{name:ui.notes,exact:true}).fill('Texto conservado ✍️');await page.getByLabel(ui.alias).fill('Alias libre');
   await page.getByRole('button',{name:ui.start}).focus();await page.keyboard.press('Enter');
   await expect(page.getByRole('combobox',{name:ui.condition,exact:true})).toBeEnabled();await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');
   await expect(page.getByText(ui.conditionReset,{exact:true})).toBeVisible();await expect(page.getByRole('textbox',{name:ui.notes,exact:true})).toHaveValue('Texto conservado ✍️');
   await button(page,ui,'start');await page.getByRole('button',{name:ui.planA,exact:true}).focus();await page.keyboard.press('Enter');await expect(page.locator('.concept-activity .concept-focus')).toBeFocused();
   await button(page,ui,'saveResults');await button(page,ui,'repeat');await expect(page.locator('.concept-activity')).not.toContainText('Interacciones:');await button(page,ui,'start');await button(page,ui,'cancel');await expect(page.getByText(ui.cancelledHelp)).toBeVisible();
-  await button(page,ui,'back');await expect(page.locator('#open-concept-1')).toBeFocused();await page.locator('#open-concept-1').click();await expect(page.getByLabel(ui.alias)).toHaveValue('Alias libre');await expect(page.getByRole('textbox',{name:ui.notes,exact:true})).toHaveValue('Texto conservado ✍️');
+  await button(page,ui,'back');await expect(page.locator('#open-concept-1')).toBeFocused();await openConcept(page,1);await expect(page.getByLabel(ui.alias)).toHaveValue('Alias libre');await expect(page.getByRole('textbox',{name:ui.notes,exact:true})).toHaveValue('Texto conservado ✍️');
 });
 
 test('concepts: completes and saves a trial using Tab and Enter, with visible focus',async({page})=>{
-  const ui=conceptResources['es-CO'].ui;await page.goto('/hci-lab-ia/#/concepts');await page.locator('#open-concept-1').click();
+  const ui=conceptResources['es-CO'].ui;await page.goto('/hci-lab-ia/#/concepts');await openConcept(page,1);
   await page.keyboard.press('Tab');await expect(page.getByRole('combobox',{name:ui.confidenceBefore,exact:true})).toBeFocused();
   await page.keyboard.press('Tab');await expect(page.getByRole('button',{name:ui.start,exact:true})).toBeFocused();await page.keyboard.press('Enter');
   await expect(page.locator('.concept-activity h3.concept-focus')).toBeFocused();await page.keyboard.press('Tab');
@@ -136,17 +137,17 @@ test('concepts: completes and saves a trial using Tab and Enter, with visible fo
 
 test('concepts: global reset cancels pending work, clears drafts and evidence, and stays empty on reload',async({page})=>{
   await page.goto('/hci-lab-ia/#/concepts');const ui=conceptResources['es-CO'].ui;
-  await page.locator('#open-concept-3').click();await page.getByRole('textbox',{name:ui.notes,exact:true}).fill('Observación real');await button(page,ui,'saveObservation');await expect(page.getByText(ui.findingSaved)).toBeVisible();
+  await openConcept(page,3);await page.getByRole('textbox',{name:ui.notes,exact:true}).fill('Observación real');await button(page,ui,'saveObservation');await expect(page.getByText(ui.findingSaved)).toBeVisible();
   await button(page,ui,'start');await page.getByLabel(ui.noteLabel).fill('Pendiente');await button(page,ui,'statusSaveAction');
   await page.getByRole('button',{name:'Gestionar proyecto',exact:true}).click();await page.getByRole('button',{name:'Restablecer proyecto',exact:true}).click();await page.getByRole('button',{name:'Borrar datos y restablecer',exact:true}).click();
   await expect(page.locator('.concept-activity')).toHaveCount(0);await expect(page.locator('.concept-catalog-card')).toHaveCount(11);await page.waitForTimeout(1100);expect(await read(page)).toEqual(emptyProject());
-  await page.locator('#open-concept-3').click();await expect(page.getByRole('textbox',{name:ui.notes,exact:true})).toHaveValue('');await button(page,ui,'start');await expect(page.getByLabel(ui.noteLabel)).toHaveValue('');
+  await openConcept(page,3);await expect(page.getByRole('textbox',{name:ui.notes,exact:true})).toHaveValue('');await button(page,ui,'start');await expect(page.getByLabel(ui.noteLabel)).toHaveValue('');
   await page.reload();expect(await read(page)).toEqual(emptyProject());
 });
 
 test('concepts: saved decisions survive complete backup and recovery; languages preserve all user text',async({page},testInfo)=>{
   await page.goto('/hci-lab-ia/#/concepts');const es=conceptResources['es-CO'].ui,fr=conceptResources['fr-FR'].ui;
-  await page.locator('#open-concept-10').click();await page.getByRole('textbox',{name:es.notes,exact:true}).fill('Observación sin traducir');await button(page,es,'start');await page.getByRole('combobox',{name:es.decision,exact:true}).selectOption('editDecision');await page.getByLabel(es.reason).fill('Razón en español');await page.getByRole('textbox',{name:es.edit,exact:true}).fill('Propuesta escrita');
+  await openConcept(page,10);await page.getByRole('textbox',{name:es.notes,exact:true}).fill('Observación sin traducir');await button(page,es,'start');await page.getByRole('combobox',{name:es.decision,exact:true}).selectOption('editDecision');await page.getByLabel(es.reason).fill('Razón en español');await page.getByRole('textbox',{name:es.edit,exact:true}).fill('Propuesta escrita');
   await page.locator('.language select').selectOption('fr-FR');await expect(page.getByRole('textbox',{name:fr.notes,exact:true})).toHaveValue('Observación sin traducir');await expect(page.getByLabel(fr.reason)).toHaveValue('Razón en español');await expect(page.getByRole('textbox',{name:fr.edit,exact:true})).toHaveValue('Propuesta escrita');
   await button(page,fr,'finishReview');await button(page,fr,'saveResults');const original=await read(page);
   const manage=manageResources['fr-FR'];

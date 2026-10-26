@@ -2,18 +2,21 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { shellResources } from '../../src/app/locales/shell';
 import { manageResources } from '../../src/features/project/locales';
+import {expandDisclosures} from '../support/disclosures';
 
 const routes = ['/', '/lab', '/concepts', '/research', '/practices', '/devices', '/multimodal', '/tracking', '/experiments', '/chatbots', '/reports', '/accessibility', '/evaluation', '/user-testing', '/metrics', '/ai', '/quality', '/course'];
 for (const theme of ['light', 'dark', 'contrast', 'dark-contrast']) {
   test(`all routes: axe and layout in ${theme}`, async ({ page }, testInfo) => {
+    test.setTimeout(120000);
     await page.addInitScript((theme) => localStorage.setItem('hci-prefs-v2', JSON.stringify({dark:theme.includes('dark'),contrast:theme.includes('contrast'),font:100,spacing:false,dyslexia:false,motion:true})), theme);
     for (const route of routes) {
       await page.goto(`/hci-lab-ia/#${route}`);
       await expect(page.locator('main h1')).toBeVisible();
-      if(route==='/course'){
-        const table=page.getByRole('region',{name:'Trazabilidad conceptual',exact:true});
+      if(route==='/course'){await page.locator('#course-traceability-heading').click();
+        const table=page.locator('#course-traceability-panel .table-wrap[role="region"]');
         await expect(table).toHaveAttribute('tabindex','0');await table.focus();await expect(table).toBeFocused();
       }
+      await expandDisclosures(page);
       const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
       await testInfo.attach(`${theme}-${route.replace('/', '') || 'home'}-axe`, { body: JSON.stringify(results.violations, null, 2), contentType:'application/json' });
       expect.soft(results.violations.map(v => ({id:v.id, impact:v.impact, targets:v.nodes.map(n=>n.target)})), route).toEqual([]);
@@ -32,14 +35,31 @@ test('mobile menu: hidden links, Escape, focus trap and route focus', async ({ p
   await expect(opener).toHaveAttribute('aria-expanded','true');
   await expect(page.getByRole('button',{name:'Cerrar',exact:true})).toBeFocused();
   await page.keyboard.press('Shift+Tab');
-  await expect(page.locator('.sidebar nav a').last()).toBeFocused();
+  await expect(page.locator('.sidebar nav button:visible').last()).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(page.getByRole('button',{name:'Cerrar',exact:true})).toBeFocused();
   await page.keyboard.press('Escape'); await expect(opener).toBeFocused();
   await page.keyboard.press('Enter');
+  await page.getByRole('button',{name:'Diseñar y explorar'}).click();
   await page.getByRole('link',{name:'Laboratorio',exact:true}).click();
   await expect(page.locator('main')).toBeFocused();
   await expect(opener).toHaveAttribute('aria-expanded','false');
+});
+
+test('sidebar sections expand accessibly and page tracking precedes keyboard help', async ({page}) => {
+  await page.setViewportSize({width:360,height:800});
+  await page.goto('/hci-lab-ia/');
+  await page.getByRole('button',{name:'Abrir menú'}).click();
+  const explore = page.getByRole('button',{name:'Diseñar y explorar'});
+  await expect(explore).toHaveAttribute('aria-expanded','false');
+  await explore.focus(); await page.keyboard.press('Enter');
+  await expect(explore).toHaveAttribute('aria-expanded','true');
+  await expect(page.getByRole('link',{name:'Laboratorio',exact:true})).toBeVisible();
+  const order = await page.evaluate(() => ({
+    tracker: Number(getComputedStyle(document.querySelector('.topbar .page-tracker')!).order),
+    help: Number(getComputedStyle(document.querySelector('.topbar .keyboard-help')!).order),
+  }));
+  expect(order.tracker).toBeLessThan(order.help);
 });
 
 test('six languages translate the common shell', async ({page}) => {

@@ -1,3 +1,4 @@
+import {ExpandableCard} from '../../../shared/ui/ExpandableCard';
 import {useTranslation} from 'react-i18next';
 import type { PageSession } from '../domain/pageSession';
 import { areaSummary } from '../domain/pageSession';
@@ -13,5 +14,5 @@ export function SessionResults({session:s,exportable=false,textual=true}:{sessio
 }
 export function TrackingRecords({records}:{records:PageSession[]}){
  const {t}=useTranslation();
- return <section className="panel tracking-records" data-no-track><h2>{t('trackingUX.records')} · {records.length}</h2>{!records.length&&<p>{t('trackingUX.empty')}</p>}{records.slice().reverse().map(s=><details key={s.id}><summary>{s.createdAt} · {s.participant||t('trackingUX.noAlias')} · {s.task} · {t(`trackingUX.${s.target||'page'}`)}</summary><p>{s.route} · {(s.exampleCondition||s.prototype)&&<>{s.exampleCondition?t(`trackingUX.${s.exampleCondition}`):s.prototype} · </>}{s.width} × {s.height}px</p><p>{s.notes}</p><SessionResults session={s} exportable/></details>)}</section>;
+ return <ExpandableCard className="tracking-records" id="tracking-records" title={`${t('trackingUX.records')} · ${records.length}`} defaultOpen={false}><div data-no-track>{!records.length&&<p>{t('trackingUX.empty')}</p>}{records.slice().reverse().map(s=><details key={s.id}><summary>{s.createdAt} · {s.participant||t('trackingUX.noAlias')} · {s.task} · {t(`trackingUX.${s.target||'page'}`)}</summary><p>{s.route} · {(s.exampleCondition||s.prototype)&&<>{s.exampleCondition?t(`trackingUX.${s.exampleCondition}`):s.prototype} · </>}{s.width} × {s.height}px</p><p>{s.notes}</p><SessionResults session={s} exportable/></details>)}</div></ExpandableCard>;
 }

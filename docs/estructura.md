@@ -9,6 +9,8 @@ src/
   app/                  entrada, navegación, composición, idioma y estilos globales
   features/
     project/            estado, respaldo y gestión del proyecto
+    identity/           cuentas reales, sesión con cookie y perfil
+    synchronization/    selección explícita, coordinación de envíos y adaptadores HTTP
     reservations/       dominio, operaciones, adaptador y presentación de reservas
     users/              registros ficticios del Laboratorio, separados de investigación
     research/           personas, empatía y escenarios

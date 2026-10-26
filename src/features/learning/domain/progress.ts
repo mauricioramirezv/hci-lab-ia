@@ -1,0 +1,30 @@
+export type Workspace = { id: string; name?: string; nombre?: string };
+export type LearningExecution = {
+  id: string;
+  workspace_id?: string;
+  workspaceId?: string;
+  activity_version_id?: string;
+  activityVersionId?: string;
+  assignment_id?: string | null;
+  assignmentId?: string | null;
+  state: 'in_progress' | 'completed' | 'cancelled' | string;
+  version: number;
+  started_at?: string;
+  completed_at?: string | null;
+};
+export type Evaluation = { id: string; score?: number | null; comment?: string | null; evaluatedAt?: string };
+export type FeedbackNote = { id: string; message: string; kind?: string; createdAt?: string };
+export type Delivery = {
+  id: string;
+  execution_id?: string;
+  version: number;
+  state: string;
+  participant_id?: string;
+  assignment_id?: string;
+  submitted_at?: string;
+  evaluations?: Evaluation[];
+  feedback?: FeedbackNote[];
+};
+export type LearningGroup = { id: string; name: string; role: 'leader' | 'participant' | string };
+export type AssignmentCriterion = { id?: string; code: string; name: string; description?: string; maxScore?: number | null; order: number };
+export type Assignment = { id: string; group_id?: string; groupId?: string; activity_version_id?: string; activityVersionId?: string; title: string; instructions: string; opens_at?: string | null; due_at?: string | null; state: string; criteria?: AssignmentCriterion[] };

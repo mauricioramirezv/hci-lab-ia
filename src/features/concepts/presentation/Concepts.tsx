@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { concepts as previousConcepts } from '../catalog';
 import { PageHead } from '../../../shared/ui/Page';
+import { DisclosureCard } from '../../../shared/ui/DisclosureCard';
 import { useProject } from '../../project/presentation';
 import { ConceptActivityRunner } from './Activity';
 import { conceptGroups, conceptIds, blankDraft, normalizeSearch } from '../domain/model';
@@ -17,6 +18,7 @@ export function Concepts() {
   const {state}=useProject();
   const [topic,setTopic]=useState('all'),[query,setQuery]=useState(''),[selected,setSelected]=useState<number>();
   const [drafts,setDrafts]=useState<Record<number,ConceptDraft>>({}),[showEvidence,setShowEvidence]=useState(false);
+  const [expandedSections,setExpandedSections]=useState<Record<string,boolean>>({});
   const [answer,setAnswer]=useState(''),[checked,setChecked]=useState(false),[diagnosisError,setDiagnosisError]=useState(false);
   const evidenceHeading=useRef<HTMLHeadingElement>(null),diagnosisInput=useRef<HTMLSelectElement>(null),catalogSearch=useRef<HTMLInputElement>(null);
   const matches=(index:number)=>normalizeSearch([text(index,'name'),text(index,'description'),text(index,'learn')].join(' ')).includes(normalizeSearch(query));
@@ -34,16 +36,17 @@ export function Concepts() {
       {!visible.length&&<p className="concept-empty">{tr('noMatches')}</p>}
       {conceptGroups.map((indices,group)=>{
         const cards=indices.filter(index=>visible.includes(index));
-        return cards.length?<section className="concept-topic section-block" key={group}><h2>{t(`conceptLab.groups.${group}`)}</h2><div className="concept-catalog-grid">{cards.map(index=><article className="concept-catalog-card" key={conceptIds[index]} data-concept={conceptIds[index]}><h3>{text(index,'name')}</h3><p>{text(index,'description')}</p><h4>{tr('learn')}</h4><p>{text(index,'learn')}</p><button id={`open-concept-${index}`} className="secondary" onClick={()=>setSelected(index)}>{tr('open',{name:text(index,'name')})}</button></article>)}</div></section>:null;
+        const id=`concept-group-${group}`;
+        return cards.length?<DisclosureCard className="concept-topic section-block" key={group} id={id} title={t(`conceptLab.groups.${group}`)} open={!!expandedSections[id]} onToggle={()=>setExpandedSections(current=>({...current,[id]:!current[id]}))}><div className="concept-catalog-grid">{cards.map(index=><article className="concept-catalog-card" key={conceptIds[index]} data-concept={conceptIds[index]}><h3>{text(index,'name')}</h3><p>{text(index,'description')}</p><h4>{tr('learn')}</h4><p>{text(index,'learn')}</p><button id={`open-concept-${index}`} className="secondary" onClick={()=>setSelected(index)}>{tr('open',{name:text(index,'name')})}</button></article>)}</div></DisclosureCard>:null;
       })}
-      <section className="panel concept-diagnosis" aria-labelledby="concept-diagnosis-title"><h2 id="concept-diagnosis-title">{tr('diagTitle')}</h2><p>{t('conceptLab.diagnosis.situation')}</p><p>{t('conceptLab.diagnosis.question')}</p>
+      <DisclosureCard className="concept-diagnosis" id="concept-diagnosis" title={tr('diagTitle')} open={!!expandedSections.diagnosis} onToggle={()=>setExpandedSections(current=>({...current,diagnosis:!current.diagnosis}))}><p>{t('conceptLab.diagnosis.situation')}</p><p>{t('conceptLab.diagnosis.question')}</p>
         <form onSubmit={e=>{e.preventDefault();if(!answer){setDiagnosisError(true);setChecked(false);diagnosisInput.current?.focus();return;}setDiagnosisError(false);setChecked(true);}}>
           <label>{tr('diagAnswer')}<select ref={diagnosisInput} value={answer} aria-invalid={diagnosisError||undefined} aria-describedby={diagnosisError?'concept-diagnosis-error':undefined} onChange={e=>{setAnswer(e.target.value);setChecked(false);setDiagnosisError(false);}}><option value="">{tr('choose')}</option>{[0,1,2].map(index=><option key={index} value={String(index+1)}>{t(`conceptLab.diagnosis.options.${index}`)}</option>)}</select></label>
           <div className="concept-actions"><button className="primary" type="submit">{tr('check')}</button><button className="secondary" type="button" onClick={()=>{setAnswer('');setChecked(false);setDiagnosisError(false);diagnosisInput.current?.focus();}}>{tr('retry')}</button></div>
         </form>
         {diagnosisError&&<p id="concept-diagnosis-error" role="alert">{tr('noAnswer')}</p>}
         {checked&&<div className="concept-feedback" role="status"><h3>{tr(answer==='1'?'correctAnswer':'reviewAnswer')}</h3><p>{t(`conceptLab.diagnosis.explanations.${Number(answer)-1}`)}</p><h4>{tr('correction')}</h4><p>{t('conceptLab.diagnosis.correction')}</p></div>}
-      </section>
+      </DisclosureCard>
     </>:<ConceptActivityRunner index={selected} draft={drafts[selected]||blankDraft()} onDraft={next=>setDrafts(current=>({...current,[selected]:next}))} onBack={back} onEvidence={viewEvidence}/>}
     {showEvidence&&<section id="concept-evidence" className="panel concept-evidence" aria-labelledby="concept-evidence-title"><h2 ref={evidenceHeading} id="concept-evidence-title" tabIndex={-1} className="concept-focus">{tr('evidenceTitle')}</h2><p>{tr('savedText')}</p>
       {!records.length&&!findings.length&&<p>{tr('noEvidence')}</p>}

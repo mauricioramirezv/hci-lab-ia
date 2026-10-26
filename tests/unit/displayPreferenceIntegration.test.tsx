@@ -27,7 +27,7 @@ it('notifies capture observers before changing geometry and avoids notifications
  try{applyDisplayPreferences({...defaultPrefs,font:200},defaultPrefs);expect(observer).toHaveBeenCalledOnce();expect(document.documentElement.style.fontSize).toBe('200%');applyDisplayPreferences({...defaultPrefs,font:200},{...defaultPrefs,font:200});expect(observer).toHaveBeenCalledOnce();}finally{window.removeEventListener(DISPLAY_PREFERENCES_EVENT,observer);}
 });
 it('pauses the teaching motion timer without changing its selected simulation or visual filter',()=>{
- vi.useFakeTimers();const view=render(<Sensory/>);
+ vi.useFakeTimers();const view=render(<Sensory/>);fireEvent.click(document.getElementById('accessibility-sensory-heading')!);
  const motor=screen.getByLabelText('Dificultad de precisión: objetivo oscilante'),filter=screen.getByLabelText('Filtro visual');
  fireEvent.change(filter,{target:{value:'blur'}});fireEvent.click(motor);
  const target=screen.getByRole('button',{name:'Confirmar'});expect(target.style.transform).not.toBe('');expect(vi.getTimerCount()).toBe(1);

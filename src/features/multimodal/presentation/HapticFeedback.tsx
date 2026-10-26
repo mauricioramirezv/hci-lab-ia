@@ -22,5 +22,5 @@ export function HapticFeedback({ onStatus }: { onStatus: (message: string) => vo
       onStatus(t('multimodal.soundRequested'));
     } catch { onStatus(t('multimodal.soundError')); }
   };
-  return <section className="panel mm-panel"><h2>{t('multimodal.channels')}</h2><p className="mm-visual-alert">{t('multimodal.alert')}</p><div className="mm-actions"><button className="secondary" onClick={vibrate}>{t('multimodal.vibrate')}</button><button className="secondary" onClick={() => void sound()}>{t('multimodal.sound')}</button></div></section>;
+  return <section className="panel mm-panel"><h3>{t('multimodal.channels')}</h3><p className="mm-visual-alert">{t('multimodal.alert')}</p><div className="mm-actions"><button className="secondary" onClick={vibrate}>{t('multimodal.vibrate')}</button><button className="secondary" onClick={() => void sound()}>{t('multimodal.sound')}</button></div></section>;
 }

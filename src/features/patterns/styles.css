@@ -1,4 +1,5 @@
 .pattern-module { min-width:0; }
+.pattern-module .pattern-disclosures { display:grid; gap:1rem; }
 .pattern-module .pattern-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; margin:1rem 0; }
 .pattern-module .pattern-actions > a { padding:.7rem 0; }
 .pattern-module label { display:grid; gap:.5rem; margin:.75rem 0; }

@@ -34,14 +34,14 @@ test('module persistence: research keeps the form and retries a failed save',asy
 });
 test('module persistence: concepts do not confirm unpersisted results',async({page})=>{
  const resource=conceptResources['es-CO'];
- await page.goto('/hci-lab-ia/#/concepts');await page.getByRole('button',{name:resource.ui.open.replace('{{name}}',resource.concepts[1].name),exact:true}).click();
+ await page.goto('/hci-lab-ia/#/concepts');await page.locator('#concept-group-0-heading').click();await page.getByRole('button',{name:resource.ui.open.replace('{{name}}',resource.concepts[1].name),exact:true}).click();
  await page.getByRole('button',{name:resource.ui.start,exact:true}).click();await page.getByRole('button',{name:'Una visita · 12 €',exact:true}).click();
  const field=page.getByRole('textbox',{name:resource.ui.notes,exact:true});await field.fill('RAW observation');
  await failureAndRetry(page,page.getByRole('button',{name:resource.ui.saveResults,exact:true}),'evidence',field);
 });
 test('module persistence: patterns retain the observation on failure',async({page})=>{
  const resource=patternResources['es-CO'],ui=resource.ui;
- await page.goto('/hci-lab-ia/#/practices');await page.getByRole('button',{name:ui.open.replace('{{name}}',resource.patterns[0].name),exact:true}).click();
+ await page.goto('/hci-lab-ia/#/practices');await page.locator('.pattern-category .disclosure-toggle').first().click();await page.getByRole('button',{name:ui.open.replace('{{name}}',resource.patterns[0].name),exact:true}).click();
  for(const key of ['identified','principle','correction'] as const)await page.getByLabel(ui[key],{exact:true}).fill('RAW '+key);
  await failureAndRetry(page,page.getByRole('button',{name:ui.save,exact:true}),'evidence',page.getByRole('textbox',{name:ui.identified,exact:true}));
 });
@@ -77,6 +77,6 @@ test('module persistence: UX tracking can retry saving a stopped capture',async(
  await failureAndRetry(page,controls.getByRole('button',{name:ui.save,exact:true}),'pageSessions');
 });
 test('module persistence: multimodal retains notes until storage succeeds',async({page})=>{
- await page.goto('/hci-lab-ia/#/multimodal');const field=page.getByRole('textbox',{name:'Observación, problema y corrección propuesta',exact:true});await field.fill('RAW observation');
+ await page.goto('/hci-lab-ia/#/multimodal');await page.locator('#multimodal-evidence-heading').click();const field=page.getByRole('textbox',{name:'Observación, problema y corrección propuesta',exact:true});await field.fill('RAW observation');
  await failureAndRetry(page,page.getByRole('button',{name:'Guardar evidencia',exact:true}),'multimodalEvidence',field);
 });

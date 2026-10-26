@@ -133,6 +133,7 @@ test('management: reset aborts active microphone and speech, clears forms and re
     Object.defineProperty(window.speechSynthesis,'cancel',{value:()=>w.speechStops++});
   });
   await page.goto('/hci-lab-ia/#/multimodal');
+  await page.locator('#multimodal-channels-heading').click();
   await page.getByLabel('Comando (confirmar, cancelar, navegar)').fill('confirmar');
   await page.getByRole('button',{name:'Activar micrófono',exact:true}).click();
   expect(await page.evaluate(()=>(window as unknown as {micActive:boolean}).micActive)).toBe(true);
@@ -141,6 +142,7 @@ test('management: reset aborts active microphone and speech, clears forms and re
     const w=window as unknown as {micActive:boolean;micAborts:number;speechStops:number;recognition:{onresult:unknown;onend:unknown;onerror:unknown}};
     return {active:w.micActive,aborted:w.micAborts>0,speechStopped:w.speechStops>0,handlers:[w.recognition.onresult,w.recognition.onend,w.recognition.onerror]};
   })).toEqual({active:false,aborted:true,speechStopped:true,handlers:[null,null,null]});
+  await page.locator('#multimodal-channels-heading').click();
   await expect(page.getByLabel('Comando (confirmar, cancelar, navegar)')).toHaveValue('');
   await expect(page.getByRole('button',{name:'Activar micrófono',exact:true})).toBeEnabled();
   await page.getByRole('button',{name:'Seguimiento de página',exact:true}).click();

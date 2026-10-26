@@ -11,6 +11,7 @@ type Language=keyof typeof patternResources;
 type Labels=typeof patternResources['es-CO']['ui'];
 const read=(page:Page)=>page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!));
 const activity=(page:Page)=>page.locator('.pattern-activity');
+async function openPattern(page:Page,index:number,language:Language='es-CO'){const heading=page.getByRole('button',{name:patternResources[language].categories[index],exact:true});if(await heading.getAttribute('aria-expanded')!=='true')await heading.click();await page.locator(`#open-pattern-${index}`).click();}
 async function action(page:Page,ui:Labels,key:keyof Labels){await activity(page).getByRole('button',{name:ui[key],exact:true}).click();}
 async function finish(page:Page,id:PatternId,good:boolean,ui:Labels){
   const example=page.locator('.pattern-example');
@@ -65,7 +66,7 @@ for(const language of Object.keys(patternResources) as Language[]){
       await expect(page.locator('.pattern-module').getByRole('status')).toHaveText(ui.count.replace('{{count}}','1'));
       for(const text of Object.values(resource.patterns[index]).slice(0,8))await expect(page.locator('.pattern-card')).toContainText(text);
       for(const good of [true,false]){
-        await page.locator(`#open-pattern-${index}`).click();await expect(activity(page).locator('h2')).toBeFocused();await expect(page.locator('.pattern-card')).toHaveCount(0);
+        await openPattern(page,index,language);await expect(activity(page).locator('h2')).toBeFocused();await expect(page.locator('.pattern-card')).toHaveCount(0);
         if(!good)await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');
         expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
         await expect(page.getByText(resource.patterns[index].instructions,{exact:true})).toBeVisible();await finish(page,id,good,ui);
@@ -91,7 +92,7 @@ for(const theme of ['light','dark','contrast','dark-contrast']){
     await page.goto('/hci-lab-ia/#/practices');await expect(page.locator('.pattern-module')).toBeVisible();expect((await new AxeBuilder({page}).include('.pattern-module').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
     await page.screenshot({path:testInfo.outputPath(`catalog-${theme}.png`),fullPage:true});await page.screenshot({path:testInfo.outputPath(`catalog-viewport-${theme}.png`)});
     for(const [index,id] of patternIds.entries())for(const good of [true,false]){
-      await page.locator(`#open-pattern-${index}`).click();await expect(activity(page).locator('h2')).toBeFocused();if(!good)await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');
+      await openPattern(page,index);await expect(activity(page).locator('h2')).toBeFocused();if(!good)await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
       let result=await new AxeBuilder({page}).include('.pattern-module').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(result.violations,`${id} ${good?'good':'bad'} before`).toEqual([]);
       await finish(page,id,good,ui);result=await new AxeBuilder({page}).include('.pattern-module').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(result.violations,`${id} ${good?'good':'bad'} after`).toEqual([]);
@@ -103,7 +104,7 @@ for(const theme of ['light','dark','contrast','dark-contrast']){
 test('patterns: search, filters, keyboard, validation, condition changes and restart preserve user text',async({page})=>{
   const es=patternResources['es-CO'].ui,fr=patternResources['fr-FR'].ui;await page.goto('/hci-lab-ia/#/practices');
   await page.getByRole('searchbox',{name:es.search,exact:true}).fill('NAVEGACION');await expect(page.locator('.pattern-card')).toHaveCount(1);await page.getByRole('searchbox',{name:es.search,exact:true}).fill('zzzz');await expect(page.getByText(es.empty,{exact:true})).toBeVisible();await page.getByRole('button',{name:es.clear,exact:true}).click();
-  await page.locator('#open-pattern-0').focus();await page.keyboard.press('Enter');await expect(activity(page).locator('h2')).toBeFocused();await page.keyboard.press('Tab');await expect(page.getByRole('combobox',{name:es.condition,exact:true})).toBeFocused();
+  const category=page.getByRole('button',{name:patternResources['es-CO'].categories[0],exact:true});await category.focus();await page.keyboard.press('Enter');await page.locator('#open-pattern-0').focus();await page.keyboard.press('Enter');await expect(activity(page).locator('h2')).toBeFocused();await page.keyboard.press('Tab');await expect(page.getByRole('combobox',{name:es.condition,exact:true})).toBeFocused();
   await page.keyboard.press('ArrowDown');await expect(page.getByRole('combobox',{name:es.condition,exact:true})).toHaveValue('bad');await expect(page.locator('#pattern-example-title')).toBeFocused();await page.keyboard.press('Tab');await expect(page.getByRole('textbox',{name:es.email,exact:true})).toBeFocused();
   expect(await page.getByRole('textbox',{name:es.email,exact:true}).evaluate(e=>{const style=getComputedStyle(e);return style.outlineStyle!=='none'||style.boxShadow!=='none';})).toBe(true);
   await page.keyboard.type('usuario@example.test');await page.keyboard.press('Tab');await page.keyboard.type('Solicitud original');await page.keyboard.press('Tab');await page.keyboard.press('Enter');await expect(page.locator('.pattern-runtime [role=status]')).toHaveText(es.formLabDone);
@@ -112,25 +113,25 @@ test('patterns: search, filters, keyboard, validation, condition changes and res
   await page.getByRole('combobox',{name:es.condition,exact:true}).selectOption('good');await expect(page.locator('#pattern-example-title')).toBeFocused();await expect(page.locator('#pattern-message')).toHaveText(es.changed);await expect(page.getByRole('textbox',{name:es.email,exact:true})).toHaveValue('usuario@example.test');
   await action(page,es,'restart');await expect(page.locator('#pattern-example-title')).toBeFocused();await expect(page.locator('#pattern-message')).toHaveText(es.restarted);await expect(page.getByRole('textbox',{name:es.identified,exact:true})).toHaveValue('Observación original');
   await page.locator('.language select').selectOption('fr-FR');await expect(page.getByRole('textbox',{name:fr.request,exact:true})).toHaveValue('Solicitud original');await expect(page.getByRole('textbox',{name:fr.alias,exact:true})).toHaveValue('Alias libre');await expect(page.getByRole('textbox',{name:fr.correction,exact:true})).toHaveValue('Mi solución');
-  await action(page,fr,'save');await action(page,fr,'back');await page.locator('#open-pattern-5').click();await expect(page.getByRole('textbox',{name:fr.alias,exact:true})).toHaveValue('Alias libre');await action(page,fr,'back');await page.locator('#open-pattern-0').click();await expect(page.getByRole('textbox',{name:fr.request,exact:true})).toHaveValue('Solicitud original');
+  await action(page,fr,'save');await action(page,fr,'back');await openPattern(page,5,'fr-FR');await expect(page.getByRole('textbox',{name:fr.alias,exact:true})).toHaveValue('Alias libre');await action(page,fr,'back');await openPattern(page,0,'fr-FR');await expect(page.getByRole('textbox',{name:fr.request,exact:true})).toHaveValue('Solicitud original');
 });
 test('patterns: cancelling and resetting pending feedback stops the example and retains authored input',async({page})=>{
-  const ui=patternResources['es-CO'].ui;await page.goto('/hci-lab-ia/#/practices');await page.locator('#open-pattern-2').click();await page.getByRole('textbox',{name:ui.document,exact:true}).fill('Mi constancia');
+  const ui=patternResources['es-CO'].ui;await page.goto('/hci-lab-ia/#/practices');await openPattern(page,2);await page.getByRole('textbox',{name:ui.document,exact:true}).fill('Mi constancia');
   await action(page,ui,'prepare');await action(page,ui,'cancel');await expect(page.locator('.pattern-runtime [role=status]')).toHaveText(ui.cancelled);await page.waitForTimeout(1400);await expect(page.getByRole('progressbar')).toHaveAttribute('value','0');
   await action(page,ui,'prepare');await page.getByRole('combobox',{name:ui.condition,exact:true}).selectOption('bad');await page.waitForTimeout(1400);await expect(page.locator('.pattern-runtime [role=status]')).toHaveText(ui.idle);await expect(page.getByRole('textbox',{name:ui.document,exact:true})).toHaveValue('Mi constancia');
   await action(page,ui,'prepare');await action(page,ui,'restart');await page.waitForTimeout(1400);await expect(page.locator('.pattern-runtime [role=status]')).toHaveText(ui.idle);
-  await action(page,ui,'prepare');await action(page,ui,'back');await page.waitForTimeout(1400);await page.locator('#open-pattern-2').click();await expect(page.locator('.pattern-runtime [role=status]')).toHaveText(ui.idle);
+  await action(page,ui,'prepare');await action(page,ui,'back');await page.waitForTimeout(1400);await openPattern(page,2);await expect(page.locator('.pattern-runtime [role=status]')).toHaveText(ui.idle);
 });
 test('patterns: evidence survives backup/recovery and CSV/Markdown; reset clears drafts and pending work',async({page},testInfo)=>{
   const original=representativeProject();await page.goto('/hci-lab-ia/#/practices');await page.evaluate(project=>localStorage.setItem('hci-lab-ia-project-v2',JSON.stringify(project)),original);await page.reload();
-  const ui=patternResources['es-CO'].ui,manage=manageResources['es-CO'];await page.locator('#open-pattern-2').click();
+  const ui=patternResources['es-CO'].ui,manage=manageResources['es-CO'];await openPattern(page,2);
   await expect(page.getByRole('textbox',{name:ui.alias,exact:true})).toHaveValue([...original.evidence!].reverse().find(record=>record.participant.trim())?.participant||'');
   await page.getByRole('textbox',{name:ui.alias,exact:true}).fill('');await page.getByRole('textbox',{name:ui.identified,exact:true}).fill('Problema escrito');await page.getByRole('textbox',{name:ui.principle,exact:true}).fill('Visibilidad');await page.getByRole('textbox',{name:ui.correction,exact:true}).fill('Confirmación persistente');await action(page,ui,'save');
   const saved=await read(page);expect(saved.evidence).toHaveLength(original.evidence!.length+1);
   await page.getByRole('button',{name:manage.title,exact:true}).click();const pending=page.waitForEvent('download');await page.getByRole('button',{name:manage.backup,exact:true}).click();const file=testInfo.outputPath('pattern-backup.json');await(await pending).saveAs(file);await page.keyboard.press('Escape');
   await page.getByRole('textbox',{name:ui.document,exact:true}).fill('Pendiente');await action(page,ui,'prepare');await page.getByRole('button',{name:manage.title,exact:true}).click();await page.getByRole('button',{name:manage.reset,exact:true}).click();await page.getByRole('dialog').getByRole('button',{name:manage.cancel,exact:true}).click();expect(await read(page)).toEqual(saved);await page.keyboard.press('Escape');
   await action(page,ui,'prepare');await page.getByRole('button',{name:manage.title,exact:true}).click();await page.getByRole('button',{name:manage.reset,exact:true}).click();await page.getByRole('button',{name:manage.confirmReset,exact:true}).click();await page.waitForTimeout(1400);expect(await read(page)).toEqual(emptyProject());await expect(page.locator('.pattern-card')).toHaveCount(6);
-  await page.locator('#open-pattern-2').click();await expect(page.getByRole('textbox',{name:ui.document,exact:true})).toHaveValue('');await expect(page.getByRole('textbox',{name:ui.identified,exact:true})).toHaveValue('');
+  await openPattern(page,2);await expect(page.getByRole('textbox',{name:ui.document,exact:true})).toHaveValue('');await expect(page.getByRole('textbox',{name:ui.identified,exact:true})).toHaveValue('');
   await page.reload();expect(await read(page)).toEqual(emptyProject());
   await page.getByRole('button',{name:manage.title,exact:true}).click();await page.locator('dialog input[type=file]').setInputFiles(file);await page.getByRole('button',{name:manage.confirmRecover,exact:true}).click();expect(await read(page)).toEqual(saved);
   await page.locator('.pattern-module').getByRole('link',{name:ui.reports,exact:true}).click();await page.locator('.pattern-record>summary').click();await expect(page.locator('.pattern-record')).toContainText('Confirmación persistente');

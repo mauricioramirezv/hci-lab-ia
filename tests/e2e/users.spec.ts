@@ -18,7 +18,7 @@ async function reset(page:Page){await manage(page);await page.getByRole('button'
 test.beforeEach(async({page})=>{await page.goto('/hci-lab-ia/#/lab/users');});
 
 test('users: validation, duplicates, own email edit, independent details and cancellation',async({page})=>{
- await expect(page.getByRole('navigation',{name:'Laboratorio',exact:true}).getByRole('link',{name:u.reservations,exact:true})).toBeVisible();
+ await expect(page.locator('#lab-section-reservations-heading')).toHaveAttribute('aria-expanded','false');await page.locator('#lab-section-reservations-heading').click();await expect(page.getByRole('navigation',{name:'Laboratorio',exact:true}).getByRole('link',{name:u.reservations,exact:true})).toBeVisible();
  await button(page,'create').click();await button(page,'save').click();await expect(page.locator('#user-name')).toBeFocused();await expect(page.getByText(u.nameRequired)).toBeVisible();
  await page.getByLabel(u.name,{exact:true}).fill(' Ana ');await page.getByLabel(u.email,{exact:true}).fill('ana@');await button(page,'save').click();await expect(page.getByText(u.emailInvalid)).toBeVisible();await expect(page.locator('#user-name')).toHaveValue(' Ana ');
  await page.getByLabel(u.email,{exact:true}).fill(' Ana@example.test ');await button(page,'save').click();await expect(page.getByRole('status')).toHaveText(u.saved);const original=(await read(page)).users![0];
@@ -32,11 +32,11 @@ test('users: status, confirmed deletion, cancellation, keyboard focus and exact 
  await page.getByRole('button',{name:`${u.activate}: Ana`,exact:true}).click();expect((await read(page)).users![0]).toEqual(original);
  const remove=page.getByRole('button',{name:`${u.delete}: Ana`,exact:true});await remove.click();await expect(page.getByRole('dialog').getByRole('button',{name:u.cancel,exact:true})).toBeFocused();await page.keyboard.press('Escape');await expect(remove).toBeFocused();expect((await read(page)).users).toEqual([original]);
  await remove.click();await page.getByRole('dialog').getByRole('button',{name:u.delete,exact:true}).click();expect((await read(page)).users).toEqual([]);await expect(page.getByRole('status')).toBeFocused();await button(page,'undo').click();expect((await read(page)).users).toEqual([original]);
- const before=await read(page);await page.locator('#user-example-email').fill('broken');await button(page,'check').click();await expect(page.getByText(u.badFeedback)).toBeVisible();await expect(page.getByText(u.emailInvalid)).toBeVisible();expect(await read(page)).toEqual(before);
+ const before=await read(page);await page.locator('#users-example-heading').click();await page.locator('#user-example-email').fill('broken');await button(page,'check').click();await expect(page.getByText(u.badFeedback)).toBeVisible();await expect(page.getByText(u.emailInvalid)).toBeVisible();expect(await read(page)).toEqual(before);
 });
 test('users: searches, filters and orders saved records',async({page})=>{
  await create(page,'Zed','z@example.test','teacher');await create(page,'Ana','a@example.test');await page.getByRole('button',{name:`${u.deactivate}: Zed`,exact:true}).click();
- const names=()=>page.locator('.users-list h3').allTextContents();expect(await names()).toEqual(['Ana','Zed']);
+ const names=()=>page.locator('.users-list').getByRole('heading',{level:4}).allTextContents();expect(await names()).toEqual(['Ana','Zed']);
  await page.getByLabel(u.search,{exact:true}).fill(' Z@EXAMPLE ');expect(await names()).toEqual(['Zed']);await page.getByLabel(u.search,{exact:true}).fill('');
  await page.locator('.users-filters').getByLabel(u.role,{exact:true}).selectOption('teacher');await page.locator('.users-filters').getByLabel(u.status,{exact:true}).selectOption('inactive');expect(await names()).toEqual(['Zed']);
  await page.locator('.users-filters').getByLabel(u.status,{exact:true}).selectOption('active');await expect(page.getByText(u.noResults)).toBeVisible();
@@ -69,7 +69,7 @@ test('users: six languages, keyboard, themes, 200% text, mobile and axe',async({
  test.setTimeout(120000);await create(page,'RAW Júlia','raw@example.test');
  for(const [lang,strings]of Object.entries(userResources)){
   await page.locator('.language select').selectOption(lang);await expect(page.getByRole('heading',{level:1})).toHaveText(strings.title);await expect(page.getByRole('heading',{name:'RAW Júlia',exact:true})).toBeVisible();
-  await page.getByRole('button',{name:strings.create,exact:true}).focus();await page.keyboard.press('Enter');await expect(page.locator('.users-page h2')).toBeFocused();await expect(page.locator('#user-name')).toHaveAccessibleName(strings.name);await page.getByRole('button',{name:strings.cancel,exact:true}).click();
+  await page.getByRole('button',{name:strings.create,exact:true}).focus();await page.keyboard.press('Enter');await expect(page.locator('.users-view-heading')).toBeFocused();await expect(page.locator('#user-name')).toHaveAccessibleName(strings.name);await page.getByRole('button',{name:strings.cancel,exact:true}).click();
  }
  await page.locator('.language select').selectOption('es-CO');
  for(const theme of ['light','dark','contrast']){

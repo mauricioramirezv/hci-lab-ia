@@ -4,6 +4,7 @@
 - [Persistencia, privacidad y límites](persistencia-privacidad.md).
 
 - [Desarrollo y despliegue](desarrollo.md).
+- [Integración opcional con el backend y revisión de la iteración 9](integracion-backend.md).
 - [Estructura del repositorio](estructura.md) y [arquitectura](arquitectura.md).
 - [Pruebas, recursos y reportes](pruebas.md).
 - [Usuarios ficticios: uso y revisión](usuarios.md).

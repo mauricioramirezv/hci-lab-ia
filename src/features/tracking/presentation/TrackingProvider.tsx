@@ -47,7 +47,13 @@ export function TrackingProvider({children}:{children:ReactNode}){
  s.height=s.target==='example'?content.current?.scrollHeight||s.height:document.documentElement.scrollHeight;update();if(!movingRef.current||modeRef.current==='none'||document.visibilityState!=='visible')return;
  if(modeRef.current==='cursor'){if(pointer.current){sample(pointer.current.x,pointer.current.y,'pointer','cursor-proxy',elapsed);setDot(pointPosition(pointer.current.x,pointer.current.y,pane.current,s.target||'page'));}return;}
  const reduced=document.documentElement.dataset.motion==='true'||window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduced&&Math.floor(s.seconds*5)%5!==0)return;
- const pos=simulationPosition(modeRef.current,phase.current);phase.current+=reduced?.5:.12;const el=s.target==='example'?pane.current:document.querySelector<HTMLElement>('#main-content');if(!el)return;const r=el.getBoundingClientRect(),left=Math.max(0,r.left),top=Math.max(0,r.top),right=Math.min(window.innerWidth,r.right),bottom=Math.min(window.innerHeight,r.bottom);const x=left+pos.x*(right-left),y=top+pos.y*(bottom-top);sample(x,y,'simulation',`simulated-${modeRef.current}`);setDot(pointPosition(x,y,pane.current,s.target||'page'));
+ const pos=simulationPosition(modeRef.current,phase.current);phase.current+=reduced?.5:.12;const el=s.target==='example'?pane.current:document.querySelector<HTMLElement>('#main-content');if(!el)return;
+ const r=el.getBoundingClientRect(),header=s.target==='page'?document.querySelector<HTMLElement>('.topbar'):null;
+ const headerPosition=header?getComputedStyle(header).position:'';
+ const coveredTop=header&&(headerPosition==='sticky'||headerPosition==='fixed')?header.getBoundingClientRect().bottom:0;
+ const left=Math.max(0,r.left),top=Math.max(0,r.top,coveredTop),right=Math.min(window.innerWidth,r.right),bottom=Math.min(window.innerHeight,r.bottom);
+ if(right<=left||bottom<=top)return;
+ const x=left+pos.x*(right-left),y=top+pos.y*(bottom-top);sample(x,y,'simulation',`simulated-${modeRef.current}`);setDot(pointPosition(x,y,pane.current,s.target||'page'));
  },200);
  return()=>{window.removeEventListener('blur',clearPointer);document.removeEventListener('mouseleave',clearPointer);document.removeEventListener('click',click,true);document.removeEventListener('pointermove',move,true);document.removeEventListener('wheel',wheel,true);document.removeEventListener('scroll',scroll,true);window.clearInterval(timer);};
  },[eligible,geometryValid,sample,stop,update]);

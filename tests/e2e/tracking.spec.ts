@@ -33,7 +33,7 @@ test('tracks clicks after scroll, pointer dwell, exports and persists a session'
   await page.getByRole('button',{name:'Descargar respaldo JSON',exact:true}).click();
   expect((await projectDownload).suggestedFilename()).toBe('hci-lab-ia-project.json');
   await page.keyboard.press('Escape');
-  await page.reload();await page.getByRole('heading',{name:'Sesiones guardadas · 1'}).locator('..').locator('summary').first().click();await expect(page.getByText('Se comprendió el resultado del formulario.')).toBeVisible();
+  await page.reload();await page.locator('#tracking-records-heading').click();await page.locator('#tracking-records-panel summary').first().click();await expect(page.getByText('Se comprendió el resultado del formulario.')).toBeVisible();
 });
 test('does not load camera without consent and does not collect after stopping', async ({page}) => {
   const external:string[]=[];page.on('request',request=>{if(request.url().includes('webgazer'))external.push(request.url());});

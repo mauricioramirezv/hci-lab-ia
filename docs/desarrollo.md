@@ -18,6 +18,8 @@ npm run preview -- --host 127.0.0.1
 
 El proyecto académico se guarda en el navegador. Use Gestionar proyecto para respaldarlo en JSON antes de cambiar de origen, navegador o equipo. Los datos de localhost y GitHub Pages no se comparten automáticamente.
 
+Las cuentas y el envío explícito de trabajo al backend son opcionales. Consulte [integración con los cuatro servicios](integracion-backend.md) para configurar proxies, CORS, cookies y el recorrido de revisión. El laboratorio público sigue funcionando localmente.
+
 ## Comprobar cambios
 
 ```powershell

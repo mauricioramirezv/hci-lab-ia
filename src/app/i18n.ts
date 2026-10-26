@@ -10,6 +10,15 @@ import { multimodalResources } from '../features/multimodal/translations';
 import i18n from 'i18next';
 import { conceptResources } from '../features/concepts/locales';
 import { patternResources } from '../features/patterns/locales';
+import {identityLocales} from '../features/identity/locales';
+import {identityMailLocales} from '../features/identity/mail-locales';
+import {synchronizationLocales} from '../features/synchronization/locales';
+import {communityLocales} from '../features/community';
+import {learningLocales} from '../features/learning';
+import {remoteReportLocales} from '../features/remoteReports';
+import {remoteReportErrorLocales} from '../features/remoteReports/error-locales';
+import {integrationEventLocales} from '../features/integrationEvents';
+import {keyboardHelpResources} from './locales/keyboard-help';
 import { activityResources } from './locales/projectActivities';
 import { trackingResources } from '../features/tracking/locales';
 import { shellResources } from './locales/shell';
@@ -83,6 +92,12 @@ Object.entries(upgradeResources).forEach(([lang, upgrade]) => i18n.addResourceBu
 i18n.addResourceBundle('it-IT', 'translation', italianBase, true, true);
 i18n.addResourceBundle('ca-ES', 'translation', catalanBase, true, true);
 Object.entries(shellResources).forEach(([lang, shell]) => i18n.addResourceBundle(lang, 'translation', { shell }, true, true));
+Object.entries(communityLocales).forEach(([lang, community]) => i18n.addResourceBundle(lang, 'translation', { community }, true, true));
+Object.entries(learningLocales).forEach(([lang, learning]) => i18n.addResourceBundle(lang, 'translation', { learning }, true, true));
+Object.entries(remoteReportLocales).forEach(([lang, remoteReports]) => i18n.addResourceBundle(lang, 'translation', { remoteReports }, true, true));
+Object.entries(remoteReportErrorLocales).forEach(([lang, messages]) => i18n.addResourceBundle(lang, 'translation', { remoteReports: messages }, true, true));
+Object.entries(integrationEventLocales).forEach(([lang, integrationEvents]) => i18n.addResourceBundle(lang, 'translation', { integrationEvents }, true, true));
+Object.entries(keyboardHelpResources).forEach(([lang, shellHelp]) => i18n.addResourceBundle(lang, 'translation', { shellHelp }, true, true));
 Object.entries(manageResources).forEach(([lang, manage]) => i18n.addResourceBundle(lang, 'translation', { manage }, true, true));
 Object.entries(conceptResources).forEach(([lang, conceptLab]) => i18n.addResourceBundle(lang, 'translation', { conceptLab }, true, true));
 Object.entries(patternResources).forEach(([lang, patternLab]) => i18n.addResourceBundle(lang, 'translation', { patternLab }, true, true));
@@ -99,3 +114,6 @@ Object.entries(crudResources).forEach(([lang,crud])=>i18n.addResourceBundle(lang
 
 Object.entries(displayResources).forEach(([lang,displayPreferences])=>i18n.addResourceBundle(lang,'translation',{displayPreferences},true,true));
 Object.entries(closureResources).forEach(([lang,closure])=>i18n.addResourceBundle(lang,'translation',{closure},true,true));
+Object.entries(identityLocales).forEach(([lang,identity])=>i18n.addResourceBundle(lang,'translation',{identity},true,true));
+Object.entries(identityMailLocales).forEach(([lang,identity])=>i18n.addResourceBundle(lang,'translation',{identity},true,true));
+Object.entries(synchronizationLocales).forEach(([lang,sync])=>i18n.addResourceBundle(lang,'translation',{sync},true,true));

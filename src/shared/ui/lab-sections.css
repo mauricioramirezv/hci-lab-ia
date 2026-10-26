@@ -1,0 +1,5 @@
+.lab-sections,.lab-sections .lab-panels{display:grid;gap:1rem;min-width:0}
+.lab-sections .lab-navigation{display:grid;justify-items:start;gap:1rem;margin:0}
+.lab-sections .lab-navigation p{margin:0}
+.lab-sections .lab-navigation a{display:inline-flex;align-items:center;text-decoration:none}
+.lab-sections .activity-panel,.lab-sections .users-form{margin:0;max-width:none}

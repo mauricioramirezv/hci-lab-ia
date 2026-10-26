@@ -1,0 +1,10 @@
+export type Page<T>={items:T[];total:number;limit:number;offset:number};
+export type Group={id:string;name:string;description:string|null;role:'leader'|'participant';joinedAt:string|null};
+export type GroupMember={accountId:string;displayAlias?:string|null;role:'leader'|'participant';joinedAt:string|null};
+export type GroupInvitation={id:string;email:string|null;expiresAt:string;createdAt:string;status:'pending'|'accepted'|'revoked'|'expired'};
+export type SharedWorkspace={workspaceId:string;sharedBy:string;sharedAt:string};
+export type Workspace={id:string;name:string};
+export type SuggestionStatus='received'|'reviewing'|'accepted'|'implemented'|'rejected';
+export type Suggestion={id:string;category:string;title:string;description:string;anonymous:boolean;authorId:string|null;status:SuggestionStatus;version:number;createdAt:string;updatedAt:string};
+export type SuggestionHistory={id:string;previousStatus:SuggestionStatus;newStatus:SuggestionStatus;response:string|null;changedAt:string};
+export const suggestionTransitions:Record<SuggestionStatus,SuggestionStatus[]>={received:['reviewing','rejected'],reviewing:['accepted','rejected'],accepted:['implemented','rejected'],implemented:[],rejected:[]};

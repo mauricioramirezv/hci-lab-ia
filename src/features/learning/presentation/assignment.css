@@ -1,0 +1,14 @@
+.learning-assignment-composer{margin:1rem 0;padding:1rem;border:1px solid var(--border,#d8dce4);border-radius:.75rem;background:var(--surface-muted,#f7f9fb)}
+.learning-assignment-composer>summary{font-weight:750;color:var(--text,#17202a)}
+.learning-assignment-composer>p{margin:.75rem 0;color:var(--muted,#52616b)}
+.assignment-form,.assignment-field{display:grid;gap:.5rem}
+.assignment-form{gap:1rem;margin-top:1rem}
+.assignment-field label{font-weight:650}
+.assignment-field textarea{width:100%;resize:vertical}
+.assignment-criteria{min-width:0;margin:0;padding:1rem;border:1px solid var(--border,#d8dce4);border-radius:.75rem}
+.assignment-criteria legend{font-weight:750;padding:0 .35rem}
+.assignment-criterion{display:grid;grid-template-columns:minmax(0,2fr) minmax(9rem,1fr) auto;align-items:end;gap:.75rem;margin:.75rem 0}
+.assignment-error,.assignment-success{padding:.75rem;border:2px solid;border-radius:.5rem}
+.assignment-error{color:#8e1b15;background:#fff0ef;border-color:#8e1b15}
+.assignment-success{color:#075f4e;background:#e1f5eb;border-color:#08725e}
+@media(max-width:620px){.assignment-criterion{grid-template-columns:1fr}.assignment-criterion button{justify-self:start}}

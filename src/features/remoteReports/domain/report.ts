@@ -1,0 +1,25 @@
+export type ReportFormat = 'json' | 'markdown' | 'csv';
+export type ReportSelection = { section: 'selected' | 'before' | 'after'; source: 'execution'; id: string };
+export type ReportSnapshotRecord = { source: string; id: string; section: string; version: number; activityVersion?: number; instrumentVersion?: number; formulaVersion?: number; data: unknown };
+export type RemoteReport = {
+  id: string;
+  workspaceId?: string;
+  projectName?: string;
+  objective?: string;
+  method?: string;
+  interpretation?: string;
+  improvements?: string;
+  limitations?: string;
+  conclusions?: string;
+  references?: string;
+  justification?: string;
+  format?: ReportFormat | 'pdf';
+  records: ReportSelection[];
+  status: 'pending' | 'partial' | 'ready' | 'failed' | string;
+  snapshotVersion: number;
+  snapshot?: { records: ReportSnapshotRecord[]; missingSources: string[]; missingRecords: ReportSelection[]; capturedAt?: string } | null;
+  missingSources?: string[];
+  lastError?: string | null;
+  generatedAt?: string | null;
+  stale?: boolean;
+};

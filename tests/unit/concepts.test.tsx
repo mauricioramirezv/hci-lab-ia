@@ -11,6 +11,8 @@ import {defaultPrefs} from '../../src/features/project/domain';
 import { representativeProject } from '../fixtures/representativeProject';
 const app=()=>render(<MemoryRouter><ProjectProvider><Concepts/></ProjectProvider></MemoryRouter>);
 const stored=()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!);
+const openConcept=(name:string)=>{const index=conceptResources['es-CO'].concepts.findIndex(concept=>concept.name===name),groupIndex=conceptGroups.findIndex(group=>group.includes(index)),groupName=conceptResources['es-CO'].groups[groupIndex],section=screen.getByRole('button',{name:groupName});if(section.getAttribute('aria-expanded')!=='true')fireEvent.click(section);fireEvent.click(screen.getByRole('button',{name:`Abrir actividad: ${name}`}));};
+const openDiagnosis=()=>{const section=screen.getByRole('button',{name:conceptResources['es-CO'].ui.diagTitle});if(section.getAttribute('aria-expanded')!=='true')fireEvent.click(section);};
 beforeEach(()=>{localStorage.clear();void i18n.changeLanguage('es-CO');});
 afterEach(()=>{cleanup();vi.useRealTimers();vi.restoreAllMocks();});
 it('assigns all eleven concepts exactly once to the four requested topics',()=>{
@@ -28,17 +30,17 @@ it('has complete module dictionaries and eleven distinct activities in all six l
   }
 });
 it('combines topic filtering and accent-insensitive search, and clears both filters',()=>{
-  app();expect(screen.getAllByRole('button',{name:/Abrir actividad:/})).toHaveLength(11);
+  const {container}=app();const cards=()=>container.querySelectorAll('.concept-catalog-card').length;expect(cards()).toBe(11);
   fireEvent.change(screen.getByLabelText('Temática'),{target:{value:'2'}});
-  expect(screen.getAllByRole('button',{name:/Abrir actividad:/})).toHaveLength(2);
+  expect(cards()).toBe(2);
   fireEvent.change(screen.getByLabelText('Buscar conceptos'),{target:{value:'COGNICION'}});
-  expect(screen.getAllByRole('button',{name:/Abrir actividad:/})).toHaveLength(1);
+  expect(cards()).toBe(1);
   fireEvent.change(screen.getByLabelText('Buscar conceptos'),{target:{value:'no-such-concept'}});
-  expect(screen.queryByRole('button',{name:/Abrir actividad:/})).not.toBeInTheDocument();
-  fireEvent.click(screen.getByRole('button',{name:'Limpiar filtros'}));expect(screen.getAllByRole('button',{name:/Abrir actividad:/})).toHaveLength(11);
+  expect(cards()).toBe(0);
+  fireEvent.click(screen.getByRole('button',{name:'Limpiar filtros'}));expect(cards()).toBe(11);
 });
 it('counts submitted errors and interactions, records elapsed time and allows saving without an alias or invented ratings',()=>{
-  app();fireEvent.click(screen.getByRole('button',{name:'Abrir actividad: Emociones'}));
+  app();openConcept('Emociones');
   const clock=vi.spyOn(performance,'now').mockReturnValue(1000);
   fireEvent.click(screen.getByRole('button',{name:'Iniciar prueba'}));
   fireEvent.change(screen.getByLabelText('Código del cupón'),{target:{value:'incorrecto'}});
@@ -52,7 +54,7 @@ it('counts submitted errors and interactions, records elapsed time and allows sa
   expect(screen.getByRole('button',{name:'Guardar resultados'})).toBeDisabled();
 });
 it('preserves free text and cancels a pending operation on condition change',()=>{
-  vi.useFakeTimers();app();fireEvent.click(screen.getByRole('button',{name:'Abrir actividad: Awareness'}));
+  vi.useFakeTimers();app();openConcept('Awareness');
   fireEvent.change(screen.getByLabelText('Observación'),{target:{value:'Mi observación ✍️'}});
   fireEvent.click(screen.getByRole('button',{name:'Iniciar prueba'}));
   fireEvent.change(screen.getByLabelText('Nota del equipo'),{target:{value:'Nota escrita'}});
@@ -70,7 +72,7 @@ it('preserves free text and cancels a pending operation on condition change',()=
   fireEvent.click(screen.getByRole('button',{name:'Repetir prueba'}));expect(screen.queryByText(/Tiempo:/)).not.toBeInTheDocument();
 });
 it('only records emotion and confidence that were explicitly reported',()=>{
-  app();fireEvent.click(screen.getByRole('button',{name:'Abrir actividad: Emociones'}));
+  app();openConcept('Emociones');
   fireEvent.change(screen.getByLabelText('Emoción antes de la prueba'),{target:{value:'2'}});
   fireEvent.change(screen.getByLabelText('Confianza antes de la prueba'),{target:{value:'1'}});
   fireEvent.click(screen.getByRole('button',{name:'Iniciar prueba'}));fireEvent.change(screen.getByLabelText('Código del cupón'),{target:{value:'CALMA'}});fireEvent.click(screen.getByRole('button',{name:'Aplicar código'}));
@@ -79,14 +81,14 @@ it('only records emotion and confidence that were explicitly reported',()=>{
   expect(stored().evidence[0].scores).toMatchObject({emotionBefore:2,confidenceBefore:1,emotionAfter:4});expect(stored().evidence[0].scores.confidenceAfter).toBeUndefined();
 });
 it('checks the diagnosis explicitly, explains the response and correction, and supports retry',()=>{
-  app();fireEvent.click(screen.getByRole('button',{name:'Comprobar'}));expect(screen.getByRole('alert')).toHaveTextContent('Elija una respuesta');
+  app();openDiagnosis();fireEvent.click(screen.getByRole('button',{name:'Comprobar'}));expect(screen.getByRole('alert')).toHaveTextContent('Elija una respuesta');
   fireEvent.change(screen.getByLabelText('Respuesta al diagnóstico'),{target:{value:'3'}});expect(screen.queryByText('Revise su respuesta')).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole('button',{name:'Comprobar'}));expect(screen.getByText('Revise su respuesta')).toBeInTheDocument();expect(screen.getByText(/Reducir contenido no justifica/)).toBeInTheDocument();
   fireEvent.click(screen.getByRole('button',{name:'Volver a intentar'}));expect(screen.getByLabelText('Respuesta al diagnóstico')).toHaveFocus();
   fireEvent.change(screen.getByLabelText('Respuesta al diagnóstico'),{target:{value:'1'}});fireEvent.click(screen.getByRole('button',{name:'Comprobar'}));expect(screen.getByText('Respuesta fundamentada')).toBeInTheDocument();
 });
 it('changes languages without overwriting user text, trial inputs or saved responses',async()=>{
-  app();fireEvent.click(screen.getByRole('button',{name:'Abrir actividad: IA responsable'}));
+  app();openConcept('IA responsable');
   fireEvent.change(screen.getByLabelText('Observación'),{target:{value:'Observación original en español.'}});fireEvent.click(screen.getByRole('button',{name:'Iniciar prueba'}));
   fireEvent.change(screen.getByLabelText('Decisión registrada'),{target:{value:'editDecision'}});
   fireEvent.change(screen.getByLabelText('Justificación de su decisión'),{target:{value:'Necesitamos menos datos.'}});
