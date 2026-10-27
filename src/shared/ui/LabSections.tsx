@@ -16,7 +16,7 @@ export function LabSections({ active, sections, navigationLabel, children }: {
   return <div className="lab-sections">
     {sections.map(section => <DisclosureCard
       key={section.id} id={`lab-section-${section.id}`} title={section.title}
-      open={!!open[section.id]} onToggle={() => setOpen(value => ({ ...value, [section.id]: !value[section.id] }))}
+      open={!!open[section.id]} onToggle={nextOpen => setOpen(value => ({ ...value, [section.id]: nextOpen }))}
     >
       {active === section.id ? children : <nav className="lab-navigation" aria-label={navigationLabel}>
         <p>{section.intro}</p>

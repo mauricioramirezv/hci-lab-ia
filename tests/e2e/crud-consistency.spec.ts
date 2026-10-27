@@ -19,7 +19,7 @@ const cases=[
 ] as const;
 const read=(page:Page):Promise<ProjectState>=>page.evaluate(()=>JSON.parse(localStorage.getItem('hci-lab-ia-project-v2')!));
 async function seed(page:Page,route:string){await page.goto('/hci-lab-ia/');await page.evaluate(project=>localStorage.setItem('hci-lab-ia-project-v2',JSON.stringify(project)),crudProject());await page.goto(`/hci-lab-ia/#${route}`);await page.reload();}
-async function openLabPage(page:Page,section:'reservations'|'users',label:string){const heading=page.locator(`#lab-section-${section}-heading`);if(await heading.getAttribute('aria-expanded')!=='true')await heading.click();await page.locator('.lab-navigation').getByRole('link',{name:label,exact:true}).click();}
+async function openLabPage(page:Page,section:'reservations'|'users',label:string){const heading=page.locator(`#lab-section-${section}-heading`);if(await heading.getAttribute('aria-expanded')!=='true')await heading.click();await expect(heading).toHaveAttribute('aria-expanded','true');await page.locator('.lab-navigation').getByRole('link',{name:label,exact:true}).click();}
 async function failWrites(page:Page,blocked:boolean){await page.evaluate(blocked=>{
  const host=window as Window&{crudWriteBlock?:{blocked:boolean}};
  if(!host.crudWriteBlock){const flag={blocked},write=Storage.prototype.setItem;host.crudWriteBlock=flag;Storage.prototype.setItem=function(key,value){if(key==='hci-lab-ia-project-v2'&&flag.blocked)throw Error('quota');write.call(this,key,value);};}else host.crudWriteBlock.blocked=blocked;
