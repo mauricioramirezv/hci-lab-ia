@@ -19,7 +19,7 @@ export function DisclosureCard({
   const Heading = headingLevel === 3 ? 'h3' : 'h2';
   return <section className={`disclosure-card panel ${className}`}>
     <Heading className="disclosure-heading">
-      <button ref={triggerRef} type="button" id={headingId} className="disclosure-toggle" aria-expanded={open} aria-controls={panelId} onClick={() => onToggle(!open)} onKeyDown={event=>{if(event.key==='Enter'&&!event.repeat){event.preventDefault();onToggle(!open);}}}>
+      <button ref={triggerRef} type="button" id={headingId} className="disclosure-toggle" aria-expanded={open} aria-controls={panelId} onClick={event => onToggle(event.currentTarget.getAttribute('aria-expanded') !== 'true')}>
         <span>{title}</span><ChevronDown aria-hidden="true" size={20}/>
       </button>
     </Heading>

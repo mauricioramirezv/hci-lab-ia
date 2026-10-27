@@ -23,7 +23,7 @@ test('laboratory navigation stays inside translated cards and protects unfinishe
   await create.click();await expect(page.getByRole('dialog',{name:crudResources[language].unsavedTitle,exact:true})).toBeVisible();
   await page.keyboard.press('Escape');await expect(page.locator('#context')).toHaveValue('university');await expect(page.locator('#service')).toHaveValue('workshop');
   await create.click();await discardChanges(page,language);await expect(create).toHaveAttribute('aria-expanded','false');
-  const users=page.locator('#lab-section-users-heading');await users.focus();await page.keyboard.press('Enter');await expect(users).toHaveAttribute('aria-expanded','true');
+  const users=page.locator('#lab-section-users-heading');await users.focus();await expect(users).toBeFocused();await page.keyboard.press('Enter');await expect(users).toHaveAttribute('aria-expanded','true');
   const link=page.locator('#lab-section-users-panel').getByRole('link',{name:userResources[language].title,exact:true});await expect(link).toBeVisible();await link.click();
   await expect(page.locator('#lab-section-users-heading')).toHaveAttribute('aria-expanded','true');
   const userCreate=page.locator('#users-create-heading');await expect(userCreate).toHaveAttribute('aria-expanded','false');await userCreate.click();
