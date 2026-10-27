@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import { DisclosureCard } from './DisclosureCard';
 import './lab-sections.css';
@@ -13,6 +13,7 @@ export function LabSections({ active, sections, navigationLabel, children }: {
   children: ReactNode;
 }) {
   const [open, setOpen] = useState<Record<string, boolean>>({ [active]: true });
+  useEffect(() => { setOpen({ [active]: true }); }, [active]);
   return <div className="lab-sections">
     {sections.map(section => <DisclosureCard
       key={section.id} id={`lab-section-${section.id}`} title={section.title}

@@ -1,7 +1,7 @@
 import {ExpandableCard} from '../../../shared/ui/ExpandableCard';
 import {useDraftGuard} from '../../../shared/ui/useDraftGuard';
 import {FormActions,RequiredFields} from '../../../shared/ui/FormActions';
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Appointment, ReservationDraft, ServiceId } from '../domain/types';
 import { services } from '../domain/types';
@@ -26,10 +26,9 @@ export function Reservations() {
  const [detail,setDetail]=useState<Appointment|null>(null);const baseline=useRef(JSON.stringify({draft:blank(),context:'',condition:'good'}));
  const [savedOpen,setSavedOpen]=useState(true);const savedHeading=useRef<HTMLButtonElement>(null);const createHeading=useRef<HTMLButtonElement>(null);
  const guard=useDraftGuard(active&&step<4&&JSON.stringify({draft,context,condition})!==baseline.current);
- const locked=useRef(false);const heading=useRef<HTMLHeadingElement>(null);const noticeRef=useRef<HTMLParagraphElement>(null);const started=useRef<number|null>(null);const initialStep=useRef(true);
+ const locked=useRef(false);const heading=useRef<HTMLHeadingElement>(null);const started=useRef<number|null>(null);const initialStep=useRef(true),previousActive=useRef(active);
  const serviceName=(item:{service:string;serviceId?:ServiceId})=>item.serviceId?tr(item.serviceId==='culture'?'cultureActivity':item.serviceId):item.service;
- useEffect(()=>{if(initialStep.current){initialStep.current=false;return;}if(active||detail)heading.current?.focus();else savedHeading.current?.focus();},[step,editing,active,detail]);
- useEffect(()=>{if(!noticeEvent.key)return;const frame=requestAnimationFrame(()=>noticeRef.current?.focus());return()=>cancelAnimationFrame(frame);},[noticeEvent]);
+ useLayoutEffect(()=>{const wasActive=previousActive.current;previousActive.current=active;if(initialStep.current){initialStep.current=false;return;}if(active||detail)heading.current?.focus();else if(wasActive)createHeading.current?.focus();else savedHeading.current?.focus();},[step,editing,active,detail]);
  const reset=()=>{baseline.current=JSON.stringify({draft:blank(),context:'',condition});setDetail(null);setDraft(blank());setContext('');setStep(1);setActive(true);setEditing('');setErrors({});setNotice('');locked.current=false;started.current=null;};
  const validate=(all=false)=>{
    const next=validateDraft(draft,{context,editingId:editing,stage:all?'all':step===1?'selection':'schedule'});
@@ -46,12 +45,12 @@ export function Reservations() {
    setStep(4);
  };
  const cancelDraft=()=>guard.request(()=>{setActive(false);setErrors({});setNotice(editing?'editCancelled':'draftCancelled');});
- const toggleDraft=()=>{if(!active){reset();return;}if(step===4){setActive(false);requestAnimationFrame(()=>createHeading.current?.focus());return;}guard.request(()=>{setActive(false);setErrors({});setNotice(editing?'editCancelled':'draftCancelled');requestAnimationFrame(()=>createHeading.current?.focus());});};
+ const toggleDraft=()=>{if(!active){reset();return;}if(step===4){setActive(false);return;}guard.request(()=>{setActive(false);setErrors({});setNotice(editing?'editCancelled':'draftCancelled');});};
  const editReservation=(a:Appointment)=>{setDetail(null);baseline.current=JSON.stringify({draft:{service:a.service,serviceId:a.serviceId,date:a.date,time:a.time},context:a.serviceId?serviceContexts[a.serviceId]:'',condition:a.condition||'good'});setEditing(a.id);setDraft({service:a.service,serviceId:a.serviceId,date:a.date,time:a.time});setContext(a.serviceId?serviceContexts[a.serviceId]:'');setCondition(a.condition||'good');setStep(2);setActive(true);setErrors({});setNotice('');locked.current=false;started.current=Date.now();};
  const summary=(item:Draft)=><dl><div><dt>{tr('service')}</dt><dd>{serviceName(item)}</dd></div><div><dt>{tr('dateTime')}</dt><dd>{item.date} · {item.time}</dd></div></dl>;
  return <div className="project-activities" data-module="reservations"><PageHead eyebrow={tr('context')} title={tr('bookingTitle')} intro={tr('bookingIntro')}/>
   <LabSections active="reservations" navigationLabel={t('nav.lab')} sections={[{id:'reservations',title:userLabel('reservations'),intro:tr('bookingIntro'),href:'/lab'},{id:'users',title:userLabel('title'),intro:userLabel('intro'),href:'/lab/users'}]}><div className="lab-panels">
-  <p ref={noticeRef} data-outcome={notice==='storageFailed'?'error':['booked','rescheduled','bookingCancelled'].includes(notice)?'success':'neutral'} aria-label={tr('bookingTitle')} role="status" tabIndex={-1} className={notice?'activity-notice':''}>{notice&&<span key={noticeEvent.seq}>{notice==='storageFailed'?t('manage.storageFailed'):tr(notice)}</span>}</p>
+  <p data-outcome={notice==='storageFailed'?'error':['booked','rescheduled','bookingCancelled'].includes(notice)?'success':'neutral'} aria-label={tr('bookingTitle')} role="status" tabIndex={-1} className={notice?'activity-notice':''}>{notice&&<span key={noticeEvent.seq}>{notice==='storageFailed'?t('manage.storageFailed'):tr(notice)}</span>}</p>
   {!detail&&<ExpandableCard headingLevel={3} id="reservation-condition" title={tr('condition')}>
   <div role="group" aria-label={tr('condition')} className="activity-actions">{(['good','bad'] as const).map(c=><button key={c} className="secondary" aria-pressed={condition===c} onClick={()=>setCondition(c)}>{tr(c)}</button>)}</div>
   <p className="activity-help">{tr(condition==='bad'?'badHelp':'goodHelp')}</p>
