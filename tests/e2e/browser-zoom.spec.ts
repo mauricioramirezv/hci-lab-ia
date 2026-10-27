@@ -93,7 +93,7 @@ test('actual Chromium browser zoom at 200%', async ({ browserName }, testInfo) =
         await expect(page.locator('.activity-panel :is(h2,h3,h4)[tabindex="-1"]')).toBeFocused();
         expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
         await page.getByRole('button',{name:'Cancelar',exact:true}).focus();await page.keyboard.press('Enter');
-        await discardChanges(page);await expect(page.getByRole('status')).toBeFocused();
+        await discardChanges(page);await expect(page.locator('#reservation-create-heading')).toBeFocused();
       }
       if (route === '/research') {
         await page.getByRole('button',{name:'Crear persona',exact:true}).click();

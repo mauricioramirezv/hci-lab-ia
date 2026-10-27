@@ -1,7 +1,7 @@
 import {ExpandableCard} from '../../../shared/ui/ExpandableCard';
 import {useDraftGuard} from '../../../shared/ui/useDraftGuard';
 import {FormActions,RequiredFields} from '../../../shared/ui/FormActions';
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Appointment, ReservationDraft, ServiceId } from '../domain/types';
 import { services } from '../domain/types';
@@ -24,10 +24,15 @@ export function Reservations() {
  const [step,setStep]=useState(1);const [active,setActive]=useState(false);const [editing,setEditing]=useState('');const [errors,setErrors]=useState<Record<string,string>>({});
  const [noticeEvent,setNoticeEvent]=useState({key:'',seq:0});const notice=noticeEvent.key;const setNotice=(key:string)=>setNoticeEvent(e=>({key,seq:e.seq+1}));const [cancelling,setCancelling]=useState<Appointment|null>(null);
  const [detail,setDetail]=useState<Appointment|null>(null);const baseline=useRef(JSON.stringify({draft:blank(),context:'',condition:'good'}));
- const [savedOpen,setSavedOpen]=useState(true);const savedHeading=useRef<HTMLButtonElement>(null);const createHeading=useRef<HTMLButtonElement>(null);
+ const [savedOpen,setSavedOpen]=useState(true);const savedHeading=useRef<HTMLButtonElement>(null);const createHeading=useRef<HTMLButtonElement>(null);const status=useRef<HTMLParagraphElement>(null);
  const guard=useDraftGuard(active&&step<4&&JSON.stringify({draft,context,condition})!==baseline.current);
  const locked=useRef(false);const heading=useRef<HTMLHeadingElement>(null);const started=useRef<number|null>(null);const initialStep=useRef(true),previousActive=useRef(active);
  const serviceName=(item:{service:string;serviceId?:ServiceId})=>item.serviceId?tr(item.serviceId==='culture'?'cultureActivity':item.serviceId):item.service;
+ useEffect(()=>{
+  if(!notice||notice==='draftCancelled'||notice==='editCancelled')return;
+  const frame=requestAnimationFrame(()=>status.current?.focus());
+  return()=>cancelAnimationFrame(frame);
+ },[notice,noticeEvent.seq]);
  useLayoutEffect(()=>{const wasActive=previousActive.current;previousActive.current=active;if(initialStep.current){initialStep.current=false;return;}if(active||detail)heading.current?.focus();else if(wasActive)createHeading.current?.focus();else savedHeading.current?.focus();},[step,editing,active,detail]);
  const reset=()=>{baseline.current=JSON.stringify({draft:blank(),context:'',condition});setDetail(null);setDraft(blank());setContext('');setStep(1);setActive(true);setEditing('');setErrors({});setNotice('');locked.current=false;started.current=null;};
  const validate=(all=false)=>{
@@ -50,7 +55,7 @@ export function Reservations() {
  const summary=(item:Draft)=><dl><div><dt>{tr('service')}</dt><dd>{serviceName(item)}</dd></div><div><dt>{tr('dateTime')}</dt><dd>{item.date} · {item.time}</dd></div></dl>;
  return <div className="project-activities" data-module="reservations"><PageHead eyebrow={tr('context')} title={tr('bookingTitle')} intro={tr('bookingIntro')}/>
   <LabSections active="reservations" navigationLabel={t('nav.lab')} sections={[{id:'reservations',title:userLabel('reservations'),intro:tr('bookingIntro'),href:'/lab'},{id:'users',title:userLabel('title'),intro:userLabel('intro'),href:'/lab/users'}]}><div className="lab-panels">
-  <p data-outcome={notice==='storageFailed'?'error':['booked','rescheduled','bookingCancelled'].includes(notice)?'success':'neutral'} aria-label={tr('bookingTitle')} role="status" tabIndex={-1} className={notice?'activity-notice':''}>{notice&&<span key={noticeEvent.seq}>{notice==='storageFailed'?t('manage.storageFailed'):tr(notice)}</span>}</p>
+  <p ref={status} data-outcome={notice==='storageFailed'?'error':['booked','rescheduled','bookingCancelled'].includes(notice)?'success':'neutral'} aria-label={tr('bookingTitle')} role="status" tabIndex={-1} className={notice?'activity-notice':''}>{notice&&<span key={noticeEvent.seq}>{notice==='storageFailed'?t('manage.storageFailed'):tr(notice)}</span>}</p>
   {!detail&&<ExpandableCard headingLevel={3} id="reservation-condition" title={tr('condition')}>
   <div role="group" aria-label={tr('condition')} className="activity-actions">{(['good','bad'] as const).map(c=><button key={c} className="secondary" aria-pressed={condition===c} onClick={()=>setCondition(c)}>{tr(c)}</button>)}</div>
   <p className="activity-help">{tr(condition==='bad'?'badHelp':'goodHelp')}</p>
