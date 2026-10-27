@@ -29,7 +29,8 @@ export function useDraftGuard(dirty:boolean){
   };
   const pop=(event:PopStateEvent)=>{
    if(restoring){restoring=false;event.stopImmediatePropagation();return;}
-   if(location.href===url||window.confirm(t('crud.unsavedText')))return;
+   if(location.href===url)return;
+   if(window.confirm(t('crud.unsavedText'))){if(currentPopGuard===pop)currentPopGuard=undefined;return;}
    event.stopImmediatePropagation();
    const delta=typeof state?.idx==='number'&&typeof event.state?.idx==='number'?state.idx-event.state.idx:0;
    if(delta){restoring=true;history.go(delta);}else history.replaceState(state,'',url);

@@ -55,7 +55,7 @@ test('CRUD consistency: links, browser back and reset respect an unsaved draft',
  await seed(page,'/lab');await openLabPage(page,'users',u.title);await page.getByRole('button',{name:u.create,exact:true}).click();await page.locator('#user-name').fill('RAW pending');
  await openLabPage(page,'reservations',u.reservations);await expect(page.getByRole('dialog',{name:c.unsavedTitle,exact:true})).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('#user-name')).toHaveValue('RAW pending');
  page.once('dialog',dialog=>dialog.dismiss());await page.goBack();await expect(page).toHaveURL(/#\/lab\/users$/);await expect(page.locator('#user-name')).toHaveValue('RAW pending');
- page.once('dialog',dialog=>dialog.accept());await page.goBack();await expect(page).toHaveURL(/#\/lab$/);
+ page.once('dialog',dialog=>dialog.accept());await page.goBack();await expect(page).toHaveURL(/#\/lab$/);await expect(page.locator('#reservation-create-heading')).toBeVisible();
  await openLabPage(page,'users',u.title);await page.getByRole('button',{name:u.create,exact:true}).click();await page.locator('#user-name').fill('RAW pending link');
  await openLabPage(page,'reservations',u.reservations);await discardChanges(page);await expect(page).toHaveURL(/#\/lab$/);
  await openLabPage(page,'users',u.title);await page.getByRole('button',{name:u.create,exact:true}).click();await page.locator('#user-name').fill('RAW pending reset');
